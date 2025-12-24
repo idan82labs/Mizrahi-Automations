@@ -2,14 +2,15 @@
 """
 Mizrahi Special Transactions - CLI Processor (single script)
 
-Implements checks #1–#5.1 from the current specification.
+Implements checks #1–#7 from the current specification.
 
 Inputs:
   - Mutual Funds List (XLSX): filtered to Mizrahi trustee funds (by 'שם נאמן')
   - Manager special transactions report (CSV or XLSX): e.g., 1702431.csv or 1702431.xlsx
+  - Specification table (XLSX, optional): for פירוט בדיקות sheet
 
 Outputs:
-  - Output XLSX: summary + exceptions + samples (+ out-of-scope funds)
+  - Output XLSX: summary + check statuses + exceptions + samples (+ out-of-scope funds)
   - Email JSON: for n8n workflow - contains ONLY two JSON objects with transaction info (no full email body)
 
 Dependencies:
@@ -22,6 +23,8 @@ Example:
     --input-report "1702431.csv" \
     --output-xlsx "output.xlsx" \
     --email-json "email.json" \
+    --manager-name "איילון" \
+    --spec-file "Special Transactions Report Testing Specifications.xlsx" \
     --seed 123
 
 Notes:
@@ -47,7 +50,8 @@ from pathlib import Path
 from typing import Any, Optional
 
 import openpyxl
-from openpyxl.styles import Font
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.utils import get_column_letter
 
 # Selenium imports (optional - for price checks)
 try:
@@ -112,6 +116,33 @@ PROBLEMATIC_LISTS_CONFIG = {
         'name_he': 'מושעים',
     },
 }
+
+# Excel styling constants (matching fund_automation_complete.py)
+HEADER_FONT = Font(name='Calibri', bold=True, color="FFFFFF", size=11)
+HEADER_FILL = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+PASS_FILL = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
+FAIL_FILL = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
+THIN_BORDER = Border(
+    left=Side(style='thin'), right=Side(style='thin'),
+    top=Side(style='thin'), bottom=Side(style='thin')
+)
+DEFAULT_FONT = Font(name='Calibri', size=11)
+
+# Hebrew month names
+HEBREW_MONTHS = {
+    1: "ינואר", 2: "פברואר", 3: "מרץ", 4: "אפריל",
+    5: "מאי", 6: "יוני", 7: "יולי", 8: "אוגוסט",
+    9: "ספטמבר", 10: "אוקטובר", 11: "נובמבר", 12: "דצמבר"
+}
+
+
+def _format_report_month_hebrew(report_month: str) -> str:
+    """Convert YYYY-MM to Hebrew format like 'ספטמבר 2025'."""
+    try:
+        year, month = report_month.split("-")
+        return f"{HEBREW_MONTHS[int(month)]} {year}"
+    except (ValueError, KeyError):
+        return report_month
 
 
 # -----------------------------
@@ -772,13 +803,101 @@ def _rtl(ws) -> None:
     ws.sheet_view.rightToLeft = True
 
 
-def _header(ws, headers: list[str]) -> None:
+def _style_header(ws, row: int = 1) -> None:
+    """Apply header styling to specified row."""
+    for cell in ws[row]:
+        cell.font = HEADER_FONT
+        cell.fill = HEADER_FILL
+        cell.alignment = Alignment(horizontal='right')
+        cell.border = THIN_BORDER
+
+
+def _style_cells(ws, start_row: int = 2) -> None:
+    """Apply styling to all data cells."""
+    for row in ws.iter_rows(min_row=start_row):
+        for cell in row:
+            cell.alignment = Alignment(horizontal='right')
+            cell.border = THIN_BORDER
+
+
+def _auto_fit_columns(ws, min_width: int = 8, max_width: int = 50) -> None:
+    """Auto-fit column widths based on content."""
+    for column_cells in ws.columns:
+        max_length = 0
+        column_letter = column_cells[0].column_letter
+
+        for cell in column_cells:
+            try:
+                if cell.value:
+                    # Calculate length, accounting for Hebrew characters (wider)
+                    cell_length = len(str(cell.value))
+                    # Add extra width for Hebrew text
+                    if any('\u0590' <= c <= '\u05FF' for c in str(cell.value)):
+                        cell_length = int(cell_length * 1.2)
+                    max_length = max(max_length, cell_length)
+            except:
+                pass
+
+        # Set width with padding, respecting min/max bounds
+        adjusted_width = min(max(max_length + 2, min_width), max_width)
+        ws.column_dimensions[column_letter].width = adjusted_width
+
+
+def _auto_fit_rows(ws, default_height: float = 15.0, chars_per_line: int = 50) -> None:
+    """Auto-fit row heights based on content and column width."""
+    for row_num in range(1, ws.max_row + 1):
+        max_lines = 1
+        for col_num in range(1, ws.max_column + 1):
+            cell = ws.cell(row_num, col_num)
+            if cell.value:
+                cell_text = str(cell.value)
+                # Count explicit line breaks
+                explicit_lines = cell_text.count('\n') + 1
+
+                # Estimate wrapped lines based on column width
+                col_letter = get_column_letter(col_num)
+                col_width = ws.column_dimensions[col_letter].width or 10
+
+                # Calculate lines needed for text wrapping
+                for line in cell_text.split('\n'):
+                    line_len = len(line)
+                    # Hebrew characters are wider
+                    if any('\u0590' <= c <= '\u05FF' for c in line):
+                        line_len = int(line_len * 1.2)
+                    wrapped_lines = max(1, int(line_len / col_width) + 1)
+                    max_lines = max(max_lines, wrapped_lines)
+
+                max_lines = max(max_lines, explicit_lines)
+
+        # Set row height based on number of lines (minimum 15)
+        ws.row_dimensions[row_num].height = max(default_height, default_height * max_lines)
+
+
+def _set_font_calibri(ws) -> None:
+    """Set Calibri font for all cells in worksheet."""
+    for row in ws.iter_rows():
+        for cell in row:
+            if cell.font:
+                # Preserve other font properties (bold, color) but change name to Calibri
+                cell.font = Font(
+                    name='Calibri',
+                    bold=cell.font.bold,
+                    italic=cell.font.italic,
+                    color=cell.font.color,
+                    size=cell.font.size or 11
+                )
+            else:
+                cell.font = Font(name='Calibri', size=11)
+
+
+def _header(ws, headers: list[str], row: int = 1) -> None:
     for i, h in enumerate(headers, start=1):
-        cell = ws.cell(1, i)
+        cell = ws.cell(row, i)
         cell.value = h
-        cell.font = Font(bold=True)
-    ws.freeze_panes = "A2"
-    ws.auto_filter.ref = ws.dimensions
+    _style_header(ws, row)
+    if row == 1:
+        ws.freeze_panes = "A2"
+        ws.auto_filter.ref = ws.dimensions
 
 
 def _fmt_date(d: Optional[dt.date]) -> str:
@@ -804,10 +923,59 @@ def _txn_to_basic_list(r: TxnRow) -> list[Any]:
     ]
 
 
+def _copy_spec_sheet_to_workbook(spec_file_path: Path, target_wb: openpyxl.Workbook, sheet_name: str = "פירוט בדיקות") -> None:
+    """Copy specification sheet to target workbook preserving all original styling."""
+    if not spec_file_path or not spec_file_path.exists():
+        return
+
+    from copy import copy
+
+    src_wb = openpyxl.load_workbook(spec_file_path)
+    # Use Hebrew sheet if available, otherwise first sheet
+    src_sheet_name = 'Hebrew' if 'Hebrew' in src_wb.sheetnames else src_wb.sheetnames[0]
+    src_ws = src_wb[src_sheet_name]
+
+    # Create new sheet in target workbook
+    target_ws = target_wb.create_sheet(sheet_name)
+    target_ws.sheet_view.rightToLeft = True
+
+    # Copy column dimensions
+    for col_letter, col_dim in src_ws.column_dimensions.items():
+        target_ws.column_dimensions[col_letter].width = col_dim.width
+        target_ws.column_dimensions[col_letter].hidden = col_dim.hidden
+
+    # Copy row dimensions
+    for row_num, row_dim in src_ws.row_dimensions.items():
+        target_ws.row_dimensions[row_num].height = row_dim.height
+        target_ws.row_dimensions[row_num].hidden = row_dim.hidden
+
+    # Copy merged cells
+    for merged_range in src_ws.merged_cells.ranges:
+        target_ws.merge_cells(str(merged_range))
+
+    # Copy all cells with their values and styles
+    for row in src_ws.iter_rows():
+        for cell in row:
+            target_cell = target_ws.cell(row=cell.row, column=cell.column, value=cell.value)
+
+            # Copy cell styles
+            if cell.has_style:
+                target_cell.font = copy(cell.font)
+                target_cell.fill = copy(cell.fill)
+                target_cell.border = copy(cell.border)
+                target_cell.alignment = copy(cell.alignment)
+                target_cell.number_format = cell.number_format
+                target_cell.protection = copy(cell.protection)
+
+    src_wb.close()
+
+
 def write_output_xlsx(
     output_path: Path,
     *,
     report_month: str,
+    manager_name: str,
+    trustee_name: str,
     summary: dict[str, Any],
     exceptions_duplicates: list[ExceptionRow],
     exceptions_date: list[ExceptionRow],
@@ -817,22 +985,68 @@ def write_output_xlsx(
     price_check_results: list[PriceCheckResult] = None,
     price_limit_results: list[PriceLimitResult] = None,
     problematic_security_results: list[ProblematicSecurityResult] = None,
+    spec_file_path: Path = None,
 ) -> None:
     wb = openpyxl.Workbook()
 
     # Validation columns to add to each sheet
-    VALIDATION_COLS = ["שם הבודק", "תוצאת בדיקה"]
+    VALIDATION_COLS = ["טופל?", "שם הבודק"]
 
-    # Summary
+    # Extract counts for סטטוס בדיקות table
+    count_out_of_scope = summary.get("שורות מחוץ לתחום", 0)
+    count_inter_fund = summary.get("חריגות עסקאות בין קרנות", 0)
+    count_date = summary.get("חריגות תאריך", 0)
+    count_decision = summary.get("חריגות אופן החלטה", 0)
+    count_price_limit = summary.get("חריגות מחיר מעל 100", 0)
+    count_problematic = summary.get("חריגות ניירות בעייתיים", 0)
+
+    # Sheet 1: Summary (סיכום) - new format
     ws_sum = wb.active
     ws_sum.title = "סיכום"
     _rtl(ws_sum)
     _header(ws_sum, ["שדה", "ערך"])
+
+    # Build new summary rows in the required order
+    hebrew_month = _format_report_month_hebrew(report_month)
+    summary_rows = [
+        ("מנהל קרן", manager_name),
+        ("נאמן", trustee_name),
+        ("חודש נבדק", f"דוח חודשי-{hebrew_month}"),
+        ("מספר קרנות מזרחי", summary.get("מספר קרנות מזרחי", "")),
+        ("סה\"כ שורות", summary.get("סה\"כ שורות", "")),
+    ]
+
     rr = 2
-    for k, v in summary.items():
-        ws_sum.cell(rr, 1).value = str(k)
+    for k, v in summary_rows:
+        ws_sum.cell(rr, 1).value = k
         ws_sum.cell(rr, 2).value = v
         rr += 1
+
+    _style_cells(ws_sum)
+
+    # Sheet 2: סטטוס בדיקות (Check Status)
+    ws_checks = wb.create_sheet("סטטוס בדיקות")
+    _rtl(ws_checks)
+    ws_checks.append(["בדיקה", "תיאור", "סטטוס", "חריגות", "טופל?", "שם הבודק"])
+    _style_header(ws_checks, 1)
+
+    # Define all checks with their descriptions
+    check_statuses = [
+        ("שורות מחוץ לתחום", "קרנות שאינן בנאמנות מזרחי", count_out_of_scope == 0, count_out_of_scope),
+        ("חריגות עסקאות בין קרנות", "עסקאות עם כמות מנוגדת באותו יום", count_inter_fund == 0, count_inter_fund),
+        ("חריגות תאריך", "עסקאות מחוץ לחודש הדוח", count_date == 0, count_date),
+        ("חריגות אופן החלטה", "אי-התאמה בין סוג לאופן החלטה", count_decision == 0, count_decision),
+        ("חריגות מחיר מעל 100", "עסקאות מסוג 31-36 עם מחיר > 100", count_price_limit == 0, count_price_limit),
+        ("חריגות ניירות בעייתיים", "ניירות ברשימות דלי סחירות/שימור/מושעים", count_problematic == 0, count_problematic),
+    ]
+
+    for row_idx, (name, description, passed, count) in enumerate(check_statuses, start=2):
+        ws_checks.append([name, description, "✓ תקין" if passed else "✗ חריגה", count, "", ""])
+        fill = PASS_FILL if passed else FAIL_FILL
+        for col in range(1, 5):
+            ws_checks.cell(row=row_idx, column=col).fill = fill
+
+    _style_cells(ws_checks)
 
     # Out-of-scope funds (helps validate check #2)
     ws_oos = wb.create_sheet("קרנות מחוץ לתחום")
@@ -1038,6 +1252,50 @@ def write_output_xlsx(
     add_sample("אופן החלטה = 1", samples.decision_1, 1)
     add_sample("אופן החלטה = 2", samples.decision_2, 2)
 
+    # Apply styling to all data sheets
+    for ws in [ws_oos, ws_dup, ws_date, ws_dm, ws_price, ws_price_limit, ws_prob, ws_s]:
+        _style_cells(ws)
+
+    # Sheet: פירוט בדיקות (Specification details) - copy with original styling preserved
+    ws_spec = None
+    if spec_file_path and spec_file_path.exists():
+        _copy_spec_sheet_to_workbook(spec_file_path, wb, "פירוט בדיקות")
+        ws_spec = wb["פירוט בדיקות"]
+
+    # Auto-fit columns and rows, set Calibri font for all sheets
+    all_sheets = [ws_sum, ws_checks, ws_oos, ws_dup, ws_date, ws_dm, ws_price, ws_price_limit, ws_prob, ws_s]
+    for ws in all_sheets:
+        _auto_fit_columns(ws)
+        _auto_fit_rows(ws)
+        _set_font_calibri(ws)
+
+    # Apply auto-fit to פירוט בדיקות (keeps original styling but adjusts row heights)
+    if ws_spec:
+        _auto_fit_columns(ws_spec)
+        _auto_fit_rows(ws_spec)
+
+    # Reorder sheets according to specification:
+    # 1. סיכום, 2. פירוט בדיקות, 3. סטטוס בדיקות, then rest in spec order
+    desired_order = [
+        "סיכום",                          # Summary
+        "פירוט בדיקות",                   # Specification details
+        "סטטוס בדיקות",                   # Check status
+        "חריגות - עסקאות בין קרנות",      # Spec #1
+        "קרנות מחוץ לתחום",               # Spec #2
+        "חריגות - תאריך",                 # Spec #3
+        "חריגות - אופן החלטה",            # Spec #4
+        "דגימות לבדיקה",                  # Spec #5
+        "בדיקת מחירים - בורסה",           # Spec #6 part 1
+        "חריגות - מחיר מעל 100",          # Spec #6 part 2
+        "חריגות - ניירות בעייתיים",       # Spec #7
+    ]
+
+    # Move sheets to correct positions
+    for idx, sheet_name in enumerate(desired_order):
+        if sheet_name in wb.sheetnames:
+            sheet = wb[sheet_name]
+            wb.move_sheet(sheet, offset=idx - wb.sheetnames.index(sheet_name))
+
     wb.save(output_path)
     wb.close()
 
@@ -1055,6 +1313,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--report-month", type=str, default=None, help="Optional report month in YYYY-MM (otherwise inferred from ת.דוח)")
     p.add_argument("--seed", type=int, default=None, help="Optional RNG seed for sampling")
     p.add_argument("--trustee-name", type=str, default=MIZRAHI_TRUSTEE_NAME_DEFAULT, help="Trustee name filter (default: Mizrahi)")
+    p.add_argument("--manager-name", type=str, default="איילון", help="Fund manager name for report header")
+    p.add_argument("--spec-file", type=Path, default=None, help="Path to specification table Excel file (for פירוט בדיקות sheet)")
     p.add_argument("--cache-lists", type=Path, default=None, help="Path to cache/load problematic securities lists JSON")
     p.add_argument("--skip-tase-prices", action="store_true", help="Skip TASE price checks (spec #6 part 1)")
     return p.parse_args()
@@ -1153,6 +1413,8 @@ def main() -> int:
     write_output_xlsx(
         args.output_xlsx,
         report_month=report_month,
+        manager_name=args.manager_name,
+        trustee_name="מזרחי טפחות",
         summary=summary,
         exceptions_duplicates=ex_dup,
         exceptions_date=ex_date,
@@ -1162,6 +1424,7 @@ def main() -> int:
         price_check_results=price_check_results,
         price_limit_results=price_limit_results,
         problematic_security_results=problematic_security_results,
+        spec_file_path=args.spec_file,
     )
 
     print("\nסיום.")
