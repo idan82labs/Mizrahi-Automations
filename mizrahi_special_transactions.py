@@ -25,6 +25,16 @@ Example:
     --email-json "email.json" \
     --manager-name "איילון" \
     --spec-file "Special Transactions Report Testing Specifications.xlsx" \
+    --price-threshold 5.0 \
+    --seed 123
+
+  # Without manager name (column will be empty):
+  python mizrahi_special_transactions.py \
+    --mutual-funds-list "Mutual Funds List.xlsx" \
+    --input-report "1702431.csv" \
+    --output-xlsx "output.xlsx" \
+    --email-json "email.json" \
+    --price-threshold 3.5 \
     --seed 123
 
 Notes:
@@ -41,8 +51,10 @@ import argparse
 import csv
 import datetime as dt
 import json
+import logging
 import random
 import re
+import sys
 import time
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
@@ -50,6 +62,103 @@ from pathlib import Path
 from typing import Any, Optional
 
 import openpyxl
+import uuid
+from datetime import datetime as datetime_module
+
+# Global log directory for current run (will be set in main)
+LOG_RUN_DIR: Optional[Path] = None
+
+# Loggers for each specification
+logger = logging.getLogger(__name__)  # Main logger
+logger_chk1 = logging.getLogger('CHK_1')  # Inter-fund transactions
+logger_chk3 = logging.getLogger('CHK_3')  # Date validation
+logger_chk4 = logging.getLogger('CHK_4')  # Decision method rules
+logger_chk6_price = logging.getLogger('CHK_6_PRICE')  # TASE price checks
+logger_chk6_limit = logging.getLogger('CHK_6_LIMIT')  # Price > 100 checks
+logger_chk7 = logging.getLogger('CHK_7')  # Problematic securities
+
+
+def setup_logging(log_base_dir: Path = Path("log")) -> Path:
+    """Set up logging with separate files for each specification.
+
+    Creates a unique directory for each run with separate log files:
+    - main.log: General processing log
+    - chk1_inter_fund.log: Inter-fund transaction checks
+    - chk3_date.log: Date validation checks
+    - chk4_decision.log: Decision method rule checks
+    - chk6_tase_price.log: TASE price comparison checks
+    - chk6_price_limit.log: Price > 100 checks
+    - chk7_problematic.log: Problematic securities checks
+
+    Returns:
+        Path to the run directory
+    """
+    global LOG_RUN_DIR
+
+    # Generate unique run ID: timestamp + short UUID
+    timestamp = datetime_module.now().strftime("%Y%m%d_%H%M%S")
+    short_uuid = str(uuid.uuid4())[:8]
+    run_id = f"{timestamp}_{short_uuid}"
+
+    # Create log directory structure
+    run_dir = log_base_dir / run_id
+    run_dir.mkdir(parents=True, exist_ok=True)
+    LOG_RUN_DIR = run_dir
+
+    # Common log format
+    log_format = logging.Formatter(
+        '%(asctime)s - %(levelname)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+
+    # Detailed format for specification logs (includes more context)
+    detailed_format = logging.Formatter(
+        '%(asctime)s - %(levelname)s - [%(name)s] %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+
+    # Console handler for main logger only
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(log_format)
+
+    # Set up main logger
+    logger.setLevel(logging.DEBUG)
+    logger.addHandler(console_handler)
+    main_file_handler = logging.FileHandler(run_dir / "main.log", encoding='utf-8')
+    main_file_handler.setLevel(logging.DEBUG)
+    main_file_handler.setFormatter(log_format)
+    logger.addHandler(main_file_handler)
+
+    # Set up specification-specific loggers
+    spec_loggers = [
+        (logger_chk1, "chk1_inter_fund.log", "CHK_1 - Inter-fund Transactions"),
+        (logger_chk3, "chk3_date.log", "CHK_3 - Date Validation"),
+        (logger_chk4, "chk4_decision.log", "CHK_4 - Decision Method Rules"),
+        (logger_chk6_price, "chk6_tase_price.log", "CHK_6 - TASE Price Checks"),
+        (logger_chk6_limit, "chk6_price_limit.log", "CHK_6 - Price > 100 Checks"),
+        (logger_chk7, "chk7_problematic.log", "CHK_7 - Problematic Securities"),
+    ]
+
+    for spec_logger, filename, description in spec_loggers:
+        spec_logger.setLevel(logging.DEBUG)
+
+        # File handler for this specification
+        file_handler = logging.FileHandler(run_dir / filename, encoding='utf-8')
+        file_handler.setLevel(logging.DEBUG)
+        file_handler.setFormatter(detailed_format)
+        spec_logger.addHandler(file_handler)
+
+        # Also add to main log file
+        spec_logger.addHandler(main_file_handler)
+
+        # Write header to the log file
+        spec_logger.info("=" * 70)
+        spec_logger.info(description)
+        spec_logger.info("=" * 70)
+
+    logger.info("Log directory created: %s", run_dir)
+    return run_dir
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
@@ -97,7 +206,7 @@ TYPE_REQUIRES_DECISION_1_OR_2 = {31, 32, 33, 34, 35, 36}
 # Price checks (spec #6)
 TASE_PRICE_CHECK_TYPES = {12, 21, 22}  # Types requiring TASE price comparison
 TASE_SAMPLES_PER_TYPE = 2
-TASE_VARIANCE_THRESHOLD = 0.05  # 5%
+TASE_VARIANCE_THRESHOLD_DEFAULT = 5.0  # 5% (in percent, will be converted to decimal)
 PRICE_LIMIT_TYPES = {31, 32, 33, 34, 35, 36}  # Types with price > 100 check
 PRICE_LIMIT = 100.0
 
@@ -451,6 +560,7 @@ def load_manager_report(input_report_path: Path) -> tuple[list[TxnRow], dict]:
 
 def check_1_duplicates_exact(rows: list[TxnRow]) -> list[ExceptionRow]:
     """Spec #1: identical date/time/security number/quantity/price -> flag all rows in the group."""
+    logger.info("CHK_1 (Exact Duplicates): Starting check on %d rows", len(rows))
     buckets: dict[tuple, list[TxnRow]] = defaultdict(list)
     for r in rows:
         key = (
@@ -468,7 +578,14 @@ def check_1_duplicates_exact(rows: list[TxnRow]) -> list[ExceptionRow]:
             continue
         group_key = "|".join(map(str, key))
         for row in group:
+            logger.warning(
+                "CHK_1 EXCEPTION: DUPLICATE_EXACT - Row %d: security_no=%s, date=%s, time=%s, qty=%s, price=%s | "
+                "Group has %d identical rows | Reason: Multiple rows share identical date/time/security/quantity/price",
+                row.row_num, row.security_no, row.tx_date, row.tx_time, row.quantity, row.price, len(group)
+            )
             out.append(ExceptionRow(check_id="CHK_1", reason="DUPLICATE_EXACT", row=row, group_key=group_key))
+
+    logger.info("CHK_1 (Exact Duplicates): Completed - found %d exceptions", len(out))
     return out
 
 
@@ -478,9 +595,14 @@ def check_1_abs_quantity_pairs(rows: list[TxnRow]) -> list[ExceptionRow]:
     Only flags when one quantity is positive and the other is negative (inter-fund transactions).
     Does NOT flag if both quantities have the same sign.
     """
+    logger_chk1.info("Starting inter-fund transaction check on %d rows", len(rows))
+    logger.info("CHK_1 (Inter-fund Transactions): Starting check on %d rows", len(rows))
+
     by_uid: dict[str, list[TxnRow]] = defaultdict(list)
     for r in rows:
         by_uid[r.unique_id].append(r)
+
+    logger_chk1.info("Grouped into %d unique IDs (security+date)", len(by_uid))
 
     out: list[ExceptionRow] = []
     for uid, group in by_uid.items():
@@ -497,14 +619,42 @@ def check_1_abs_quantity_pairs(rows: list[TxnRow]) -> list[ExceptionRow]:
 
             # Only flag if we have BOTH positive and negative quantities with same abs value
             if has_positive and has_negative:
+                positive_rows = [r for r in rs if r.quantity is not None and r.quantity > 0]
+                negative_rows = [r for r in rs if r.quantity is not None and r.quantity < 0]
                 for r in rs:
+                    logger_chk1.warning(
+                        "EXCEPTION FOUND:\n"
+                        "  Row Number: %d\n"
+                        "  Security Number: %s\n"
+                        "  Security Name: %s\n"
+                        "  Fund Number: %s\n"
+                        "  Fund Name: %s\n"
+                        "  Transaction Date: %s\n"
+                        "  Quantity: %s\n"
+                        "  Price: %s\n"
+                        "  Unique ID: %s\n"
+                        "  Absolute Quantity: %s\n"
+                        "  Positive quantity rows: %s\n"
+                        "  Negative quantity rows: %s\n"
+                        "  Reason: Matching abs(quantity) with opposite signs indicates inter-fund transaction",
+                        r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
+                        r.tx_date, r.quantity, r.price, uid, abs_qty,
+                        [pr.row_num for pr in positive_rows],
+                        [nr.row_num for nr in negative_rows]
+                    )
                     out.append(ExceptionRow(check_id="CHK_1", reason="עסקה בין קרנות", row=r, group_key=f"{uid}|abs={abs_qty}"))
 
+    logger_chk1.info("Check completed - found %d exceptions", len(out))
+    logger.info("CHK_1 (Inter-fund Transactions): Completed - found %d exceptions", len(out))
     return out
 
 
 def check_3_dates_in_report_month(rows: list[TxnRow], report_month: str) -> list[ExceptionRow]:
     """Spec #3: tx_date must be within same month (YYYY-MM)."""
+    logger_chk3.info("Starting date validation check on %d rows", len(rows))
+    logger_chk3.info("Expected report month: %s", report_month)
+    logger.info("CHK_3 (Date in Report Month): Starting check on %d rows for month %s", len(rows), report_month)
+
     y, m = report_month.split("-")
     year = int(y)
     month = int(m)
@@ -512,27 +662,103 @@ def check_3_dates_in_report_month(rows: list[TxnRow], report_month: str) -> list
     out: list[ExceptionRow] = []
     for r in rows:
         if r.tx_date is None:
+            logger_chk3.warning(
+                "EXCEPTION FOUND - MISSING DATE:\n"
+                "  Row Number: %d\n"
+                "  Security Number: %s\n"
+                "  Security Name: %s\n"
+                "  Fund Number: %s\n"
+                "  Fund Name: %s\n"
+                "  Expected Month: %s\n"
+                "  Actual Date: None\n"
+                "  Reason: Transaction date is missing/null",
+                r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name, report_month
+            )
             out.append(ExceptionRow(check_id="CHK_3", reason="MISSING_TX_DATE", row=r, group_key=report_month))
             continue
         if r.tx_date.year != year or r.tx_date.month != month:
+            logger_chk3.warning(
+                "EXCEPTION FOUND - DATE OUT OF RANGE:\n"
+                "  Row Number: %d\n"
+                "  Security Number: %s\n"
+                "  Security Name: %s\n"
+                "  Fund Number: %s\n"
+                "  Fund Name: %s\n"
+                "  Expected Month: %s (year=%d, month=%d)\n"
+                "  Actual Date: %s (year=%d, month=%d)\n"
+                "  Reason: Transaction date does not match report month",
+                r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
+                report_month, year, month, r.tx_date, r.tx_date.year, r.tx_date.month
+            )
             out.append(ExceptionRow(check_id="CHK_3", reason="DATE_OUT_OF_REPORT_MONTH", row=r, group_key=report_month))
+
+    logger_chk3.info("Check completed - found %d exceptions", len(out))
+    logger.info("CHK_3 (Date in Report Month): Completed - found %d exceptions", len(out))
     return out
 
 
 def check_4_decision_method_rules(rows: list[TxnRow]) -> list[ExceptionRow]:
     """Spec #4: decision method allowed values depend on type."""
+    logger_chk4.info("Starting decision method rules check on %d rows", len(rows))
+    logger_chk4.info("Types requiring decision_method=1: %s", TYPE_REQUIRES_DECISION_1)
+    logger_chk4.info("Types requiring decision_method=1 or 2: %s", TYPE_REQUIRES_DECISION_1_OR_2)
+    logger.info("CHK_4 (Decision Method Rules): Starting check on %d rows", len(rows))
+
     out: list[ExceptionRow] = []
     for r in rows:
         if r.tx_type is None or r.decision_method is None:
+            logger_chk4.warning(
+                "EXCEPTION FOUND - MISSING DATA:\n"
+                "  Row Number: %d\n"
+                "  Security Number: %s\n"
+                "  Security Name: %s\n"
+                "  Fund Number: %s\n"
+                "  Fund Name: %s\n"
+                "  Transaction Type: %s\n"
+                "  Decision Method: %s\n"
+                "  Reason: Transaction type or decision method is missing/null",
+                r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
+                r.tx_type, r.decision_method
+            )
             out.append(ExceptionRow(check_id="CHK_4", reason="MISSING_TYPE_OR_DECISION_METHOD", row=r))
             continue
 
         if r.tx_type in TYPE_REQUIRES_DECISION_1 and r.decision_method != 1:
+            logger_chk4.warning(
+                "EXCEPTION FOUND - WRONG DECISION METHOD:\n"
+                "  Row Number: %d\n"
+                "  Security Number: %s\n"
+                "  Security Name: %s\n"
+                "  Fund Number: %s\n"
+                "  Fund Name: %s\n"
+                "  Transaction Type: %d\n"
+                "  Decision Method: %d\n"
+                "  Required Decision Method: 1\n"
+                "  Reason: Type %d requires decision_method=1, but got %d",
+                r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
+                r.tx_type, r.decision_method, r.tx_type, r.decision_method
+            )
             out.append(ExceptionRow(check_id="CHK_4", reason=f"TYPE_{r.tx_type}_REQUIRES_DECISION_1", row=r, group_key=f"type={r.tx_type}"))
 
         if r.tx_type in TYPE_REQUIRES_DECISION_1_OR_2 and r.decision_method not in (1, 2):
+            logger_chk4.warning(
+                "EXCEPTION FOUND - WRONG DECISION METHOD:\n"
+                "  Row Number: %d\n"
+                "  Security Number: %s\n"
+                "  Security Name: %s\n"
+                "  Fund Number: %s\n"
+                "  Fund Name: %s\n"
+                "  Transaction Type: %d\n"
+                "  Decision Method: %d\n"
+                "  Required Decision Method: 1 or 2\n"
+                "  Reason: Type %d requires decision_method=1 or 2, but got %d",
+                r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
+                r.tx_type, r.decision_method, r.tx_type, r.decision_method
+            )
             out.append(ExceptionRow(check_id="CHK_4", reason=f"TYPE_{r.tx_type}_REQUIRES_DECISION_1_OR_2", row=r, group_key=f"type={r.tx_type}"))
 
+    logger_chk4.info("Check completed - found %d exceptions", len(out))
+    logger.info("CHK_4 (Decision Method Rules): Completed - found %d exceptions", len(out))
     return out
 
 
@@ -569,6 +795,12 @@ def _fetch_tase_closing_price(driver, security_no: str, tx_date: dt.date) -> tup
     date_str = tx_date.strftime('%Y-%m-%d')
     url = f'https://market.tase.co.il/he/market_data/security/{security_no}/historical_data/eod?pType=8&oId=0{security_no}&dFrom={date_str}&dTo={date_str}'
 
+    logger_chk6_price.info("=" * 50)
+    logger_chk6_price.info("Fetching TASE closing price")
+    logger_chk6_price.info("  Security Number: %s", security_no)
+    logger_chk6_price.info("  Transaction Date: %s", tx_date)
+    logger_chk6_price.info("  URL: %s", url)
+
     try:
         driver.get(url)
         time.sleep(3)
@@ -581,54 +813,90 @@ def _fetch_tase_closing_price(driver, security_no: str, tx_date: dt.date) -> tup
         body = driver.find_element(By.TAG_NAME, 'body')
         text = body.text
 
+        logger_chk6_price.debug("Page body text (first 500 chars): %s", text[:500] if text else "EMPTY")
+
         if "לא נמצאו תוצאות" in text or "אין נתונים" in text:
+            logger_chk6_price.warning("No data found on TASE website for this security/date")
             return None, "לא נמצאו נתונים לתאריך זה"
 
         tables = driver.find_elements(By.TAG_NAME, 'table')
         if not tables:
+            logger_chk6_price.warning("No table element found on page")
             return None, "לא נמצאה טבלה"
 
-        for table in tables:
+        logger_chk6_price.info("Found %d table(s) on page", len(tables))
+
+        for table_idx, table in enumerate(tables):
             rows = table.find_elements(By.TAG_NAME, 'tr')
+            logger_chk6_price.debug("Table %d has %d rows", table_idx, len(rows))
             for row in rows:
                 cells = row.find_elements(By.TAG_NAME, 'td')
                 if cells:
                     row_text = [cell.text.strip() for cell in cells]
+                    logger_chk6_price.debug("Scraped row: %s", row_text)
                     date_formatted = tx_date.strftime('%d/%m/%Y')
                     if row_text and date_formatted in row_text[0]:
+                        logger_chk6_price.info("Found matching date row!")
+                        logger_chk6_price.info("  Scraped data: %s", row_text)
                         if len(row_text) >= 2:
                             try:
                                 price_str = row_text[1].replace(',', '')
-                                return float(price_str), None
+                                price = float(price_str)
+                                logger_chk6_price.info("  Parsed closing price: %s", price)
+                                logger_chk6_price.info("  SUCCESS: Price retrieved")
+                                return price, None
                             except ValueError:
+                                logger_chk6_price.error("Failed to parse price value: '%s'", row_text[1])
                                 return None, f"לא ניתן לפרסר מחיר: {row_text[1]}"
 
+        logger_chk6_price.warning("Date %s not found in any table", date_formatted)
         return None, "התאריך לא נמצא בטבלה"
     except Exception as e:
+        logger_chk6_price.error("Exception while fetching: %s", str(e))
         return None, f"שגיאה: {str(e)}"
 
 
-def check_6_tase_prices(rows: list[TxnRow], seed: Optional[int] = None) -> list[PriceCheckResult]:
-    """Spec #6 Part 1: Sample transactions of types 12,21,22 and compare with TASE closing price."""
+def check_6_tase_prices(rows: list[TxnRow], seed: Optional[int] = None, variance_threshold_pct: float = TASE_VARIANCE_THRESHOLD_DEFAULT) -> list[PriceCheckResult]:
+    """Spec #6 Part 1: Sample transactions of types 12,21,22 and compare with TASE closing price.
+
+    Args:
+        rows: List of transaction rows to check
+        seed: Random seed for reproducible sampling
+        variance_threshold_pct: Maximum allowed variance in percent (e.g., 5.0 for 5%)
+    """
+    logger_chk6_price.info("Starting TASE price comparison check")
+    logger_chk6_price.info("Variance threshold: %.2f%%", variance_threshold_pct)
+    logger_chk6_price.info("Target transaction types: %s", TASE_PRICE_CHECK_TYPES)
+    logger_chk6_price.info("Samples per type: %d", TASE_SAMPLES_PER_TYPE)
+    logger.info("CHK_6 (TASE Prices): Starting TASE price comparison check")
+
     if not SELENIUM_AVAILABLE:
-        print("WARNING: Selenium not available, skipping TASE price checks")
+        logger_chk6_price.warning("Selenium not available - skipping TASE price checks")
+        logger.warning("CHK_6 (TASE Prices): Selenium not available, skipping TASE price checks")
         return []
 
     results: list[PriceCheckResult] = []
     rng = random.Random(seed)
+    variance_threshold_decimal = variance_threshold_pct / 100.0
 
     # Select samples for each type
     samples_by_type: dict[int, list[TxnRow]] = {}
     for tx_type in TASE_PRICE_CHECK_TYPES:
         type_rows = [r for r in rows if r.tx_type == tx_type and r.security_no and r.tx_date and r.price]
         if type_rows:
-            samples_by_type[tx_type] = rng.sample(type_rows, min(TASE_SAMPLES_PER_TYPE, len(type_rows)))
+            selected = rng.sample(type_rows, min(TASE_SAMPLES_PER_TYPE, len(type_rows)))
+            samples_by_type[tx_type] = selected
+            logger_chk6_price.info("Type %d: %d eligible rows, selected %d samples", tx_type, len(type_rows), len(selected))
+            for s in selected:
+                logger_chk6_price.info("  - Row %d: security=%s, date=%s, price=%.4f", s.row_num, s.security_no, s.tx_date, s.price)
 
     if not any(samples_by_type.values()):
+        logger_chk6_price.warning("No eligible transactions found for TASE price checks")
         return results
 
     driver = _init_selenium_driver()
     if not driver:
+        logger_chk6_price.error("Failed to initialize Selenium driver")
         return results
 
     try:
@@ -636,10 +904,49 @@ def check_6_tase_prices(rows: list[TxnRow], seed: Optional[int] = None) -> list[
             for txn in txns:
                 closing_price, error = _fetch_tase_closing_price(driver, txn.security_no, txn.tx_date)
                 if error:
+                    logger_chk6_price.warning(
+                        "EXCEPTION - FETCH ERROR:\n"
+                        "  Row Number: %d\n"
+                        "  Security Number: %s\n"
+                        "  Security Name: %s\n"
+                        "  Fund Number: %s\n"
+                        "  Transaction Date: %s\n"
+                        "  Transaction Price: %s\n"
+                        "  Error: %s",
+                        txn.row_num, txn.security_no, txn.security_name, txn.fund_no,
+                        txn.tx_date, txn.price, error
+                    )
                     results.append(PriceCheckResult(row=txn, error_message=error))
                 else:
                     variance = abs(txn.price - closing_price) / closing_price if closing_price else 0
-                    is_exception = variance > TASE_VARIANCE_THRESHOLD
+                    is_exception = variance > variance_threshold_decimal
+                    if is_exception:
+                        logger_chk6_price.warning(
+                            "EXCEPTION - VARIANCE EXCEEDED:\n"
+                            "  Row Number: %d\n"
+                            "  Security Number: %s\n"
+                            "  Security Name: %s\n"
+                            "  Fund Number: %s\n"
+                            "  Transaction Date: %s\n"
+                            "  Transaction Price: %.4f\n"
+                            "  TASE Closing Price: %.4f\n"
+                            "  Variance: %.2f%%\n"
+                            "  Threshold: %.2f%%\n"
+                            "  Reason: Price variance exceeds allowed threshold",
+                            txn.row_num, txn.security_no, txn.security_name, txn.fund_no,
+                            txn.tx_date, txn.price, closing_price, variance * 100, variance_threshold_pct
+                        )
+                    else:
+                        logger_chk6_price.info(
+                            "PASSED:\n"
+                            "  Row Number: %d\n"
+                            "  Security Number: %s\n"
+                            "  Transaction Price: %.4f\n"
+                            "  TASE Closing Price: %.4f\n"
+                            "  Variance: %.2f%% (within %.2f%% threshold)",
+                            txn.row_num, txn.security_no, txn.price, closing_price,
+                            variance * 100, variance_threshold_pct
+                        )
                     results.append(PriceCheckResult(
                         row=txn,
                         tase_closing_price=closing_price,
@@ -649,17 +956,44 @@ def check_6_tase_prices(rows: list[TxnRow], seed: Optional[int] = None) -> list[
     finally:
         driver.quit()
 
+    exception_count = sum(1 for r in results if r.is_exception)
+    logger_chk6_price.info("Check completed - checked %d transactions, %d exceptions", len(results), exception_count)
+    logger.info("CHK_6 (TASE Prices): Completed - checked %d transactions, %d exceptions", len(results), exception_count)
     return results
 
 
 def check_6_price_limits(rows: list[TxnRow]) -> list[PriceLimitResult]:
     """Spec #6 Part 2: Check types 31-36 for price > 100."""
+    logger_chk6_limit.info("Starting price > 100 check")
+    logger_chk6_limit.info("Target transaction types: %s", PRICE_LIMIT_TYPES)
+    logger_chk6_limit.info("Price limit threshold: %.2f", PRICE_LIMIT)
+    logger.info("CHK_6 (Price Limits): Starting price > 100 check for types %s", PRICE_LIMIT_TYPES)
+
     results: list[PriceLimitResult] = []
+    checked_count = 0
     for row in rows:
         if row.tx_type in PRICE_LIMIT_TYPES and row.price is not None:
+            checked_count += 1
             is_exception = row.price > PRICE_LIMIT
             if is_exception:
+                logger_chk6_limit.warning(
+                    "EXCEPTION FOUND - PRICE > 100:\n"
+                    "  Row Number: %d\n"
+                    "  Security Number: %s\n"
+                    "  Security Name: %s\n"
+                    "  Fund Number: %s\n"
+                    "  Fund Name: %s\n"
+                    "  Transaction Type: %d\n"
+                    "  Price: %.4f\n"
+                    "  Price Limit: %.2f\n"
+                    "  Reason: Transaction type %d should not have price exceeding %.2f",
+                    row.row_num, row.security_no, row.security_name, row.fund_no, row.fund_name,
+                    row.tx_type, row.price, PRICE_LIMIT, row.tx_type, PRICE_LIMIT
+                )
                 results.append(PriceLimitResult(row=row, is_exception=True))
+
+    logger_chk6_limit.info("Check completed - checked %d transactions, found %d exceptions", checked_count, len(results))
+    logger.info("CHK_6 (Price Limits): Completed - checked %d transactions, found %d exceptions", checked_count, len(results))
     return results
 
 
@@ -669,6 +1003,10 @@ def check_6_price_limits(rows: list[TxnRow]) -> list[PriceLimitResult]:
 
 def _fetch_problematic_list(driver, list_type: str, url: str) -> set[str]:
     """Fetch a problematic securities list from TASE website."""
+    logger_chk7.info("=" * 50)
+    logger_chk7.info("Fetching problematic list: %s", list_type)
+    logger_chk7.info("  URL: %s", url)
+
     securities: set[str] = set()
     try:
         driver.get(url)
@@ -680,77 +1018,125 @@ def _fetch_problematic_list(driver, list_type: str, url: str) -> set[str]:
         time.sleep(2)
 
         tables = driver.find_elements(By.TAG_NAME, 'table')
-        for table in tables:
+        logger_chk7.info("Found %d table(s) on page", len(tables))
+
+        for table_idx, table in enumerate(tables):
             rows = table.find_elements(By.TAG_NAME, 'tr')
+            logger_chk7.debug("Table %d has %d rows", table_idx, len(rows))
             for row in rows:
                 cells = row.find_elements(By.TAG_NAME, 'td')
                 if len(cells) >= 4:
                     cell_texts = [cell.text.strip() for cell in cells]
+                    logger_chk7.debug("Scraped row: %s", cell_texts)
                     for text in cell_texts:
                         if re.match(r'^\d{7}$', text):
                             securities.add(text)
+                            logger_chk7.debug("Found security number: %s", text)
                             break
+
+        logger_chk7.info("Successfully fetched list '%s'", list_type)
+        logger_chk7.info("  Securities found: %d", len(securities))
+        if securities:
+            logger_chk7.info("  Sample (first 10): %s", list(securities)[:10])
     except Exception as e:
-        print(f"    Error fetching {list_type}: {e}")
+        logger_chk7.error("Error fetching '%s': %s", list_type, str(e))
     return securities
 
 
 def fetch_problematic_lists(cache_path: Optional[Path] = None) -> dict[str, set[str]]:
     """Fetch all problematic securities lists from TASE."""
+    logger_chk7.info("Starting fetch of all problematic securities lists")
+    logger.info("CHK_7 (Problematic Lists): Starting fetch of all problematic lists")
+
     # Try to load from cache
     if cache_path and cache_path.exists():
         try:
+            logger_chk7.info("Loading from cache: %s", cache_path)
             cached = json.loads(cache_path.read_text(encoding='utf-8'))
-            return {k: set(v) for k, v in cached.items()}
-        except:
-            pass
+            result = {k: set(v) for k, v in cached.items()}
+            for list_type, securities in result.items():
+                logger_chk7.info("  Loaded '%s': %d securities", list_type, len(securities))
+            return result
+        except Exception as e:
+            logger_chk7.warning("Failed to load from cache: %s", str(e))
 
     if not SELENIUM_AVAILABLE:
-        print("WARNING: Selenium not available, skipping problematic securities fetch")
+        logger_chk7.warning("Selenium not available - skipping problematic securities fetch")
         return {}
 
     driver = _init_selenium_driver()
     if not driver:
+        logger_chk7.error("Failed to initialize Selenium driver")
         return {}
 
     all_lists: dict[str, set[str]] = {}
     try:
         for list_type, config in PROBLEMATIC_LISTS_CONFIG.items():
-            print(f"  Fetching {config['name_he']}...")
+            logger_chk7.info("Fetching '%s' (%s)...", config['name_he'], list_type)
             securities = _fetch_problematic_list(driver, list_type, config['url'])
             all_lists[list_type] = securities
-            print(f"    Found {len(securities)} securities")
     finally:
         driver.quit()
 
     # Save to cache
     if cache_path:
+        logger_chk7.info("Saving to cache: %s", cache_path)
         cache_data = {k: list(v) for k, v in all_lists.items()}
         cache_path.write_text(json.dumps(cache_data, ensure_ascii=False, indent=2), encoding='utf-8')
 
+    total_securities = sum(len(s) for s in all_lists.values())
+    logger_chk7.info("Fetch complete - %d lists, %d total securities", len(all_lists), total_securities)
+    logger.info("CHK_7 (Problematic Lists): Fetch complete - %d lists, %d total securities", len(all_lists), total_securities)
     return all_lists
 
 
 def check_7_problematic_securities(rows: list[TxnRow], problematic_lists: dict[str, set[str]]) -> list[ProblematicSecurityResult]:
     """Spec #7: Check all transactions against problematic securities lists."""
+    logger_chk7.info("Starting problematic securities check on %d rows", len(rows))
+    logger.info("CHK_7 (Problematic Securities): Starting check on %d rows", len(rows))
+
+    for list_type, securities in problematic_lists.items():
+        logger_chk7.info("Checking against '%s' list (%d securities)",
+                        PROBLEMATIC_LISTS_CONFIG[list_type]['name_he'], len(securities))
+
     results: list[ProblematicSecurityResult] = []
+    checked_count = 0
 
     for row in rows:
         if not row.security_no:
             continue
 
+        checked_count += 1
         matched_lists = []
         for list_type, security_nos in problematic_lists.items():
             if row.security_no in security_nos:
                 matched_lists.append(PROBLEMATIC_LISTS_CONFIG[list_type]['name_he'])
 
         if matched_lists:
+            logger_chk7.warning(
+                "EXCEPTION FOUND - PROBLEMATIC SECURITY:\n"
+                "  Row Number: %d\n"
+                "  Security Number: %s\n"
+                "  Security Name: %s\n"
+                "  Fund Number: %s\n"
+                "  Fund Name: %s\n"
+                "  Transaction Date: %s\n"
+                "  Transaction Type: %s\n"
+                "  Quantity: %s\n"
+                "  Price: %s\n"
+                "  Matched Lists: %s\n"
+                "  Reason: Security appears in problematic lists",
+                row.row_num, row.security_no, row.security_name, row.fund_no, row.fund_name,
+                row.tx_date, row.tx_type, row.quantity, row.price, ", ".join(matched_lists)
+            )
             results.append(ProblematicSecurityResult(
                 row=row,
                 matched_lists=matched_lists,
                 is_exception=True
             ))
 
+    logger_chk7.info("Check completed - checked %d transactions, found %d exceptions", checked_count, len(results))
+    logger.info("CHK_7 (Problematic Securities): Completed - checked %d transactions, found %d exceptions", checked_count, len(results))
     return results
 
 
@@ -808,7 +1194,7 @@ def _style_header(ws, row: int = 1) -> None:
     for cell in ws[row]:
         cell.font = HEADER_FONT
         cell.fill = HEADER_FILL
-        cell.alignment = Alignment(horizontal='right')
+        cell.alignment = Alignment(horizontal='right', vertical='center', wrap_text=True)
         cell.border = THIN_BORDER
 
 
@@ -816,61 +1202,106 @@ def _style_cells(ws, start_row: int = 2) -> None:
     """Apply styling to all data cells."""
     for row in ws.iter_rows(min_row=start_row):
         for cell in row:
-            cell.alignment = Alignment(horizontal='right')
+            cell.alignment = Alignment(horizontal='right', vertical='top', wrap_text=True)
             cell.border = THIN_BORDER
 
 
-def _auto_fit_columns(ws, min_width: int = 8, max_width: int = 50) -> None:
-    """Auto-fit column widths based on content."""
+def _auto_fit_columns(ws, min_width: int = 10, max_width: int = 60) -> None:
+    """Auto-fit column widths based on content.
+
+    Improved algorithm that properly accounts for:
+    - Hebrew characters (wider display)
+    - Multi-line content (uses longest line)
+    - Numeric values and dates
+    """
     for column_cells in ws.columns:
         max_length = 0
-        column_letter = column_cells[0].column_letter
+        column_letter = None
 
         for cell in column_cells:
+            if column_letter is None:
+                column_letter = cell.column_letter
+
             try:
-                if cell.value:
-                    # Calculate length, accounting for Hebrew characters (wider)
-                    cell_length = len(str(cell.value))
-                    # Add extra width for Hebrew text
-                    if any('\u0590' <= c <= '\u05FF' for c in str(cell.value)):
-                        cell_length = int(cell_length * 1.2)
-                    max_length = max(max_length, cell_length)
-            except:
+                if cell.value is not None:
+                    cell_text = str(cell.value)
+
+                    # For multi-line content, check longest line
+                    lines = cell_text.split('\n')
+                    for line in lines:
+                        line_len = len(line)
+
+                        # Hebrew characters need ~1.5x width
+                        hebrew_chars = sum(1 for c in line if '\u0590' <= c <= '\u05FF')
+                        if hebrew_chars > 0:
+                            # Add 50% more width for Hebrew content
+                            line_len = int(line_len + hebrew_chars * 0.5)
+
+                        max_length = max(max_length, line_len)
+            except Exception:
                 pass
 
-        # Set width with padding, respecting min/max bounds
-        adjusted_width = min(max(max_length + 2, min_width), max_width)
-        ws.column_dimensions[column_letter].width = adjusted_width
+        if column_letter:
+            # Set width with padding, respecting min/max bounds
+            # Add 3 chars padding for comfortable display
+            adjusted_width = min(max(max_length + 3, min_width), max_width)
+            ws.column_dimensions[column_letter].width = adjusted_width
 
 
-def _auto_fit_rows(ws, default_height: float = 15.0, chars_per_line: int = 50) -> None:
-    """Auto-fit row heights based on content and column width."""
+def _auto_fit_rows(ws, default_height: float = 18.0, header_height: float = 22.0) -> None:
+    """Auto-fit row heights based on content and column width.
+
+    Improved algorithm that:
+    - Sets appropriate header row height
+    - Accounts for wrapped text based on actual column widths
+    - Handles multi-line content properly
+    - Uses larger default height for better readability
+    """
     for row_num in range(1, ws.max_row + 1):
         max_lines = 1
+        is_header = (row_num == 1)
+
         for col_num in range(1, ws.max_column + 1):
             cell = ws.cell(row_num, col_num)
-            if cell.value:
+            if cell.value is not None:
                 cell_text = str(cell.value)
+
                 # Count explicit line breaks
                 explicit_lines = cell_text.count('\n') + 1
 
-                # Estimate wrapped lines based on column width
+                # Get column width for wrap calculation
                 col_letter = get_column_letter(col_num)
-                col_width = ws.column_dimensions[col_letter].width or 10
+                col_width = ws.column_dimensions[col_letter].width
+                if col_width is None or col_width == 0:
+                    col_width = 10  # Default
 
                 # Calculate lines needed for text wrapping
+                lines_needed = 0
                 for line in cell_text.split('\n'):
                     line_len = len(line)
-                    # Hebrew characters are wider
-                    if any('\u0590' <= c <= '\u05FF' for c in line):
-                        line_len = int(line_len * 1.2)
-                    wrapped_lines = max(1, int(line_len / col_width) + 1)
-                    max_lines = max(max_lines, wrapped_lines)
 
-                max_lines = max(max_lines, explicit_lines)
+                    # Hebrew characters are wider (1.5x)
+                    hebrew_chars = sum(1 for c in line if '\u0590' <= c <= '\u05FF')
+                    if hebrew_chars > 0:
+                        line_len = int(line_len + hebrew_chars * 0.5)
 
-        # Set row height based on number of lines (minimum 15)
-        ws.row_dimensions[row_num].height = max(default_height, default_height * max_lines)
+                    # Calculate wrapped lines: chars per line ≈ column_width - 2 (for padding)
+                    chars_per_line = max(col_width - 2, 5)
+                    wrapped_lines = max(1, int((line_len + chars_per_line - 1) / chars_per_line))
+                    lines_needed += wrapped_lines
+
+                max_lines = max(max_lines, lines_needed, explicit_lines)
+
+        # Set row height based on number of lines
+        if is_header:
+            # Header gets extra height
+            row_height = max(header_height, default_height * max_lines)
+        else:
+            row_height = max(default_height, default_height * max_lines)
+
+        # Cap maximum height to prevent overly tall rows
+        row_height = min(row_height, 150.0)
+        ws.row_dimensions[row_num].height = row_height
 
 
 def _set_font_calibri(ws) -> None:
@@ -1313,15 +1744,32 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--report-month", type=str, default=None, help="Optional report month in YYYY-MM (otherwise inferred from ת.דוח)")
     p.add_argument("--seed", type=int, default=None, help="Optional RNG seed for sampling")
     p.add_argument("--trustee-name", type=str, default=MIZRAHI_TRUSTEE_NAME_DEFAULT, help="Trustee name filter (default: Mizrahi)")
-    p.add_argument("--manager-name", type=str, default="איילון", help="Fund manager name for report header")
+    p.add_argument("--manager-name", type=str, default=None, help="Fund manager name for report header (optional, column left empty if not provided)")
     p.add_argument("--spec-file", type=Path, default=None, help="Path to specification table Excel file (for פירוט בדיקות sheet)")
     p.add_argument("--cache-lists", type=Path, default=None, help="Path to cache/load problematic securities lists JSON")
     p.add_argument("--skip-tase-prices", action="store_true", help="Skip TASE price checks (spec #6 part 1)")
+    p.add_argument(
+        "--price-threshold",
+        type=float,
+        default=TASE_VARIANCE_THRESHOLD_DEFAULT,
+        help=f"Price variance threshold in percent for TASE price checks (default: {TASE_VARIANCE_THRESHOLD_DEFAULT}%%)"
+    )
     return p.parse_args()
 
 
 def main() -> int:
     args = parse_args()
+
+    # Set up logging with separate files for each specification
+    log_dir = setup_logging()
+
+    # Log startup info
+    logger.info("=" * 60)
+    logger.info("Mizrahi Special Transactions Processor - Starting")
+    logger.info("=" * 60)
+    logger.info("Log directory: %s", log_dir)
+    logger.info("Price variance threshold: %.2f%%", args.price_threshold)
+    logger.info("Manager name: %s", args.manager_name if args.manager_name else "(not specified - column will be empty)")
 
     for path in [args.mutual_funds_list, args.input_report]:
         if not path.exists():
@@ -1330,7 +1778,7 @@ def main() -> int:
     # Fund scope = Mizrahi trustee funds only (Maya report removed for now)
     in_scope_funds = load_mizrahi_fund_ids(args.mutual_funds_list, args.trustee_name)
     if not in_scope_funds:
-        print("WARNING: Filtered Mizrahi fund list is empty. Check trustee name / input file.")
+        logger.warning("Filtered Mizrahi fund list is empty. Check trustee name / input file.")
 
     rows, meta = load_manager_report(args.input_report)
 
@@ -1338,12 +1786,17 @@ def main() -> int:
     if not report_month:
         raise SystemExit("Could not infer report month from ת.דוח. Provide --report-month YYYY-MM.")
 
+    logger.info("Report month: %s", report_month)
+    logger.info("Total rows loaded: %d", len(rows))
+
     # Check #1: all rows (inter-fund transactions - same abs quantity, opposite signs)
     ex_dup = check_1_abs_quantity_pairs(rows)
 
     # Check #2: filter to in-scope rows (fund exists in Mizrahi filtered list)
     in_scope_rows = [r for r in rows if r.fund_no in in_scope_funds]
     out_scope_rows = [r for r in rows if r.fund_no is not None and r.fund_no not in in_scope_funds]
+
+    logger.info("In-scope rows: %d, Out-of-scope rows: %d", len(in_scope_rows), len(out_scope_rows))
 
     out_of_scope_funds: dict[int, dict[str, Any]] = {}
     if out_scope_rows:
@@ -1374,23 +1827,26 @@ def main() -> int:
     # Check #6 Part 1: TASE price checks (sampled)
     price_check_results: list[PriceCheckResult] = []
     if not args.skip_tase_prices:
-        print("Running TASE price checks (spec #6 part 1)...")
-        price_check_results = check_6_tase_prices(in_scope_rows, seed=args.seed)
+        logger.info("Running TASE price checks (spec #6 part 1) with threshold %.2f%%...", args.price_threshold)
+        price_check_results = check_6_tase_prices(in_scope_rows, seed=args.seed, variance_threshold_pct=args.price_threshold)
         price_exceptions = [r for r in price_check_results if r.is_exception]
-        print(f"  Sampled {len(price_check_results)} transactions, {len(price_exceptions)} exceptions (>5% variance)")
+        logger.info("Sampled %d transactions, %d exceptions (>%.2f%% variance)", len(price_check_results), len(price_exceptions), args.price_threshold)
 
     # Check #6 Part 2: Price > 100 for types 31-36
-    print("Running price > 100 check (spec #6 part 2)...")
+    logger.info("Running price > 100 check (spec #6 part 2)...")
     price_limit_results = check_6_price_limits(in_scope_rows)
-    print(f"  Found {len(price_limit_results)} exceptions with price > 100")
+    logger.info("Found %d exceptions with price > 100", len(price_limit_results))
 
     # Check #7: Problematic securities
-    print("Running problematic securities check (spec #7)...")
+    logger.info("Running problematic securities check (spec #7)...")
     problematic_lists = fetch_problematic_lists(cache_path=args.cache_lists)
     for list_type, securities in problematic_lists.items():
-        print(f"  {PROBLEMATIC_LISTS_CONFIG[list_type]['name_he']}: {len(securities)} ניירות")
+        logger.info("  %s: %d ניירות", PROBLEMATIC_LISTS_CONFIG[list_type]['name_he'], len(securities))
     problematic_security_results = check_7_problematic_securities(in_scope_rows, problematic_lists)
-    print(f"  Found {len(problematic_security_results)} transactions with problematic securities")
+    logger.info("Found %d transactions with problematic securities", len(problematic_security_results))
+
+    # Manager name: use empty string if not provided (column header will still appear)
+    manager_name = args.manager_name if args.manager_name else ""
 
     summary = {
         "חודש דוח": report_month,
@@ -1407,13 +1863,14 @@ def main() -> int:
         "שורות תקינות לדגימה": len(valid_rows),
         "דגימה אופן החלטה 1 - שורה": samples.decision_1.row_num if samples.decision_1 else None,
         "דגימה אופן החלטה 2 - שורה": samples.decision_2.row_num if samples.decision_2 else None,
+        "סף סטייה במחיר": f"{args.price_threshold}%",
     }
 
     args.output_xlsx.parent.mkdir(parents=True, exist_ok=True)
     write_output_xlsx(
         args.output_xlsx,
         report_month=report_month,
-        manager_name=args.manager_name,
+        manager_name=manager_name,
         trustee_name="מזרחי טפחות",
         summary=summary,
         exceptions_duplicates=ex_dup,
@@ -1427,10 +1884,22 @@ def main() -> int:
         spec_file_path=args.spec_file,
     )
 
-    print("\nסיום.")
-    print(json.dumps(summary, ensure_ascii=False, indent=2))
-    print(f"קובץ פלט: {args.output_xlsx}")
-    print(f"קובץ JSON: {args.email_json}")
+    logger.info("=" * 60)
+    logger.info("Processing complete")
+    logger.info("=" * 60)
+    logger.info("Summary: %s", json.dumps(summary, ensure_ascii=False, indent=2))
+    logger.info("Output file: %s", args.output_xlsx)
+    logger.info("Email JSON: %s", args.email_json)
+    logger.info("Log directory: %s", log_dir)
+    logger.info("")
+    logger.info("Log files created:")
+    logger.info("  - main.log              : General processing log")
+    logger.info("  - chk1_inter_fund.log   : CHK_1 - Inter-fund transactions")
+    logger.info("  - chk3_date.log         : CHK_3 - Date validation")
+    logger.info("  - chk4_decision.log     : CHK_4 - Decision method rules")
+    logger.info("  - chk6_tase_price.log   : CHK_6 - TASE price checks")
+    logger.info("  - chk6_price_limit.log  : CHK_6 - Price > 100 checks")
+    logger.info("  - chk7_problematic.log  : CHK_7 - Problematic securities")
     return 0
 
 
