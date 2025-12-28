@@ -175,7 +175,6 @@ try:
 except ImportError:
     SELENIUM_AVAILABLE = False
 
-
 # -----------------------------
 # Configuration (column headers)
 # -----------------------------
@@ -236,6 +235,19 @@ THIN_BORDER = Border(
     top=Side(style='thin'), bottom=Side(style='thin')
 )
 DEFAULT_FONT = Font(name='Calibri', size=11)
+
+# Headers that should have wrap_text=True (long text fields)
+# Other columns will have wrap_text=False to keep rows compact
+WRAP_HEADERS = {
+    "שם קרן",
+    "שם נייר",
+    "סיבה",
+    "רשימות בעייתיות",
+    "סיבה סבירות",
+    "הערות",
+    "שדה",  # Summary sheet field column
+    "ערך",  # Summary sheet value column
+}
 
 # Hebrew month names
 HEBREW_MONTHS = {
@@ -1199,109 +1211,214 @@ def _style_header(ws, row: int = 1) -> None:
 
 
 def _style_cells(ws, start_row: int = 2) -> None:
-    """Apply styling to all data cells."""
-    for row in ws.iter_rows(min_row=start_row):
+    """Apply styling to all data cells.
+
+    Only columns with headers in WRAP_HEADERS will have wrap_text=True.
+    This prevents numeric/date columns from causing tall rows.
+    """
+    # Determine which columns should wrap based on header text in row 1
+    wrap_cols: set[int] = set()
+    for col_idx in range(1, ws.max_column + 1):
+        header_cell = ws.cell(1, col_idx)
+        header_text = str(header_cell.value).strip() if header_cell.value is not None else ""
+        if header_text in WRAP_HEADERS:
+            wrap_cols.add(col_idx)
+
+    # Apply styling to data cells
+    for row in ws.iter_rows(min_row=start_row, max_row=ws.max_row, min_col=1, max_col=ws.max_column):
         for cell in row:
-            cell.alignment = Alignment(horizontal='right', vertical='top', wrap_text=True)
+            wrap = cell.col_idx in wrap_cols
+            cell.alignment = Alignment(horizontal='right', vertical='top', wrap_text=wrap)
             cell.border = THIN_BORDER
 
 
-def _auto_fit_columns(ws, min_width: int = 10, max_width: int = 60) -> None:
-    """Auto-fit column widths based on content.
+def _calculate_text_width(text: str, is_bold: bool = False) -> float:
+    """Calculate approximate display width of text in Excel units.
 
-    Improved algorithm that properly accounts for:
-    - Hebrew characters (wider display)
-    - Multi-line content (uses longest line)
-    - Numeric values and dates
+    Excel column width is based on the number of characters that fit using the default font.
+    For Calibri 11pt (default), each character is approximately 1 unit wide.
+    Hebrew characters are slightly wider, spaces are narrower.
     """
-    for column_cells in ws.columns:
-        max_length = 0
-        column_letter = None
+    if not text:
+        return 0.0
 
-        for cell in column_cells:
-            if column_letter is None:
-                column_letter = cell.column_letter
-
-            try:
-                if cell.value is not None:
-                    cell_text = str(cell.value)
-
-                    # For multi-line content, check longest line
-                    lines = cell_text.split('\n')
-                    for line in lines:
-                        line_len = len(line)
-
-                        # Hebrew characters need ~1.5x width
-                        hebrew_chars = sum(1 for c in line if '\u0590' <= c <= '\u05FF')
-                        if hebrew_chars > 0:
-                            # Add 50% more width for Hebrew content
-                            line_len = int(line_len + hebrew_chars * 0.5)
-
-                        max_length = max(max_length, line_len)
-            except Exception:
-                pass
-
-        if column_letter:
-            # Set width with padding, respecting min/max bounds
-            # Add 3 chars padding for comfortable display
-            adjusted_width = min(max(max_length + 3, min_width), max_width)
-            ws.column_dimensions[column_letter].width = adjusted_width
-
-
-def _auto_fit_rows(ws, default_height: float = 18.0, header_height: float = 22.0) -> None:
-    """Auto-fit row heights based on content and column width.
-
-    Improved algorithm that:
-    - Sets appropriate header row height
-    - Accounts for wrapped text based on actual column widths
-    - Handles multi-line content properly
-    - Uses larger default height for better readability
-    """
-    for row_num in range(1, ws.max_row + 1):
-        max_lines = 1
-        is_header = (row_num == 1)
-
-        for col_num in range(1, ws.max_column + 1):
-            cell = ws.cell(row_num, col_num)
-            if cell.value is not None:
-                cell_text = str(cell.value)
-
-                # Count explicit line breaks
-                explicit_lines = cell_text.count('\n') + 1
-
-                # Get column width for wrap calculation
-                col_letter = get_column_letter(col_num)
-                col_width = ws.column_dimensions[col_letter].width
-                if col_width is None or col_width == 0:
-                    col_width = 10  # Default
-
-                # Calculate lines needed for text wrapping
-                lines_needed = 0
-                for line in cell_text.split('\n'):
-                    line_len = len(line)
-
-                    # Hebrew characters are wider (1.5x)
-                    hebrew_chars = sum(1 for c in line if '\u0590' <= c <= '\u05FF')
-                    if hebrew_chars > 0:
-                        line_len = int(line_len + hebrew_chars * 0.5)
-
-                    # Calculate wrapped lines: chars per line ≈ column_width - 2 (for padding)
-                    chars_per_line = max(col_width - 2, 5)
-                    wrapped_lines = max(1, int((line_len + chars_per_line - 1) / chars_per_line))
-                    lines_needed += wrapped_lines
-
-                max_lines = max(max_lines, lines_needed, explicit_lines)
-
-        # Set row height based on number of lines
-        if is_header:
-            # Header gets extra height
-            row_height = max(header_height, default_height * max_lines)
+    width = 0.0
+    for char in text:
+        if char == " ":
+            # Spaces are narrower
+            width += 0.5
+        elif '\u0590' <= char <= '\u05FF':
+            # Hebrew characters - reduced from 1.3 to 1.05 to prevent inflation
+            width += 1.05
+        elif char in '０１２３４５６７８９':
+            # Full-width digits
+            width += 2.0
+        elif ord(char) > 0x4E00:
+            # CJK characters
+            width += 2.0
+        elif char in 'WMwm':
+            # Wide Latin characters
+            width += 1.2
+        elif char in 'il|!.,;:\'"':
+            # Narrow characters
+            width += 0.6
         else:
-            row_height = max(default_height, default_height * max_lines)
+            width += 1.0
 
-        # Cap maximum height to prevent overly tall rows
-        row_height = min(row_height, 150.0)
-        ws.row_dimensions[row_num].height = row_height
+    # Bold text is slightly wider
+    if is_bold:
+        width *= 1.05
+
+    return width
+
+
+def _auto_fit_columns(ws, min_width: float = 8.0, max_width: float = 50.0, padding: float = 1.2) -> dict[str, float]:
+    """Auto-fit column widths based on content - simulates Excel double-click behavior.
+
+    Returns a dict mapping column letters to their calculated widths for use by row height calculation.
+
+    Each column gets its own optimal width based on the widest content in that column.
+
+    Args:
+        ws: Worksheet to process
+        min_width: Minimum column width
+        max_width: Maximum column width
+        padding: Padding to add to calculated width (reduced from 2.5 to 1.2)
+    """
+    column_widths: dict[str, float] = {}
+
+    for col_idx in range(1, ws.max_column + 1):
+        column_letter = get_column_letter(col_idx)
+        max_width_found = 0.0
+        widest_cell_text = ""
+
+        for row_idx in range(1, ws.max_row + 1):
+            cell = ws.cell(row_idx, col_idx)
+
+            if cell.value is None:
+                continue
+
+            cell_text = str(cell.value)
+            is_bold = cell.font.bold if cell.font else False
+            is_header = (row_idx == 1)
+
+            # For multi-line content, find the longest line
+            lines = cell_text.split('\n')
+            for line in lines:
+                line_width = _calculate_text_width(line, is_bold or is_header)
+                if line_width > max_width_found:
+                    max_width_found = line_width
+                    widest_cell_text = line[:50]  # Truncate for logging
+
+        # Add padding (reduced from 2.5 to 1.2)
+        final_width = max_width_found + padding
+
+        # Apply min/max bounds
+        was_capped = final_width > max_width
+        final_width = max(min_width, min(final_width, max_width))
+
+        # Debug log when column hits max_width
+        if was_capped:
+            logger.debug(
+                "Column %s in sheet '%s' hit max_width (%.1f): calculated=%.1f, text='%s'",
+                column_letter, ws.title, max_width, max_width_found + padding, widest_cell_text
+            )
+
+        ws.column_dimensions[column_letter].width = final_width
+        column_widths[column_letter] = final_width
+
+    return column_widths
+
+
+def _auto_fit_rows(ws, column_widths: dict[str, float] = None, line_height: float = 15.0, header_line_height: float = 18.0, min_height: float = 15.0, max_height: float = 120.0) -> None:
+    """Auto-fit row heights based on content - simulates Excel double-click behavior.
+
+    Each row gets its own optimal height based on:
+    - Number of explicit line breaks in cell content
+    - Text wrapping based on actual column widths
+    - Different heights for header vs data rows
+
+    Args:
+        ws: Worksheet to process
+        column_widths: Dict of column letter -> width (from _auto_fit_columns)
+        line_height: Height per line for data rows (pixels)
+        header_line_height: Height per line for header row (pixels)
+        min_height: Minimum row height
+        max_height: Maximum row height to prevent extremely tall rows (reduced from 200 to 120)
+    """
+    # If column_widths not provided, read from worksheet
+    if column_widths is None:
+        column_widths = {}
+        for col_idx in range(1, ws.max_column + 1):
+            col_letter = get_column_letter(col_idx)
+            width = ws.column_dimensions[col_letter].width
+            column_widths[col_letter] = width if width else 10.0
+
+    for row_idx in range(1, ws.max_row + 1):
+        max_lines_needed = 1
+        is_header = (row_idx == 1)
+        tallest_cell_text = ""
+        tallest_cell_col = ""
+
+        for col_idx in range(1, ws.max_column + 1):
+            cell = ws.cell(row_idx, col_idx)
+
+            if cell.value is None:
+                continue
+
+            cell_text = str(cell.value)
+            col_letter = get_column_letter(col_idx)
+            col_width = column_widths.get(col_letter, 10.0)
+
+            # Check if cell has wrap_text enabled
+            has_wrap = cell.alignment.wrap_text if cell.alignment else False
+
+            # Calculate lines for this cell
+            lines_in_cell = 0
+
+            for line in cell_text.split('\n'):
+                if not line:
+                    lines_in_cell += 1
+                    continue
+
+                # Calculate text width using the same logic as column width calculation
+                is_bold = cell.font.bold if cell.font else False
+                text_width = _calculate_text_width(line, is_bold or is_header)
+
+                # Available width for text (column width minus padding)
+                # Raised minimum from 4.0 to 6.0 to prevent extreme line counts in narrow columns
+                available_width = max(col_width - 1.0, 6.0)
+
+                if has_wrap and text_width > available_width:
+                    # Text will wrap - calculate how many lines needed
+                    wrapped_lines = int((text_width / available_width) + 0.99)  # Ceiling
+                    lines_in_cell += max(1, wrapped_lines)
+                else:
+                    lines_in_cell += 1
+
+            if lines_in_cell > max_lines_needed:
+                max_lines_needed = lines_in_cell
+                tallest_cell_text = cell_text[:50]  # Truncate for logging
+                tallest_cell_col = col_letter
+
+        # Calculate row height based on number of lines
+        if is_header:
+            row_height = header_line_height * max_lines_needed
+        else:
+            row_height = line_height * max_lines_needed
+
+        # Apply min/max bounds
+        was_capped = row_height > max_height
+        row_height = max(min_height, min(row_height, max_height))
+
+        # Debug log when row hits max_height
+        if was_capped:
+            logger.debug(
+                "Row %d in sheet '%s' hit max_height (%.1f): calculated=%.1f, col=%s, text='%s'",
+                row_idx, ws.title, max_height, line_height * max_lines_needed, tallest_cell_col, tallest_cell_text
+            )
+
+        ws.row_dimensions[row_idx].height = row_height
 
 
 def _set_font_calibri(ws) -> None:
@@ -1693,17 +1810,22 @@ def write_output_xlsx(
         _copy_spec_sheet_to_workbook(spec_file_path, wb, "פירוט בדיקות")
         ws_spec = wb["פירוט בדיקות"]
 
-    # Auto-fit columns and rows, set Calibri font for all sheets
+    # Set Calibri font BEFORE measuring widths/heights (measurement is tuned for Calibri)
+    # Then auto-fit columns and rows for all sheets
     all_sheets = [ws_sum, ws_checks, ws_oos, ws_dup, ws_date, ws_dm, ws_price, ws_price_limit, ws_prob, ws_s]
     for ws in all_sheets:
-        _auto_fit_columns(ws)
-        _auto_fit_rows(ws)
+        # 1. Set font first (measurement is calibrated for Calibri)
         _set_font_calibri(ws)
+        # 2. Calculate and set column widths, get the widths dict
+        column_widths = _auto_fit_columns(ws)
+        # 3. Calculate row heights using the column widths
+        _auto_fit_rows(ws, column_widths=column_widths)
 
-    # Apply auto-fit to פירוט בדיקות (keeps original styling but adjusts row heights)
+    # Apply auto-fit to פירוט בדיקות (keeps original styling but adjusts dimensions)
     if ws_spec:
-        _auto_fit_columns(ws_spec)
-        _auto_fit_rows(ws_spec)
+        _set_font_calibri(ws_spec)
+        spec_column_widths = _auto_fit_columns(ws_spec)
+        _auto_fit_rows(ws_spec, column_widths=spec_column_widths)
 
     # Reorder sheets according to specification:
     # 1. סיכום, 2. פירוט בדיקות, 3. סטטוס בדיקות, then rest in spec order
