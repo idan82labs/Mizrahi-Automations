@@ -75,6 +75,7 @@ logger_chk3 = logging.getLogger('CHK_3')  # Date validation
 logger_chk4 = logging.getLogger('CHK_4')  # Decision method rules
 logger_chk6_price = logging.getLogger('CHK_6_PRICE')  # TASE price checks
 logger_chk6_limit = logging.getLogger('CHK_6_LIMIT')  # Price > 100 checks
+logger_chk6_url_fail = logging.getLogger('CHK_6_URL_FAIL')  # Failed URL fetches (for manual verification)
 logger_chk7 = logging.getLogger('CHK_7')  # Problematic securities
 
 
@@ -137,6 +138,7 @@ def setup_logging(log_base_dir: Path = Path("log")) -> Path:
         (logger_chk4, "chk4_decision.log", "CHK_4 - Decision Method Rules"),
         (logger_chk6_price, "chk6_tase_price.log", "CHK_6 - TASE Price Checks"),
         (logger_chk6_limit, "chk6_price_limit.log", "CHK_6 - Price > 100 Checks"),
+        (logger_chk6_url_fail, "chk6_failed_urls.log", "CHK_6 - Failed URL Fetches (Manual Verification Required)"),
         (logger_chk7, "chk7_problematic.log", "CHK_7 - Problematic Securities"),
     ]
 
@@ -871,13 +873,18 @@ def _fetch_tase_closing_price(driver, security_no: str, tx_date: dt.date) -> tup
 def check_6_tase_prices(rows: list[TxnRow], seed: Optional[int] = None, variance_threshold_pct: float = TASE_VARIANCE_THRESHOLD_DEFAULT) -> list[PriceCheckResult]:
     """Spec #6 Part 1: Sample transactions of types 12,21,22 and compare with TASE closing price.
 
+    Exception is raised ONLY when transaction price is HIGHER than TASE closing price by more than threshold.
+    Transaction price being LOWER than closing price is acceptable.
+
+    Failed URL fetches are logged to a separate file for manual verification and NOT included in results.
+
     Args:
         rows: List of transaction rows to check
         seed: Random seed for reproducible sampling
-        variance_threshold_pct: Maximum allowed variance in percent (e.g., 5.0 for 5%)
+        variance_threshold_pct: Maximum allowed price above TASE closing price in percent (e.g., 5.0 for 5%)
     """
     logger_chk6_price.info("Starting TASE price comparison check")
-    logger_chk6_price.info("Variance threshold: %.2f%%", variance_threshold_pct)
+    logger_chk6_price.info("Threshold (max price above closing): %.2f%%", variance_threshold_pct)
     logger_chk6_price.info("Target transaction types: %s", TASE_PRICE_CHECK_TYPES)
     logger_chk6_price.info("Samples per type: %d", TASE_SAMPLES_PER_TYPE)
     logger.info("CHK_6 (TASE Prices): Starting TASE price comparison check")
@@ -911,13 +918,19 @@ def check_6_tase_prices(rows: list[TxnRow], seed: Optional[int] = None, variance
         logger_chk6_price.error("Failed to initialize Selenium driver")
         return results
 
+    failed_url_count = 0
     try:
         for tx_type, txns in samples_by_type.items():
             for txn in txns:
                 closing_price, error = _fetch_tase_closing_price(driver, txn.security_no, txn.tx_date)
                 if error:
-                    logger_chk6_price.warning(
-                        "EXCEPTION - FETCH ERROR:\n"
+                    # Log failed URLs to separate file for manual verification - NOT added to results
+                    failed_url_count += 1
+                    date_str = txn.tx_date.strftime('%Y-%m-%d') if txn.tx_date else 'N/A'
+                    url = f'https://market.tase.co.il/he/market_data/security/{txn.security_no}/historical_data/eod?pType=8&oId=0{txn.security_no}&dFrom={date_str}&dTo={date_str}'
+                    logger_chk6_url_fail.warning(
+                        "FAILED URL - MANUAL VERIFICATION REQUIRED:\n"
+                        "  URL: %s\n"
                         "  Row Number: %d\n"
                         "  Security Number: %s\n"
                         "  Security Name: %s\n"
@@ -925,16 +938,30 @@ def check_6_tase_prices(rows: list[TxnRow], seed: Optional[int] = None, variance
                         "  Transaction Date: %s\n"
                         "  Transaction Price: %s\n"
                         "  Error: %s",
-                        txn.row_num, txn.security_no, txn.security_name, txn.fund_no,
+                        url, txn.row_num, txn.security_no, txn.security_name, txn.fund_no,
                         txn.tx_date, txn.price, error
                     )
-                    results.append(PriceCheckResult(row=txn, error_message=error))
+                    logger_chk6_price.info(
+                        "URL FETCH FAILED (logged to chk6_failed_urls.log for manual verification):\n"
+                        "  Row Number: %d\n"
+                        "  Security Number: %s\n"
+                        "  Error: %s",
+                        txn.row_num, txn.security_no, error
+                    )
                 else:
-                    variance = abs(txn.price - closing_price) / closing_price if closing_price else 0
-                    is_exception = variance > variance_threshold_decimal
+                    # Calculate how much HIGHER the transaction price is compared to closing price
+                    # Only flag as exception if price is HIGHER by more than threshold
+                    # Price being LOWER is acceptable
+                    if closing_price and closing_price > 0:
+                        price_above_pct = ((txn.price - closing_price) / closing_price) * 100
+                        is_exception = price_above_pct > variance_threshold_pct
+                    else:
+                        price_above_pct = 0.0
+                        is_exception = False
+
                     if is_exception:
                         logger_chk6_price.warning(
-                            "EXCEPTION - VARIANCE EXCEEDED:\n"
+                            "EXCEPTION - PRICE TOO HIGH:\n"
                             "  Row Number: %d\n"
                             "  Security Number: %s\n"
                             "  Security Name: %s\n"
@@ -942,35 +969,36 @@ def check_6_tase_prices(rows: list[TxnRow], seed: Optional[int] = None, variance
                             "  Transaction Date: %s\n"
                             "  Transaction Price: %.4f\n"
                             "  TASE Closing Price: %.4f\n"
-                            "  Variance: %.2f%%\n"
+                            "  Price Above Closing: %.2f%%\n"
                             "  Threshold: %.2f%%\n"
-                            "  Reason: Price variance exceeds allowed threshold",
+                            "  Reason: Transaction price exceeds TASE closing price by more than threshold",
                             txn.row_num, txn.security_no, txn.security_name, txn.fund_no,
-                            txn.tx_date, txn.price, closing_price, variance * 100, variance_threshold_pct
+                            txn.tx_date, txn.price, closing_price, price_above_pct, variance_threshold_pct
                         )
                     else:
+                        status = "BELOW CLOSING" if price_above_pct < 0 else "WITHIN THRESHOLD"
                         logger_chk6_price.info(
-                            "PASSED:\n"
+                            "PASSED (%s):\n"
                             "  Row Number: %d\n"
                             "  Security Number: %s\n"
                             "  Transaction Price: %.4f\n"
                             "  TASE Closing Price: %.4f\n"
-                            "  Variance: %.2f%% (within %.2f%% threshold)",
-                            txn.row_num, txn.security_no, txn.price, closing_price,
-                            variance * 100, variance_threshold_pct
+                            "  Price vs Closing: %.2f%% (threshold: +%.2f%%)",
+                            status, txn.row_num, txn.security_no, txn.price, closing_price,
+                            price_above_pct, variance_threshold_pct
                         )
                     results.append(PriceCheckResult(
                         row=txn,
                         tase_closing_price=closing_price,
-                        variance_pct=variance * 100,
+                        variance_pct=price_above_pct,
                         is_exception=is_exception
                     ))
     finally:
         driver.quit()
 
     exception_count = sum(1 for r in results if r.is_exception)
-    logger_chk6_price.info("Check completed - checked %d transactions, %d exceptions", len(results), exception_count)
-    logger.info("CHK_6 (TASE Prices): Completed - checked %d transactions, %d exceptions", len(results), exception_count)
+    logger_chk6_price.info("Check completed - checked %d transactions, %d exceptions, %d failed URLs", len(results), exception_count, failed_url_count)
+    logger.info("CHK_6 (TASE Prices): Completed - checked %d transactions, %d exceptions, %d failed URLs (see chk6_failed_urls.log)", len(results), exception_count, failed_url_count)
     return results
 
 
@@ -1153,28 +1181,17 @@ def check_7_problematic_securities(rows: list[TxnRow], problematic_lists: dict[s
 
 
 def build_email_json(samples: Samples) -> list[dict[str, Any]]:
-    """Spec #5.1: JSON file should contain only two JSON objects with transaction info.
+    """Spec #5.1: JSON file should contain only valid JSON objects with transaction info.
 
-    Output is always a list with 2 items:
-      - item 0: decision method 1 sample (or empty object with nulls if unavailable)
-      - item 1: decision method 2 sample (or empty object with nulls if unavailable)
+    Output is a list containing only valid samples (no empty objects):
+      - If decision method 1 sample exists, include it
+      - If decision method 2 sample exists, include it
+      - If neither exists, return empty list
 
     Each object contains:
       Fund number, Fund name, Security name, Security number, Quantity, Price, Date, Type, Decision method
     """
-    def txn_obj(row: Optional[TxnRow], decision_method: int) -> dict[str, Any]:
-        if row is None:
-            return {
-                "fund_number": None,
-                "fund_name": None,
-                "security_name": None,
-                "security_number": None,
-                "quantity": None,
-                "price": None,
-                "date": None,
-                "type": None,
-                "decision_method": decision_method,
-            }
+    def txn_obj(row: TxnRow) -> dict[str, Any]:
         return {
             "fund_number": row.fund_no,
             "fund_name": row.fund_name,
@@ -1187,10 +1204,12 @@ def build_email_json(samples: Samples) -> list[dict[str, Any]]:
             "decision_method": row.decision_method,
         }
 
-    return [
-        txn_obj(samples.decision_1, 1),
-        txn_obj(samples.decision_2, 2),
-    ]
+    result = []
+    if samples.decision_1 is not None:
+        result.append(txn_obj(samples.decision_1))
+    if samples.decision_2 is not None:
+        result.append(txn_obj(samples.decision_2))
+    return result
 
 
 # -----------------------------
@@ -1541,7 +1560,7 @@ def write_output_xlsx(
     VALIDATION_COLS = ["טופל?", "שם הבודק"]
 
     # Extract counts for סטטוס בדיקות table
-    count_out_of_scope = summary.get("שורות מחוץ לתחום", 0)
+    count_out_of_scope = summary.get("קרנות מחוץ לתחום", 0)
     count_inter_fund = summary.get("חריגות עסקאות בין קרנות", 0)
     count_date = summary.get("חריגות תאריך", 0)
     count_decision = summary.get("חריגות אופן החלטה", 0)
@@ -1561,6 +1580,7 @@ def write_output_xlsx(
         ("נאמן", trustee_name),
         ("חודש נבדק", f"דוח חודשי-{hebrew_month}"),
         ("מספר קרנות מזרחי", summary.get("מספר קרנות מזרחי", "")),
+        ("קרנות בקובץ קלט", summary.get("קרנות בקובץ קלט", "")),
         ("סה\"כ שורות", summary.get("סה\"כ שורות", "")),
     ]
 
@@ -1580,7 +1600,7 @@ def write_output_xlsx(
 
     # Define all checks with their descriptions
     check_statuses = [
-        ("שורות מחוץ לתחום", "קרנות שאינן בנאמנות מזרחי", count_out_of_scope == 0, count_out_of_scope),
+        ("קרנות מחוץ לתחום", "קרנות שאינן בנאמנות מזרחי", count_out_of_scope == 0, count_out_of_scope),
         ("חריגות עסקאות בין קרנות", "עסקאות עם כמות מנוגדת באותו יום", count_inter_fund == 0, count_inter_fund),
         ("חריגות תאריך", "עסקאות מחוץ לחודש הדוח", count_date == 0, count_date),
         ("חריגות אופן החלטה", "אי-התאמה בין סוג לאופן החלטה", count_decision == 0, count_decision),
@@ -1596,109 +1616,126 @@ def write_output_xlsx(
 
     _style_cells(ws_checks)
 
-    # Out-of-scope funds (helps validate check #2)
-    ws_oos = wb.create_sheet("קרנות מחוץ לתחום")
-    _rtl(ws_oos)
-    _header(ws_oos, ["מספר קרן", "שם קרן (מהקלט)", "מספר עסקאות", "סיבה"] + VALIDATION_COLS)
-    for fid, info in sorted(out_of_scope_funds.items(), key=lambda x: x[0]):
-        ws_oos.append([fid, info.get("fund_name"), info.get("count_rows"), info.get("reason"), "", ""])
+    # Track which optional sheets are created
+    optional_sheets = []
 
-    # Exceptions - duplicates (inter-fund transactions)
-    ws_dup = wb.create_sheet("חריגות - עסקאות בין קרנות")
-    _rtl(ws_dup)
-    _header(
-        ws_dup,
-        [
-            "בדיקה",
-            "סיבה",
-            "מפתח קבוצה",
-            "מספר קרן",
-            "שם קרן",
-            "שם נייר",
-            "מספר נייר",
-            "כמות",
-            "מחיר",
-            "תאריך",
-            "שעה",
-            "סוג",
-            "אופן החלטה",
-            "שורה בקובץ",
-        ] + VALIDATION_COLS,
-    )
-    for ex in exceptions_duplicates:
-        ws_dup.append([ex.check_id, ex.reason, ex.group_key, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
+    # Out-of-scope funds (helps validate check #2) - only create if there are out-of-scope funds
+    ws_oos = None
+    if out_of_scope_funds:
+        ws_oos = wb.create_sheet("קרנות מחוץ לתחום")
+        _rtl(ws_oos)
+        _header(ws_oos, ["מספר קרן", "שם קרן (מהקלט)", "מספר עסקאות", "סיבה"] + VALIDATION_COLS)
+        for fid, info in sorted(out_of_scope_funds.items(), key=lambda x: x[0]):
+            ws_oos.append([fid, info.get("fund_name"), info.get("count_rows"), info.get("reason"), "", ""])
+        optional_sheets.append(ws_oos)
 
-    # Exceptions - date
-    ws_date = wb.create_sheet("חריגות - תאריך")
-    _rtl(ws_date)
-    _header(
-        ws_date,
-        [
-            "בדיקה",
-            "סיבה",
-            "מספר קרן",
-            "שם קרן",
-            "שם נייר",
-            "מספר נייר",
-            "כמות",
-            "מחיר",
-            "תאריך",
-            "שעה",
-            "סוג",
-            "אופן החלטה",
-            "שורה בקובץ",
-        ] + VALIDATION_COLS,
-    )
-    for ex in exceptions_date:
-        ws_date.append([ex.check_id, ex.reason, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
+    # Exceptions - duplicates (inter-fund transactions) - only create if there are exceptions
+    ws_dup = None
+    if exceptions_duplicates:
+        ws_dup = wb.create_sheet("חריגות - עסקאות בין קרנות")
+        _rtl(ws_dup)
+        _header(
+            ws_dup,
+            [
+                "בדיקה",
+                "סיבה",
+                "מפתח קבוצה",
+                "מספר קרן",
+                "שם קרן",
+                "שם נייר",
+                "מספר נייר",
+                "כמות",
+                "מחיר",
+                "תאריך",
+                "שעה",
+                "סוג",
+                "אופן החלטה",
+                "שורה בקובץ",
+            ] + VALIDATION_COLS,
+        )
+        for ex in exceptions_duplicates:
+            ws_dup.append([ex.check_id, ex.reason, ex.group_key, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
+        optional_sheets.append(ws_dup)
 
-    # Exceptions - decision method
-    ws_dm = wb.create_sheet("חריגות - אופן החלטה")
-    _rtl(ws_dm)
-    _header(
-        ws_dm,
-        [
-            "בדיקה",
-            "סיבה",
-            "מספר קרן",
-            "שם קרן",
-            "שם נייר",
-            "מספר נייר",
-            "כמות",
-            "מחיר",
-            "תאריך",
-            "שעה",
-            "סוג",
-            "אופן החלטה",
-            "שורה בקובץ",
-        ] + VALIDATION_COLS,
-    )
-    for ex in exceptions_decision:
-        ws_dm.append([ex.check_id, ex.reason, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
+    # Exceptions - date - only create if there are exceptions
+    ws_date = None
+    if exceptions_date:
+        ws_date = wb.create_sheet("חריגות - תאריך")
+        _rtl(ws_date)
+        _header(
+            ws_date,
+            [
+                "בדיקה",
+                "סיבה",
+                "מספר קרן",
+                "שם קרן",
+                "שם נייר",
+                "מספר נייר",
+                "כמות",
+                "מחיר",
+                "תאריך",
+                "שעה",
+                "סוג",
+                "אופן החלטה",
+                "שורה בקובץ",
+            ] + VALIDATION_COLS,
+        )
+        for ex in exceptions_date:
+            ws_date.append([ex.check_id, ex.reason, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
+        optional_sheets.append(ws_date)
 
-    # Spec #6 Part 1: TASE price check results
-    ws_price = wb.create_sheet("בדיקת מחירים - בורסה")
-    _rtl(ws_price)
-    _header(
-        ws_price,
-        [
-            "מספר קרן",
-            "שם קרן",
-            "שם נייר",
-            "מספר נייר",
-            "כמות",
-            "מחיר בעסקה",
-            "תאריך",
-            "שעה",
-            "סוג",
-            "מחיר סגירה בורסה",
-            "סטייה באחוזים",
-            "חריגה",
-            "הערה",
-        ] + VALIDATION_COLS,
-    )
-    if price_check_results:
-        for r in price_check_results:
+    # Exceptions - decision method - only create if there are exceptions
+    ws_dm = None
+    if exceptions_decision:
+        ws_dm = wb.create_sheet("חריגות - אופן החלטה")
+        _rtl(ws_dm)
+        _header(
+            ws_dm,
+            [
+                "בדיקה",
+                "סיבה",
+                "מספר קרן",
+                "שם קרן",
+                "שם נייר",
+                "מספר נייר",
+                "כמות",
+                "מחיר",
+                "תאריך",
+                "שעה",
+                "סוג",
+                "אופן החלטה",
+                "שורה בקובץ",
+            ] + VALIDATION_COLS,
+        )
+        for ex in exceptions_decision:
+            ws_dm.append([ex.check_id, ex.reason, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
+        optional_sheets.append(ws_dm)
+
+    # Spec #6 Part 1: TASE price check results - only create if there are results with exceptions
+    ws_price = None
+    price_exceptions = [r for r in (price_check_results or []) if r.is_exception]
+    if price_exceptions:
+        ws_price = wb.create_sheet("בדיקת מחירים - בורסה")
+        _rtl(ws_price)
+        _header(
+            ws_price,
+            [
+                "מספר קרן",
+                "שם קרן",
+                "שם נייר",
+                "מספר נייר",
+                "כמות",
+                "מחיר בעסקה",
+                "תאריך",
+                "שעה",
+                "סוג",
+                "מחיר סגירה בורסה",
+                "סטייה באחוזים",
+                "חריגה",
+                "הערה",
+            ] + VALIDATION_COLS,
+        )
+        for r in price_exceptions:
             ws_price.append([
                 r.row.fund_no,
                 r.row.fund_name,
@@ -1711,55 +1748,59 @@ def write_output_xlsx(
                 r.row.tx_type,
                 r.tase_closing_price,
                 f"{r.variance_pct:.2f}%" if r.variance_pct is not None else "",
-                "כן" if r.is_exception else "לא",
+                "כן",
                 r.error_message or "",
                 "", ""
             ])
+        optional_sheets.append(ws_price)
 
-    # Spec #6 Part 2: Price > 100 exceptions
-    ws_price_limit = wb.create_sheet("חריגות - מחיר מעל 100")
-    _rtl(ws_price_limit)
-    _header(
-        ws_price_limit,
-        [
-            "מספר קרן",
-            "שם קרן",
-            "שם נייר",
-            "מספר נייר",
-            "כמות",
-            "מחיר",
-            "תאריך",
-            "שעה",
-            "סוג",
-            "אופן החלטה",
-            "שורה בקובץ",
-        ] + VALIDATION_COLS,
-    )
+    # Spec #6 Part 2: Price > 100 exceptions - only create if there are exceptions
+    ws_price_limit = None
     if price_limit_results:
+        ws_price_limit = wb.create_sheet("חריגות - מחיר מעל 100")
+        _rtl(ws_price_limit)
+        _header(
+            ws_price_limit,
+            [
+                "מספר קרן",
+                "שם קרן",
+                "שם נייר",
+                "מספר נייר",
+                "כמות",
+                "מחיר",
+                "תאריך",
+                "שעה",
+                "סוג",
+                "אופן החלטה",
+                "שורה בקובץ",
+            ] + VALIDATION_COLS,
+        )
         for r in price_limit_results:
             ws_price_limit.append([*_txn_to_basic_list(r.row), r.row.row_num, "", ""])
+        optional_sheets.append(ws_price_limit)
 
-    # Spec #7: Problematic securities
-    ws_prob = wb.create_sheet("חריגות - ניירות בעייתיים")
-    _rtl(ws_prob)
-    _header(
-        ws_prob,
-        [
-            "מספר קרן",
-            "שם קרן",
-            "שם נייר",
-            "מספר נייר",
-            "כמות",
-            "מחיר",
-            "תאריך",
-            "שעה",
-            "סוג",
-            "אופן החלטה",
-            "רשימות בעייתיות",
-            "שורה בקובץ",
-        ] + VALIDATION_COLS,
-    )
+    # Spec #7: Problematic securities - only create if there are exceptions
+    ws_prob = None
     if problematic_security_results:
+        ws_prob = wb.create_sheet("חריגות - ניירות בעייתיים")
+        _rtl(ws_prob)
+        _header(
+            ws_prob,
+            [
+                "מספר קרן",
+                "שם קרן",
+                "שם נייר",
+                "מספר נייר",
+                "כמות",
+                "מחיר",
+                "תאריך",
+                "שעה",
+                "סוג",
+                "אופן החלטה",
+                "רשימות בעייתיות",
+                "שורה בקובץ",
+            ] + VALIDATION_COLS,
+        )
         for r in problematic_security_results:
             ws_prob.append([
                 *_txn_to_basic_list(r.row),
@@ -1767,41 +1808,45 @@ def write_output_xlsx(
                 r.row.row_num,
                 "", ""
             ])
+        optional_sheets.append(ws_prob)
 
-    # Samples
-    ws_s = wb.create_sheet("דגימות לבדיקה")
-    _rtl(ws_s)
-    _header(
-        ws_s,
-        [
-            "קבוצה",
-            "מספר קרן",
-            "שם קרן",
-            "שם נייר",
-            "מספר נייר",
-            "כמות",
-            "מחיר",
-            "תאריך",
-            "שעה",
-            "סוג",
-            "אופן החלטה",
-            "תאריך החלטת דירקטוריון",
-            "סבירות החלטה",
-            "ציות לנוהל מנהל",
-        ] + VALIDATION_COLS,
-    )
+    # Samples - only create if there are samples
+    ws_s = None
+    has_samples = samples.decision_1 is not None or samples.decision_2 is not None
+    if has_samples:
+        ws_s = wb.create_sheet("דגימות לבדיקה")
+        _rtl(ws_s)
+        _header(
+            ws_s,
+            [
+                "קבוצה",
+                "מספר קרן",
+                "שם קרן",
+                "שם נייר",
+                "מספר נייר",
+                "כמות",
+                "מחיר",
+                "תאריך",
+                "שעה",
+                "סוג",
+                "אופן החלטה",
+                "תאריך החלטת דירקטוריון",
+                "סבירות החלטה",
+                "ציות לנוהל מנהל",
+            ] + VALIDATION_COLS,
+        )
 
-    def add_sample(label: str, row: Optional[TxnRow], decision_method: int) -> None:
-        if not row:
-            ws_s.append([label, None, None, None, None, None, None, None, None, None, decision_method, "", "", "", "", ""])
-            return
-        ws_s.append([label, *_txn_to_basic_list(row), "", "", "", "", ""])
+        def add_sample(label: str, row: Optional[TxnRow]) -> None:
+            if row:
+                ws_s.append([label, *_txn_to_basic_list(row), "", "", "", "", ""])
 
-    add_sample("אופן החלטה = 1", samples.decision_1, 1)
-    add_sample("אופן החלטה = 2", samples.decision_2, 2)
+        # Only add samples that exist (no empty rows)
+        add_sample("אופן החלטה = 1", samples.decision_1)
+        add_sample("אופן החלטה = 2", samples.decision_2)
+        optional_sheets.append(ws_s)
 
-    # Apply styling to all data sheets
-    for ws in [ws_oos, ws_dup, ws_date, ws_dm, ws_price, ws_price_limit, ws_prob, ws_s]:
+    # Apply styling to all optional data sheets that were created
+    for ws in optional_sheets:
         _style_cells(ws)
 
     # Sheet: פירוט בדיקות (Specification details) - copy with original styling preserved
@@ -1811,8 +1856,8 @@ def write_output_xlsx(
         ws_spec = wb["פירוט בדיקות"]
 
     # Set Calibri font BEFORE measuring widths/heights (measurement is tuned for Calibri)
-    # Then auto-fit columns and rows for all sheets
-    all_sheets = [ws_sum, ws_checks, ws_oos, ws_dup, ws_date, ws_dm, ws_price, ws_price_limit, ws_prob, ws_s]
+    # Then auto-fit columns and rows for all sheets (only include sheets that were created)
+    all_sheets = [ws_sum, ws_checks] + optional_sheets
     for ws in all_sheets:
         # 1. Set font first (measurement is calibrated for Calibri)
         _set_font_calibri(ws)
@@ -1970,13 +2015,17 @@ def main() -> int:
     # Manager name: use empty string if not provided (column header will still appear)
     manager_name = args.manager_name if args.manager_name else ""
 
+    # Count unique funds in input file
+    unique_funds_in_input = len({r.fund_no for r in rows if r.fund_no is not None})
+
     summary = {
         "חודש דוח": report_month,
         "סיבת סינון": "קרנות מזרחי בלבד",
         "מספר קרנות מזרחי": len(in_scope_funds),
+        "קרנות בקובץ קלט": unique_funds_in_input,
         "סה\"כ שורות": len(rows),
         "שורות בתחום": len(in_scope_rows),
-        "שורות מחוץ לתחום": len(out_scope_rows),
+        "קרנות מחוץ לתחום": len(out_of_scope_funds),
         "חריגות עסקאות בין קרנות": len(ex_dup),
         "חריגות תאריך": len(ex_date),
         "חריגות אופן החלטה": len(ex_decision),
@@ -2021,6 +2070,7 @@ def main() -> int:
     logger.info("  - chk4_decision.log     : CHK_4 - Decision method rules")
     logger.info("  - chk6_tase_price.log   : CHK_6 - TASE price checks")
     logger.info("  - chk6_price_limit.log  : CHK_6 - Price > 100 checks")
+    logger.info("  - chk6_failed_urls.log  : CHK_6 - Failed URL fetches (manual verification)")
     logger.info("  - chk7_problematic.log  : CHK_7 - Problematic securities")
     return 0
 
