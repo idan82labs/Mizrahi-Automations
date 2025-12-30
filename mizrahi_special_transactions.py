@@ -1548,7 +1548,7 @@ def write_output_xlsx(
     exceptions_date: list[ExceptionRow],
     exceptions_decision: list[ExceptionRow],
     samples: Samples,
-    out_of_scope_funds: dict[int, dict[str, Any]],
+    in_scope_funds: set[int],
     price_check_results: list[PriceCheckResult] = None,
     price_limit_results: list[PriceLimitResult] = None,
     problematic_security_results: list[ProblematicSecurityResult] = None,
@@ -1560,7 +1560,6 @@ def write_output_xlsx(
     VALIDATION_COLS = ["טופל?", "שם הבודק"]
 
     # Extract counts for סטטוס בדיקות table
-    count_out_of_scope = summary.get("קרנות מחוץ לתחום", 0)
     count_inter_fund = summary.get("חריגות עסקאות בין קרנות", 0)
     count_date = summary.get("חריגות תאריך", 0)
     count_decision = summary.get("חריגות אופן החלטה", 0)
@@ -1583,6 +1582,7 @@ def write_output_xlsx(
         ("חודש נבדק", f"דוח חודשי-{hebrew_month}"),
         ("מספר קרנות של מנהל הקרן", summary.get("מספר קרנות של מנהל הקרן", "")),
         ("מספר קרנות של מנהל הקרן – בניהול מזרחי", summary.get("מספר קרנות של מנהל הקרן – בניהול מזרחי", "")),
+        ("מספר קרנות של מנהל הקרן – בניהול חיצוני", summary.get("קרנות מחוץ לתחום", "")),
     ]
 
     rr = 2
@@ -1600,9 +1600,9 @@ def write_output_xlsx(
     _style_header(ws_checks, 1)
 
     # Define all checks with their descriptions (with specification numbers)
+    # Note: Spec #2 (out-of-scope funds) is shown in summary table, not here
     check_statuses = [
         ("בדיקה #1 - חריגות עסקאות בין קרנות", "עסקאות עם כמות מנוגדת באותו יום", count_inter_fund == 0, count_inter_fund),
-        ("בדיקה #2 - קרנות מחוץ לתחום", "קרנות שאינן בנאמנות מזרחי", count_out_of_scope == 0, count_out_of_scope),
         ("בדיקה #3 - חריגות תאריך", "עסקאות מחוץ לחודש הדוח", count_date == 0, count_date),
         ("בדיקה #4 - חריגות אופן החלטה", "אי-התאמה בין סוג לאופן החלטה", count_decision == 0, count_decision),
         ("בדיקה #5 - דגימה לבדיקה – אופן החלטה 1", "קיימת דגימה תקינה עם אופן החלטה 1" if samples.decision_1 is not None else "לא קיימת דגימה תקינה עם אופן החלטה 1", samples.decision_1 is not None, 0 if samples.decision_1 is not None else 1),
@@ -1623,15 +1623,7 @@ def write_output_xlsx(
     # Track which optional sheets are created
     optional_sheets = []
 
-    # Out-of-scope funds (helps validate check #2) - only create if there are out-of-scope funds
-    ws_oos = None
-    if out_of_scope_funds:
-        ws_oos = wb.create_sheet("בדיקה #2 - קרנות מחוץ לתחום")
-        _rtl(ws_oos)
-        _header(ws_oos, ["מספר קרן", "שם קרן (מהקלט)", "מספר עסקאות", "סיבה"] + VALIDATION_COLS)
-        for fid, info in sorted(out_of_scope_funds.items(), key=lambda x: x[0]):
-            ws_oos.append([fid, info.get("fund_name"), info.get("count_rows"), info.get("reason"), "", ""])
-        optional_sheets.append(ws_oos)
+    # Note: Spec #2 (out-of-scope funds) count is shown in summary table, no separate sheet
 
     # Exceptions - duplicates (inter-fund transactions) - only create if there are exceptions
     ws_dup = None
@@ -1646,6 +1638,7 @@ def write_output_xlsx(
                 "מפתח קבוצה",
                 "מספר קרן",
                 "שם קרן",
+                "קרן של מזרחי?",
                 "שם נייר",
                 "מספר נייר",
                 "כמות",
@@ -1658,7 +1651,11 @@ def write_output_xlsx(
             ] + VALIDATION_COLS,
         )
         for ex in exceptions_duplicates:
-            ws_dup.append([ex.check_id, ex.reason, ex.group_key, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
+            is_mizrahi = "כן" if ex.row.fund_no in in_scope_funds else "לא"
+            basic_list = _txn_to_basic_list(ex.row)
+            # Insert is_mizrahi after fund_name (index 1 in basic_list corresponds to שם קרן)
+            row_data = [ex.check_id, ex.reason, ex.group_key, basic_list[0], basic_list[1], is_mizrahi] + basic_list[2:] + [ex.row.row_num, "", ""]
+            ws_dup.append(row_data)
         optional_sheets.append(ws_dup)
 
     # Exceptions - date - only create if there are exceptions
@@ -1879,12 +1876,12 @@ def write_output_xlsx(
 
     # Reorder sheets according to specification:
     # 1. סיכום, 2. פירוט בדיקות, 3. סטטוס בדיקות, then rest in spec order
+    # Note: Spec #2 (out-of-scope funds) count is shown in summary table, no separate sheet
     desired_order = [
         "סיכום",                              # Summary
         "פירוט בדיקות",                       # Specification details
         "סטטוס בדיקות",                       # Check status
         "בדיקה #1 - עסקאות בין קרנות",        # Spec #1
-        "בדיקה #2 - קרנות מחוץ לתחום",        # Spec #2
         "בדיקה #3 - תאריך",                   # Spec #3
         "בדיקה #4 - אופן החלטה",              # Spec #4
         "בדיקה #5 - דגימות לבדיקה",           # Spec #5
@@ -2053,7 +2050,7 @@ def main() -> int:
         exceptions_date=ex_date,
         exceptions_decision=ex_decision,
         samples=samples,
-        out_of_scope_funds=out_of_scope_funds,
+        in_scope_funds=in_scope_funds,
         price_check_results=price_check_results,
         price_limit_results=price_limit_results,
         problematic_security_results=problematic_security_results,
