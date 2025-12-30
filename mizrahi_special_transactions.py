@@ -1566,6 +1566,8 @@ def write_output_xlsx(
     count_decision = summary.get("חריגות אופן החלטה", 0)
     count_price_limit = summary.get("חריגות מחיר מעל 100", 0)
     count_problematic = summary.get("חריגות ניירות בעייתיים", 0)
+    # Count TASE price exceptions
+    count_tase_price = len([r for r in (price_check_results or []) if r.is_exception])
 
     # Sheet 1: Summary (סיכום) - new format
     ws_sum = wb.active
@@ -1579,9 +1581,8 @@ def write_output_xlsx(
         ("מנהל קרן", manager_name),
         ("נאמן", trustee_name),
         ("חודש נבדק", f"דוח חודשי-{hebrew_month}"),
-        ("מספר קרנות מזרחי", summary.get("מספר קרנות מזרחי", "")),
-        ("קרנות בקובץ קלט", summary.get("קרנות בקובץ קלט", "")),
-        ("סה\"כ שורות", summary.get("סה\"כ שורות", "")),
+        ("מספר קרנות של מנהל הקרן", summary.get("מספר קרנות של מנהל הקרן", "")),
+        ("מספר קרנות של מנהל הקרן – בניהול מזרחי", summary.get("מספר קרנות של מנהל הקרן – בניהול מזרחי", "")),
     ]
 
     rr = 2
@@ -1598,14 +1599,17 @@ def write_output_xlsx(
     ws_checks.append(["בדיקה", "תיאור", "סטטוס", "חריגות", "טופל?", "שם הבודק"])
     _style_header(ws_checks, 1)
 
-    # Define all checks with their descriptions
+    # Define all checks with their descriptions (with specification numbers)
     check_statuses = [
-        ("קרנות מחוץ לתחום", "קרנות שאינן בנאמנות מזרחי", count_out_of_scope == 0, count_out_of_scope),
-        ("חריגות עסקאות בין קרנות", "עסקאות עם כמות מנוגדת באותו יום", count_inter_fund == 0, count_inter_fund),
-        ("חריגות תאריך", "עסקאות מחוץ לחודש הדוח", count_date == 0, count_date),
-        ("חריגות אופן החלטה", "אי-התאמה בין סוג לאופן החלטה", count_decision == 0, count_decision),
-        ("חריגות מחיר מעל 100", "עסקאות מסוג 31-36 עם מחיר > 100", count_price_limit == 0, count_price_limit),
-        ("חריגות ניירות בעייתיים", "ניירות ברשימות דלי סחירות/שימור/מושעים", count_problematic == 0, count_problematic),
+        ("בדיקה #1 - חריגות עסקאות בין קרנות", "עסקאות עם כמות מנוגדת באותו יום", count_inter_fund == 0, count_inter_fund),
+        ("בדיקה #2 - קרנות מחוץ לתחום", "קרנות שאינן בנאמנות מזרחי", count_out_of_scope == 0, count_out_of_scope),
+        ("בדיקה #3 - חריגות תאריך", "עסקאות מחוץ לחודש הדוח", count_date == 0, count_date),
+        ("בדיקה #4 - חריגות אופן החלטה", "אי-התאמה בין סוג לאופן החלטה", count_decision == 0, count_decision),
+        ("בדיקה #5 - דגימה לבדיקה – אופן החלטה 1", "קיימת דגימה תקינה עם אופן החלטה 1" if samples.decision_1 is not None else "לא קיימת דגימה תקינה עם אופן החלטה 1", samples.decision_1 is not None, 0 if samples.decision_1 is not None else 1),
+        ("בדיקה #5 - דגימה לבדיקה – אופן החלטה 2", "קיימת דגימה תקינה עם אופן החלטה 2" if samples.decision_2 is not None else "לא קיימת דגימה תקינה עם אופן החלטה 2", samples.decision_2 is not None, 0 if samples.decision_2 is not None else 1),
+        ("בדיקה #6 - חריגות סטיית מחיר מבורסה", "סטייה מעל סף אחוז ממחיר סגירה בבורסה", count_tase_price == 0, count_tase_price),
+        ("בדיקה #6 - חריגות מחיר מעל 100", "עסקאות מסוג 31-36 עם מחיר > 100", count_price_limit == 0, count_price_limit),
+        ("בדיקה #7 - חריגות ניירות בעייתיים", "ניירות ברשימות דלי סחירות/שימור/מושעים", count_problematic == 0, count_problematic),
     ]
 
     for row_idx, (name, description, passed, count) in enumerate(check_statuses, start=2):
@@ -1622,7 +1626,7 @@ def write_output_xlsx(
     # Out-of-scope funds (helps validate check #2) - only create if there are out-of-scope funds
     ws_oos = None
     if out_of_scope_funds:
-        ws_oos = wb.create_sheet("קרנות מחוץ לתחום")
+        ws_oos = wb.create_sheet("בדיקה #2 - קרנות מחוץ לתחום")
         _rtl(ws_oos)
         _header(ws_oos, ["מספר קרן", "שם קרן (מהקלט)", "מספר עסקאות", "סיבה"] + VALIDATION_COLS)
         for fid, info in sorted(out_of_scope_funds.items(), key=lambda x: x[0]):
@@ -1632,7 +1636,7 @@ def write_output_xlsx(
     # Exceptions - duplicates (inter-fund transactions) - only create if there are exceptions
     ws_dup = None
     if exceptions_duplicates:
-        ws_dup = wb.create_sheet("חריגות - עסקאות בין קרנות")
+        ws_dup = wb.create_sheet("בדיקה #1 - עסקאות בין קרנות")
         _rtl(ws_dup)
         _header(
             ws_dup,
@@ -1660,7 +1664,7 @@ def write_output_xlsx(
     # Exceptions - date - only create if there are exceptions
     ws_date = None
     if exceptions_date:
-        ws_date = wb.create_sheet("חריגות - תאריך")
+        ws_date = wb.create_sheet("בדיקה #3 - תאריך")
         _rtl(ws_date)
         _header(
             ws_date,
@@ -1687,7 +1691,7 @@ def write_output_xlsx(
     # Exceptions - decision method - only create if there are exceptions
     ws_dm = None
     if exceptions_decision:
-        ws_dm = wb.create_sheet("חריגות - אופן החלטה")
+        ws_dm = wb.create_sheet("בדיקה #4 - אופן החלטה")
         _rtl(ws_dm)
         _header(
             ws_dm,
@@ -1711,15 +1715,17 @@ def write_output_xlsx(
             ws_dm.append([ex.check_id, ex.reason, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
         optional_sheets.append(ws_dm)
 
-    # Spec #6 Part 1: TASE price check results - only create if there are results with exceptions
+    # Spec #6: Price checks (TASE price variance and price > 100) - merged into single sheet
     ws_price = None
     price_exceptions = [r for r in (price_check_results or []) if r.is_exception]
-    if price_exceptions:
-        ws_price = wb.create_sheet("בדיקת מחירים - בורסה")
+    has_price_exceptions = price_exceptions or price_limit_results
+    if has_price_exceptions:
+        ws_price = wb.create_sheet("בדיקה #6 - חריגות מחיר")
         _rtl(ws_price)
         _header(
             ws_price,
             [
+                "סוג בדיקה",
                 "מספר קרן",
                 "שם קרן",
                 "שם נייר",
@@ -1729,14 +1735,17 @@ def write_output_xlsx(
                 "תאריך",
                 "שעה",
                 "סוג",
+                "אופן החלטה",
                 "מחיר סגירה בורסה",
                 "סטייה באחוזים",
-                "חריגה",
+                "שורה בקובץ",
                 "הערה",
             ] + VALIDATION_COLS,
         )
+        # Add TASE price variance exceptions
         for r in price_exceptions:
             ws_price.append([
+                "סטיית מחיר מבורסה",
                 r.row.fund_no,
                 r.row.fund_name,
                 r.row.security_name,
@@ -1746,43 +1755,39 @@ def write_output_xlsx(
                 _fmt_date(r.row.tx_date),
                 _fmt_time(r.row.tx_time),
                 r.row.tx_type,
+                r.row.decision_method,
                 r.tase_closing_price,
                 f"{r.variance_pct:.2f}%" if r.variance_pct is not None else "",
-                "כן",
+                r.row.row_num,
                 r.error_message or "",
+                "", ""
+            ])
+        # Add price > 100 exceptions
+        for r in (price_limit_results or []):
+            ws_price.append([
+                "מחיר מעל 100",
+                r.row.fund_no,
+                r.row.fund_name,
+                r.row.security_name,
+                r.row.security_no,
+                r.row.quantity,
+                r.row.price,
+                _fmt_date(r.row.tx_date),
+                _fmt_time(r.row.tx_time),
+                r.row.tx_type,
+                r.row.decision_method,
+                "",  # No TASE price for this check
+                "",  # No variance for this check
+                r.row.row_num,
+                "",
                 "", ""
             ])
         optional_sheets.append(ws_price)
 
-    # Spec #6 Part 2: Price > 100 exceptions - only create if there are exceptions
-    ws_price_limit = None
-    if price_limit_results:
-        ws_price_limit = wb.create_sheet("חריגות - מחיר מעל 100")
-        _rtl(ws_price_limit)
-        _header(
-            ws_price_limit,
-            [
-                "מספר קרן",
-                "שם קרן",
-                "שם נייר",
-                "מספר נייר",
-                "כמות",
-                "מחיר",
-                "תאריך",
-                "שעה",
-                "סוג",
-                "אופן החלטה",
-                "שורה בקובץ",
-            ] + VALIDATION_COLS,
-        )
-        for r in price_limit_results:
-            ws_price_limit.append([*_txn_to_basic_list(r.row), r.row.row_num, "", ""])
-        optional_sheets.append(ws_price_limit)
-
     # Spec #7: Problematic securities - only create if there are exceptions
     ws_prob = None
     if problematic_security_results:
-        ws_prob = wb.create_sheet("חריגות - ניירות בעייתיים")
+        ws_prob = wb.create_sheet("בדיקה #7 - ניירות בעייתיים")
         _rtl(ws_prob)
         _header(
             ws_prob,
@@ -1814,7 +1819,7 @@ def write_output_xlsx(
     ws_s = None
     has_samples = samples.decision_1 is not None or samples.decision_2 is not None
     if has_samples:
-        ws_s = wb.create_sheet("דגימות לבדיקה")
+        ws_s = wb.create_sheet("בדיקה #5 - דגימות לבדיקה")
         _rtl(ws_s)
         _header(
             ws_s,
@@ -1875,17 +1880,16 @@ def write_output_xlsx(
     # Reorder sheets according to specification:
     # 1. סיכום, 2. פירוט בדיקות, 3. סטטוס בדיקות, then rest in spec order
     desired_order = [
-        "סיכום",                          # Summary
-        "פירוט בדיקות",                   # Specification details
-        "סטטוס בדיקות",                   # Check status
-        "חריגות - עסקאות בין קרנות",      # Spec #1
-        "קרנות מחוץ לתחום",               # Spec #2
-        "חריגות - תאריך",                 # Spec #3
-        "חריגות - אופן החלטה",            # Spec #4
-        "דגימות לבדיקה",                  # Spec #5
-        "בדיקת מחירים - בורסה",           # Spec #6 part 1
-        "חריגות - מחיר מעל 100",          # Spec #6 part 2
-        "חריגות - ניירות בעייתיים",       # Spec #7
+        "סיכום",                              # Summary
+        "פירוט בדיקות",                       # Specification details
+        "סטטוס בדיקות",                       # Check status
+        "בדיקה #1 - עסקאות בין קרנות",        # Spec #1
+        "בדיקה #2 - קרנות מחוץ לתחום",        # Spec #2
+        "בדיקה #3 - תאריך",                   # Spec #3
+        "בדיקה #4 - אופן החלטה",              # Spec #4
+        "בדיקה #5 - דגימות לבדיקה",           # Spec #5
+        "בדיקה #6 - חריגות מחיר",             # Spec #6 (merged price checks)
+        "בדיקה #7 - ניירות בעייתיים",         # Spec #7
     ]
 
     # Move sheets to correct positions
@@ -2017,13 +2021,14 @@ def main() -> int:
 
     # Count unique funds in input file
     unique_funds_in_input = len({r.fund_no for r in rows if r.fund_no is not None})
+    # Count unique mizrahi funds in input file (intersection of input funds and in_scope_funds)
+    unique_mizrahi_funds_in_input = len({r.fund_no for r in in_scope_rows if r.fund_no is not None})
 
     summary = {
         "חודש דוח": report_month,
         "סיבת סינון": "קרנות מזרחי בלבד",
-        "מספר קרנות מזרחי": len(in_scope_funds),
-        "קרנות בקובץ קלט": unique_funds_in_input,
-        "סה\"כ שורות": len(rows),
+        "מספר קרנות של מנהל הקרן": unique_funds_in_input,
+        "מספר קרנות של מנהל הקרן – בניהול מזרחי": unique_mizrahi_funds_in_input,
         "שורות בתחום": len(in_scope_rows),
         "קרנות מחוץ לתחום": len(out_of_scope_funds),
         "חריגות עסקאות בין קרנות": len(ex_dup),
