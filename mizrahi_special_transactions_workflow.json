@@ -1,0 +1,709 @@
+{
+  "name": "Mizrahi Special Transactions Orchestrator",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        -256,
+        4128
+      ],
+      "id": "ee2d3b6c-3cd1-4264-b9af-eb6436bdd941",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "sendTo": "elay.g@82labs.io",
+        "subject": "Error in Mizrahi Special Transactions Workflow!",
+        "emailType": "text",
+        "message": "=There was an error processing manager: {{ $json.managerName }}\n\nError: {{ $json.error }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        -16,
+        4128
+      ],
+      "id": "68526e04-43fd-4413-8bea-d39646d6d725",
+      "name": "Send Error Email",
+      "webhookId": "2e5b8b98-376f-48f7-9787-8ac115f09b56",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "DGg7VXtEGqomgL1k",
+          "name": "Elay.g - Gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "formTitle": "Mizrahi Special Transactions Report",
+        "formDescription": "Upload files and select manager for special transactions processing",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Manager Name (שם מנהל)",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  { "option": "מגדל" },
+                  { "option": "איילון" },
+                  { "option": "קסם" },
+                  { "option": "סיגמא" },
+                  { "option": "פורסט" },
+                  { "option": "הראל" },
+                  { "option": "אנליסט" },
+                  { "option": "מיטב" },
+                  { "option": "איביאי" },
+                  { "option": "אלטשולר-שחם" }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email Address",
+              "fieldType": "email",
+              "placeholder": "first@gmail.com; second@gmail.com",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Mutual Funds List (XLSX)",
+              "fieldType": "file",
+              "requiredField": true,
+              "acceptFileTypes": ".xlsx"
+            },
+            {
+              "fieldLabel": "Manager Report (CSV or XLSX)",
+              "fieldType": "file",
+              "requiredField": true,
+              "acceptFileTypes": ".csv,.xlsx"
+            },
+            {
+              "fieldLabel": "Specification File (XLSX) - Optional",
+              "fieldType": "file",
+              "requiredField": false,
+              "acceptFileTypes": ".xlsx"
+            },
+            {
+              "fieldLabel": "Price Threshold (%)",
+              "fieldType": "number",
+              "placeholder": "5.0",
+              "requiredField": false
+            },
+            {
+              "fieldLabel": "Skip TASE Price Checks",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  { "option": "No (Recommended)" },
+                  { "option": "Yes" }
+                ]
+              },
+              "requiredField": false
+            }
+          ]
+        },
+        "options": {
+          "buttonLabel": "Process Report",
+          "path": "mizrahi-special-transactions",
+          "respondWithOptions": {
+            "values": {
+              "formSubmittedText": "Your request has been submitted. The report will be sent to your email within ~5 minutes."
+            }
+          }
+        }
+      },
+      "id": "794aa274-7e26-4ab9-916d-cb3114015fd3",
+      "name": "Form Trigger - Upload Files",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -928,
+        3616
+      ],
+      "webhookId": "e30a6ac0-11cd-4d8a-a517-3ca10c192123"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "managerName",
+              "name": "managerName",
+              "value": "={{ $json['Manager Name (שם מנהל)'].trim() }}",
+              "type": "string"
+            },
+            {
+              "id": "emails",
+              "name": "emails",
+              "value": "={{ $json['Email Address'] }}",
+              "type": "string"
+            },
+            {
+              "id": "priceThreshold",
+              "name": "priceThreshold",
+              "value": "={{ $json['Price Threshold (%)'] || 5.0 }}",
+              "type": "number"
+            },
+            {
+              "id": "skipTasePrices",
+              "name": "skipTasePrices",
+              "value": "={{ $json['Skip TASE Price Checks'] === 'Yes' }}",
+              "type": "boolean"
+            },
+            {
+              "id": "hasSpecFile",
+              "name": "hasSpecFile",
+              "value": "={{ $json['Specification File (XLSX) - Optional'] ? true : false }}",
+              "type": "boolean"
+            },
+            {
+              "id": "timestamp",
+              "name": "timestamp",
+              "value": "={{ $now.toFormat('yyyyMMdd_HHmmss') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "242ccc78-3b20-47fb-865b-05891516e4c5",
+      "name": "Extract Form Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -656,
+        3616
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "upload",
+        "path": "=/root/input/mutual_funds_list_{{ $json.timestamp }}.xlsx",
+        "binaryPropertyName": "={{ $('Form Trigger - Upload Files').first().binary['Mutual Funds List (XLSX)'] ? 'Mutual Funds List (XLSX)' : 'file0' }}"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        -416,
+        3456
+      ],
+      "id": "upload-mutual-funds",
+      "name": "Upload Mutual Funds List",
+      "credentials": {
+        "sshPassword": {
+          "id": "R4y3FQotAAAvJxr8",
+          "name": "Mizrahi Automation Droplet SSH"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "upload",
+        "path": "=/root/input/manager_report_{{ $json.managerName }}_{{ $json.timestamp }}.{{ $('Form Trigger - Upload Files').first().binary['Manager Report (CSV or XLSX)'].fileName.split('.').pop() }}",
+        "binaryPropertyName": "={{ $('Form Trigger - Upload Files').first().binary['Manager Report (CSV or XLSX)'] ? 'Manager Report (CSV or XLSX)' : 'file1' }}"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        -416,
+        3616
+      ],
+      "id": "upload-manager-report",
+      "name": "Upload Manager Report",
+      "credentials": {
+        "sshPassword": {
+          "id": "R4y3FQotAAAvJxr8",
+          "name": "Mizrahi Automation Droplet SSH"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "upload",
+        "path": "=/root/input/spec_file_{{ $json.timestamp }}.xlsx",
+        "binaryPropertyName": "={{ $('Form Trigger - Upload Files').first().binary['Specification File (XLSX) - Optional'] ? 'Specification File (XLSX) - Optional' : 'file2' }}"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        -416,
+        3776
+      ],
+      "id": "upload-spec-file",
+      "name": "Upload Spec File (Optional)",
+      "credentials": {
+        "sshPassword": {
+          "id": "R4y3FQotAAAvJxr8",
+          "name": "Mizrahi Automation Droplet SSH"
+        }
+      },
+      "executeOnce": false,
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "command": "=mkdir -p /root/input /root/output"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        -656,
+        3456
+      ],
+      "id": "create-dirs",
+      "name": "Create Input/Output Dirs",
+      "credentials": {
+        "sshPassword": {
+          "id": "R4y3FQotAAAvJxr8",
+          "name": "Mizrahi Automation Droplet SSH"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "command": "=cd /root && source mizrahi-venv/bin/activate && python3 mizrahi_special_transactions.py \\\n  --mutual-funds-list \"/root/input/mutual_funds_list_{{ $('Extract Form Data').first().json.timestamp }}.xlsx\" \\\n  --input-report \"/root/input/manager_report_{{ $('Extract Form Data').first().json.managerName }}_{{ $('Extract Form Data').first().json.timestamp }}.{{ $('Form Trigger - Upload Files').first().binary['Manager Report (CSV or XLSX)'].fileName.split('.').pop() }}\" \\\n  --output-xlsx \"/root/output/special_txn_{{ $('Extract Form Data').first().json.managerName }}_{{ $('Extract Form Data').first().json.timestamp }}.xlsx\" \\\n  --email-json \"/root/output/email_{{ $('Extract Form Data').first().json.managerName }}_{{ $('Extract Form Data').first().json.timestamp }}.json\" \\\n  --manager-name \"{{ $('Extract Form Data').first().json.managerName }}\" \\\n  --price-threshold {{ $('Extract Form Data').first().json.priceThreshold }} \\\n  {{ $('Extract Form Data').first().json.hasSpecFile ? '--spec-file \"/root/input/spec_file_' + $('Extract Form Data').first().json.timestamp + '.xlsx\"' : '' }} \\\n  {{ $('Extract Form Data').first().json.skipTasePrices ? '--skip-tase-prices' : '' }} \\\n  2>&1",
+        "cwd": "/root"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        -16,
+        3616
+      ],
+      "id": "run-python-script",
+      "name": "Run Special Transactions Script",
+      "credentials": {
+        "sshPassword": {
+          "id": "R4y3FQotAAAvJxr8",
+          "name": "Mizrahi Automation Droplet SSH"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "command": "=ls -t /root/output/special_txn_{{ $('Extract Form Data').first().json.managerName }}_*.xlsx 2>/dev/null | head -1",
+        "cwd": "/root"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        176,
+        3616
+      ],
+      "id": "get-output-xlsx-path",
+      "name": "Get Output Excel Path",
+      "credentials": {
+        "sshPassword": {
+          "id": "R4y3FQotAAAvJxr8",
+          "name": "Mizrahi Automation Droplet SSH"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "command": "=cat /root/output/email_{{ $('Extract Form Data').first().json.managerName }}_{{ $('Extract Form Data').first().json.timestamp }}.json 2>/dev/null || echo '[]'",
+        "cwd": "/root"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        176,
+        3776
+      ],
+      "id": "get-email-json",
+      "name": "Get Email JSON",
+      "credentials": {
+        "sshPassword": {
+          "id": "R4y3FQotAAAvJxr8",
+          "name": "Mizrahi Automation Droplet SSH"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "download",
+        "path": "={{ $('Get Output Excel Path').first().json.stdout.trim() }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        368,
+        3616
+      ],
+      "id": "download-output-xlsx",
+      "name": "Download Output Excel",
+      "credentials": {
+        "sshPassword": {
+          "id": "R4y3FQotAAAvJxr8",
+          "name": "Mizrahi Automation Droplet SSH"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.first();\nconst fullPath = $('Get Output Excel Path').first().json.stdout.trim();\nconst fileName = fullPath.split('/').pop();\n\n// Get form data\nconst formData = $('Extract Form Data').first().json;\n\n// Parse email JSON for transaction samples\nlet emailJsonStr = $('Get Email JSON').first().json.stdout || '[]';\nlet transactionSamples = [];\ntry {\n  transactionSamples = JSON.parse(emailJsonStr);\n} catch (e) {\n  transactionSamples = [];\n}\n\n// Update binary filename\nif (item.binary && item.binary.data) {\n  item.binary.data.fileName = fileName;\n}\n\n// Add all data to json for next nodes\nitem.json.managerName = formData.managerName;\nitem.json.emails = formData.emails;\nitem.json.fileName = fileName;\nitem.json.transactionSamples = transactionSamples;\nitem.json.timestamp = formData.timestamp;\n\nreturn [item];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        3616
+      ],
+      "id": "process-output",
+      "name": "Process Output Data"
+    },
+    {
+      "parameters": {
+        "html": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"he\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>דוח עסקאות מיוחדות</title>\n</head>\n<body style=\"margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f8; direction: rtl; line-height: 1.7;\">\n    \n    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" style=\"background-color: #f4f6f8; padding: 40px 20px;\">\n        <tr>\n            <td align=\"center\">\n                \n                <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" style=\"max-width: 600px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); overflow: hidden;\">\n                    \n                    <!-- Header -->\n                    <tr>\n                        <td style=\"background-color: #ffffff; padding: 30px 40px; border-bottom: 1px solid #eef1f4; text-align: center;\">\n                            <img src=\"https://storage.bhol.co.il/articles/35167_tumb_700X500.png\" alt=\"מזרחי טפחות\" style=\"max-height: 100px; max-width: 420px;\">\n                        </td>\n                    </tr>\n                    \n                    <!-- Status Banner -->\n                    <tr>\n                        <td style=\"background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); padding: 45px 40px; text-align: center;\">\n                            <div style=\"width: 70px; height: 70px; background-color: rgba(255,255,255,0.2); border-radius: 50%; margin: 0 auto 20px; line-height: 70px;\">\n                                <span style=\"font-size: 32px; color: white;\">&#128202;</span>\n                            </div>\n                            <h1 style=\"color: #ffffff; margin: 0 0 8px 0; font-size: 24px; font-weight: 600;\">דוח עסקאות מיוחדות</h1>\n                            <p style=\"color: rgba(255,255,255,0.9); margin: 0; font-size: 15px; font-weight: 400;\">בדיקות #1-#7 הושלמו</p>\n                        </td>\n                    </tr>\n                    \n                    <!-- Main Content -->\n                    <tr>\n                        <td style=\"padding: 40px;\">\n                            \n                            <!-- Info Card -->\n                            <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" style=\"background-color: #f8fafc; border-radius: 8px; border-right: 4px solid #3B82F6;\">\n                                <tr>\n                                    <td style=\"padding: 25px;\">\n                                        <h2 style=\"color: #1e293b; margin: 0 0 15px 0; font-size: 17px; font-weight: 600;\">פרטי הדוח</h2>\n                                        \n                                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\">\n                                            <tr>\n                                                <td style=\"padding: 8px 0; color: #64748b; font-size: 14px; width: 120px;\">מנהל קרן:</td>\n                                                <td style=\"padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 500;\">{{ $json.managerName }}</td>\n                                            </tr>\n                                            <tr>\n                                                <td style=\"padding: 8px 0; color: #64748b; font-size: 14px;\">שם הדוח:</td>\n                                                <td style=\"padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 500;\">{{ $json.fileName }}</td>\n                                            </tr>\n                                            <tr>\n                                                <td style=\"padding: 8px 0; color: #64748b; font-size: 14px;\">תאריך יצירה:</td>\n                                                <td style=\"padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 500;\">{{ $now.setZone('Asia/Jerusalem').toFormat('dd/MM/yyyy') }}</td>\n                                            </tr>\n                                            <tr>\n                                                <td style=\"padding: 8px 0; color: #64748b; font-size: 14px;\">שעת יצירה:</td>\n                                                <td style=\"padding: 8px 0; color: #1e293b; font-size: 14px; font-weight: 500;\">{{ $now.setZone('Asia/Jerusalem').toFormat('HH:mm') }}</td>\n                                            </tr>\n                                        </table>\n                                    </td>\n                                </tr>\n                            </table>\n                            \n                            <!-- Transaction Samples Section (if available) -->\n                            {{ $json.transactionSamples && $json.transactionSamples.length > 0 ? `\n                            <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" style=\"margin-top: 25px; background-color: #fefce8; border-radius: 8px; border-right: 4px solid #eab308;\">\n                                <tr>\n                                    <td style=\"padding: 25px;\">\n                                        <h2 style=\"color: #1e293b; margin: 0 0 15px 0; font-size: 17px; font-weight: 600;\">דגימות עסקאות לבדיקה ידנית</h2>\n                                        <p style=\"color: #64748b; font-size: 13px; margin: 0 0 15px 0;\">עסקאות אלו נבחרו באקראי לבדיקה ידנית (בדיקה #5)</p>\n                                        <p style=\"color: #1e293b; font-size: 14px; margin: 0;\">מספר דגימות: ${$json.transactionSamples.length}</p>\n                                    </td>\n                                </tr>\n                            </table>\n                            ` : '' }}\n                            \n                            <!-- Attachment Notice -->\n                            <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" style=\"margin-top: 25px;\">\n                                <tr>\n                                    <td style=\"background-color: #eff6ff; border-radius: 8px; padding: 18px 20px; text-align: center;\">\n                                        <span style=\"color: #3b82f6; font-size: 18px; margin-left: 8px;\">&#128206;</span>\n                                        <span style=\"color: #1e40af; font-size: 14px;\">הדוח המלא מצורף למייל זה כקובץ Excel</span>\n                                    </td>\n                                </tr>\n                            </table>\n                            \n                            <!-- Checks Summary -->\n                            <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" style=\"margin-top: 25px;\">\n                                <tr>\n                                    <td style=\"background-color: #f0fdf4; border-radius: 8px; padding: 18px 20px;\">\n                                        <p style=\"color: #166534; font-size: 14px; margin: 0; font-weight: 500;\">בדיקות שבוצעו:</p>\n                                        <ul style=\"color: #166534; font-size: 13px; margin: 10px 0 0 0; padding-right: 20px;\">\n                                            <li>בדיקה #1: עסקאות בין-קרנות</li>\n                                            <li>בדיקה #3: תאריכים בטווח חודש הדיווח</li>\n                                            <li>בדיקה #4: כללי אופן החלטה</li>\n                                            <li>בדיקה #5: דגימות לבדיקה ידנית</li>\n                                            <li>בדיקה #6: השוואת מחירים לבורסה</li>\n                                            <li>בדיקה #7: ניירות ערך בעייתיים</li>\n                                        </ul>\n                                    </td>\n                                </tr>\n                            </table>\n                            \n                        </td>\n                    </tr>\n                    \n                    <!-- Footer -->\n                    <tr>\n                        <td style=\"background-color: #f8fafc; padding: 20px 40px; text-align: center; border-top: 1px solid #e2e8f0;\">\n                            <p style=\"margin: 0; color: #94a3b8; font-size: 12px;\">\n                                Powered by <a href=\"https://82labs.com\" target=\"_blank\" style=\"color: #64748b; text-decoration: none; font-weight: 600;\">82Labs</a>\n                            </p>\n                        </td>\n                    </tr>\n                    \n                </table>\n                \n            </td>\n        </tr>\n    </table>\n    \n</body>\n</html>"
+      },
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        752,
+        3616
+      ],
+      "id": "html-email-template",
+      "name": "Generate Email HTML"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.emails }}",
+        "subject": "=דוח עסקאות מיוחדות - {{ $json.managerName }}",
+        "message": "={{ $('Generate Email HTML').first().json.html }}",
+        "options": {
+          "attachmentsUi": {
+            "attachmentsBinary": [
+              {
+                "property": "=data"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        944,
+        3616
+      ],
+      "id": "send-report-email",
+      "name": "Send Report Email",
+      "webhookId": "c6803016-5f23-4c61-be4d-facb98dcd0c4",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "DGg7VXtEGqomgL1k",
+          "name": "Elay.g - Gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "command": "=rm -f /root/input/mutual_funds_list_{{ $('Extract Form Data').first().json.timestamp }}.xlsx \\\n  /root/input/manager_report_{{ $('Extract Form Data').first().json.managerName }}_{{ $('Extract Form Data').first().json.timestamp }}.* \\\n  /root/input/spec_file_{{ $('Extract Form Data').first().json.timestamp }}.xlsx 2>/dev/null; echo 'Cleanup complete'",
+        "cwd": "/root"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        1136,
+        3616
+      ],
+      "id": "cleanup-input-files",
+      "name": "Cleanup Input Files",
+      "credentials": {
+        "sshPassword": {
+          "id": "R4y3FQotAAAvJxr8",
+          "name": "Mizrahi Automation Droplet SSH"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Trigger: Form Submission\nUpload files and select manager for processing",
+        "height": 320,
+        "width": 300
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1024,
+        3536
+      ],
+      "id": "sticky-form-trigger",
+      "name": "Sticky Note - Form Trigger"
+    },
+    {
+      "parameters": {
+        "content": "## File Upload\nUpload input files to server via SSH",
+        "height": 480,
+        "width": 300,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -512,
+        3376
+      ],
+      "id": "sticky-file-upload",
+      "name": "Sticky Note - File Upload"
+    },
+    {
+      "parameters": {
+        "content": "## Processing\nRun Python script via SSH",
+        "height": 320,
+        "width": 240,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -112,
+        3536
+      ],
+      "id": "sticky-processing",
+      "name": "Sticky Note - Processing"
+    },
+    {
+      "parameters": {
+        "content": "## Output Retrieval\nGet output files and email JSON",
+        "height": 400,
+        "width": 280,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        128,
+        3536
+      ],
+      "id": "sticky-output",
+      "name": "Sticky Note - Output"
+    },
+    {
+      "parameters": {
+        "content": "## Email & Cleanup\nSend report and cleanup temp files",
+        "height": 320,
+        "width": 600,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        512,
+        3536
+      ],
+      "id": "sticky-email",
+      "name": "Sticky Note - Email"
+    },
+    {
+      "parameters": {
+        "content": "## Error Handling",
+        "height": 200,
+        "width": 400,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -352,
+        4064
+      ],
+      "typeVersion": 1,
+      "id": "sticky-error",
+      "name": "Sticky Note - Error"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        -176,
+        3616
+      ],
+      "id": "merge-after-upload",
+      "name": "Merge After Upload"
+    }
+  ],
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send Error Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Form Trigger - Upload Files": {
+      "main": [
+        [
+          {
+            "node": "Extract Form Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Form Data": {
+      "main": [
+        [
+          {
+            "node": "Create Input/Output Dirs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Input/Output Dirs": {
+      "main": [
+        [
+          {
+            "node": "Upload Mutual Funds List",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Upload Manager Report",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Upload Spec File (Optional)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Mutual Funds List": {
+      "main": [
+        [
+          {
+            "node": "Merge After Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Manager Report": {
+      "main": [
+        [
+          {
+            "node": "Merge After Upload",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Upload Spec File (Optional)": {
+      "main": [
+        [
+          {
+            "node": "Merge After Upload",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Merge After Upload": {
+      "main": [
+        [
+          {
+            "node": "Run Special Transactions Script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run Special Transactions Script": {
+      "main": [
+        [
+          {
+            "node": "Get Output Excel Path",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Email JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Output Excel Path": {
+      "main": [
+        [
+          {
+            "node": "Download Output Excel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Output Excel": {
+      "main": [
+        [
+          {
+            "node": "Process Output Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Output Data": {
+      "main": [
+        [
+          {
+            "node": "Generate Email HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Email HTML": {
+      "main": [
+        [
+          {
+            "node": "Send Report Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Report Email": {
+      "main": [
+        [
+          {
+            "node": "Cleanup Input Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "c880adfc8ab05950d92e126ee3993c4a816dbb96fe9687814d0ff32aa19bc6ed"
+  }
+}
