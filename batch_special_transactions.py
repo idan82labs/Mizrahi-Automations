@@ -60,6 +60,7 @@ EMAIL_RECIPIENT = "elay.g@82labs.io"
 # Processing configuration
 TRUSTEE_NAME = "מזרחי טפחות"
 DEFAULT_PRICE_THRESHOLD = 5.0
+DEFAULT_SPEC_FILE = "spec-file.xlsx"  # Default specification file
 
 # ============================================================================
 # LOGGING
@@ -229,12 +230,13 @@ def process_manager(manager_name, manager_code, funds_list_path, token, args, ou
         "--email-json", str(email_json),
         "--manager-name", manager_name,
         "--price-threshold", str(args.price_threshold),
+        "--log-dir", str(manager_dir),  # Logs go into manager's output directory
     ]
 
     if args.skip_tase_prices:
         cmd.append("--skip-tase-prices")
 
-    if args.spec_file:
+    if args.spec_file and args.spec_file.exists():
         cmd.extend(["--spec-file", str(args.spec_file)])
 
     if args.seed:
@@ -330,7 +332,7 @@ SUCCESSFUL MANAGERS:
             email_body += f"\n✗ {r['manager_name']}: {r.get('error', 'Unknown error')}"
 
     email_body += f"\n\n{'='*60}\nAll output files are attached to this email."
-    email_body += f"\n\nProcessing logs are available in: {output_dir}/logs/"
+    email_body += f"\n\nProcessing logs are available in each manager's output folder."
 
     log("Email body prepared:")
     log(email_body)
@@ -399,7 +401,8 @@ def parse_args():
     parser.add_argument(
         "--spec-file",
         type=Path,
-        help="Optional specification table Excel file"
+        default=Path(DEFAULT_SPEC_FILE),
+        help=f"Specification table Excel file (default: {DEFAULT_SPEC_FILE})"
     )
     parser.add_argument(
         "--seed",

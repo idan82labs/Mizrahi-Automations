@@ -33,6 +33,10 @@ special_transactions_test/
 log/
 *.log
 
+# Test runs (but keep tests/README.md)
+tests/*
+!tests/README.md
+
 # Temp files
 *.tmp
 *.cache

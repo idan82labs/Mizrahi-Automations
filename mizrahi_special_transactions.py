@@ -1991,6 +1991,7 @@ def parse_args() -> argparse.Namespace:
         default=TASE_VARIANCE_THRESHOLD_DEFAULT,
         help=f"Price variance threshold in percent for TASE price checks (default: {TASE_VARIANCE_THRESHOLD_DEFAULT}%%)"
     )
+    p.add_argument("--log-dir", type=Path, default=Path("log"), help="Base directory for log files (default: ./log)")
     return p.parse_args()
 
 
@@ -1998,7 +1999,7 @@ def main() -> int:
     args = parse_args()
 
     # Set up logging with separate files for each specification
-    log_dir = setup_logging()
+    log_dir = setup_logging(args.log_dir)
 
     # Log startup info
     logger.info("=" * 60)
