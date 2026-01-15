@@ -11,7 +11,8 @@ Inputs:
 
 Outputs:
   - Output XLSX: summary + check statuses + exceptions + samples (+ out-of-scope funds)
-  - Email JSON: for n8n workflow - contains ONLY two JSON objects with transaction info (no full email body)
+  - Email JSON: structured email data with transactions grouped by decision method (אופן החלטה)
+    Returns empty if no decision method 1 or 2 transactions exist.
 
 Dependencies:
   - Python 3.10+
@@ -1226,17 +1227,23 @@ def check_7_problematic_securities(rows: list[TxnRow], problematic_lists: dict[s
     return results
 
 
-def build_email_json(samples: Samples) -> list[dict[str, Any]]:
-    """Spec #5.1: JSON file should contain only valid JSON objects with transaction info.
+def build_email_json(samples: Samples, manager_name: str, report_month: str) -> list[dict[str, Any]]:
+    """Build email body with sampled transactions grouped by decision method.
 
-    Output is a list containing only valid samples (no empty objects):
-      - If decision method 1 sample exists, include it
-      - If decision method 2 sample exists, include it
-      - If neither exists, return empty list
+    Returns empty list if no decision method 1 or 2 samples exist.
 
-    Each object contains:
+    Output structure:
+    - Manager name and report month
+    - Decision method 1 transaction (if sampled)
+    - Decision method 2 transaction (if sampled)
+
+    Each transaction includes:
       Fund number, Fund name, Security name, Security number, Quantity, Price, Date, Type, Decision method
     """
+    # If no decision method 1 or 2 samples, return empty (do not create email)
+    if samples.decision_1 is None and samples.decision_2 is None:
+        return []
+
     def txn_obj(row: TxnRow) -> dict[str, Any]:
         return {
             "fund_number": row.fund_no,
@@ -1250,12 +1257,28 @@ def build_email_json(samples: Samples) -> list[dict[str, Any]]:
             "decision_method": row.decision_method,
         }
 
-    result = []
-    if samples.decision_1 is not None:
-        result.append(txn_obj(samples.decision_1))
-    if samples.decision_2 is not None:
-        result.append(txn_obj(samples.decision_2))
-    return result
+    # Parse month for Hebrew month name
+    month_names_he = {
+        "01": "ינואר", "02": "פברואר", "03": "מרץ", "04": "אפריל",
+        "05": "מאי", "06": "יוני", "07": "יולי", "08": "אוגוסט",
+        "09": "ספטמבר", "10": "אוקטובר", "11": "נובמבר", "12": "דצמבר"
+    }
+    try:
+        year, month = report_month.split("-")
+        month_he = month_names_he.get(month, month)
+    except:
+        month_he = report_month
+        year = ""
+
+    # Build email structure with only sampled transactions
+    result = {
+        "manager_name": manager_name,
+        "report_month": f"{month_he} {year}".strip(),
+        "decision_1_transactions": [txn_obj(samples.decision_1)] if samples.decision_1 is not None else None,
+        "decision_2_transactions": [txn_obj(samples.decision_2)] if samples.decision_2 is not None else None,
+    }
+
+    return [result]
 
 
 # -----------------------------
@@ -2033,8 +2056,9 @@ def main() -> int:
     # Check #5: sampling
     samples = pick_samples(valid_rows, seed=args.seed)
 
-    # Check #5.1: email JSON (two objects only)
-    email_payload = build_email_json(samples)
+    # Check #5.1: email JSON with sampled transactions
+    manager_name_str = args.manager_name if args.manager_name else "מנהל הקרנות"
+    email_payload = build_email_json(samples, manager_name_str, report_month)
     args.email_json.parent.mkdir(parents=True, exist_ok=True)
     args.email_json.write_text(json.dumps(email_payload, ensure_ascii=False, indent=2), encoding="utf-8")
 

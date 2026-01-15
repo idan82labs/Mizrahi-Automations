@@ -133,7 +133,7 @@ def build_maya_special_transactions_url(fund_code):
         f"https://maya.tase.co.il/he/reports/funds?"
         f"fromDate={one_year_ago.strftime('%Y-%m-%d')}&toDate={today.strftime('%Y-%m-%d')}"
         f"&noMeetings=false&isSingle=false&isIntendToTaseMember=false"
-        f"&by=group&groupId=7&itemId={fund_code}&eventsIds%5B%5D=5618"
+        f"&by=group&groupId=7&itemId={fund_code}&eventsIds%5B%5D=5615"
     )
 
 def fetch_funds_list(token, output_dir):
