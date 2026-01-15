@@ -1204,12 +1204,19 @@ def fetch_problematic_lists(cache_path: Optional[Path] = None) -> dict[str, set[
         "suspended": set(),
     }
 
+    # Get API key from environment variable
+    api_key = os.getenv('TASE_API_KEY')
+    if not api_key:
+        logger_chk7.warning("TASE_API_KEY environment variable not set - skipping problematic securities fetch")
+        logger.warning("CHK_7: TASE_API_KEY not set - problematic securities check will be skipped")
+        return all_lists
+
     try:
         conn = http.client.HTTPSConnection("datawise.tase.co.il")
         headers = {
             'accept': "application/json",
             'accept-language': "he-IL",
-            'apikey': "DMKPl68EhJr3pSFy1w0dn9inGsBFAf7d"
+            'apikey': api_key
         }
 
         conn.request("GET", "/v1/basic-securities/illiquid-maintenance-suspension-list", headers=headers)
