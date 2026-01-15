@@ -627,11 +627,11 @@ def check_1_duplicates_exact(rows: list[TxnRow]) -> list[ExceptionRow]:
 
 
 def check_1_abs_quantity_pairs(rows: list[TxnRow]) -> list[ExceptionRow]:
-    """Spec #1: within unique_id(security+date), if there are two rows with same abs(quantity) but DIFFERENT SIGNS -> flag.
+    """Spec #1: within unique_id(security+date), if there are two rows with same abs(quantity) but DIFFERENT SIGNS and EQUAL PRICE -> flag.
 
-    Only flags when one quantity is positive and the other is negative (inter-fund transactions).
+    Only flags when one quantity is positive and the other is negative (inter-fund transactions) AND all prices are identical.
     Does NOT flag if both quantities have the same sign.
-    Does NOT flag if all matching transactions have the same price (legitimate transfer).
+    Does NOT flag if prices are different.
     """
     logger_chk1.info("Starting inter-fund transaction check on %d rows", len(rows))
     logger.info("CHK_1 (Inter-fund Transactions): Starting check on %d rows", len(rows))
@@ -657,20 +657,21 @@ def check_1_abs_quantity_pairs(rows: list[TxnRow]) -> list[ExceptionRow]:
 
             # Only flag if we have BOTH positive and negative quantities with same abs value
             if has_positive and has_negative:
-                # Check if all prices are identical - if so, skip flagging (legitimate transfer)
+                # Check if all prices are identical - if NOT, skip flagging
                 prices = [r.price for r in rs if r.price is not None]
-                if prices and len(set(prices)) == 1:
+                if not prices or len(set(prices)) != 1:
                     logger_chk1.info(
-                        "SKIPPED (identical prices):\n"
+                        "SKIPPED (different prices):\n"
                         "  Unique ID: %s\n"
                         "  Absolute Quantity: %s\n"
-                        "  Price: %s\n"
+                        "  Prices: %s\n"
                         "  Rows: %s\n"
-                        "  Reason: All matching transactions have identical price - legitimate transfer",
-                        uid, abs_qty, prices[0], [r.row_num for r in rs]
+                        "  Reason: Prices are not identical - not an inter-fund transaction",
+                        uid, abs_qty, prices, [r.row_num for r in rs]
                     )
                     continue
 
+                # All prices are identical - flag as inter-fund transaction
                 positive_rows = [r for r in rs if r.quantity is not None and r.quantity > 0]
                 negative_rows = [r for r in rs if r.quantity is not None and r.quantity < 0]
                 for r in rs:
@@ -688,7 +689,7 @@ def check_1_abs_quantity_pairs(rows: list[TxnRow]) -> list[ExceptionRow]:
                         "  Absolute Quantity: %s\n"
                         "  Positive quantity rows: %s\n"
                         "  Negative quantity rows: %s\n"
-                        "  Reason: Matching abs(quantity) with opposite signs indicates inter-fund transaction",
+                        "  Reason: Matching abs(quantity) with opposite signs and identical price indicates inter-fund transaction",
                         r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
                         r.tx_date, r.quantity, r.price, uid, abs_qty,
                         [pr.row_num for pr in positive_rows],
@@ -809,43 +810,47 @@ def check_4_decision_method_rules(rows: list[TxnRow]) -> list[ExceptionRow]:
             )
             out.append(ExceptionRow(check_id="CHK_4", reason=f"TYPE_{r.tx_type}_REQUIRES_DECISION_1_OR_2", row=r, group_key=f"type={r.tx_type}"))
 
-        # Check דחצ (dachatz) fields - Rule B takes priority over Rule A
-        # Rule B: If any of דחצ1-4 equals 2, flag as exception
-        if r.dachatz_1 == 2 or r.dachatz_2 == 2 or r.dachatz_3 == 2 or r.dachatz_4 == 2:
-            logger_chk4.warning(
-                "EXCEPTION FOUND - DACHATZ OPPOSITION:\n"
-                "  Row Number: %d\n"
-                "  Security Number: %s\n"
-                "  Security Name: %s\n"
-                "  Fund Number: %s\n"
-                "  Fund Name: %s\n"
-                "  דחצ1: %s\n"
-                "  דחצ2: %s\n"
-                "  דחצ3: %s\n"
-                "  דחצ4: %s\n"
-                "  Reason: יש דח\"צ שהתנגד להחלטה",
-                r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
-                r.dachatz_1, r.dachatz_2, r.dachatz_3, r.dachatz_4
-            )
-            out.append(ExceptionRow(check_id="CHK_4", reason="יש דח\"צ שהתנגד להחלטה", row=r))
-        # Rule A: If דחצ1 equals 0, flag as exception (only if Rule B didn't trigger)
-        elif r.dachatz_1 == 0:
-            logger_chk4.warning(
-                "EXCEPTION FOUND - NO DECISION FOR DACHATZ 1:\n"
-                "  Row Number: %d\n"
-                "  Security Number: %s\n"
-                "  Security Name: %s\n"
-                "  Fund Number: %s\n"
-                "  Fund Name: %s\n"
-                "  דחצ1: %s\n"
-                "  דחצ2: %s\n"
-                "  דחצ3: %s\n"
-                "  דחצ4: %s\n"
-                "  Reason: אין החלטה לדח\"צ 1",
-                r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
-                r.dachatz_1, r.dachatz_2, r.dachatz_3, r.dachatz_4
-            )
-            out.append(ExceptionRow(check_id="CHK_4", reason="אין החלטה לדח\"צ 1", row=r))
+        # Check דחצ (dachatz) fields - ONLY when decision_method = 1
+        # Rule B takes priority over Rule A
+        if r.decision_method == 1:
+            # Rule B: If any of דחצ1-4 equals 2, flag as exception
+            if r.dachatz_1 == 2 or r.dachatz_2 == 2 or r.dachatz_3 == 2 or r.dachatz_4 == 2:
+                logger_chk4.warning(
+                    "EXCEPTION FOUND - DACHATZ OPPOSITION:\n"
+                    "  Row Number: %d\n"
+                    "  Security Number: %s\n"
+                    "  Security Name: %s\n"
+                    "  Fund Number: %s\n"
+                    "  Fund Name: %s\n"
+                    "  Decision Method: %d\n"
+                    "  דחצ1: %s\n"
+                    "  דחצ2: %s\n"
+                    "  דחצ3: %s\n"
+                    "  דחצ4: %s\n"
+                    "  Reason: יש דח\"צ שהתנגד להחלטה",
+                    r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
+                    r.decision_method, r.dachatz_1, r.dachatz_2, r.dachatz_3, r.dachatz_4
+                )
+                out.append(ExceptionRow(check_id="CHK_4", reason="יש דח\"צ שהתנגד להחלטה", row=r))
+            # Rule A: If דחצ1 equals 0, flag as exception (only if Rule B didn't trigger)
+            elif r.dachatz_1 == 0:
+                logger_chk4.warning(
+                    "EXCEPTION FOUND - NO DECISION FOR DACHATZ 1:\n"
+                    "  Row Number: %d\n"
+                    "  Security Number: %s\n"
+                    "  Security Name: %s\n"
+                    "  Fund Number: %s\n"
+                    "  Fund Name: %s\n"
+                    "  Decision Method: %d\n"
+                    "  דחצ1: %s\n"
+                    "  דחצ2: %s\n"
+                    "  דחצ3: %s\n"
+                    "  דחצ4: %s\n"
+                    "  Reason: אין החלטה לדח\"צ 1",
+                    r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
+                    r.decision_method, r.dachatz_1, r.dachatz_2, r.dachatz_3, r.dachatz_4
+                )
+                out.append(ExceptionRow(check_id="CHK_4", reason="אין החלטה לדח\"צ 1", row=r))
 
     logger_chk4.info("Check completed - found %d exceptions", len(out))
     logger.info("CHK_4 (Decision Method Rules): Completed - found %d exceptions", len(out))
@@ -853,13 +858,21 @@ def check_4_decision_method_rules(rows: list[TxnRow]) -> list[ExceptionRow]:
 
 
 def pick_samples(valid_rows: list[TxnRow], seed: Optional[int]) -> Samples:
-    """Spec #5: random transaction with decision method 1 and 2 from valid lines."""
+    """Spec #5: Pick 1 random transaction from all in-scope rows."""
+    if not valid_rows:
+        return Samples(decision_1=None, decision_2=None)
+
     rng = random.Random(seed)
-    dm1 = [r for r in valid_rows if r.decision_method == 1]
-    dm2 = [r for r in valid_rows if r.decision_method == 2]
-    s1 = rng.choice(dm1) if dm1 else None
-    s2 = rng.choice(dm2) if dm2 else None
-    return Samples(decision_1=s1, decision_2=s2)
+    sampled_row = rng.choice(valid_rows)
+
+    # Place the sample in the appropriate field based on its decision method
+    if sampled_row.decision_method == 1:
+        return Samples(decision_1=sampled_row, decision_2=None)
+    elif sampled_row.decision_method == 2:
+        return Samples(decision_1=None, decision_2=sampled_row)
+    else:
+        # If decision method is neither 1 nor 2, put it in decision_1
+        return Samples(decision_1=sampled_row, decision_2=None)
 
 
 # -----------------------------
@@ -2117,12 +2130,12 @@ def main() -> int:
     ex_date = check_3_dates_in_report_month(in_scope_rows, report_month)
     ex_decision = check_4_decision_method_rules(in_scope_rows)
 
-    # Valid lines for sampling: in-scope rows NOT present in any exception list (including duplicates)
+    # Valid lines: in-scope rows NOT present in any exception list (for summary count only)
     ex_row_nums = {e.row.row_num for e in (ex_dup + ex_date + ex_decision)}
     valid_rows = [r for r in in_scope_rows if r.row_num not in ex_row_nums]
 
-    # Check #5: sampling
-    samples = pick_samples(valid_rows, seed=args.seed)
+    # Check #5: sampling from ALL in-scope rows (regardless of exceptions)
+    samples = pick_samples(in_scope_rows, seed=args.seed)
 
     # Check #5.1: email JSON with sampled transactions
     manager_name_str = args.manager_name if args.manager_name else "מנהל הקרנות"

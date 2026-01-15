@@ -32,6 +32,10 @@ except ImportError:
     print("Install with: pip install requests")
     sys.exit(1)
 
+# Ensure UTF-8 output on Windows (for Hebrew text)
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 # ============================================================================
 # CONFIGURATION
 # ============================================================================

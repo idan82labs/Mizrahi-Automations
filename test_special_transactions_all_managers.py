@@ -190,35 +190,21 @@ def test_manager_special_transactions(manager_name, fund_code, token, output_dir
         kv_store_id = run_data["defaultKeyValueStoreId"]
         log(f"Key-Value Store ID: {kv_store_id}")
 
-        # Try different possible keys for CSV reports (skip listing, just try fetching)
-        report_keys = [
-            "report_latest_month.csv",
-            "report_previous_month.csv",
-            "special_transactions.csv",
-            "OUTPUT"
-        ]
-
+        # Fetch only the latest month report
+        report_key = "report_latest_month.csv"
         files_saved = []
-        for key in report_keys:
-            try:
-                resp = apify_request("GET", f"/key-value-stores/{kv_store_id}/records/{key}", token)
-                if resp.status_code == 200 and len(resp.content) > 0:
-                    # Determine file extension
-                    content_type = resp.headers.get('Content-Type', '')
-                    if 'csv' in content_type or key.endswith('.csv'):
-                        ext = 'csv'
-                    elif 'json' in content_type:
-                        ext = 'json'
-                    else:
-                        ext = 'txt'
 
-                    file_path = manager_dir / f"{manager_name}_{key.replace('.', '_')}.{ext}"
-                    file_path.write_bytes(resp.content)
-                    files_saved.append(file_path)
-                    log_success(f"Saved {key}: {file_path} ({len(resp.content)} bytes)")
-            except Exception as e:
-                log(f"Key '{key}' not available: {e}")
-                continue
+        try:
+            resp = apify_request("GET", f"/key-value-stores/{kv_store_id}/records/{report_key}", token)
+            if resp.status_code == 200 and len(resp.content) > 0:
+                file_path = manager_dir / f"{manager_name}_{report_key.replace('.', '_')}.csv"
+                file_path.write_bytes(resp.content)
+                files_saved.append(file_path)
+                log_success(f"Saved {report_key}: {file_path} ({len(resp.content)} bytes)")
+            else:
+                log_error(f"Report '{report_key}' not found or empty")
+        except Exception as e:
+            log_error(f"Failed to fetch {report_key}: {e}")
 
         # Get dataset info if available
         dataset_id = run_data.get("defaultDatasetId")
