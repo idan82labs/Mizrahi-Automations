@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Test Special Transactions Actor (nQh62mdhpUTM5l65l - עסקה מתואמת/מחוץ לבורסה)
 Tests the coordinated/off-exchange transactions actor for all fund managers.
@@ -10,6 +11,7 @@ Usage:
 
 import os
 import sys
+import io
 import time
 import base64
 import argparse
@@ -18,6 +20,9 @@ import subprocess
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List
+
+# Ensure UTF-8 output on Windows
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 try:
     import requests

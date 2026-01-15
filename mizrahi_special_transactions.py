@@ -51,6 +51,7 @@ from __future__ import annotations
 import argparse
 import csv
 import datetime as dt
+import io
 import json
 import logging
 import random
@@ -65,6 +66,9 @@ from typing import Any, Optional
 import openpyxl
 import uuid
 from datetime import datetime as datetime_module
+
+# Ensure UTF-8 output on Windows
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 # Global log directory for current run (will be set in main)
 LOG_RUN_DIR: Optional[Path] = None
@@ -201,7 +205,12 @@ R_COL_TYPE = "סוג"
 R_COL_DECISION = "אופן החלטה"
 R_COL_REPORT_DATE = "ת. דוח"  # used to infer month if --report-month omitted
 R_COL_REPORT_DATE_ALT = "ת.דוח"  # alternative without space (some managers use this)
+R_COL_DACHATZ1 = "דחצ1"
+R_COL_DACHATZ2 = "דחצ2"
+R_COL_DACHATZ3 = "דחצ3"
+R_COL_DACHATZ4 = "דחצ4"
 
+# -----------------------------
 # Decision-method rules (check #4)
 TYPE_REQUIRES_DECISION_1 = {12, 22}
 TYPE_REQUIRES_DECISION_1_OR_2 = {31, 32, 33, 34, 35, 36}
@@ -288,6 +297,10 @@ class TxnRow:
     tx_type: Optional[int]
     decision_method: Optional[int]
     report_date: Optional[dt.date]
+    dachatz_1: Optional[int]
+    dachatz_2: Optional[int]
+    dachatz_3: Optional[int]
+    dachatz_4: Optional[int]
 
     @property
     def unique_id(self) -> str:
@@ -462,7 +475,7 @@ def load_manager_report_xlsx(input_report_path: Path) -> tuple[list[TxnRow], dic
     def col(name: str) -> Optional[int]:
         return headers.get(name)
 
-    required = [R_COL_FUND_NO, R_COL_SECURITY_NO, R_COL_QUANTITY, R_COL_PRICE, R_COL_DATE, R_COL_TIME, R_COL_TYPE, R_COL_DECISION]
+    required = [R_COL_FUND_NO, R_COL_SECURITY_NO, R_COL_QUANTITY, R_COL_PRICE, R_COL_DATE, R_COL_TIME, R_COL_TYPE, R_COL_DECISION, R_COL_DACHATZ1, R_COL_DACHATZ2, R_COL_DACHATZ3, R_COL_DACHATZ4]
     missing = [r for r in required if col(r) is None]
     if missing:
         wb.close()
@@ -492,6 +505,10 @@ def load_manager_report_xlsx(input_report_path: Path) -> tuple[list[TxnRow], dic
             tx_type=_to_int(ws.cell(r, col(R_COL_TYPE)).value),
             decision_method=_to_int(ws.cell(r, col(R_COL_DECISION)).value),
             report_date=_parse_ddmmyyyy(ws.cell(r, col(R_COL_REPORT_DATE)).value) if col(R_COL_REPORT_DATE) else None,
+            dachatz_1=_to_int(ws.cell(r, col(R_COL_DACHATZ1)).value),
+            dachatz_2=_to_int(ws.cell(r, col(R_COL_DACHATZ2)).value),
+            dachatz_3=_to_int(ws.cell(r, col(R_COL_DACHATZ3)).value),
+            dachatz_4=_to_int(ws.cell(r, col(R_COL_DACHATZ4)).value),
         )
         rows.append(row)
 
@@ -520,7 +537,7 @@ def load_manager_report_csv(input_report_path: Path) -> tuple[list[TxnRow], dict
         if reader.fieldnames:
             reader.fieldnames = [h.strip() for h in reader.fieldnames]
 
-        required = [R_COL_FUND_NO, R_COL_SECURITY_NO, R_COL_QUANTITY, R_COL_PRICE, R_COL_DATE, R_COL_TIME, R_COL_TYPE, R_COL_DECISION]
+        required = [R_COL_FUND_NO, R_COL_SECURITY_NO, R_COL_QUANTITY, R_COL_PRICE, R_COL_DATE, R_COL_TIME, R_COL_TYPE, R_COL_DECISION, R_COL_DACHATZ1, R_COL_DACHATZ2, R_COL_DACHATZ3, R_COL_DACHATZ4]
         missing = [r for r in required if r not in (reader.fieldnames or [])]
         if missing:
             raise ValueError(f"Manager report CSV missing required columns: {missing}")
@@ -546,6 +563,10 @@ def load_manager_report_csv(input_report_path: Path) -> tuple[list[TxnRow], dict
                 tx_type=_to_int(csv_row.get(R_COL_TYPE)),
                 decision_method=_to_int(csv_row.get(R_COL_DECISION)),
                 report_date=_parse_ddmmyyyy(csv_row.get(R_COL_REPORT_DATE) or csv_row.get(R_COL_REPORT_DATE_ALT)),
+                dachatz_1=_to_int(csv_row.get(R_COL_DACHATZ1)),
+                dachatz_2=_to_int(csv_row.get(R_COL_DACHATZ2)),
+                dachatz_3=_to_int(csv_row.get(R_COL_DACHATZ3)),
+                dachatz_4=_to_int(csv_row.get(R_COL_DACHATZ4)),
             )
             rows.append(row)
 
@@ -787,6 +808,44 @@ def check_4_decision_method_rules(rows: list[TxnRow]) -> list[ExceptionRow]:
                 r.tx_type, r.decision_method, r.tx_type, r.decision_method
             )
             out.append(ExceptionRow(check_id="CHK_4", reason=f"TYPE_{r.tx_type}_REQUIRES_DECISION_1_OR_2", row=r, group_key=f"type={r.tx_type}"))
+
+        # Check דחצ (dachatz) fields - Rule B takes priority over Rule A
+        # Rule B: If any of דחצ1-4 equals 2, flag as exception
+        if r.dachatz_1 == 2 or r.dachatz_2 == 2 or r.dachatz_3 == 2 or r.dachatz_4 == 2:
+            logger_chk4.warning(
+                "EXCEPTION FOUND - DACHATZ OPPOSITION:\n"
+                "  Row Number: %d\n"
+                "  Security Number: %s\n"
+                "  Security Name: %s\n"
+                "  Fund Number: %s\n"
+                "  Fund Name: %s\n"
+                "  דחצ1: %s\n"
+                "  דחצ2: %s\n"
+                "  דחצ3: %s\n"
+                "  דחצ4: %s\n"
+                "  Reason: יש דח\"צ שהתנגד להחלטה",
+                r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
+                r.dachatz_1, r.dachatz_2, r.dachatz_3, r.dachatz_4
+            )
+            out.append(ExceptionRow(check_id="CHK_4", reason="יש דח\"צ שהתנגד להחלטה", row=r))
+        # Rule A: If דחצ1 equals 0, flag as exception (only if Rule B didn't trigger)
+        elif r.dachatz_1 == 0:
+            logger_chk4.warning(
+                "EXCEPTION FOUND - NO DECISION FOR DACHATZ 1:\n"
+                "  Row Number: %d\n"
+                "  Security Number: %s\n"
+                "  Security Name: %s\n"
+                "  Fund Number: %s\n"
+                "  Fund Name: %s\n"
+                "  דחצ1: %s\n"
+                "  דחצ2: %s\n"
+                "  דחצ3: %s\n"
+                "  דחצ4: %s\n"
+                "  Reason: אין החלטה לדח\"צ 1",
+                r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
+                r.dachatz_1, r.dachatz_2, r.dachatz_3, r.dachatz_4
+            )
+            out.append(ExceptionRow(check_id="CHK_4", reason="אין החלטה לדח\"צ 1", row=r))
 
     logger_chk4.info("Check completed - found %d exceptions", len(out))
     logger.info("CHK_4 (Decision Method Rules): Completed - found %d exceptions", len(out))
@@ -1882,39 +1941,46 @@ def write_output_xlsx(
         optional_sheets.append(ws_prob)
 
     # Samples - only create if there are samples
-    ws_s = None
-    has_samples = samples.decision_1 is not None or samples.decision_2 is not None
-    if has_samples:
-        ws_s = wb.create_sheet("בדיקה #5 - דגימות לבדיקה")
-        _rtl(ws_s)
-        _header(
-            ws_s,
-            [
-                "קבוצה",
-                "מספר קרן",
-                "שם קרן",
-                "שם נייר",
-                "מספר נייר",
-                "כמות",
-                "מחיר",
-                "תאריך",
-                "שעה",
-                "סוג",
-                "אופן החלטה",
-                "תאריך החלטת דירקטוריון",
-                "סבירות החלטה",
-                "ציות לנוהל מנהל",
-            ] + VALIDATION_COLS,
-        )
+    # Create separate sheets for each decision method sample
+    # Base headers for both sheets
+    base_headers = [
+        "מספר קרן",
+        "שם קרן",
+        "שם נייר",
+        "מספר נייר",
+        "כמות",
+        "מחיר",
+        "תאריך",
+        "שעה",
+        "סוג",
+        "אופן החלטה",
+    ]
 
-        def add_sample(label: str, row: Optional[TxnRow]) -> None:
-            if row:
-                ws_s.append([label, *_txn_to_basic_list(row), "", "", "", "", ""])
+    # Sheet for decision method 1 sample (board approval)
+    if samples.decision_1 is not None:
+        headers_dm1 = base_headers + [
+            "תאריך החלטת דירקטוריון",
+            "סבירות החלטה",
+            "ציות לנוהל מנהל",
+        ] + VALIDATION_COLS
+        ws_s1 = wb.create_sheet("בדיקה #5 - אופן החלטה 1")
+        _rtl(ws_s1)
+        _header(ws_s1, headers_dm1)
+        ws_s1.append([*_txn_to_basic_list(samples.decision_1), "", "", "", "", ""])
+        optional_sheets.append(ws_s1)
 
-        # Only add samples that exist (no empty rows)
-        add_sample("אופן החלטה = 1", samples.decision_1)
-        add_sample("אופן החלטה = 2", samples.decision_2)
-        optional_sheets.append(ws_s)
+    # Sheet for decision method 2 sample (procedure approval)
+    if samples.decision_2 is not None:
+        headers_dm2 = base_headers + [
+            "בהתאם לאיזה סעיף בנוהל אושרה העסקה?",
+            "סבירות החלטה",
+            "ציות לנוהל מנהל",
+        ] + VALIDATION_COLS
+        ws_s2 = wb.create_sheet("בדיקה #5 - אופן החלטה 2")
+        _rtl(ws_s2)
+        _header(ws_s2, headers_dm2)
+        ws_s2.append([*_txn_to_basic_list(samples.decision_2), "", "", "", "", ""])
+        optional_sheets.append(ws_s2)
 
     # Apply styling to all optional data sheets that were created
     for ws in optional_sheets:
@@ -1953,7 +2019,8 @@ def write_output_xlsx(
         "בדיקה #1 - עסקאות בין קרנות",        # Spec #1
         "בדיקה #3 - תאריך",                   # Spec #3
         "בדיקה #4 - אופן החלטה",              # Spec #4
-        "בדיקה #5 - דגימות לבדיקה",           # Spec #5
+        "בדיקה #5 - אופן החלטה 1",            # Spec #5 - Decision method 1
+        "בדיקה #5 - אופן החלטה 2",            # Spec #5 - Decision method 2
         "בדיקה #6 - חריגות מחיר",             # Spec #6 (merged price checks)
         "בדיקה #7 - ניירות בעייתיים",         # Spec #7
     ]
