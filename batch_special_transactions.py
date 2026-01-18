@@ -201,6 +201,86 @@ def fetch_manager_report(manager_name, fund_code, token, output_dir):
         return None
 
 # ============================================================================
+# EMAIL HELPER FUNCTIONS
+# ============================================================================
+
+def _extract_report_month(email_json_path):
+    """Extract report_month from email.json"""
+    try:
+        with open(email_json_path, encoding='utf-8') as f:
+            data = json.load(f)
+        if data and len(data) > 0:
+            return data[0].get('report_month', 'N/A')
+        return 'N/A'
+    except Exception as e:
+        log_error(f"Failed to extract report_month from email.json: {e}")
+        return 'N/A'
+
+
+def _send_manager_emails(manager_name, xlsx_path, email_json_path, report_month, recipient, test_mode=False):
+    """
+    Send emails for a single manager using send_special_txn_email.py
+
+    If test_mode=True or RESEND_API_KEY not set, HTML files are created instead of sending emails.
+    """
+    log(f"\n{'='*60}")
+
+    # Check if RESEND_API_KEY is configured (unless already in test mode)
+    if not test_mode and not os.getenv("RESEND_API_KEY"):
+        log("RESEND_API_KEY not configured - saving emails as HTML files")
+        test_mode = True
+
+    if test_mode:
+        log(f"Creating email HTML files for {manager_name}")
+    else:
+        log(f"Sending emails for {manager_name}")
+
+    log(f"{'='*60}")
+
+    email_script = Path(__file__).parent / "send_special_txn_email.py"
+
+    if not email_script.exists():
+        log_error(f"Email script not found: {email_script}")
+        return {"status": "failed", "error": "Email script not found"}
+
+    cmd = [
+        sys.executable,
+        str(email_script),
+        "--manager-name", manager_name,
+        "--xlsx-path", str(xlsx_path),
+        "--email-json-path", str(email_json_path),
+        "--report-month", report_month,
+        "--recipient", recipient
+    ]
+
+    # Add test mode flag and output directory if in test mode
+    if test_mode:
+        cmd.append("--test-mode")
+        cmd.extend(["--output-dir", str(xlsx_path.parent)])
+
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', timeout=120)
+
+        if result.returncode == 0:
+            if test_mode:
+                log_success(f"Email HTML files created for {manager_name}")
+            else:
+                log_success(f"Emails sent successfully for {manager_name}")
+            log(result.stdout)
+            return {"status": "success", "test_mode": test_mode}
+        else:
+            log_error(f"Email processing failed for {manager_name}")
+            log_error(f"Error: {result.stderr}")
+            return {"status": "failed", "error": result.stderr}
+
+    except subprocess.TimeoutExpired:
+        log_error(f"Email processing timeout for {manager_name}")
+        return {"status": "failed", "error": "Email timeout"}
+    except Exception as e:
+        log_error(f"Email processing exception for {manager_name}: {e}")
+        return {"status": "failed", "error": str(e)}
+
+# ============================================================================
 # PROCESSING FUNCTIONS
 # ============================================================================
 
@@ -258,13 +338,26 @@ def process_manager(manager_name, manager_code, funds_list_path, token, args, ou
 
             # Check if output files exist
             if output_xlsx.exists() and email_json.exists():
+                # Extract report_month from email.json
+                report_month = _extract_report_month(email_json)
+
+                # Send emails if recipient is configured
+                email_status = None
+                if args.email:
+                    email_status = _send_manager_emails(
+                        manager_name, output_xlsx, email_json,
+                        report_month, args.email,
+                        test_mode=args.test_mode
+                    )
+
                 return {
                     "manager_name": manager_name,
                     "manager_code": manager_code,
                     "output_xlsx": output_xlsx,
                     "email_json": email_json,
                     "status": "success",
-                    "log_output": result.stdout
+                    "log_output": result.stdout,
+                    "email_status": email_status
                 }
             else:
                 log_error(f"Output files missing for {manager_name}")
@@ -417,6 +510,11 @@ def parse_args():
         "--email",
         default=EMAIL_RECIPIENT,
         help=f"Email recipient (default: {EMAIL_RECIPIENT})"
+    )
+    parser.add_argument(
+        "--test-mode",
+        action="store_true",
+        help="Test mode: save emails as HTML files instead of sending (auto-enabled if RESEND_API_KEY not set)"
     )
 
     return parser.parse_args()

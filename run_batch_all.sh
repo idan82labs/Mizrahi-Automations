@@ -1,24 +1,28 @@
 #!/bin/bash
 #
-# Run batch processing for ALL managers and send email
-# Usage: ./run_batch_all.sh YOUR_APIFY_TOKEN [GMAIL_USER] [GMAIL_APP_PASSWORD]
+# Run batch processing for ALL managers
+# Emails are sent automatically per-manager during processing
+# Usage: ./run_batch_all.sh YOUR_APIFY_TOKEN
+#
+# Requirements:
+#   - RESEND_API_KEY environment variable must be set for email sending
 #
 
 set -e
 
 if [ -z "$1" ]; then
     echo "Error: Apify token required"
-    echo "Usage: $0 YOUR_APIFY_TOKEN [GMAIL_USER] [GMAIL_APP_PASSWORD]"
+    echo "Usage: $0 YOUR_APIFY_TOKEN"
     echo ""
     echo "Examples:"
     echo "  $0 apify_token_here"
-    echo "  $0 apify_token_here your.email@gmail.com app_password_here"
+    echo ""
+    echo "Note: Set RESEND_API_KEY environment variable for email sending"
+    echo "  export RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     exit 1
 fi
 
 APIFY_TOKEN="$1"
-GMAIL_USER="${2:-}"
-GMAIL_PASSWORD="${3:-}"
 
 echo "=========================================="
 echo "BATCH PROCESSOR - ALL MANAGERS"
@@ -57,35 +61,8 @@ echo "BATCH PROCESSING COMPLETE"
 echo "=========================================="
 echo "Output directory: $LATEST_BATCH"
 echo ""
-
-# Send email if credentials provided
-if [ -n "$GMAIL_USER" ] && [ -n "$GMAIL_PASSWORD" ]; then
-    echo "=========================================="
-    echo "SENDING RESULTS EMAIL"
-    echo "=========================================="
-    python /root/send_batch_email.py \
-        --batch-dir "$LATEST_BATCH" \
-        --gmail-user "$GMAIL_USER" \
-        --gmail-app-password "$GMAIL_PASSWORD" \
-        --recipient elay.g@82labs.io
-
-    echo ""
-    echo "=========================================="
-    echo "EMAIL SENT SUCCESSFULLY"
-    echo "=========================================="
-else
-    echo "=========================================="
-    echo "Email credentials not provided"
-    echo "=========================================="
-    echo "To send results via email, run:"
-    echo ""
-    echo "  python /root/send_batch_email.py \\"
-    echo "    --batch-dir \"$LATEST_BATCH\" \\"
-    echo "    --gmail-user your.email@gmail.com \\"
-    echo "    --gmail-app-password your_app_password \\"
-    echo "    --recipient elay.g@82labs.io"
-    echo "=========================================="
-fi
-
+echo "Note: Emails were sent automatically during processing"
+echo "      (2 emails per manager if RESEND_API_KEY is set)"
+echo "=========================================="
 echo ""
 echo "ALL DONE!"

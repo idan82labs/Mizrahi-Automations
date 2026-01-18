@@ -54,6 +54,7 @@ import datetime as dt
 import io
 import json
 import logging
+import os
 import random
 import re
 import sys
@@ -81,6 +82,7 @@ logger_chk4 = logging.getLogger('CHK_4')  # Decision method rules
 logger_chk6_price = logging.getLogger('CHK_6_PRICE')  # TASE price checks
 logger_chk6_limit = logging.getLogger('CHK_6_LIMIT')  # Price > 100 checks
 logger_chk6_url_fail = logging.getLogger('CHK_6_URL_FAIL')  # Failed URL fetches (for manual verification)
+logger_chk6_consistency = logging.getLogger('CHK_6_CONSISTENCY')  # Price consistency checks (6ג)
 logger_chk7 = logging.getLogger('CHK_7')  # Problematic securities
 
 
@@ -94,6 +96,7 @@ def setup_logging(log_base_dir: Path = Path("log")) -> Path:
     - chk4_decision.log: Decision method rule checks
     - chk6_tase_price.log: TASE price comparison checks
     - chk6_price_limit.log: Price > 100 checks
+    - chk6_price_consistency.log: Price consistency checks (6ג)
     - chk7_problematic.log: Problematic securities checks
 
     Returns:
@@ -144,6 +147,7 @@ def setup_logging(log_base_dir: Path = Path("log")) -> Path:
         (logger_chk6_price, "chk6_tase_price.log", "CHK_6 - TASE Price Checks"),
         (logger_chk6_limit, "chk6_price_limit.log", "CHK_6 - Price > 100 Checks"),
         (logger_chk6_url_fail, "chk6_failed_urls.log", "CHK_6 - Failed URL Fetches (Manual Verification Required)"),
+        (logger_chk6_consistency, "chk6_price_consistency.log", "CHK_6ג - Price Consistency Checks"),
         (logger_chk7, "chk7_problematic.log", "CHK_7 - Problematic Securities"),
     ]
 
@@ -221,6 +225,7 @@ TASE_SAMPLES_PER_TYPE = 2
 TASE_VARIANCE_THRESHOLD_DEFAULT = 5.0  # 5% (in percent, will be converted to decimal)
 PRICE_LIMIT_TYPES = {31, 32, 33, 34, 35, 36}  # Types with price > 100 check
 PRICE_LIMIT = 100.0
+PRICE_CONSISTENCY_TYPES = {31, 32, 33, 34, 35, 36}  # Types requiring price consistency check (6ג)
 
 # Problematic securities lists (spec #7)
 PROBLEMATIC_LISTS_CONFIG = {
@@ -338,6 +343,21 @@ class PriceCheckResult:
 class PriceLimitResult:
     """Result of price > 100 check for types 31-36."""
     row: TxnRow
+    is_exception: bool = False
+
+
+@dataclass
+class PriceConsistencyResult:
+    """Result of internal price consistency check for types 31-36.
+
+    Checks if the same security was traded at different prices on the same date,
+    which may indicate potential fund discrimination.
+    """
+    row: TxnRow
+    security_no: str
+    transaction_date: dt.date
+    prices_found: list[float] = field(default_factory=list)  # All distinct prices for this security on this date
+    other_rows: list[int] = field(default_factory=list)  # Row numbers with different prices
     is_exception: bool = False
 
 
@@ -750,12 +770,16 @@ def check_3_dates_in_report_month(rows: list[TxnRow], report_month: str) -> list
     return out
 
 
-def check_4_decision_method_rules(rows: list[TxnRow]) -> list[ExceptionRow]:
-    """Spec #4: decision method allowed values depend on type."""
-    logger_chk4.info("Starting decision method rules check on %d rows", len(rows))
-    logger_chk4.info("Types requiring decision_method=1: %s", TYPE_REQUIRES_DECISION_1)
-    logger_chk4.info("Types requiring decision_method=1 or 2: %s", TYPE_REQUIRES_DECISION_1_OR_2)
-    logger.info("CHK_4 (Decision Method Rules): Starting check on %d rows", len(rows))
+def check_4d_missing_data(rows: list[TxnRow]) -> list[ExceptionRow]:
+    """בדיקה #4ד - אופן החלטה (בדיקת שלמות נתונים בסיסית)
+
+    Validates presence of transaction_type and decision_method fields.
+    """
+    logger_chk4.info("=" * 60)
+    logger_chk4.info("בדיקה #4ד - בדיקת שלמות נתונים בסיסית")
+    logger_chk4.info("=" * 60)
+    logger_chk4.info("Starting missing data check on %d rows", len(rows))
+    logger.info("CHK_4D (Missing Data): Starting check on %d rows", len(rows))
 
     out: list[ExceptionRow] = []
     for r in rows:
@@ -773,7 +797,32 @@ def check_4_decision_method_rules(rows: list[TxnRow]) -> list[ExceptionRow]:
                 r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
                 r.tx_type, r.decision_method
             )
-            out.append(ExceptionRow(check_id="CHK_4", reason="MISSING_TYPE_OR_DECISION_METHOD", row=r))
+            out.append(ExceptionRow(check_id="CHK_4D", reason="MISSING_TYPE_OR_DECISION_METHOD", row=r))
+
+    logger_chk4.info("Check completed - found %d exceptions", len(out))
+    logger.info("CHK_4D (Missing Data): Completed - found %d exceptions", len(out))
+    return out
+
+
+def check_4a_type_decision_compatibility(rows: list[TxnRow]) -> list[ExceptionRow]:
+    """בדיקה #4א - אופן החלטה (התאמת סוג עסקה לאופן קבלת החלטה)
+
+    Validates compatibility between transaction_type and decision_method.
+    Types {12, 22} MUST have decision_method = 1
+    Types {31, 32, 33, 34, 35, 36} MUST have decision_method ∈ {1, 2}
+    """
+    logger_chk4.info("=" * 60)
+    logger_chk4.info("בדיקה #4א - התאמת סוג עסקה לאופן קבלת החלטה")
+    logger_chk4.info("=" * 60)
+    logger_chk4.info("Starting type-decision compatibility check on %d rows", len(rows))
+    logger_chk4.info("Types requiring decision_method=1: %s", TYPE_REQUIRES_DECISION_1)
+    logger_chk4.info("Types requiring decision_method=1 or 2: %s", TYPE_REQUIRES_DECISION_1_OR_2)
+    logger.info("CHK_4A (Type-Decision Compatibility): Starting check on %d rows", len(rows))
+
+    out: list[ExceptionRow] = []
+    for r in rows:
+        # Skip if data is missing (will be caught by CHK_4D)
+        if r.tx_type is None or r.decision_method is None:
             continue
 
         if r.tx_type in TYPE_REQUIRES_DECISION_1 and r.decision_method != 1:
@@ -791,7 +840,7 @@ def check_4_decision_method_rules(rows: list[TxnRow]) -> list[ExceptionRow]:
                 r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
                 r.tx_type, r.decision_method, r.tx_type, r.decision_method
             )
-            out.append(ExceptionRow(check_id="CHK_4", reason=f"TYPE_{r.tx_type}_REQUIRES_DECISION_1", row=r, group_key=f"type={r.tx_type}"))
+            out.append(ExceptionRow(check_id="CHK_4A", reason=f"TYPE_{r.tx_type}_REQUIRES_DECISION_1", row=r, group_key=f"type={r.tx_type}"))
 
         if r.tx_type in TYPE_REQUIRES_DECISION_1_OR_2 and r.decision_method not in (1, 2):
             logger_chk4.warning(
@@ -808,52 +857,106 @@ def check_4_decision_method_rules(rows: list[TxnRow]) -> list[ExceptionRow]:
                 r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
                 r.tx_type, r.decision_method, r.tx_type, r.decision_method
             )
-            out.append(ExceptionRow(check_id="CHK_4", reason=f"TYPE_{r.tx_type}_REQUIRES_DECISION_1_OR_2", row=r, group_key=f"type={r.tx_type}"))
-
-        # Check דחצ (dachatz) fields - ONLY when decision_method = 1
-        # Rule B takes priority over Rule A
-        if r.decision_method == 1:
-            # Rule B: If any of דחצ1-4 equals 2, flag as exception
-            if r.dachatz_1 == 2 or r.dachatz_2 == 2 or r.dachatz_3 == 2 or r.dachatz_4 == 2:
-                logger_chk4.warning(
-                    "EXCEPTION FOUND - DACHATZ OPPOSITION:\n"
-                    "  Row Number: %d\n"
-                    "  Security Number: %s\n"
-                    "  Security Name: %s\n"
-                    "  Fund Number: %s\n"
-                    "  Fund Name: %s\n"
-                    "  Decision Method: %d\n"
-                    "  דחצ1: %s\n"
-                    "  דחצ2: %s\n"
-                    "  דחצ3: %s\n"
-                    "  דחצ4: %s\n"
-                    "  Reason: יש דח\"צ שהתנגד להחלטה",
-                    r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
-                    r.decision_method, r.dachatz_1, r.dachatz_2, r.dachatz_3, r.dachatz_4
-                )
-                out.append(ExceptionRow(check_id="CHK_4", reason="יש דח\"צ שהתנגד להחלטה", row=r))
-            # Rule A: If דחצ1 equals 0, flag as exception (only if Rule B didn't trigger)
-            elif r.dachatz_1 == 0:
-                logger_chk4.warning(
-                    "EXCEPTION FOUND - NO DECISION FOR DACHATZ 1:\n"
-                    "  Row Number: %d\n"
-                    "  Security Number: %s\n"
-                    "  Security Name: %s\n"
-                    "  Fund Number: %s\n"
-                    "  Fund Name: %s\n"
-                    "  Decision Method: %d\n"
-                    "  דחצ1: %s\n"
-                    "  דחצ2: %s\n"
-                    "  דחצ3: %s\n"
-                    "  דחצ4: %s\n"
-                    "  Reason: אין החלטה לדח\"צ 1",
-                    r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
-                    r.decision_method, r.dachatz_1, r.dachatz_2, r.dachatz_3, r.dachatz_4
-                )
-                out.append(ExceptionRow(check_id="CHK_4", reason="אין החלטה לדח\"צ 1", row=r))
+            out.append(ExceptionRow(check_id="CHK_4A", reason=f"TYPE_{r.tx_type}_REQUIRES_DECISION_1_OR_2", row=r, group_key=f"type={r.tx_type}"))
 
     logger_chk4.info("Check completed - found %d exceptions", len(out))
-    logger.info("CHK_4 (Decision Method Rules): Completed - found %d exceptions", len(out))
+    logger.info("CHK_4A (Type-Decision Compatibility): Completed - found %d exceptions", len(out))
+    return out
+
+
+def check_4b_dachatz_opposition(rows: list[TxnRow]) -> list[ExceptionRow]:
+    """בדיקה #4ב - אופן החלטה (דח\"צ - התנגדות להחלטה)
+
+    Checks if ANY דח\"צ field equals 2 (opposition).
+    Applies only when decision_method = 1.
+    """
+    logger_chk4.info("=" * 60)
+    logger_chk4.info("בדיקה #4ב - דח\"צ - התנגדות להחלטה")
+    logger_chk4.info("=" * 60)
+    logger_chk4.info("Starting דח\"צ opposition check on %d rows", len(rows))
+    logger.info("CHK_4B (Dachatz Opposition): Starting check on %d rows", len(rows))
+
+    out: list[ExceptionRow] = []
+    for r in rows:
+        # Skip if decision_method is not 1 (or is None)
+        if r.decision_method != 1:
+            continue
+
+        # Rule B: If any of דחצ1-4 equals 2, flag as exception
+        if r.dachatz_1 == 2 or r.dachatz_2 == 2 or r.dachatz_3 == 2 or r.dachatz_4 == 2:
+            logger_chk4.warning(
+                "EXCEPTION FOUND - DACHATZ OPPOSITION:\n"
+                "  Row Number: %d\n"
+                "  Security Number: %s\n"
+                "  Security Name: %s\n"
+                "  Fund Number: %s\n"
+                "  Fund Name: %s\n"
+                "  Decision Method: %d\n"
+                "  דחצ1: %s\n"
+                "  דחצ2: %s\n"
+                "  דחצ3: %s\n"
+                "  דחצ4: %s\n"
+                "  Reason: יש דח\"צ שהתנגד להחלטה",
+                r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
+                r.decision_method, r.dachatz_1, r.dachatz_2, r.dachatz_3, r.dachatz_4
+            )
+            out.append(ExceptionRow(check_id="CHK_4B", reason="יש דח\"צ שהתנגד להחלטה", row=r))
+
+    logger_chk4.info("Check completed - found %d exceptions", len(out))
+    logger.info("CHK_4B (Dachatz Opposition): Completed - found %d exceptions", len(out))
+    return out
+
+
+def check_4c_dachatz1_no_decision(rows: list[TxnRow], exceptions_4b: list[ExceptionRow]) -> list[ExceptionRow]:
+    """בדיקה #4ג - אופן החלטה (דח\"צ 1 לא קיבל החלטה)
+
+    Checks if דח\"צ1 equals 0 (no decision).
+    Applies only when:
+    - decision_method = 1
+    - AND בדיקה #4ב did not raise an exception for this row
+    """
+    logger_chk4.info("=" * 60)
+    logger_chk4.info("בדיקה #4ג - דח\"צ 1 לא קיבל החלטה")
+    logger_chk4.info("=" * 60)
+    logger_chk4.info("Starting דח\"צ1 no decision check on %d rows", len(rows))
+    logger.info("CHK_4C (Dachatz1 No Decision): Starting check on %d rows", len(rows))
+
+    # Build set of row numbers that failed CHK_4B
+    rows_failed_4b = {ex.row.row_num for ex in exceptions_4b}
+    logger_chk4.info("Rows that failed CHK_4B (will be skipped): %d", len(rows_failed_4b))
+
+    out: list[ExceptionRow] = []
+    for r in rows:
+        # Skip if decision_method is not 1 (or is None)
+        if r.decision_method != 1:
+            continue
+
+        # Skip if this row already failed CHK_4B
+        if r.row_num in rows_failed_4b:
+            continue
+
+        # Rule A: If דחצ1 equals 0, flag as exception
+        if r.dachatz_1 == 0:
+            logger_chk4.warning(
+                "EXCEPTION FOUND - NO DECISION FOR DACHATZ 1:\n"
+                "  Row Number: %d\n"
+                "  Security Number: %s\n"
+                "  Security Name: %s\n"
+                "  Fund Number: %s\n"
+                "  Fund Name: %s\n"
+                "  Decision Method: %d\n"
+                "  דחצ1: %s\n"
+                "  דחצ2: %s\n"
+                "  דחצ3: %s\n"
+                "  דחצ4: %s\n"
+                "  Reason: אין החלטה לדח\"צ 1",
+                r.row_num, r.security_no, r.security_name, r.fund_no, r.fund_name,
+                r.decision_method, r.dachatz_1, r.dachatz_2, r.dachatz_3, r.dachatz_4
+            )
+            out.append(ExceptionRow(check_id="CHK_4C", reason="אין החלטה לדח\"צ 1", row=r))
+
+    logger_chk4.info("Check completed - found %d exceptions", len(out))
+    logger.info("CHK_4C (Dachatz1 No Decision): Completed - found %d exceptions", len(out))
     return out
 
 
@@ -1123,6 +1226,113 @@ def check_6_price_limits(rows: list[TxnRow]) -> list[PriceLimitResult]:
 
     logger_chk6_limit.info("Check completed - checked %d transactions, found %d exceptions", checked_count, len(results))
     logger.info("CHK_6 (Price Limits): Completed - checked %d transactions, found %d exceptions", checked_count, len(results))
+    return results
+
+
+def check_6c_price_consistency(rows: list[TxnRow]) -> list[PriceConsistencyResult]:
+    """Spec #6 Part 3 (6ג): Internal price consistency check for types 31-36.
+
+    Checks if the same security was traded at different prices on the same date.
+    This may indicate potential fund discrimination (preferential pricing between funds).
+
+    Args:
+        rows: List of transaction rows to check
+
+    Returns:
+        List of PriceConsistencyResult objects for transactions with inconsistent prices
+    """
+    logger_chk6_consistency.info("=" * 70)
+    logger_chk6_consistency.info("CHK_6ג - Price Consistency")
+    logger_chk6_consistency.info("=" * 70)
+    logger_chk6_consistency.info("Starting internal price consistency check")
+    logger_chk6_consistency.info("Target transaction types: %s", PRICE_CONSISTENCY_TYPES)
+    logger.info("CHK_6ג (Price Consistency): Starting internal price consistency check for types %s", PRICE_CONSISTENCY_TYPES)
+
+    # Filter to relevant transaction types with required fields
+    eligible_rows = [
+        r for r in rows
+        if r.tx_type in PRICE_CONSISTENCY_TYPES
+        and r.security_no
+        and r.tx_date
+        and r.price is not None
+    ]
+
+    logger_chk6_consistency.info("Found %d eligible transactions for price consistency check", len(eligible_rows))
+
+    # Group by (security_no, tx_date)
+    grouped: dict[tuple[str, dt.date], list[TxnRow]] = defaultdict(list)
+    for row in eligible_rows:
+        key = (row.security_no, row.tx_date)
+        grouped[key].append(row)
+
+    logger_chk6_consistency.info("Grouped into %d unique (security, date) combinations", len(grouped))
+
+    results: list[PriceConsistencyResult] = []
+    checked_groups = 0
+    exception_groups = 0
+
+    for (security_no, tx_date), group_rows in grouped.items():
+        checked_groups += 1
+
+        # Get all distinct prices in this group
+        prices = sorted(set(r.price for r in group_rows))
+
+        # If multiple distinct prices exist, flag all transactions in this group
+        if len(prices) > 1:
+            exception_groups += 1
+            logger_chk6_consistency.warning(
+                "EXCEPTION - PRICE INCONSISTENCY DETECTED:\n"
+                "  Security Number: %s\n"
+                "  Transaction Date: %s\n"
+                "  Number of Transactions: %d\n"
+                "  Distinct Prices Found: %s\n"
+                "  Row Numbers: %s\n"
+                "  Reason: Same security traded at different prices on same date",
+                security_no,
+                tx_date,
+                len(group_rows),
+                [f"{p:.4f}" for p in prices],
+                [r.row_num for r in group_rows]
+            )
+
+            # Create exception result for each transaction in this group
+            for row in group_rows:
+                # Get row numbers of OTHER transactions with different prices
+                other_rows = [
+                    r.row_num for r in group_rows
+                    if r.row_num != row.row_num and r.price != row.price
+                ]
+
+                result = PriceConsistencyResult(
+                    row=row,
+                    security_no=security_no,
+                    transaction_date=tx_date,
+                    prices_found=prices,
+                    other_rows=other_rows,
+                    is_exception=True
+                )
+                results.append(result)
+
+                logger_chk6_consistency.info(
+                    "  - Row %d: Fund %s, Price %.4f, Conflicting rows: %s",
+                    row.row_num, row.fund_no, row.price, other_rows if other_rows else "None"
+                )
+        else:
+            # All transactions in this group have the same price - OK
+            logger_chk6_consistency.debug(
+                "OK - Consistent pricing: Security %s, Date %s, Price %.4f, Transactions: %d",
+                security_no, tx_date, prices[0], len(group_rows)
+            )
+
+    logger_chk6_consistency.info(
+        "Check completed - checked %d (security, date) groups, found %d groups with price inconsistencies, total %d exception transactions",
+        checked_groups, exception_groups, len(results)
+    )
+    logger.info(
+        "CHK_6ג (Price Consistency): Completed - checked %d groups, %d groups with inconsistencies, %d exception transactions",
+        checked_groups, exception_groups, len(results)
+    )
+
     return results
 
 
@@ -1694,11 +1904,15 @@ def write_output_xlsx(
     summary: dict[str, Any],
     exceptions_duplicates: list[ExceptionRow],
     exceptions_date: list[ExceptionRow],
-    exceptions_decision: list[ExceptionRow],
+    exceptions_decision_4a: list[ExceptionRow],
+    exceptions_decision_4b: list[ExceptionRow],
+    exceptions_decision_4c: list[ExceptionRow],
+    exceptions_decision_4d: list[ExceptionRow],
     samples: Samples,
     in_scope_funds: set[int],
     price_check_results: list[PriceCheckResult] = None,
     price_limit_results: list[PriceLimitResult] = None,
+    price_consistency_results: list[PriceConsistencyResult] = None,
     problematic_security_results: list[ProblematicSecurityResult] = None,
     spec_file_path: Path = None,
 ) -> None:
@@ -1710,11 +1924,16 @@ def write_output_xlsx(
     # Extract counts for סטטוס בדיקות table
     count_inter_fund = summary.get("חריגות עסקאות בין קרנות", 0)
     count_date = summary.get("חריגות תאריך", 0)
-    count_decision = summary.get("חריגות אופן החלטה", 0)
+    count_decision_4a = summary.get("חריגות אופן החלטה 4א", 0)
+    count_decision_4b = summary.get("חריגות אופן החלטה 4ב", 0)
+    count_decision_4c = summary.get("חריגות אופן החלטה 4ג", 0)
+    count_decision_4d = summary.get("חריגות אופן החלטה 4ד", 0)
     count_price_limit = summary.get("חריגות מחיר מעל 100", 0)
     count_problematic = summary.get("חריגות ניירות בעייתיים", 0)
     # Count TASE price exceptions
     count_tase_price = len([r for r in (price_check_results or []) if r.is_exception])
+    # Count price consistency exceptions (6ג)
+    count_price_consistency = len(price_consistency_results or [])
 
     # Sheet 1: Summary (סיכום) - new format
     ws_sum = wb.active
@@ -1752,11 +1971,15 @@ def write_output_xlsx(
     check_statuses = [
         ("בדיקה #1 - חריגות עסקאות בין קרנות", "עסקאות עם כמות מנוגדת באותו יום", count_inter_fund == 0, count_inter_fund),
         ("בדיקה #3 - חריגות תאריך", "עסקאות מחוץ לחודש הדוח", count_date == 0, count_date),
-        ("בדיקה #4 - חריגות אופן החלטה", "אי-התאמה בין סוג לאופן החלטה", count_decision == 0, count_decision),
-        ("בדיקה #5 - דגימה לבדיקה – אופן החלטה 1", "קיימת דגימה תקינה עם אופן החלטה 1" if samples.decision_1 is not None else "לא קיימת דגימה תקינה עם אופן החלטה 1", samples.decision_1 is not None, 0 if samples.decision_1 is not None else 1),
-        ("בדיקה #5 - דגימה לבדיקה – אופן החלטה 2", "קיימת דגימה תקינה עם אופן החלטה 2" if samples.decision_2 is not None else "לא קיימת דגימה תקינה עם אופן החלטה 2", samples.decision_2 is not None, 0 if samples.decision_2 is not None else 1),
+        ("בדיקה #4ד - אופן החלטה", "בדיקת שלמות נתונים בסיסית", count_decision_4d == 0, count_decision_4d),
+        ("בדיקה #4א - אופן החלטה", "התאמת סוג עסקה לאופן קבלת החלטה", count_decision_4a == 0, count_decision_4a),
+        ("בדיקה #4ב - אופן החלטה", "דח\"צ - התנגדות להחלטה", count_decision_4b == 0, count_decision_4b),
+        ("בדיקה #4ג - אופן החלטה", "דח\"צ 1 לא קיבל החלטה", count_decision_4c == 0, count_decision_4c),
+        ("בדיקה #5א - דגימה לבדיקה – אופן החלטה 1", "קיימת דגימה תקינה עם אופן החלטה 1" if samples.decision_1 is not None else "לא קיימת דגימה תקינה עם אופן החלטה 1", samples.decision_1 is not None, 0 if samples.decision_1 is not None else 1),
+        ("בדיקה #5ב - דגימה לבדיקה – אופן החלטה 2", "קיימת דגימה תקינה עם אופן החלטה 2" if samples.decision_2 is not None else "לא קיימת דגימה תקינה עם אופן החלטה 2", samples.decision_2 is not None, 0 if samples.decision_2 is not None else 1),
         ("בדיקה #6 - חריגות סטיית מחיר מבורסה", "סטייה מעל סף אחוז ממחיר סגירה בבורסה", count_tase_price == 0, count_tase_price),
         ("בדיקה #6 - חריגות מחיר מעל 100", "עסקאות מסוג 31-36 עם מחיר > 100", count_price_limit == 0, count_price_limit),
+        ("בדיקה #6ג - חוסר עקביות מחיר", "עסקאות באותו נייר ותאריך במחירים שונים", count_price_consistency == 0, count_price_consistency),
         ("בדיקה #7 - חריגות ניירות בעייתיים", "ניירות ברשימות דלי סחירות/שימור/מושעים", count_problematic == 0, count_problematic),
     ]
 
@@ -1833,13 +2056,13 @@ def write_output_xlsx(
             ws_date.append([ex.check_id, ex.reason, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
         optional_sheets.append(ws_date)
 
-    # Exceptions - decision method - only create if there are exceptions
-    ws_dm = None
-    if exceptions_decision:
-        ws_dm = wb.create_sheet("בדיקה #4 - אופן החלטה")
-        _rtl(ws_dm)
+    # Exceptions - decision method 4D (missing data) - only create if there are exceptions
+    ws_dm_4d = None
+    if exceptions_decision_4d:
+        ws_dm_4d = wb.create_sheet("בדיקה #4ד - אופן החלטה")
+        _rtl(ws_dm_4d)
         _header(
-            ws_dm,
+            ws_dm_4d,
             [
                 "בדיקה",
                 "סיבה",
@@ -1856,14 +2079,95 @@ def write_output_xlsx(
                 "שורה בקובץ",
             ] + VALIDATION_COLS,
         )
-        for ex in exceptions_decision:
-            ws_dm.append([ex.check_id, ex.reason, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
-        optional_sheets.append(ws_dm)
+        for ex in exceptions_decision_4d:
+            ws_dm_4d.append([ex.check_id, ex.reason, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
+        optional_sheets.append(ws_dm_4d)
 
-    # Spec #6: Price checks (TASE price variance and price > 100) - merged into single sheet
+    # Exceptions - decision method 4A (type-decision compatibility) - only create if there are exceptions
+    ws_dm_4a = None
+    if exceptions_decision_4a:
+        ws_dm_4a = wb.create_sheet("בדיקה #4א - אופן החלטה")
+        _rtl(ws_dm_4a)
+        _header(
+            ws_dm_4a,
+            [
+                "בדיקה",
+                "סיבה",
+                "מספר קרן",
+                "שם קרן",
+                "שם נייר",
+                "מספר נייר",
+                "כמות",
+                "מחיר",
+                "תאריך",
+                "שעה",
+                "סוג",
+                "אופן החלטה",
+                "שורה בקובץ",
+            ] + VALIDATION_COLS,
+        )
+        for ex in exceptions_decision_4a:
+            ws_dm_4a.append([ex.check_id, ex.reason, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
+        optional_sheets.append(ws_dm_4a)
+
+    # Exceptions - decision method 4B (dachatz opposition) - only create if there are exceptions
+    ws_dm_4b = None
+    if exceptions_decision_4b:
+        ws_dm_4b = wb.create_sheet("בדיקה #4ב - אופן החלטה")
+        _rtl(ws_dm_4b)
+        _header(
+            ws_dm_4b,
+            [
+                "בדיקה",
+                "סיבה",
+                "מספר קרן",
+                "שם קרן",
+                "שם נייר",
+                "מספר נייר",
+                "כמות",
+                "מחיר",
+                "תאריך",
+                "שעה",
+                "סוג",
+                "אופן החלטה",
+                "שורה בקובץ",
+            ] + VALIDATION_COLS,
+        )
+        for ex in exceptions_decision_4b:
+            ws_dm_4b.append([ex.check_id, ex.reason, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
+        optional_sheets.append(ws_dm_4b)
+
+    # Exceptions - decision method 4C (dachatz1 no decision) - only create if there are exceptions
+    ws_dm_4c = None
+    if exceptions_decision_4c:
+        ws_dm_4c = wb.create_sheet("בדיקה #4ג - אופן החלטה")
+        _rtl(ws_dm_4c)
+        _header(
+            ws_dm_4c,
+            [
+                "בדיקה",
+                "סיבה",
+                "מספר קרן",
+                "שם קרן",
+                "שם נייר",
+                "מספר נייר",
+                "כמות",
+                "מחיר",
+                "תאריך",
+                "שעה",
+                "סוג",
+                "אופן החלטה",
+                "שורה בקובץ",
+            ] + VALIDATION_COLS,
+        )
+        for ex in exceptions_decision_4c:
+            ws_dm_4c.append([ex.check_id, ex.reason, *_txn_to_basic_list(ex.row), ex.row.row_num, "", ""])
+        optional_sheets.append(ws_dm_4c)
+
+    # Spec #6: Price checks (TASE price variance, price > 100, and price consistency) - merged into single sheet
     ws_price = None
     price_exceptions = [r for r in (price_check_results or []) if r.is_exception]
-    has_price_exceptions = price_exceptions or price_limit_results
+    has_price_exceptions = price_exceptions or price_limit_results or price_consistency_results
     if has_price_exceptions:
         ws_price = wb.create_sheet("בדיקה #6 - חריגות מחיר")
         _rtl(ws_price)
@@ -1927,6 +2231,31 @@ def write_output_xlsx(
                 "",
                 "", ""
             ])
+        # Add price consistency exceptions (6ג)
+        for r in (price_consistency_results or []):
+            # Format the note with conflicting rows and prices
+            prices_str = ", ".join([f"{p:.4f}" for p in r.prices_found])
+            other_rows_str = ", ".join([str(rn) for rn in r.other_rows]) if r.other_rows else "N/A"
+            note = f"שורות מתנגשות: {other_rows_str}. מחירים שנמצאו: {prices_str}"
+
+            ws_price.append([
+                "חוסר עקביות מחיר (6ג)",
+                r.row.fund_no,
+                r.row.fund_name,
+                r.row.security_name,
+                r.row.security_no,
+                r.row.quantity,
+                r.row.price,
+                _fmt_date(r.row.tx_date),
+                _fmt_time(r.row.tx_time),
+                r.row.tx_type,
+                r.row.decision_method,
+                "",  # No TASE price for this check
+                "",  # No variance for this check
+                r.row.row_num,
+                note,
+                "", ""
+            ])
         optional_sheets.append(ws_price)
 
     # Spec #7: Problematic securities - only create if there are exceptions
@@ -1949,6 +2278,8 @@ def write_output_xlsx(
                 "אופן החלטה",
                 "רשימות בעייתיות",
                 "שורה בקובץ",
+                "מחיר סגירה בורסה",
+                "סטייה באחוזים",
             ] + VALIDATION_COLS,
         )
         for r in problematic_security_results:
@@ -1956,7 +2287,9 @@ def write_output_xlsx(
                 *_txn_to_basic_list(r.row),
                 ", ".join(r.matched_lists),
                 r.row.row_num,
-                "", ""
+                "",  # מחיר סגירה בורסה - empty for now
+                "",  # סטייה באחוזים - empty for now
+                "", ""  # VALIDATION_COLS (תקין?, בודק)
             ])
         optional_sheets.append(ws_prob)
 
@@ -1983,7 +2316,7 @@ def write_output_xlsx(
             "סבירות החלטה",
             "ציות לנוהל מנהל",
         ] + VALIDATION_COLS
-        ws_s1 = wb.create_sheet("בדיקה #5 - אופן החלטה 1")
+        ws_s1 = wb.create_sheet("בדיקה #5א - אופן החלטה 1")
         _rtl(ws_s1)
         _header(ws_s1, headers_dm1)
         ws_s1.append([*_txn_to_basic_list(samples.decision_1), "", "", "", "", ""])
@@ -1996,7 +2329,7 @@ def write_output_xlsx(
             "סבירות החלטה",
             "ציות לנוהל מנהל",
         ] + VALIDATION_COLS
-        ws_s2 = wb.create_sheet("בדיקה #5 - אופן החלטה 2")
+        ws_s2 = wb.create_sheet("בדיקה #5ב - אופן החלטה 2")
         _rtl(ws_s2)
         _header(ws_s2, headers_dm2)
         ws_s2.append([*_txn_to_basic_list(samples.decision_2), "", "", "", "", ""])
@@ -2133,12 +2466,17 @@ def main() -> int:
                 "reason": "לא ברשימת קרנות מזרחי",
             }
 
-    # Check #3, #4: in-scope only
+    # Check #3: in-scope only
     ex_date = check_3_dates_in_report_month(in_scope_rows, report_month)
-    ex_decision = check_4_decision_method_rules(in_scope_rows)
+
+    # Check #4: Split into 4 sub-checks (in execution order)
+    ex_decision_4d = check_4d_missing_data(in_scope_rows)
+    ex_decision_4a = check_4a_type_decision_compatibility(in_scope_rows)
+    ex_decision_4b = check_4b_dachatz_opposition(in_scope_rows)
+    ex_decision_4c = check_4c_dachatz1_no_decision(in_scope_rows, ex_decision_4b)
 
     # Valid lines: in-scope rows NOT present in any exception list (for summary count only)
-    ex_row_nums = {e.row.row_num for e in (ex_dup + ex_date + ex_decision)}
+    ex_row_nums = {e.row.row_num for e in (ex_dup + ex_date + ex_decision_4d + ex_decision_4a + ex_decision_4b + ex_decision_4c)}
     valid_rows = [r for r in in_scope_rows if r.row_num not in ex_row_nums]
 
     # Check #5: sampling from ALL in-scope rows (regardless of exceptions)
@@ -2162,6 +2500,11 @@ def main() -> int:
     logger.info("Running price > 100 check (spec #6 part 2)...")
     price_limit_results = check_6_price_limits(in_scope_rows)
     logger.info("Found %d exceptions with price > 100", len(price_limit_results))
+
+    # Check #6 Part 3 (6ג): Price consistency for types 31-36
+    logger.info("Running price consistency check (spec #6 part 3 / 6ג)...")
+    price_consistency_results = check_6c_price_consistency(in_scope_rows)
+    logger.info("Found %d exceptions with price inconsistencies", len(price_consistency_results))
 
     # Check #7: Problematic securities
     logger.info("Running problematic securities check (spec #7)...")
@@ -2188,7 +2531,10 @@ def main() -> int:
         "קרנות מחוץ לתחום": len(out_of_scope_funds),
         "חריגות עסקאות בין קרנות": len(ex_dup),
         "חריגות תאריך": len(ex_date),
-        "חריגות אופן החלטה": len(ex_decision),
+        "חריגות אופן החלטה 4א": len(ex_decision_4a),
+        "חריגות אופן החלטה 4ב": len(ex_decision_4b),
+        "חריגות אופן החלטה 4ג": len(ex_decision_4c),
+        "חריגות אופן החלטה 4ד": len(ex_decision_4d),
         "חריגות מחיר מעל 100": len(price_limit_results),
         "חריגות ניירות בעייתיים": len(problematic_security_results),
         "שורות תקינות לדגימה": len(valid_rows),
@@ -2206,11 +2552,15 @@ def main() -> int:
         summary=summary,
         exceptions_duplicates=ex_dup,
         exceptions_date=ex_date,
-        exceptions_decision=ex_decision,
+        exceptions_decision_4a=ex_decision_4a,
+        exceptions_decision_4b=ex_decision_4b,
+        exceptions_decision_4c=ex_decision_4c,
+        exceptions_decision_4d=ex_decision_4d,
         samples=samples,
         in_scope_funds=in_scope_funds,
         price_check_results=price_check_results,
         price_limit_results=price_limit_results,
+        price_consistency_results=price_consistency_results,
         problematic_security_results=problematic_security_results,
         spec_file_path=args.spec_file,
     )
@@ -2224,14 +2574,15 @@ def main() -> int:
     logger.info("Log directory: %s", log_dir)
     logger.info("")
     logger.info("Log files created:")
-    logger.info("  - main.log              : General processing log")
-    logger.info("  - chk1_inter_fund.log   : CHK_1 - Inter-fund transactions")
-    logger.info("  - chk3_date.log         : CHK_3 - Date validation")
-    logger.info("  - chk4_decision.log     : CHK_4 - Decision method rules")
-    logger.info("  - chk6_tase_price.log   : CHK_6 - TASE price checks")
-    logger.info("  - chk6_price_limit.log  : CHK_6 - Price > 100 checks")
-    logger.info("  - chk6_failed_urls.log  : CHK_6 - Failed URL fetches (manual verification)")
-    logger.info("  - chk7_problematic.log  : CHK_7 - Problematic securities")
+    logger.info("  - main.log                    : General processing log")
+    logger.info("  - chk1_inter_fund.log         : CHK_1 - Inter-fund transactions")
+    logger.info("  - chk3_date.log               : CHK_3 - Date validation")
+    logger.info("  - chk4_decision.log           : CHK_4 (4A-4D) - Decision method rules (all sub-checks)")
+    logger.info("  - chk6_tase_price.log         : CHK_6 - TASE price checks")
+    logger.info("  - chk6_price_limit.log        : CHK_6 - Price > 100 checks")
+    logger.info("  - chk6_price_consistency.log  : CHK_6ג - Price consistency checks")
+    logger.info("  - chk6_failed_urls.log        : CHK_6 - Failed URL fetches (manual verification)")
+    logger.info("  - chk7_problematic.log        : CHK_7 - Problematic securities")
     return 0
 
 
