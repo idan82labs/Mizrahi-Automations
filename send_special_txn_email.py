@@ -233,6 +233,9 @@ def build_samples_html(email_data):
         decision_1_section = f"""
         <h3 style="color: #1e293b; font-size: 16px; margin: 25px 0 10px 0;">אופן החלטה 1:</h3>
         {decision_1_table}
+        <p style="margin: 15px 0 0 0; color: #1e293b; font-size: 14px;">
+            אנא ציינו בהתאם לאיזה סעיף בנוהל אושרה העסקה וצרפו אסמכתאות רלוונטיות בהתאם לנדרש בהתאם לנוהל
+        </p>
         """
 
     decision_2_section = ""
@@ -241,6 +244,9 @@ def build_samples_html(email_data):
         decision_2_section = f"""
         <h3 style="color: #1e293b; font-size: 16px; margin: 25px 0 10px 0;">אופן החלטה 2:</h3>
         {decision_2_table}
+        <p style="margin: 15px 0 0 0; color: #1e293b; font-size: 14px;">
+            אנא ציינו את מועד אישור העסקה וכן צרפו פרוטוקול/ טיוטת פרוטוקול/ חומר נלווה שהוצג בפני הדירקטוריון לטובת אישור העסקה.
+        </p>
         """
 
     return f"""<!DOCTYPE html>

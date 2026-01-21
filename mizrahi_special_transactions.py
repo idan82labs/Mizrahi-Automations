@@ -961,21 +961,21 @@ def check_4c_dachatz1_no_decision(rows: list[TxnRow], exceptions_4b: list[Except
 
 
 def pick_samples(valid_rows: list[TxnRow], seed: Optional[int]) -> Samples:
-    """Spec #5: Pick 1 random transaction from all in-scope rows."""
+    """Spec #5: Pick 1 random transaction from each decision method group (5א and 5ב)."""
     if not valid_rows:
         return Samples(decision_1=None, decision_2=None)
 
     rng = random.Random(seed)
-    sampled_row = rng.choice(valid_rows)
 
-    # Place the sample in the appropriate field based on its decision method
-    if sampled_row.decision_method == 1:
-        return Samples(decision_1=sampled_row, decision_2=None)
-    elif sampled_row.decision_method == 2:
-        return Samples(decision_1=None, decision_2=sampled_row)
-    else:
-        # If decision method is neither 1 nor 2, put it in decision_1
-        return Samples(decision_1=sampled_row, decision_2=None)
+    # Separate valid rows by decision method
+    decision_1_rows = [r for r in valid_rows if r.decision_method == 1]
+    decision_2_rows = [r for r in valid_rows if r.decision_method == 2]
+
+    # Sample from each group independently
+    sample_1 = rng.choice(decision_1_rows) if decision_1_rows else None
+    sample_2 = rng.choice(decision_2_rows) if decision_2_rows else None
+
+    return Samples(decision_1=sample_1, decision_2=sample_2)
 
 
 # -----------------------------
@@ -2177,6 +2177,7 @@ def write_output_xlsx(
                 "סוג בדיקה",
                 "מספר קרן",
                 "שם קרן",
+                "קרן של מזרחי?",
                 "שם נייר",
                 "מספר נייר",
                 "כמות",
@@ -2193,10 +2194,12 @@ def write_output_xlsx(
         )
         # Add TASE price variance exceptions
         for r in price_exceptions:
+            is_mizrahi = "כן" if r.row.fund_no in in_scope_funds else "לא"
             ws_price.append([
                 "סטיית מחיר מבורסה",
                 r.row.fund_no,
                 r.row.fund_name,
+                is_mizrahi,
                 r.row.security_name,
                 r.row.security_no,
                 r.row.quantity,
@@ -2213,10 +2216,12 @@ def write_output_xlsx(
             ])
         # Add price > 100 exceptions
         for r in (price_limit_results or []):
+            is_mizrahi = "כן" if r.row.fund_no in in_scope_funds else "לא"
             ws_price.append([
                 "מחיר מעל 100",
                 r.row.fund_no,
                 r.row.fund_name,
+                is_mizrahi,
                 r.row.security_name,
                 r.row.security_no,
                 r.row.quantity,
@@ -2237,11 +2242,13 @@ def write_output_xlsx(
             prices_str = ", ".join([f"{p:.4f}" for p in r.prices_found])
             other_rows_str = ", ".join([str(rn) for rn in r.other_rows]) if r.other_rows else "N/A"
             note = f"שורות מתנגשות: {other_rows_str}. מחירים שנמצאו: {prices_str}"
+            is_mizrahi = "כן" if r.row.fund_no in in_scope_funds else "לא"
 
             ws_price.append([
                 "חוסר עקביות מחיר (6ג)",
                 r.row.fund_no,
                 r.row.fund_name,
+                is_mizrahi,
                 r.row.security_name,
                 r.row.security_no,
                 r.row.quantity,
@@ -2501,9 +2508,9 @@ def main() -> int:
     price_limit_results = check_6_price_limits(in_scope_rows)
     logger.info("Found %d exceptions with price > 100", len(price_limit_results))
 
-    # Check #6 Part 3 (6ג): Price consistency for types 31-36
+    # Check #6 Part 3 (6ג): Price consistency for types 31-36 (all funds, not just Mizrahi)
     logger.info("Running price consistency check (spec #6 part 3 / 6ג)...")
-    price_consistency_results = check_6c_price_consistency(in_scope_rows)
+    price_consistency_results = check_6c_price_consistency(rows)
     logger.info("Found %d exceptions with price inconsistencies", len(price_consistency_results))
 
     # Check #7: Problematic securities
