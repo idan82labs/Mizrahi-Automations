@@ -532,11 +532,18 @@ def load_manager_report_xlsx(input_report_path: Path) -> tuple[list[TxnRow], dic
         )
         rows.append(row)
 
+    # Infer report month from transaction dates (not submission date)
     inferred_month = None
+    month_counts = Counter()
+
     for row in rows:
-        if row.report_date:
-            inferred_month = f"{row.report_date.year:04d}-{row.report_date.month:02d}"
-            break
+        if row.tx_date:  # Use transaction date (תאריך), not report date (ת.דוח)
+            month_key = f"{row.tx_date.year:04d}-{row.tx_date.month:02d}"
+            month_counts[month_key] += 1
+
+    # Get most common month across all transactions
+    if month_counts:
+        inferred_month = month_counts.most_common(1)[0][0]
 
     wb.close()
     meta = {"sheet": ws.title, "rows_parsed": len(rows), "report_month_inferred": inferred_month}
@@ -590,11 +597,18 @@ def load_manager_report_csv(input_report_path: Path) -> tuple[list[TxnRow], dict
             )
             rows.append(row)
 
+    # Infer report month from transaction dates (not submission date)
     inferred_month = None
+    month_counts = Counter()
+
     for row in rows:
-        if row.report_date:
-            inferred_month = f"{row.report_date.year:04d}-{row.report_date.month:02d}"
-            break
+        if row.tx_date:  # Use transaction date (תאריך), not report date (ת.דוח)
+            month_key = f"{row.tx_date.year:04d}-{row.tx_date.month:02d}"
+            month_counts[month_key] += 1
+
+    # Get most common month across all transactions
+    if month_counts:
+        inferred_month = month_counts.most_common(1)[0][0]
 
     meta = {"source": str(input_report_path), "rows_parsed": len(rows), "report_month_inferred": inferred_month}
     return rows, meta
