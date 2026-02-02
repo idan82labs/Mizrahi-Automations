@@ -1,0 +1,27 @@
+2026-01-22 01:05:53 - INFO - [CHK_2B] ======================================================================
+2026-01-22 01:05:53 - INFO - [CHK_2B] CHK_2B - Exposure Profile Check
+2026-01-22 01:05:53 - INFO - [CHK_2B] ======================================================================
+2026-01-22 01:05:55 - INFO - [CHK_2B] Starting exposure profile check
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 1171321: Profile 4D allows max 120% FX but total is 199.97%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 1187079: Profile 6D allows max 120% FX but total is 199.96%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 1188069: Profile 6D allows max 120% FX but total is 130.00%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 1200195: Profile 4D allows max 120% FX but total is 199.95%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 1200351: Profile 4D allows max 120% FX but total is 199.94%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 1207901: Profile 4D allows max 120% FX but total is 199.94%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 1217561: Profile 4D allows max 120% FX but total is 200.08%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 1219294: Profile 0D allows max 120% FX but total is 199.81%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 1221670: Profile 4D allows max 120% FX but total is 199.94%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 5121843: Profile 4D allows max 120% FX but total is 200.46%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 5135090: Profile 4D allows max 120% FX but total is 203.88%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 5137716: Profile 0D allows max 120% FX but total is 200.56%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 5138151: Profile 4D allows max 120% FX but total is 196.56%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 5138458: Profile 0D allows max 120% FX but total is 200.16%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 5139514: Profile 0D allows max 120% FX but total is 200.33%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 5139886: Profile 4D allows max 120% FX but total is 200.08%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 5140850: Profile 4D allows max 120% FX but total is 199.96%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 1189810: Profile 4D allows max 120% FX but total is 199.95%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 1189828: Profile 4D allows max 120% FX but total is 199.92%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 5122627: Profile 4D allows max 120% FX but total is 202.11%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 5138284: Profile 0D allows max 120% FX but total is 199.18%
+2026-01-22 01:05:55 - WARNING - [CHK_2B] Fund 5140041: Profile 4D allows max 120% FX but total is 199.38%
+2026-01-22 01:05:55 - INFO - [CHK_2B] Exposure profile check completed: 22 exceptions

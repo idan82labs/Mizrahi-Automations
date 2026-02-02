@@ -1,0 +1,7 @@
+2026-01-21 21:18:47 - INFO - [CHK_3] ======================================================================
+2026-01-21 21:18:47 - INFO - [CHK_3] CHK_3 - Within-Month Combinations
+2026-01-21 21:18:47 - INFO - [CHK_3] ======================================================================
+2026-01-21 21:18:48 - INFO - [CHK_3] Starting within-month combinations check
+2026-01-21 21:18:48 - WARNING - [CHK_3] Fund 1193317: Has code 06 but missing FX-related codes
+2026-01-21 21:18:48 - WARNING - [CHK_3] Fund 5138391: Has code 06 but missing FX-related codes
+2026-01-21 21:18:48 - INFO - [CHK_3] Combinations check completed: 84 total exceptions

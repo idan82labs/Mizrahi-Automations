@@ -1,0 +1,3 @@
+[submodule "mizrahi_5/k303_magna_downloader"]
+	path = mizrahi_5/k303_magna_downloader
+	url = https://github.com/Reneb82labs/Maya-K303-Reports-Downloader.git

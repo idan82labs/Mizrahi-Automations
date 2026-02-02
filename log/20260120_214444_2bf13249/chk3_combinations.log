@@ -1,0 +1,16 @@
+2026-01-20 21:44:44 - INFO - [CHK_3] ======================================================================
+2026-01-20 21:44:44 - INFO - [CHK_3] CHK_3 - Within-Month Combinations
+2026-01-20 21:44:44 - INFO - [CHK_3] ======================================================================
+2026-01-20 21:44:44 - INFO - [CHK_3] Starting within-month combinations check
+2026-01-20 21:44:44 - WARNING - [CHK_3] Fund 1168723: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - [CHK_3] Fund 1193317: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - [CHK_3] Fund 1201623: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - [CHK_3] Fund 1212794: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - [CHK_3] Fund 5129887: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - [CHK_3] Fund 5134713: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - [CHK_3] Fund 5139365: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - [CHK_3] Fund 5140595: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - [CHK_3] Fund 1150184: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - [CHK_3] Fund 1150283: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - [CHK_3] Fund 5138391: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - INFO - [CHK_3] Combinations check completed: 98 total exceptions

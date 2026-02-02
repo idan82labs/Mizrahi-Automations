@@ -1,0 +1,2004 @@
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - CHK_1A - Fund Completeness
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - CHK_1B - Date Validity
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - CHK_2A - Previous Month Comparison
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - CHK_2B - Exposure Profile Check
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - CHK_3 - Within-Month Combinations
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - Log directory created: log\20260120_202533_4bfb4f01
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - Disclosure Report K.303 Validator
+2026-01-20 20:25:33 - INFO - ======================================================================
+2026-01-20 20:25:33 - INFO - Loading mutual funds list...
+2026-01-20 20:25:33 - INFO - Loaded 2443 funds from mutual funds list
+2026-01-20 20:25:33 - INFO - Found 540 funds for trustee: מזרחי טפחות חברה לנאמנות בע"מ
+2026-01-20 20:25:33 - INFO - Loading current month disclosure report...
+2026-01-20 20:25:33 - INFO - Detected XLSX format for: disclosure_migdal_current_month.csv
+2026-01-20 20:25:33 - INFO - Loaded 4098 rows from disclosure report (XLSX): disclosure_migdal_current_month.csv
+2026-01-20 20:25:33 - INFO - Loading previous month disclosure report...
+2026-01-20 20:25:33 - INFO - Detected CSV format for: disclosure_migdal_previous_month.xlsx - Sheet1.csv
+2026-01-20 20:25:33 - INFO - Loaded 4037 rows from disclosure report (encoding: utf-8-sig): disclosure_migdal_previous_month.xlsx - Sheet1.csv
+2026-01-20 20:25:33 - INFO - Report month: 2025-12
+2026-01-20 20:25:33 - INFO - Running validation checks...
+2026-01-20 20:25:33 - INFO - Starting fund completeness check
+2026-01-20 20:25:33 - WARNING - Fund 1143700 (תכלית סל (40) ת"א 35) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1145747 (קסם MSCI India (!)(4D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1145754 (קסם KOSPI 200 (!)(4D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1145804 (קסם MSCI World (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1145879 (קסם DJ Health Care Titans 30 (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1145945 (קסם NIKKEI 225 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1145952 (קסם EURO STOXX 50 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146059 (קסם 6A) ETF) ממונפת בחסר ת"א 35 פי 2 חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146091 (קסם IBOVESPA(!)(4D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146182 (קסם STOXX Europe 600 (4A) ETF מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146224 (קסם NASDAQ US BuyBack Achievers (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146240 (קסם STOXX Europe MID 200 (4A) ETF מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146265 (קסם 4A) ETF) משולבת מניות אירופה חודשי מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146307 (קסם STOXX Europe 600 Banks (4A) ETF מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146372 (קסם MDAX (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146380 (קסם 6A) ETF) ממונפת ת"א 35 פי 3 חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146422 (קסם LBMA Gold Price PM USD (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146430 (קסם 4A) ETF) אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146455 (קסם ETFי (00) חסר תל בונד 40 צמודות (534)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146521 (קסם FTSE China 50 (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146620 (קסם ETFי (4A) חוזה Bloomberg Brent Crude מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146638 (קסם  ETFי (0A) משולבת תל גוב-כללי (65%) וקונצרני ישראל (35%) חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146661 (קסם 2A) ETF) משולבת אגח כללי ישראל (90%) ומניות ישראל (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146679 (קסם MSCI AC World (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146687 (קסם Hang Seng China (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146695 (קסם 2A) ETF) משולבת אגח כללי ישראל (80%) ומניות (20%) חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146703 (קסם DAX (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146745 (קסם 6A) ETF) חסר ת"א 35 (5,337.49)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1146828 (קסם 4A) ETF) משולבת מניות MidCap מפותחות חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1147024 (קסם S&P SmallCap 600 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1147057 (קסם 2A) ETF) משולבת תל גוב-כללי(55%) קונצרני(30%) ומניות(15%) חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1147099 (קסם FTSE 250 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1147131 (קסם ETFי (00)(!) חסר תל בונד- תשואות צמודות (682.1)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1147214 (קסם 4D) ETF) משולבת מניות סקטורים ארהב S&P חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1147230 (קסם S&P Technology (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1147263 (קסם iBoxx $ Corps Liquid 3-7 Years (0A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1147297 (קסם iBoxx $ Corps Liquid 3-7 Years (0D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1147396 (קסם ETFי (00) תל בונד שקלי 3-5) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1148899 (הראל סל (4A) ת"א 125) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1148931 (הראל סל (4A) ת"א 90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1149970 (הראל סל (4A) ‏S&P 500 Equal Weight מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1150440 (הראל סל (00) תל בונד 20 צמודות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1150473 (הראל סל (00) תל בונד 60 צמודות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1150499 (הראל סל (00) תל בונד 40 צמודות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1150523 (הראל סל (00) תל בונד שקלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1150739 (הראל סל (00)(!) תל בונד גלובל שקלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1150747 (הראל סל (00) תל בונד שקלי-בנקים וביטוח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1150762 (קסם ETFי (00) תל בונד שקלי 50) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1150770 (קסם ETFי (00)(!) תל בונד גלובל שקלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1150796 (קסם S&P MidCap 400 (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1155092 (הראל סל (00) כשרה תל בונד 60 צמודות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1155191 (הראל סל (00) כשרה תל בונד שקלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1155340 (הראל סל (4A) כשרה ת"א 125) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1161058 (קסם ETF י(60) חסר ת"א 90 (6123.68)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1161827 (הראל סל (4A) ת"א טכנולוגיה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1161876 (קסם ETF י(00)(!) חסר תל בונד גלובל שקלי (718)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1166172 (הראל סל (4A) כשרה ת"א 90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1167568 (הראל סל (6A) ממונפת NASDAQ 100 פי 3 חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1167576 (הראל סל (6D) ממונפת בחסר NASDAQ 100 פי 2 חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1169622 (הראל סל (0A) תל בונד מאגר) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1184092 (הראל סל (4A)יS&P North American Expanded Tech Software מנוטרלת מט``ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1190685 (הראל סל (4A) אינדקס ישראל 100 רווחיות משקל שווה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1190859 (הראל סל (4D) אינדקס מומנטום ארה"ב) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1193614 (קסם ETF‏י (00) תל בונד-צמודות 1-3) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1193655 (קסם ETFי (00) תל בונד שקלי A) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1193663 (קסם ETFי (00) תל בונד שקלי AA-AAA) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1193671 (קסם ETFי (00) תל בונד צמודות 5-15) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1193689 (קסם ETFי (00) תל בונד-שקלי 1-3) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1193739 (קסם S&P Technology (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1193747 (קסם S&P MidCap 400 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1194315 (אימפקט (6F) לונג/שורט - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1194323 (פסטרנק שהם (6F) לונג/שורט - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1194356 (אנליסט (5D) נדל"ן ישראל - חו"ל Multi Strategy- קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1194364 (אנליסט (6D) מניות Multi Strategy- קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1200435 (אי.בי.אי. סל (4A)י 500 S&P מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1200443 (אי.בי.אי. סל (4A)י Nasdaq 100 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1200450 (אי.בי.אי. סל (4D)י Nasdaq 100) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1207646 (פורצ`ן (6F)י Multi-Strategy - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1210871 (הראל סל (0D)י S&P U.S. Treasury Bond 5-7 Year) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1212521 (פסטרנק שהם (2D)(!) אסטרטגיות אג"ח - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1213594 (הראל סל (4A) ת"א 90 ובנקים) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1218916 (ATF סל (4D)י S&P 500) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1218924 (ATF סל (4A)י S&P 500 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1220391 (הראל סל (4D)י (CME CF Bitcoin Reference Rate (BRRNY) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5100383 (מיטב (0B) מדורגות A ומעלה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5100953 (קסם אקטיב (3D) תיק מנוהל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5101019 (מיטב (4D) מניות טכנולוגיה חו"ל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5101092 (אנליסט (4D) טכנולוגיות חו"ל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5101258 (אנליסט (4B) מניות ישראל Large & mid cap) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5101266 (אנליסט (4B) נדל"ן) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5101480 (קסם אקטיב (2B)י אג"ח + 25%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5101639 (אנליסט (4D) השקעות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5102256 (מיטב (4D) מניות ארה"ב) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5102371 (הראל (0D) אג"ח דולר בינלאומי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5103296 (מיטב (4A) מניות ת"א MID CAP) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5104153 (מיטב (4B) מניות ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5104237 (אנליסט (0D)(!) אג"ח חו"ל ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5104328 (אנליסט (5C) אסטרטגיות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5104948 (קסם אקטיב (4D) אירופה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5105390 (הראל (0D)(!) אג"ח עולמי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5105580 (מיטב (2B) עוקבת תיק 2 הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5105929 (אנליסט (4D) מניות ארה"ב) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5105978 (קסם  אקטיב (0A) מדינה צמוד ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5106158 (איילון (0B) אג"ח חברות ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5106885 (הראל (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5106992 (מיטב (0B)(!) הזדמנויות אג"ח בסיכון גבוה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5107156 (הראל (0C) קונצרני A ומעלה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5107503 (הראל (1A) קונצרני שקלי + 10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5107859 (הראל (2B) אג"ח מדורג ומניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5108006 (הראל (4B) שווקים מפותחים עד 30% מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5109608 (איילון (1B)(!) אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5109848 (קסם אקטיב (4D) ארה"ב נקוב $) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5110051 (הראל (4B) ת"א-Midcap150) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5110192 (הראל (1B) מדד בינוני ממשלתי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5110341 (הראל (0D) כספית נקובה ב-$) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5110523 (אנליסט (0B)(!) אג"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5110929 (הראל (1B)(!) תיק אג"ח פלוס 10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5111307 (מיטב (2A) מדינה + 20%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5111992 (הראל (1A) נכסים סולידיים) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5112560 (הראל (0B) תיק מדינה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5112586 (הראל מחקה (2A) משולבת אג"ח ישראל (90%) מניות ישראל-חול (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5112693 (קסם אקטיב (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5112719 (קסם אקטיב (1A)י 10-90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5113121 (הראל מחקה (00) משולבת מדינה חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5113618 (מיטב (4A) מניות צמיחה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5113709 (אנליסט (2B) עוקבת תיק 2 הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5113782 (הראל (1D)(!) בונד + 10% - נקוב $ אגד חוץ) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5113956 (מיטב (1B) אג"ח קונצרני + 10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5114079 (מיטב (2B) י30/70) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5114350 (אנליסט 10/90 (1A)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5114434 (מיטב (0A) עוקבת תיק מרכיב הנזילות הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5114640 (מיטב (1A)(!) קונצרני פלוס) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5114780 (מיטב (0B)(!) אג"ח ממשלתי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5114939 (הראל מחקה (00) תל בונד צמודות-יתר) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5115027 (אנליסט (4B) מניות ת"א 125 במומנטום) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5115225 (אנליסט (00) שקלית קונצרנית ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5115290 (הראל 10/90 (1A) מחלקת) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5115506 (סיגמא (00)(!) מודל דירוג פנימי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5115514 (סיגמא (2B) מדינה + 20%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5115738 (הראל מחקה (2B) משולבת אג"ח ישראל (80%) מניות ישראל-חול (20%) חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5115803 (אנליסט (1A) ממשלתית תיק סולידי עד שנתיים) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5116033 (אנליסט (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5116553 (קסם אקטיב (1A) אג"ח מדינה + 10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5116629 (FOREST (י0A)(!) אג"ח מדורג) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5116660 (הראל (2B) שנהב אג"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5116736 (דיאמונד (4A) מניות ת"א 125) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5116785 (הראל מחקה (00) תל גוב-צמודות 5-10) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5116793 (הראל מחקה (00) משולבת אג"ח ישראל צמוד חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5116934 (אנליסט (0B) מודל דירוג פנימי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5116942 (קסם אקטיב (0A) אג"ח מדורג ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117007 (הראל מחקה (00) משולבת אג"ח ישראל שקלי חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117239 (הראל (1B) תיק אג"ח סולידי + 10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117247 (הראל מחקה (00) תל גוב-צמודות 2-5) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117262 (הראל מחקה (00) תל גוב-שקלי 2-5) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117270 (הראל מחקה (00) תל בונד 20 צמודות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117288 (הראל מחקה (00) תל בונד שקלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117445 (Gse Spotי (0A) מחקר קונצרני) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117460 (הראל (2B) תיק אג"ח + 15%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117650 (איילון (2C)י 25/75 כשרה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117668 (איילון (0B) תיק השקעות ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117684 (איילון (6A) אקסטרים ת"א 125 פי 3) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117692 (איילון (60) אקסטרים ת"א 35 פי 3) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117700 (איילון (00) כספית) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117734 (אימפקט (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117742 (איילון (4B) משקל שווה ת"א 35) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117759 (איילון (6D) אקסטרים 500 S&P פי 3) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5117809 (איילון (0F) אקסטרים דולר פי 3) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5118419 (הראל מחקה (4D)י S&P 500 נקובה ב-$) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5119003 (קסם אקטיב (4D) מניות ארה"ב) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5119144 (אנליסט (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5119359 (מיטב (1A)י 5/95) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5119367 (מיטב (1B) אג"ח פלוס) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5119409 (הראל (00) כספית שקלית) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5119607 (אנליסט (00) אג"ח מדינה עד 5 שנים ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5119672 (אנליסט (0A)(!) אג"ח פיזור רחב ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5119763 (הראל מחקה (2A) משולבת מדינה (90%) מניות ישראל-חול (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5119854 (פרופאונד (4B) מנייתית) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120225 (אימפקט (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120340 (הראל (0A) עוקבת מרכיב נזילות - הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120704 (סיגמא (0A)(!) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120720 (סיגמא (1B)(!) תיק אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120795 (אנליסט (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120811 (אנליסט (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120837 (אנליסט (4B) תעשיות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120852 (אנליסט (00) כספית שקלית) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120886 (מיטב (0B) סולידית) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120894 (אנליסט (2C) אג"ח חברות + 30%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120902 (מיטב (2D) עוקבת תיק 2 חו"ל הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5120910 (אנליסט (1C) אג"ח מדינה + 10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5121140 (אנליסט (00) כספית) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5121272 (מיטב (0B) מדינה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5121694 (מיטב (1B)(!)י 10/90 תיק אג"ח חו"ל עד 30% מט"ח.) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5121736 (מיטב (4B) מניות חו"ל עד 30% מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5121801 (הראל מחקה (2A) משולבת אג``ח ישראל (75%) מניות ישראל-חול (25%) חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5121819 (הראל מחקה (00) משולבת ממשלתיות חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5121835 (הראל מחקה (00) תל בונד 60 צמודות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5122510 (הראל מחקה (4A) ת"א 125) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5122536 (אלפא טק (4D) אירופה E.S.G) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5122551 (הראל מחקה (00) All-Bond-ריבית משתנה שקלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5122601 (מיטב (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5122619 (מיטב (0B) מדינה צמודה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5122668 (קסם אקטיב (4A) ארה"ב מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5122957 (קסם S&P 500 (4A) KTF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5123104 (הראל מחקה (00) אינדקס קונצרני מאוזן מח"מ 2-4) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5123112 (הראל מחקה (00) אינדקס קונצרני צמוד A) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5123120 (מיטב (00) מדינה שקלי עד 4 שנים) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5123138 (מיטב (0B) אג"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5123146 (מיטב (1A) קונצרני שקלי פלוס) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5123211 (קסם אקטיב (4D) זהב) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5123468 (קסם אקטיב (1B)(!)י אג"ח +10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5123476 (קסם אקטיב (0A) אג"ח מדינה ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5123559 (הראל מחקה (00) אינדקס קונצרני שקלי A) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5124060 (סיגמא (2C)י 25/75) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5124672 (הראל (3B) תיק השקעות עד 50%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5124698 (הראל (0A) תיק אג"ח סולידי עד שלוש שנים) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5124888 (פרופאונד (1A)י 10/90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5124912 (הראל מחקה (00) אינדקס לפדיון 2028 (מתגלגל כל 6 שנים)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5125265 (FOREST י(1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5125463 (פסטרנק שהם (A0)(!) אג"ח חברות ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5125828 (אלפי בנדק (0A)(!)י All Bond כללי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5125836 (אלפא טק (4A) מניות ESG ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5126065 (מיטב (3B)י 40/60) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5126347 (מיטב (2C) תיק השקעות 15/85) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5126685 (אנליסט (4B) מניות SMALL CAP ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5126776 (קסם אקטיב (2B)י 20-80) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5127030 (מיטב (1A) סולידית פלוס) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5127139 (שופן (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5127501 (הראל מחקה (4A)י Dax - מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5127527 (הראל מחקה (4A)י S&P 500 - מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5127568 (איילון (4D) קנאביס חו"ל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5127576 (פסטרנק שהם (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5127774 (הראל (2D) תיק אג"ח חו"ל - נקובה $) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5127782 (הראל (1B) מדינה + 10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5127790 (הראל (00) כספית מגמת ריבית) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5127808 (הראל (0D) כספית דולרית מגמת ריבית) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128095 (הראל מחקה (0A) תל בונד מאגר) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128103 (הראל מחקה (00) תל גוב-משתנה שקלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128111 (הראל מחקה (00) תל גוב-שקלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128137 (הראל מחקה (00) תל גוב-שקלי 5+) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128194 (הראל מחקה (2A) משולבת אג"ח ישראל (90%) ומניות (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128202 (הראל מחקה (4A) משולבת מניות חו"ל חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128210 (הראל מחקה (2A) משולבת אג"ח ישראל (85%) מניות ישראל-חול (15%) חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128236 (הראל מחקה (4D) משולבת מניות חו"ל חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128244 (הראל מחקה (4D) משולבת מניות סקטורים ארה"ב חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128251 (הראל מחקה (4A) משולבת מניות סקטורים ארה"ב חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128293 (אלפא טק (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128509 (דיאמונד (4D) מניות גלובאלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128673 (סיגמא (1A) מדינה צמודה פלוס) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128855 (איילון (4D) מניות גלובאלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128871 (הראל (2B) עוקבת תיק מס` 3 - הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128897 (הראל (00) שהם אג"ח סולידי ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5128947 (איילון (6D) אקסטרים נאסד"ק 100 פי 3) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129093 (פורצ`ן (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129101 (פורצ`ן (0D)(!) אג"ח בינלאומי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129119 (פורצ`ן (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129275 (הראל מחקה (4D)יS&P 500) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129283 (הראל מחקה (4D)יNASDAQ 100) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129382 (שופן (0B) אג"ח גלאט בפקוח ועד ההלכה של הגר"ש ואזנר והגר"נ קרליץ) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129424 (הראל מחקה (00) אינדקס לפדיון 2030 (מתגלגל כל 6 שנים)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129473 (אלפא טק (4D) מניות חו"ל ESG) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129606 (פסטרנק שהם (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129655 (אנליסט (2B) עוקבת תיק 3 הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129663 (הראל מחקה (00) אינדקס אג"ח תזרימיות A ומעלה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129689 (הראל מחקה (00) תל בונד צמודות- בנקים ללא COCO) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129697 (הראל מחקה (4A) תל דיב) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129705 (הראל מחקה (4A) ת"א סקטור-באלאנס) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5129978 (FOREST (י0B)(!) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130018 (הראל מחקה (00) אינדקס אג"ח CoCo בנקים) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130026 (הראל מחקה (4D)י Dow Jones U.S. Select Medical Equipment) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130307 (איילון (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130315 (איילון (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130323 (איילון (4B) מימון ואשראי חוץ בנקאי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130414 (פרופאונד אג"ח מדורגות (0A)(!)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130422 (פרופאונד גמישה (4D)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130430 (פרופאונד 20/80 (2B)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130638 (הראל מחקה (4A) ת"א 90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130661 (הראל מחקה (4A) ת"א 35) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130729 (אימפקט (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130802 (פורצ`ן (0B)(!) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130810 (פסטרנק שהם (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130919 (אי.בי.אי. מחקה (4A) ת"א 90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130950 (אנליסט (0B) סולידית LV) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5130992 (אי.בי.אי. מחקה (00) תל בונד שקלי AA-AAA) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5131008 (אי.בי.אי. מחקה (00) תל בונד צמודות AA-AAA) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5131081 (הראל מחקה (4A) ת"א טכנולוגיה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5131164 (הראל מחקה (00) אינדקס AA-AAA ריאליות שקלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5131180 (הראל מחקה (00) אינדקס AA-AAA ריאליות צמוד) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5131347 (קסם KTFי (00) משולבת אג"ח חברות (50%) אג"ח מדינה (50%) חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5131404 (הראל מחקה (4A) ת"א בנייה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5131420 (הראל מחקה (4A) ת"א מניב ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5131792 (הראל מחקה (0A) תל גוב-כללי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5131958 (דיאמונד (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5132006 (קסם KTF י(4D)י אינדקס eGaming מנוטרלת דולר) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5132030 (הראל מחקה (00) אינדקס A שקלי מנפיקים ישראלים) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5132204 (פסטרנק שהם (1B)(!)י 10/90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5132295 (הראל מחקה (4A) אינדקס קמעונאות ומסחר ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5132410 (פלקון (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5132592 (הראל מחקה (0D) אינדקס A-AAA ת"א שקלי - נקובה $) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5132865 (הראל מחקה (00) אינדקס A-AA צמוד 0-2) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133012 (קסם S&P Regional Banks (4D) KTF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133111 (פסטרנק שהם (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133145 (הראל מחקה (00) אינדקס A-AAA ריאליות פקטור מרווח מאג``ח ממשלתי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133152 (הראל מחקה (0A) אינדקס אג"ח מנפיקים ישראלים במשקל שווה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133236 (ATF מחקה (40) אינדקס בנקים וביטוח ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133459 (פורצ`ן (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133574 (הראל מחקה (4A)י NASDAQ 100 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133608 (הראל מחקה (0D) אינדקס AA-AAA ת"א 0-2 - נקובה $) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133616 (הראל מחקה (4A)י אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133756 (הראל מחקה (0A)י All Bond כללי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133764 (הראל מחקה (4A) ת"א All-Share) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133905 (ATF מחקה (00) אינדקס אג"ח חברות ישראל EW TOP 100) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5133939 (מיטב (2A) תיק אג"ח + 15%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134028 (מיטב (2B)י 25/75) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134036 (מיטב (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134101 (הראל מחקה (4A) אינדקס מניות ערך ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134143 (אימפקט (4D)י Global Shares) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134226 (פסטרנק שהם (0B) אג"ח כללי ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134234 (פסטרנק שהם (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134283 (פורצ`ן (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134606 (מיטב (0A)(!) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134614 (מיטב (1A)(!) תיק אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134663 (מיטב (0A) אג"ח מדינה ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134705 (הראל מחקה (0A) אינדקס לפדיון 2026 מנפיקים במשקל שווה (מתגלגל כל 6 שנים)) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134754 (הראל (2C) אגד ישראלי עד 15% מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134762 (הראל (2C) אגד ישראלי עד 30% מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134846 (פרופאונד (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5134929 (קסם iBoxx USD Liquid FRN Investment Grade Corporates 100 (0D) KTF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5135058 (Gse Spotי (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5135165 (ATF מחקה (4A) אינדקס ת"א-125 מומנטום ענפי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5135264 (פרופאונד (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5135272 (קסם KTFי (4A) משולבת מניות חו"ל מפותחות MidCap חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5135348 (הראל מחקה (4D) ת"א 90 - נקובה $) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5135736 (הראל מחקה (0D) תל גוב-מק"מ - נקובה $) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5135835 (הראל מחקה (00) תל גוב-שקלי 10+) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5135843 (הראל מחקה (00) תל גוב-צמודות 10+) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5135975 (ATF מחקה (00) אינדקס אג"ח בנקים וחב` ממשלתיות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136064 (קסם KTFי (4D)י NIKKEI 225) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136080 (פסטרנק שהם (2B)י 15/85) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136098 (פסטרנק שהם (4B) מניות Mid Cap ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136163 (מיטב (4B) נדל"ן - תשתיות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136254 (בול מרקט (4D) השקעות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136288 (FOREST י(2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136619 (פלקון (0A) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136627 (סיגמא (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136676 (ATF מחקה (2B) משולבת אינדקס מנגנון אג"ח (75%) מניות (25%) חודשי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136692 (קסם KTFי (4D)י S&P Consumer Staples) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136775 (ATF מחקה (4A) אינדקס מניות ארה"ב Large Cap מומנטום ענפי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136833 (אי.בי.אי. מחקה (4A)י S&P 500 Equal Weight מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136841 (אי.בי.אי. מחקה (4A) ת"א סקטור-באלאנס) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136858 (אי.בי.אי. מחקה (00) תל בונד-צמודות 1-3) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136866 (איילון (00) כספית ניהול הנזילות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5136924 (איילון (0D) כספית דולרית) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137070 (אנליסט (0A) סולידית) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137211 (פורצ`ן (0B) תיק אג"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137237 (אי.בי.אי. מחקה (4A) אינדקס מניות דיבידנד ישראל מחלקת) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137310 (הראל (0D) כספית יורו) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137336 (ATF מחקה (4D) אינדקס מניות ארה"ב Large Cap מומנטום ענפי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137435 (הראל מחקה (4D) אינדקס Top10 Tech) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137476 (פסטרנק שהם (0B)(!) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137526 (אי.בי.אי. מחקה (00) אינדקס אג"ח קופון גבוה מחלקת) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137690 (מיטב (00) כספית שקלית ללא קונצרני) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137765 (פסטרנק שהם (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137807 (הראל מחקה (4D)י  S&P 500 Equal Weight) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137831 (איילון (00) אג"ח קונצרני מדורג A ומעלה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137880 (מיטב (2B)י 20/80 מודל ESG) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137898 (מיטב (2B)י 30/70 מודל ESG) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5137997 (ATF מחקה (00) אינדקס שקלים ארוכים עד 20% מדינה) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5138219 (פרופאונד (0B)(!) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5138359 (ATF מחקה (00) אינדקס EW TOP100 מרווח מעל הממוצע מותאם מח"מ) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5138375 (מיטב (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5138409 (הראל מחקה (4D) אינדקס תעשיות ביטחוניות ארה``ב וישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5138425 (פורצ`ן (0D)(!) אג"ח גלובלי – נקובה $) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5138722 (הראל מחקה (0D)י iBoxx USD Liquid 5-9 Top 50) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5138839 (אנליסט (0D) כספית דולרית - נקובה $) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5138847 (הראל מחקה (00) תל בונד צמודות בנקים וחברות ממשלתיות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5138854 (הראל מחקה (00) תל בונד צמודות 5-10) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5138862 (הראל מחקה (00) תל בונד שקלי 5-10) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5138896 (קסם KTF י(4D)י MSCI India) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139076 (איילון (0D) כספית דולרית – נקובה דולר) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139175 (ATF מחקה (4A) אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139233 (קסם KTFי (4A) ת"א-125 ערך) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139332 (מיטב (4B) מניות מומנטום) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139340 (איילון (6A) אקסטרים בנקים פי 3) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139357 (איילון (6A) אקסטרים ת"א 90 פי 3) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139407 (קסם KTFי (00) תל בונד 125 ערך שקלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139415 (קסם KTFי (00) תל בונד 125 ערך צמודות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139449 (אנליסט (0B)(!) תיק קונצרני) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139571 (הראל מחקה (4D)י S&P 500 Momentum) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139639 (הראל מחקה (4A) ת"א 90 ובנקים) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139670 (אנליסט (4B) מניות ערך) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139688 (אנליסט (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139712 (אנליסט (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139738 (קסם KTFי (4A) ת"א 90 ובנקים) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139753 (פורצ`ן (1B) תיק אג"ח בינלאומי עד 20% מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139837 (הראל מחקה (4D)י Russell 2000) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139902 (קסם S&P/TSX 60 (4D) KTF) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139936 (ATF מחקה (4A) ת"א-20) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139944 (ATF מחקה (4A) ת"א-50 ריאלי) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139951 (ATF מחקה (4A) ת"א-200) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139969 (DCMSי (2D) תיק השקעות גלובלי עד 30% מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139985 (הראל מחקה (00)(!) תל בונד- תשואות צמודות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5139993 (הראל מחקה (4A)י S&P Hotels, Resorts & Cruise lines 15% FMC Capped מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140009 (הראל מחקה (4A) ת"א- ביטוח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140058 (קסם KTF י(00)י תל בונד צמודות 1-3) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140116 (ATF מחקה (00) תל בונד-צמודות A) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140124 (ATF מחקה (00)(!) תל בונד-תשואות צמודות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140132 (הראל מחקה (4A)י S&P 500 Momentum מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140348 (מיטב (2B)י 15/85 מודל ESG) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140355 (מיטב (0B) אג"ח מודל ESG) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140413 (אנליסט (00) כספית חיסכון) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140504 (מיטב (4A) ת"א 125 מומנטום) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140553 (פסטרנק שהם (2B)י 25/75) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140561 (הראל מחקה (4A) אינדקס תעשיות ביטחוניות ארה"ב וישראל מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140579 (אקהאוס (4B) מניות ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140629 (הראל מחקה (4D) אינדקס תשתיות ובינוי ארה"ב וישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140686 (אנליסט (6F) מניות ממונפת) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140694 (פרופאונד (4B) מניות Large & Mid Cap ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5140926 (הראל מחקה (4D) אינדקס תעשיות ביטחוניות אירופה Top10) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141049 (פרופאונד (1B)(!) תיק אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141247 (אנליסט (4B) מניות Mid Cap ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141254 (אנליסט (1A) מדינה צמודה פלוס) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141296 (מיטב (00) כספית ג`מבו) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141312 (קסם KTFי (4A) אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141486 (מיטב (4B) בנקים – ביטוח ושוק ההון) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141510 (אקהאוס (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141544 (סיגמא (2B) תיק אג"ח + 30%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141569 (אלטשולר שחם מחקה (4A)י Nasdaq 100 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141635 (אלטשולר שחם מחקה (00) תל בונד-שקלי 5-15) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141643 (סיגמא (4B) מניות ת"א 125) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141650 (סיגמא (4B) מניות ערך) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141668 (סיגמא (0B) אג"ח מדורג ללא מניות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141767 (אנליסט (3C) תיק השקעות עד 50%) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141817 (ATF מחקה (0A) אינדקס אג"ח ממשלת ארה"ב - מח"מ דינמי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141890 (פלקון (4D) תיק השקעות גמיש) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5141940 (פורצ`ן (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5142039 (תכלית TTF י(4A) ‏ת"א נדל"ן-35) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5142054 (MTF מחקה (4D)י Crypto Ecosystem iNDEX) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5142088 (קסם KTF י(4A)י MarketVector תעשיות בטחוניות ישראליות) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 5142096 (קסם KTF י(4A)י LBMA GOLD PRICE PM USD מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 20:25:33 - WARNING - Fund 1158310 (MTF. INDX US E-COMMERCE 4) is in report but not in mutual funds list
+2026-01-20 20:25:33 - WARNING - Fund 5132576 (BLUESTAR TRAVEL& VACATION) is in report but not in mutual funds list
+2026-01-20 20:25:33 - INFO - Fund completeness check completed: 441 exceptions
+2026-01-20 20:25:33 - INFO - Starting date validity check for month: 2025-12
+2026-01-20 20:25:33 - WARNING - Row 1996: Missing report date for fund 1150184
+2026-01-20 20:25:33 - INFO - Date validity check completed: 1 exceptions
+2026-01-20 20:25:33 - INFO - Starting previous month comparison check
+2026-01-20 20:25:33 - WARNING - Fund 1150184: Code 010101 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1150184: Code 0501 removed (was 0.48%)
+2026-01-20 20:25:33 - WARNING - Fund 1150184: Code 0601 removed (was 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 1150184: Code 10101 added (now 99.99%)
+2026-01-20 20:25:33 - WARNING - Fund 1150184: Code 501 added (now 0.16%)
+2026-01-20 20:25:33 - WARNING - Fund 1150184: Code 502 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1150184: Code 601 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1150283: Code 010101 removed (was 100.01%)
+2026-01-20 20:25:33 - WARNING - Fund 1150283: Code 0501 removed (was -0.25%)
+2026-01-20 20:25:33 - WARNING - Fund 1150283: Code 0601 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1150283: Code 10101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1150283: Code 501 added (now -0.09%)
+2026-01-20 20:25:33 - WARNING - Fund 1150283: Code 502 added (now 0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 1150283: Code 601 added (now 0.41%)
+2026-01-20 20:25:33 - WARNING - Fund 1159714: Code 010101 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1159714: Code 10101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 03010201 removed (was 47.90%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 03010202 removed (was 52.15%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 0501 removed (was -0.04%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 070101 removed (was 80.75%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 070102 removed (was 19.30%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 3010201 added (now 47.76%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 3010202 added (now 52.24%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 501 added (now -0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 70101 added (now 82.27%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 70102 added (now 17.73%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1162361: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1168723: Code 010101 removed (was 76.32%)
+2026-01-20 20:25:33 - WARNING - Fund 1168723: Code 010102 removed (was 23.68%)
+2026-01-20 20:25:33 - WARNING - Fund 1168723: Code 0501 removed (was -0.05%)
+2026-01-20 20:25:33 - WARNING - Fund 1168723: Code 0601 removed (was 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 1168723: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1168723: Code 10 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1168723: Code 10101 added (now 77.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1168723: Code 10102 added (now 22.99%)
+2026-01-20 20:25:33 - WARNING - Fund 1168723: Code 501 added (now 0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 010201 removed (was 100.33%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 03010102 removed (was 47.17%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 0501 removed (was 49.84%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 0502 removed (was -0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 0601 removed (was 99.38%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 060201 removed (was 99.38%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 070101 removed (was 47.17%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 10201 added (now 100.37%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 3010102 added (now 70.83%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 501 added (now 25.41%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 502 added (now 2.43%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 601 added (now 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 60201 added (now 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 70101 added (now 70.83%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1171321: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 010201 removed (was 298.30%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 03010102 removed (was 48.76%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 0501 removed (was 45.47%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 0502 removed (was 2.32%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 0601 removed (was 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 060201 removed (was 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 070101 removed (was 48.76%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 10201 added (now 302.95%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 3010102 added (now 80.73%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 501 added (now -13.50%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 502 added (now 34.32%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 601 added (now 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 60201 added (now 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 70101 added (now 80.73%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1187079: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 010201 removed (was -199.22%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 03010102 removed (was 74.34%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 0501 removed (was 14.57%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 0502 removed (was 0.92%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 0601 removed (was 99.94%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 060201 removed (was 99.94%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 070101 removed (was 74.34%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 10201 added (now -196.42%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 3010102 added (now 64.67%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 501 added (now 25.57%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 502 added (now 7.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 601 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 60201 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 70101 added (now 64.67%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1188069: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 010214 removed (was 99.10%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 03010102 removed (was 33.20%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 03010203 removed (was 22.26%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 03010301 removed (was 1.43%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 0501 removed (was 39.68%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 0502 removed (was 0.38%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 0601 removed (was 99.91%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 060201 removed (was 99.91%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 070101 removed (was 56.90%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 10 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 10213 added (now 100.04%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 3010102 added (now 35.42%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 3010203 added (now 22.59%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 3010301 added (now 1.46%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 501 added (now 38.46%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 502 added (now 1.83%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 601 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 60201 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1189810: Code 70101 added (now 59.47%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 010214 removed (was 100.04%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 03010102 removed (was 31.88%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 03010203 removed (was 21.93%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 03010301 removed (was 1.35%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 0501 removed (was 41.33%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 0502 removed (was 1.57%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 0601 removed (was 99.87%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 060201 removed (was 99.87%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 070101 removed (was 55.16%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 10 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 10213 added (now 100.14%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 3010102 added (now 34.20%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 3010203 added (now 21.77%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 3010301 added (now 1.35%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 501 added (now 36.84%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 502 added (now 1.77%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 601 added (now 99.96%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 60201 added (now 99.96%)
+2026-01-20 20:25:33 - WARNING - Fund 1189828: Code 70101 added (now 57.31%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 03010202 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 0501 removed (was -0.07%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 070101 removed (was 56.17%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 070102 removed (was 43.83%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 3010202 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 501 added (now -0.16%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 70101 added (now 57.03%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 70102 added (now 42.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193044: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 03010202 removed (was 100.86%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 0501 removed (was -1.01%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 070101 removed (was 41.13%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 070102 removed (was 59.74%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 3010202 added (now 100.59%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 501 added (now -0.66%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 70101 added (now 41.24%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 70102 added (now 59.34%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193051: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 03010201 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 0501 removed (was -0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 070101 removed (was 90.65%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 070102 removed (was 9.35%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 3010201 added (now 100.06%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 501 added (now -0.21%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 70101 added (now 90.50%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 70102 added (now 9.56%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193135: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 03010201 removed (was 61.02%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 03010202 removed (was 38.04%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 03010203 removed (was 0.45%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 03010204 removed (was 0.77%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 0501 removed (was -0.31%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 0601 removed (was 0.77%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 070101 removed (was 65.32%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 070102 removed (was 34.95%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 080206 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 3010201 added (now 60.83%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 3010202 added (now 38.23%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 3010203 added (now 0.45%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 3010204 added (now 0.75%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 501 added (now -0.36%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 601 added (now 0.75%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 70101 added (now 65.92%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 70102 added (now 34.34%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 80206 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1193317: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 010201 removed (was 99.95%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 03010102 removed (was 40.45%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 0501 removed (was 35.28%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 0502 removed (was -0.05%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 0601 removed (was 99.91%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 060201 removed (was 99.91%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 070101 removed (was 40.45%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 10201 added (now 100.25%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 3010102 added (now 65.51%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 501 added (now 33.80%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 502 added (now 0.31%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 601 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 60201 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 70101 added (now 65.51%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200195: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 010201 removed (was 0.51%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 010213 removed (was 99.89%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 03010102 removed (was 85.51%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 0501 removed (was 11.95%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 0502 removed (was 2.29%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 0601 removed (was 99.90%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 060201 removed (was 99.90%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 070101 removed (was 85.51%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 10213 added (now 100.22%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 3010102 added (now 87.83%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 501 added (now 11.51%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 502 added (now 0.10%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 601 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 60201 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 70101 added (now 87.83%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1200351: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1201623: Code 010101 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1201623: Code 0501 removed (was -0.29%)
+2026-01-20 20:25:33 - WARNING - Fund 1201623: Code 0601 removed (was 0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 1201623: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1201623: Code 10 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1201623: Code 10101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1201623: Code 501 added (now -0.64%)
+2026-01-20 20:25:33 - WARNING - Fund 1201623: Code 502 added (now 0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 1201623: Code 601 added (now 0.63%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 010201 removed (was 92.23%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 010207 removed (was 3.70%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 010209 removed (was 4.01%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 03010102 removed (was 15.50%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 0501 removed (was 55.47%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 0502 removed (was -0.95%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 0601 removed (was 100.11%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 060201 removed (was 100.11%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 070101 removed (was 15.50%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 10201 added (now 100.16%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 3010102 added (now 60.43%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 501 added (now 38.15%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 502 added (now 0.22%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 601 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 60201 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 70101 added (now 60.43%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1207901: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1212794: Code 010101 removed (was 99.17%)
+2026-01-20 20:25:33 - WARNING - Fund 1212794: Code 010102 removed (was 0.81%)
+2026-01-20 20:25:33 - WARNING - Fund 1212794: Code 0501 removed (was -0.28%)
+2026-01-20 20:25:33 - WARNING - Fund 1212794: Code 0601 removed (was 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 1212794: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1212794: Code 10 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1212794: Code 10101 added (now 99.30%)
+2026-01-20 20:25:33 - WARNING - Fund 1212794: Code 10102 added (now 0.69%)
+2026-01-20 20:25:33 - WARNING - Fund 1212794: Code 501 added (now -0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 1212794: Code 502 added (now 0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 1212794: Code 601 added (now 0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 010201 removed (was 99.57%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 010211 removed (was 0.60%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 03010102 removed (was 80.76%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 0501 removed (was 18.52%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 0502 removed (was -0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 0601 removed (was 100.15%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 060201 removed (was 100.15%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 070101 removed (was 80.76%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 10201 added (now 100.75%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 3010102 added (now 98.95%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 501 added (now 3.02%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 502 added (now 0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 601 added (now 100.04%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 60201 added (now 100.04%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 70101 added (now 98.95%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1217561: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 03020101 removed (was 100.31%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 0501 removed (was -0.95%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 0502 removed (was 0.25%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 0601 removed (was 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 060201 removed (was 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 070101 removed (was 100.31%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 0803 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 3020101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 501 added (now -0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 502 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 601 added (now 99.90%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 60201 added (now 99.90%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 70101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 803 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1219294: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 010201 removed (was 101.12%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 03010102 removed (was 86.45%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 0501 removed (was 12.66%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 0502 removed (was 1.67%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 0601 removed (was 99.29%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 060201 removed (was 99.29%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 070101 removed (was 86.45%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 10201 added (now 101.18%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 3010102 added (now 93.69%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 501 added (now 0.35%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 502 added (now 5.15%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 601 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 60201 added (now 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 70101 added (now 93.69%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1221670: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 010208 removed (was 99.42%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 03010102 removed (was 95.82%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 0501 removed (was 3.52%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 0502 removed (was -3.35%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 0601 removed (was -0.63%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 070101 removed (was 95.82%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 10208 added (now 100.36%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 3010102 added (now 92.80%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 501 added (now 6.30%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 502 added (now -0.28%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 601 added (now 0.68%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 70101 added (now 92.80%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 1222439: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5121686: Code 03010101 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5121686: Code 0501 removed (was 0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5121686: Code 070101 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5121686: Code 3010101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5121686: Code 501 added (now 0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5121686: Code 70101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 010207 removed (was 100.04%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 03010102 removed (was 64.83%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 0501 removed (was 34.08%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 0502 removed (was 1.10%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 0601 removed (was 100.13%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 060202 removed (was 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 070101 removed (was 64.83%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 10207 added (now 79.60%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 10208 added (now 20.33%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 3010102 added (now 76.36%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 501 added (now 8.05%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 502 added (now 14.27%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 601 added (now 100.31%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 60202 added (now 100.14%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 70101 added (now 76.36%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5121843: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 010207 removed (was 99.93%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 03010102 removed (was 58.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 0501 removed (was 40.65%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 0502 removed (was -0.62%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 0601 removed (was -0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 070101 removed (was 58.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 10207 added (now 61.74%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 10208 added (now 38.26%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 3010102 added (now 71.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 501 added (now 27.81%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 502 added (now -0.73%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 601 added (now 0.35%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 70101 added (now 71.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122163: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 03010201 removed (was 100.28%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 0501 removed (was -0.31%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 070101 removed (was 91.95%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 070102 removed (was 8.33%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 3010201 added (now 100.33%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 501 added (now -0.50%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 70101 added (now 92.11%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 70102 added (now 8.22%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122262: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 03010202 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 0501 removed (was -0.06%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 070102 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 3010202 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 501 added (now -0.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 70102 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122320: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 010201 removed (was 100.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 03010102 removed (was 40.70%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 03010203 removed (was 23.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 03010301 removed (was 1.58%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 0501 removed (was 31.44%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 0502 removed (was 0.22%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 0601 removed (was 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 060201 removed (was 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 070101 removed (was 65.29%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 10 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 10201 added (now 100.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 3010102 added (now 48.91%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 3010203 added (now 24.30%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 3010301 added (now 1.68%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 501 added (now 23.46%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 502 added (now -0.10%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 601 added (now 101.05%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 60201 added (now 101.05%)
+2026-01-20 20:25:33 - WARNING - Fund 5122627: Code 70101 added (now 74.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 03010201 removed (was 100.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 0501 removed (was -0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 070102 removed (was 100.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 3010201 added (now 100.48%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 501 added (now -0.49%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 70102 added (now 100.48%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122635: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 03010102 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 0501 removed (was 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 070101 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 3010102 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 501 added (now 0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 70101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5122973: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 03010202 removed (was 100.78%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 0501 removed (was -0.90%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 070101 removed (was 100.78%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 3010202 added (now 100.61%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 501 added (now -0.82%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 70101 added (now 100.61%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123260: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 03010201 removed (was 100.40%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 0501 removed (was -0.42%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 070101 removed (was 100.40%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 3010201 added (now 100.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 501 added (now -0.36%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 70101 added (now 100.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123278: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 03010201 removed (was 100.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 0501 removed (was -0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 070102 removed (was 100.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 070202 removed (was 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 3010201 added (now 100.42%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 501 added (now -0.43%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 70102 added (now 100.41%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 70202 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123344: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 03010201 removed (was 41.12%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 03010202 removed (was 59.26%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 0501 removed (was -0.54%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 070102 removed (was 34.63%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 070202 removed (was 65.75%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 3010201 added (now 42.43%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 3010202 added (now 57.73%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 501 added (now -0.49%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 70102 added (now 31.61%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 70202 added (now 68.55%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123351: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123369: Code 03010202 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123369: Code 070102 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123369: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123369: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123369: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123369: Code 3010202 added (now 100.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5123369: Code 501 added (now -0.05%)
+2026-01-20 20:25:33 - WARNING - Fund 5123369: Code 70102 added (now 100.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5123369: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123369: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123369: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 03010102 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 0501 removed (was 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 070101 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 3010102 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 501 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 70101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123393: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 03010201 removed (was 100.25%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 0501 removed (was -0.27%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 070101 removed (was 81.57%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 070102 removed (was 18.68%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 070202 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 3010201 added (now 100.26%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 501 added (now -0.38%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 70101 added (now 82.12%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 70102 added (now 18.14%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 70202 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123518: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123641: Code 010102 removed (was 100.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5123641: Code 0501 removed (was -0.04%)
+2026-01-20 20:25:33 - WARNING - Fund 5123641: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5123641: Code 10102 added (now 99.99%)
+2026-01-20 20:25:33 - WARNING - Fund 5123641: Code 501 added (now -0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5123641: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 03010201 removed (was 50.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 03010202 removed (was 49.86%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 0501 removed (was -0.04%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 070101 removed (was 46.94%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 070102 removed (was 53.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 070202 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 3010201 added (now 50.12%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 3010202 added (now 50.30%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 501 added (now -0.47%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 70101 added (now 46.58%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 70102 added (now 53.84%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 70202 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129069: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129887: Code 010101 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129887: Code 0501 removed (was -0.28%)
+2026-01-20 20:25:33 - WARNING - Fund 5129887: Code 0601 removed (was 0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5129887: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129887: Code 10101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5129887: Code 501 added (now -2.57%)
+2026-01-20 20:25:33 - WARNING - Fund 5129887: Code 502 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5129887: Code 601 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5129887: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 03010201 removed (was 42.09%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 03010202 removed (was 58.63%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 0501 removed (was -0.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 070101 removed (was 86.83%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 070102 removed (was 13.89%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 3010201 added (now 40.78%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 3010202 added (now 59.22%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 501 added (now -0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 70101 added (now 84.33%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 70102 added (now 15.67%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130000: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 03010201 removed (was 101.67%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 0501 removed (was -1.74%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 070101 removed (was 101.67%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 3010201 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 501 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 70101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130083: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 010101 removed (was 20.53%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 03010201 removed (was 70.80%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 03010202 removed (was 9.62%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 0501 removed (was -1.25%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 070101 removed (was 80.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 070102 removed (was 0.19%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 10101 added (now 19.93%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 3010201 added (now 70.44%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 3010202 added (now 9.63%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 501 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 70101 added (now 79.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 70102 added (now 0.18%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130372: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 010101 removed (was 18.46%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 010102 removed (was 1.71%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 03010201 removed (was 69.35%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 03010202 removed (was 10.50%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 0501 removed (was -0.05%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 070101 removed (was 65.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 070102 removed (was 14.68%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 10101 added (now 18.92%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 10102 added (now 1.75%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 3010201 added (now 69.69%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 3010202 added (now 10.11%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 501 added (now -0.70%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 70101 added (now 65.33%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 70102 added (now 14.47%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130596: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5130604: Code 010101 removed (was 88.86%)
+2026-01-20 20:25:33 - WARNING - Fund 5130604: Code 010102 removed (was 11.14%)
+2026-01-20 20:25:33 - WARNING - Fund 5130604: Code 0501 removed (was -0.08%)
+2026-01-20 20:25:33 - WARNING - Fund 5130604: Code 10101 added (now 88.70%)
+2026-01-20 20:25:33 - WARNING - Fund 5130604: Code 10102 added (now 11.31%)
+2026-01-20 20:25:33 - WARNING - Fund 5130604: Code 501 added (now -0.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 03010201 removed (was 95.82%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 03010202 removed (was 2.59%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 03010203 removed (was 1.59%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 0501 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 070101 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 3010201 added (now 95.60%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 3010202 added (now 2.84%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 3010203 added (now 1.56%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 501 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 70101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131222: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131529: Code 010101 removed (was 42.55%)
+2026-01-20 20:25:33 - WARNING - Fund 5131529: Code 010102 removed (was 57.45%)
+2026-01-20 20:25:33 - WARNING - Fund 5131529: Code 0501 removed (was 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5131529: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131529: Code 10101 added (now 42.54%)
+2026-01-20 20:25:33 - WARNING - Fund 5131529: Code 10102 added (now 57.46%)
+2026-01-20 20:25:33 - WARNING - Fund 5131529: Code 501 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5131529: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 03010202 removed (was 100.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 0501 removed (was -0.21%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 070101 removed (was 50.24%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 070102 removed (was 49.93%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 3010202 added (now 100.34%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 501 added (now -0.47%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 70101 added (now 50.18%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 70102 added (now 50.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131727: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 03010201 removed (was 100.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 0501 removed (was -0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 070101 removed (was 49.60%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 070102 removed (was 50.42%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 3010201 added (now 100.30%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 501 added (now -0.36%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 70101 added (now 50.54%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 70102 added (now 49.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5131735: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 010213 removed (was 98.93%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 03010102 removed (was 89.83%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 0501 removed (was 16.47%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 0502 removed (was -2.55%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 0601 removed (was -0.59%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 070101 removed (was 89.83%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 10213 added (now 101.45%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 3010102 added (now 87.45%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 501 added (now 13.05%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 502 added (now -0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 601 added (now -0.57%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 70101 added (now 87.45%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133038: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 010214 removed (was 98.47%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 03010102 removed (was 88.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 0501 removed (was 10.72%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 0502 removed (was -1.75%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 0601 removed (was 0.67%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 070101 removed (was 88.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 10214 added (now 100.32%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 3010102 added (now 87.97%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 501 added (now 11.74%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 502 added (now -0.47%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 601 added (now 0.08%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 70101 added (now 87.97%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133715: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 010201 removed (was 98.38%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 03010102 removed (was 82.94%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 0501 removed (was 14.55%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 0502 removed (was 0.34%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 0601 removed (was -1.80%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 070101 removed (was 82.94%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 10201 added (now 100.83%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 3010102 added (now 94.48%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 501 added (now 3.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 502 added (now 0.08%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 601 added (now -0.50%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 70101 added (now 94.48%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5133897: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 010214 removed (was 98.78%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 03010102 removed (was 85.97%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 0501 removed (was 11.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 0502 removed (was -2.84%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 0601 removed (was 2.29%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 070101 removed (was 85.97%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 10214 added (now 97.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 3010102 added (now 59.15%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 501 added (now 41.25%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 502 added (now -1.12%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 601 added (now -0.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 70101 added (now 59.15%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134135: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 010214 removed (was 99.25%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 03010102 removed (was 45.56%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 0501 removed (was 53.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 0502 removed (was -5.14%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 0601 removed (was 2.43%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 070101 removed (was 45.56%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 10214 added (now 99.55%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 3010102 added (now 53.44%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 501 added (now 46.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 502 added (now -1.49%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 601 added (now 0.36%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 70101 added (now 53.44%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134242: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134713: Code 010101 removed (was 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 5134713: Code 0501 removed (was -0.24%)
+2026-01-20 20:25:33 - WARNING - Fund 5134713: Code 0601 removed (was 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5134713: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134713: Code 10101 added (now 99.96%)
+2026-01-20 20:25:33 - WARNING - Fund 5134713: Code 10102 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134713: Code 501 added (now -0.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5134713: Code 502 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5134713: Code 601 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5134713: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 03010201 removed (was 39.79%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 03010202 removed (was 60.22%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 0501 removed (was -0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 070102 removed (was 100.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 3010201 added (now 49.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 3010202 added (now 51.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 501 added (now -0.18%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 70102 added (now 100.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134788: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 03010201 removed (was 39.38%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 03010202 removed (was 60.66%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 0501 removed (was -0.08%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 070101 removed (was 100.04%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 3010201 added (now 50.21%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 3010202 added (now 50.51%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 501 added (now -0.97%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 70101 added (now 100.71%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134796: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 03010202 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 0501 removed (was -0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 070102 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 3010202 added (now 100.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 501 added (now -0.04%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 70102 added (now 100.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5134853: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135090: Code 010101 removed (was 100.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5135090: Code 0502 removed (was 1.99%)
+2026-01-20 20:25:33 - WARNING - Fund 5135090: Code 0601 removed (was 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 5135090: Code 060201 removed (was 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 5135090: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135090: Code 10101 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135090: Code 502 added (now 11.05%)
+2026-01-20 20:25:33 - WARNING - Fund 5135090: Code 601 added (now 101.94%)
+2026-01-20 20:25:33 - WARNING - Fund 5135090: Code 60201 added (now 101.94%)
+2026-01-20 20:25:33 - WARNING - Fund 5135090: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 010201 removed (was 100.63%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 03010102 removed (was 88.87%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 0501 removed (was 9.94%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 0502 removed (was -1.26%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 0601 removed (was 0.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 070101 removed (was 88.87%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 10201 added (now 99.79%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 3010102 added (now 92.12%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 501 added (now 7.30%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 601 added (now -0.62%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 70101 added (now 92.12%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135603: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 03010102 removed (was 78.72%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 03010201 removed (was 17.04%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 03010202 removed (was 4.24%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 0501 removed (was 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 070101 removed (was 83.67%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 070102 removed (was 16.33%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 080205 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 3010201 added (now 58.94%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 3010202 added (now 45.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 501 added (now -4.12%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 70101 added (now 48.64%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 70102 added (now 55.47%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 80205 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135942: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 010201 removed (was 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 03010102 removed (was 50.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 0501 removed (was 50.81%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 0502 removed (was -4.61%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 0601 removed (was 1.35%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 070101 removed (was 50.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 10201 added (now 100.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 3010102 added (now 59.45%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 3010203 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 501 added (now 39.38%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 502 added (now -0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 601 added (now -0.85%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 70101 added (now 59.45%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5135983: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 010213 removed (was 98.86%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 03010102 removed (was 86.64%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 0501 removed (was 13.06%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 0502 removed (was -0.63%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 0601 removed (was -0.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 070101 removed (was 86.64%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 10213 added (now 99.96%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 3010102 added (now 84.06%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 501 added (now 14.87%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 502 added (now -0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 601 added (now -0.53%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 70101 added (now 84.06%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137112: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 03020201 removed (was 99.75%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 0501 removed (was 0.18%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 0502 removed (was 0.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 0601 removed (was 100.25%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 060201 removed (was 100.25%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 070101 removed (was 19.97%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 070102 removed (was 79.78%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 0803 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 3020201 added (now 98.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 501 added (now 1.58%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 502 added (now -0.10%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 601 added (now 100.28%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 60201 added (now 100.28%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 70101 added (now 19.66%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 70102 added (now 78.85%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 803 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137716: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 03020101 removed (was 100.22%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 0501 removed (was -0.66%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 0502 removed (was 0.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 0601 removed (was 0.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 070101 removed (was 100.22%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 0803 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 3020101 added (now 100.13%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 501 added (now 72.36%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 502 added (now -72.51%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 601 added (now -0.29%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 70101 added (now 100.13%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 803 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5137773: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 010201 removed (was 99.91%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 03010102 removed (was 48.27%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 0501 removed (was 48.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 0502 removed (was 0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 0601 removed (was 99.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 060201 removed (was 99.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 070101 removed (was 48.27%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 10201 added (now 100.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 3010102 added (now 63.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 501 added (now 34.62%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 601 added (now 98.28%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 60201 added (now 98.28%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 70101 added (now 63.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138151: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 010201 removed (was 99.94%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 03010102 removed (was 47.33%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 0501 removed (was 52.30%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 0502 removed (was -1.86%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 0601 removed (was 0.77%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 070101 removed (was 47.33%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 10201 added (now 100.11%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 3010102 added (now 64.91%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 501 added (now 35.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 502 added (now -0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 601 added (now -0.64%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 70101 added (now 64.91%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138201: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 03020101 removed (was 7.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 03020111 removed (was 24.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 03020201 removed (was 39.56%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 03020207 removed (was 6.25%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 03020211 removed (was 18.51%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 03020212 removed (was 2.84%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 0501 removed (was 0.49%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 0502 removed (was 0.43%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 0601 removed (was 99.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 060201 removed (was 99.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 070101 removed (was 20.37%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 070102 removed (was 78.72%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 3020101 added (now 2.77%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 3020111 added (now 26.09%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 3020201 added (now 44.56%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 3020207 added (now 5.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 3020211 added (now 19.55%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 3020212 added (now 0.44%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 501 added (now 0.42%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 502 added (now 1.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 601 added (now 99.59%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 60201 added (now 99.59%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 70101 added (now 9.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5138284: Code 70102 added (now 88.82%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 03010101 removed (was 8.54%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 03010102 removed (was 10.25%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 03010201 removed (was 36.64%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 03010202 removed (was 39.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 03010203 removed (was 3.59%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 03010204 removed (was 0.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 0501 removed (was 1.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 0601 removed (was 0.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 070101 removed (was 54.06%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 070102 removed (was 44.91%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 3010101 added (now 8.49%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 3010102 added (now 10.49%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 3010201 added (now 36.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 3010202 added (now 38.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 3010203 added (now 3.54%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 3010204 added (now 0.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 501 added (now 2.99%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 601 added (now 0.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 70101 added (now 53.57%)
+2026-01-20 20:25:33 - WARNING - Fund 5138391: Code 70102 added (now 43.40%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 03020201 removed (was 100.29%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 0501 removed (was -0.12%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 0502 removed (was -0.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 0601 removed (was 99.85%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 060201 removed (was 99.85%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 070102 removed (was 100.29%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 0803 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 3020201 added (now 100.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 501 added (now -0.51%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 502 added (now -0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 601 added (now 100.08%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 60201 added (now 100.08%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 70102 added (now 100.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 803 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138458: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 010201 removed (was 99.93%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 03010102 removed (was 59.45%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 0501 removed (was 39.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 0502 removed (was -1.38%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 0601 removed (was -0.15%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 070101 removed (was 59.45%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 10201 added (now 100.11%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 3010102 added (now 78.37%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 501 added (now 20.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 502 added (now -0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 601 added (now -0.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 70101 added (now 78.37%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138474: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 010201 removed (was 100.36%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 03010102 removed (was 78.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 0501 removed (was 4.60%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 0502 removed (was 7.41%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 0601 removed (was 0.68%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 070101 removed (was 78.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 10201 added (now 98.06%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 3010102 added (now 79.91%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 501 added (now 6.21%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 502 added (now 5.21%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 601 added (now -0.92%)
+2026-01-20 20:25:33 - WARNING - Fund 5138524: Code 70101 added (now 79.91%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 010101 removed (was 3.49%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 010102 removed (was 1.39%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 010201 removed (was 3.92%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 03010102 removed (was 6.25%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 03010201 removed (was 36.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 03010202 removed (was 46.74%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 03010203 removed (was 0.68%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 0501 removed (was 0.65%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 0502 removed (was 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 0601 removed (was 1.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 070101 removed (was 31.39%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 070102 removed (was 51.85%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 070202 removed (was 7.31%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 10101 added (now 3.75%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 10102 added (now 1.61%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 10201 added (now 4.08%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 3010102 added (now 4.11%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 3010201 added (now 34.29%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 3010202 added (now 49.96%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 3010203 added (now 0.69%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 501 added (now 1.35%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 502 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 601 added (now 1.57%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 70101 added (now 27.84%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 70102 added (now 52.67%)
+2026-01-20 20:25:33 - WARNING - Fund 5138532: Code 70202 added (now 8.53%)
+2026-01-20 20:25:33 - WARNING - Fund 5139027: Code 010101 removed (was 76.32%)
+2026-01-20 20:25:33 - WARNING - Fund 5139027: Code 010102 removed (was 23.70%)
+2026-01-20 20:25:33 - WARNING - Fund 5139027: Code 0501 removed (was -0.10%)
+2026-01-20 20:25:33 - WARNING - Fund 5139027: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139027: Code 10101 added (now 75.63%)
+2026-01-20 20:25:33 - WARNING - Fund 5139027: Code 10102 added (now 24.38%)
+2026-01-20 20:25:33 - WARNING - Fund 5139027: Code 501 added (now -0.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5139027: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 010101 removed (was 95.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 010102 removed (was 6.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 03010102 removed (was 6.05%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 03010201 removed (was 21.10%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 03010202 removed (was 1.18%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 03010203 removed (was 0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 0501 removed (was 2.70%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 070101 removed (was 28.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 070102 removed (was 0.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 10101 added (now 93.82%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 10102 added (now 6.67%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 3010102 added (now 7.15%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 3010201 added (now 22.45%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 3010202 added (now 1.41%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 3010203 added (now 0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 501 added (now 0.56%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 70101 added (now 30.89%)
+2026-01-20 20:25:33 - WARNING - Fund 5139183: Code 70102 added (now 0.15%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 010201 removed (was 99.83%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 03010102 removed (was 91.73%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 0501 removed (was 7.35%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 0502 removed (was -1.26%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 0601 removed (was 0.46%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 070101 removed (was 91.73%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 10201 added (now 100.10%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 3010102 added (now 89.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 501 added (now 10.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 502 added (now -1.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 601 added (now -0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 70101 added (now 89.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139274: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139365: Code 010101 removed (was 99.19%)
+2026-01-20 20:25:33 - WARNING - Fund 5139365: Code 010102 removed (was 0.81%)
+2026-01-20 20:25:33 - WARNING - Fund 5139365: Code 0501 removed (was -0.31%)
+2026-01-20 20:25:33 - WARNING - Fund 5139365: Code 0601 removed (was 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5139365: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139365: Code 10 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139365: Code 10101 added (now 99.30%)
+2026-01-20 20:25:33 - WARNING - Fund 5139365: Code 10102 added (now 0.69%)
+2026-01-20 20:25:33 - WARNING - Fund 5139365: Code 501 added (now -0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5139365: Code 502 added (now 0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5139365: Code 601 added (now 0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 03020111 removed (was 99.61%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 0501 removed (was 0.51%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 0502 removed (was -0.11%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 0601 removed (was 100.15%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 060201 removed (was 100.15%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 070101 removed (was 99.61%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 0803 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 3020111 added (now 97.80%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 501 added (now 2.08%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 502 added (now 0.12%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 601 added (now 100.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 60201 added (now 100.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 70101 added (now 97.80%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 803 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139514: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 010213 removed (was 100.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 0501 removed (was 0.35%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 0502 removed (was -0.37%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 0601 removed (was 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 060201 removed (was 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 10213 added (now 99.95%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 501 added (now -1.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 502 added (now 1.28%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 601 added (now 100.04%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 60201 added (now 100.04%)
+2026-01-20 20:25:33 - WARNING - Fund 5139886: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 010201 removed (was 83.11%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 010207 removed (was 8.15%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 010211 removed (was 3.81%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 010214 removed (was 4.32%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 0501 removed (was -0.04%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 0502 removed (was 0.61%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 0601 removed (was 100.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 060201 removed (was 97.85%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 10201 added (now 81.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 10207 added (now 8.51%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 10211 added (now 3.87%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 10214 added (now 4.40%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 501 added (now -0.92%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 502 added (now 3.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 601 added (now 100.91%)
+2026-01-20 20:25:33 - WARNING - Fund 5140041: Code 60201 added (now 98.47%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 010214 removed (was 97.69%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 03010102 removed (was 94.81%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 0501 removed (was 3.96%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 0502 removed (was -1.68%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 0601 removed (was 0.45%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 070101 removed (was 94.81%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 10214 added (now 98.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 3010102 added (now 86.09%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 501 added (now 13.59%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 502 added (now -1.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 601 added (now 0.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 70101 added (now 86.09%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140140: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140157: Code 010101 removed (was 100.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5140157: Code 0501 removed (was -0.44%)
+2026-01-20 20:25:33 - WARNING - Fund 5140157: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140157: Code 10101 added (now 99.95%)
+2026-01-20 20:25:33 - WARNING - Fund 5140157: Code 501 added (now -1.21%)
+2026-01-20 20:25:33 - WARNING - Fund 5140157: Code 502 added (now 0.09%)
+2026-01-20 20:25:33 - WARNING - Fund 5140157: Code 601 added (now 0.09%)
+2026-01-20 20:25:33 - WARNING - Fund 5140157: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 010213 removed (was 99.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 03010102 removed (was 63.87%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 0501 removed (was 34.43%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 0502 removed (was -1.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 0601 removed (was 0.47%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 070101 removed (was 63.87%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 10213 added (now 98.99%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 3010102 added (now 48.34%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 501 added (now 51.62%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 502 added (now -1.05%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 601 added (now -0.13%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 70101 added (now 48.34%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140165: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140199: Code 010101 removed (was 94.15%)
+2026-01-20 20:25:33 - WARNING - Fund 5140199: Code 010102 removed (was 5.85%)
+2026-01-20 20:25:33 - WARNING - Fund 5140199: Code 0501 removed (was -0.30%)
+2026-01-20 20:25:33 - WARNING - Fund 5140199: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140199: Code 10 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140199: Code 10101 added (now 94.21%)
+2026-01-20 20:25:33 - WARNING - Fund 5140199: Code 10102 added (now 5.81%)
+2026-01-20 20:25:33 - WARNING - Fund 5140199: Code 501 added (now -0.06%)
+2026-01-20 20:25:33 - WARNING - Fund 5140199: Code 502 added (now 0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5140199: Code 601 added (now 0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 010201 removed (was 100.18%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 03010102 removed (was 84.29%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 0501 removed (was 15.79%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 0502 removed (was -1.77%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 0601 removed (was 0.10%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 070101 removed (was 84.29%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 10201 added (now 100.11%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 3010102 added (now 90.19%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 501 added (now 7.18%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 502 added (now 3.27%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 601 added (now -0.81%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 70101 added (now 90.19%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140207: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 010201 removed (was 99.97%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 03010102 removed (was 81.29%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 0501 removed (was 18.42%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 0502 removed (was -1.63%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 0601 removed (was -0.31%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 070101 removed (was 81.29%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 10201 added (now 100.15%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 3010102 added (now 82.18%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 501 added (now 16.73%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 502 added (now -0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 601 added (now -0.77%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 70101 added (now 82.18%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140215: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140397: Code 010101 removed (was 81.38%)
+2026-01-20 20:25:33 - WARNING - Fund 5140397: Code 010102 removed (was 18.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5140397: Code 0501 removed (was -0.06%)
+2026-01-20 20:25:33 - WARNING - Fund 5140397: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140397: Code 10101 added (now 81.64%)
+2026-01-20 20:25:33 - WARNING - Fund 5140397: Code 10102 added (now 18.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5140397: Code 501 added (now 0.11%)
+2026-01-20 20:25:33 - WARNING - Fund 5140397: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 010208 removed (was 100.59%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 03010102 removed (was 96.59%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 0501 removed (was 3.17%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 0502 removed (was -3.45%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 0601 removed (was -0.98%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 070101 removed (was 96.59%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 10208 added (now 100.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 3010102 added (now 94.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 501 added (now 4.98%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 502 added (now -0.31%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 601 added (now 0.61%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 70101 added (now 94.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140439: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140447: Code 010101 removed (was 97.52%)
+2026-01-20 20:25:33 - WARNING - Fund 5140447: Code 010102 removed (was 2.48%)
+2026-01-20 20:25:33 - WARNING - Fund 5140447: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140447: Code 10101 added (now 97.73%)
+2026-01-20 20:25:33 - WARNING - Fund 5140447: Code 10102 added (now 2.25%)
+2026-01-20 20:25:33 - WARNING - Fund 5140447: Code 501 added (now 0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5140447: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140595: Code 010101 removed (was 97.57%)
+2026-01-20 20:25:33 - WARNING - Fund 5140595: Code 010102 removed (was 2.43%)
+2026-01-20 20:25:33 - WARNING - Fund 5140595: Code 0501 removed (was -0.43%)
+2026-01-20 20:25:33 - WARNING - Fund 5140595: Code 0601 removed (was 0.14%)
+2026-01-20 20:25:33 - WARNING - Fund 5140595: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140595: Code 10101 added (now 97.80%)
+2026-01-20 20:25:33 - WARNING - Fund 5140595: Code 10102 added (now 2.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5140595: Code 501 added (now -0.70%)
+2026-01-20 20:25:33 - WARNING - Fund 5140595: Code 502 added (now 0.70%)
+2026-01-20 20:25:33 - WARNING - Fund 5140595: Code 601 added (now 0.70%)
+2026-01-20 20:25:33 - WARNING - Fund 5140595: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 010201 removed (was 100.39%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 03010102 removed (was 85.73%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 0501 removed (was 7.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 0502 removed (was 1.41%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 0601 removed (was 99.89%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 060201 removed (was 99.89%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 070101 removed (was 85.73%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 10201 added (now 100.27%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 3010102 added (now 91.67%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 501 added (now -1.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 502 added (now 8.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 601 added (now 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 60201 added (now 99.98%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 70101 added (now 91.67%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140850: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 03010202 removed (was 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 0501 removed (was -0.03%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 070102 removed (was 93.12%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 070202 removed (was 6.88%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 080204 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 3010202 added (now 100.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 501 added (now -0.27%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 70102 added (now 90.38%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 70202 added (now 9.62%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 80204 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140868: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 010201 removed (was 99.91%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 03010102 removed (was 93.57%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 0501 removed (was 7.21%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 0502 removed (was -4.32%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 0601 removed (was -3.65%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 070101 removed (was 93.57%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 10201 added (now 100.39%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 3010102 added (now 98.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 501 added (now 11.41%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 502 added (now -8.76%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 601 added (now -1.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 70101 added (now 98.23%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5140884: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141072: Code 10101 added (now 99.99%)
+2026-01-20 20:25:33 - WARNING - Fund 5141072: Code 501 added (now 0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 010201 removed (was 99.34%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 03010102 removed (was 82.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 0501 removed (was 17.53%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 0502 removed (was -2.60%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 0601 removed (was -0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 070101 removed (was 82.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 10201 added (now 99.28%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 3010102 added (now 94.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 501 added (now 5.16%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 502 added (now -0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 601 added (now -0.63%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 70101 added (now 94.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141114: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 010201 removed (was 99.05%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 03010102 removed (was 83.58%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 0501 removed (was 17.20%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 0502 removed (was -2.42%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 0601 removed (was -0.04%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 070101 removed (was 83.58%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 0801 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 080201 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 09 removed (was 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 10201 added (now 101.07%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 3010102 added (now 93.50%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 501 added (now 7.09%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 502 added (now -0.01%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 601 added (now -1.34%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 70101 added (now 93.50%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 801 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 80201 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141213: Code 9 added (now 0.00%)
+2026-01-20 20:25:33 - WARNING - Fund 5141262: Code 10101 added (now 39.61%)
+2026-01-20 20:25:33 - WARNING - Fund 5141262: Code 10201 added (now 62.28%)
+2026-01-20 20:25:33 - WARNING - Fund 5141262: Code 501 added (now -1.69%)
+2026-01-20 20:25:33 - WARNING - Fund 5141262: Code 502 added (now -0.25%)
+2026-01-20 20:25:33 - WARNING - Fund 5141262: Code 601 added (now -0.34%)
+2026-01-20 20:25:33 - WARNING - Fund 5141759: Code 10101 added (now 49.74%)
+2026-01-20 20:25:33 - WARNING - Fund 5141759: Code 10201 added (now 49.37%)
+2026-01-20 20:25:33 - WARNING - Fund 5141759: Code 501 added (now 50.13%)
+2026-01-20 20:25:33 - WARNING - Fund 5141759: Code 502 added (now -0.02%)
+2026-01-20 20:25:33 - WARNING - Fund 5141759: Code 601 added (now 1.12%)
+2026-01-20 20:25:33 - WARNING - Fund 5141916: Code 10101 added (now 96.47%)
+2026-01-20 20:25:33 - WARNING - Fund 5141916: Code 10102 added (now 2.46%)
+2026-01-20 20:25:33 - WARNING - Fund 5141916: Code 501 added (now 1.06%)
+2026-01-20 20:25:33 - WARNING - Fund 5141924: Code 10101 added (now 98.90%)
+2026-01-20 20:25:33 - WARNING - Fund 5141924: Code 501 added (now 1.10%)
+2026-01-20 20:25:33 - INFO - Previous month comparison completed: 1521 exceptions
+2026-01-20 20:25:33 - INFO - Starting exposure profile check
+2026-01-20 20:25:33 - INFO - Exposure profile check completed: 0 exceptions
+2026-01-20 20:25:33 - INFO - Starting within-month combinations check
+2026-01-20 20:25:33 - INFO - Combinations check completed: 0 total exceptions
+2026-01-20 20:25:33 - INFO - Writing output Excel file...
