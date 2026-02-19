@@ -1,0 +1,29 @@
+{
+    "startUrls": [
+        {
+            "url": "https://www.magna.isa.gov.il/?form=%D7%A7303&q=%D7%9E%D7%92%D7%93%D7%9C%20%D7%A7%D7%A8%D7%A0%D7%95%D7%AA%20%D7%A0%D7%90%D7%9E%D7%A0%D7%95%D7%AA",
+            "userData": {
+                "label": "SEARCH_RESULTS",
+                "managerName": "מגדל"
+            }
+        }
+    ],
+    "keepUrlFragments": false,
+    "useChrome": false,
+    "headless": true,
+    "ignoreSslErrors": false,
+    "ignoreCorsAndCsp": false,
+    "downloadMedia": true,
+    "downloadCss": false,
+    "maxConcurrency": 1,
+    "maxRequestRetries": 3,
+    "maxRequestsPerCrawl": 10,
+    "navigationTimeoutSecs": 60,
+    "pageLoadTimeoutSecs": 60,
+    "proxyConfiguration": {
+        "useApifyProxy": true,
+        "apifyProxyGroups": ["RESIDENTIAL"]
+    },
+    "preNavigationHooks": "// Called before navigating to each URL\n({ page, request }) => {\n    // Set Hebrew language preference\n    return page.setExtraHTTPHeaders({\n        'Accept-Language': 'he-IL,he;q=0.9,en;q=0.8'\n    });\n}",
+    "pageFunction": "// See pageFunction.js for the full code\n// Copy the contents of pageFunction.js here"
+}

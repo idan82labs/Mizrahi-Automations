@@ -1,0 +1,1430 @@
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - CHK_1A - Fund Completeness
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - CHK_1B - Date Validity
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - CHK_2A - Previous Month Comparison
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - CHK_2B - Exposure Profile Check
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - CHK_3 - Within-Month Combinations
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - Log directory created: log\20260120_214444_2bf13249
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - Disclosure Report K.303 Validator
+2026-01-20 21:44:44 - INFO - ======================================================================
+2026-01-20 21:44:44 - INFO - Loading mutual funds list...
+2026-01-20 21:44:44 - INFO - Loaded 2443 funds from mutual funds list
+2026-01-20 21:44:44 - INFO - Found 540 funds for trustee: מזרחי טפחות חברה לנאמנות בע"מ
+2026-01-20 21:44:44 - INFO - Loading current month disclosure report...
+2026-01-20 21:44:44 - INFO - Detected CSV format for: disclosure_migdal_current_month.csv
+2026-01-20 21:44:44 - INFO - Loaded 4037 rows from disclosure report (encoding: utf-8-sig): disclosure_migdal_current_month.csv
+2026-01-20 21:44:44 - INFO - Loading previous month disclosure report...
+2026-01-20 21:44:44 - INFO - Detected CSV format for: disclosure_migdal_previous_month.csv
+2026-01-20 21:44:44 - INFO - Loaded 4037 rows from disclosure report (encoding: utf-8-sig): disclosure_migdal_previous_month.csv
+2026-01-20 21:44:44 - INFO - Report month: 2025-12
+2026-01-20 21:44:44 - INFO - Running validation checks...
+2026-01-20 21:44:44 - INFO - Starting fund completeness check
+2026-01-20 21:44:44 - WARNING - Fund 1143700 (תכלית סל (40) ת"א 35) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1145747 (קסם MSCI India (!)(4D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1145754 (קסם KOSPI 200 (!)(4D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1145804 (קסם MSCI World (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1145879 (קסם DJ Health Care Titans 30 (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1145945 (קסם NIKKEI 225 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1145952 (קסם EURO STOXX 50 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146059 (קסם 6A) ETF) ממונפת בחסר ת"א 35 פי 2 חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146091 (קסם IBOVESPA(!)(4D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146182 (קסם STOXX Europe 600 (4A) ETF מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146224 (קסם NASDAQ US BuyBack Achievers (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146240 (קסם STOXX Europe MID 200 (4A) ETF מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146265 (קסם 4A) ETF) משולבת מניות אירופה חודשי מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146307 (קסם STOXX Europe 600 Banks (4A) ETF מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146372 (קסם MDAX (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146380 (קסם 6A) ETF) ממונפת ת"א 35 פי 3 חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146422 (קסם LBMA Gold Price PM USD (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146430 (קסם 4A) ETF) אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146455 (קסם ETFי (00) חסר תל בונד 40 צמודות (534)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146521 (קסם FTSE China 50 (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146620 (קסם ETFי (4A) חוזה Bloomberg Brent Crude מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146638 (קסם  ETFי (0A) משולבת תל גוב-כללי (65%) וקונצרני ישראל (35%) חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146661 (קסם 2A) ETF) משולבת אגח כללי ישראל (90%) ומניות ישראל (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146679 (קסם MSCI AC World (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146687 (קסם Hang Seng China (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146695 (קסם 2A) ETF) משולבת אגח כללי ישראל (80%) ומניות (20%) חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146703 (קסם DAX (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146745 (קסם 6A) ETF) חסר ת"א 35 (5,337.49)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1146828 (קסם 4A) ETF) משולבת מניות MidCap מפותחות חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1147024 (קסם S&P SmallCap 600 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1147057 (קסם 2A) ETF) משולבת תל גוב-כללי(55%) קונצרני(30%) ומניות(15%) חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1147099 (קסם FTSE 250 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1147131 (קסם ETFי (00)(!) חסר תל בונד- תשואות צמודות (682.1)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1147214 (קסם 4D) ETF) משולבת מניות סקטורים ארהב S&P חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1147230 (קסם S&P Technology (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1147263 (קסם iBoxx $ Corps Liquid 3-7 Years (0A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1147297 (קסם iBoxx $ Corps Liquid 3-7 Years (0D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1147396 (קסם ETFי (00) תל בונד שקלי 3-5) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1148899 (הראל סל (4A) ת"א 125) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1148931 (הראל סל (4A) ת"א 90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1149970 (הראל סל (4A) ‏S&P 500 Equal Weight מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1150440 (הראל סל (00) תל בונד 20 צמודות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1150473 (הראל סל (00) תל בונד 60 צמודות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1150499 (הראל סל (00) תל בונד 40 צמודות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1150523 (הראל סל (00) תל בונד שקלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1150739 (הראל סל (00)(!) תל בונד גלובל שקלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1150747 (הראל סל (00) תל בונד שקלי-בנקים וביטוח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1150762 (קסם ETFי (00) תל בונד שקלי 50) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1150770 (קסם ETFי (00)(!) תל בונד גלובל שקלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1150796 (קסם S&P MidCap 400 (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1155092 (הראל סל (00) כשרה תל בונד 60 צמודות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1155191 (הראל סל (00) כשרה תל בונד שקלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1155340 (הראל סל (4A) כשרה ת"א 125) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1161058 (קסם ETF י(60) חסר ת"א 90 (6123.68)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1161827 (הראל סל (4A) ת"א טכנולוגיה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1161876 (קסם ETF י(00)(!) חסר תל בונד גלובל שקלי (718)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1166172 (הראל סל (4A) כשרה ת"א 90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1167568 (הראל סל (6A) ממונפת NASDAQ 100 פי 3 חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1167576 (הראל סל (6D) ממונפת בחסר NASDAQ 100 פי 2 חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1169622 (הראל סל (0A) תל בונד מאגר) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1184092 (הראל סל (4A)יS&P North American Expanded Tech Software מנוטרלת מט``ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1190685 (הראל סל (4A) אינדקס ישראל 100 רווחיות משקל שווה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1190859 (הראל סל (4D) אינדקס מומנטום ארה"ב) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1193614 (קסם ETF‏י (00) תל בונד-צמודות 1-3) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1193655 (קסם ETFי (00) תל בונד שקלי A) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1193663 (קסם ETFי (00) תל בונד שקלי AA-AAA) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1193671 (קסם ETFי (00) תל בונד צמודות 5-15) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1193689 (קסם ETFי (00) תל בונד-שקלי 1-3) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1193739 (קסם S&P Technology (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1193747 (קסם S&P MidCap 400 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1194315 (אימפקט (6F) לונג/שורט - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1194323 (פסטרנק שהם (6F) לונג/שורט - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1194356 (אנליסט (5D) נדל"ן ישראל - חו"ל Multi Strategy- קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1194364 (אנליסט (6D) מניות Multi Strategy- קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1200435 (אי.בי.אי. סל (4A)י 500 S&P מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1200443 (אי.בי.אי. סל (4A)י Nasdaq 100 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1200450 (אי.בי.אי. סל (4D)י Nasdaq 100) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1207646 (פורצ`ן (6F)י Multi-Strategy - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1210871 (הראל סל (0D)י S&P U.S. Treasury Bond 5-7 Year) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1212521 (פסטרנק שהם (2D)(!) אסטרטגיות אג"ח - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1213594 (הראל סל (4A) ת"א 90 ובנקים) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1218916 (ATF סל (4D)י S&P 500) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1218924 (ATF סל (4A)י S&P 500 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1220391 (הראל סל (4D)י (CME CF Bitcoin Reference Rate (BRRNY) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5100383 (מיטב (0B) מדורגות A ומעלה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5100953 (קסם אקטיב (3D) תיק מנוהל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5101019 (מיטב (4D) מניות טכנולוגיה חו"ל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5101092 (אנליסט (4D) טכנולוגיות חו"ל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5101258 (אנליסט (4B) מניות ישראל Large & mid cap) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5101266 (אנליסט (4B) נדל"ן) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5101480 (קסם אקטיב (2B)י אג"ח + 25%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5101639 (אנליסט (4D) השקעות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5102256 (מיטב (4D) מניות ארה"ב) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5102371 (הראל (0D) אג"ח דולר בינלאומי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5103296 (מיטב (4A) מניות ת"א MID CAP) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5104153 (מיטב (4B) מניות ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5104237 (אנליסט (0D)(!) אג"ח חו"ל ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5104328 (אנליסט (5C) אסטרטגיות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5104948 (קסם אקטיב (4D) אירופה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5105390 (הראל (0D)(!) אג"ח עולמי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5105580 (מיטב (2B) עוקבת תיק 2 הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5105929 (אנליסט (4D) מניות ארה"ב) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5105978 (קסם  אקטיב (0A) מדינה צמוד ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5106158 (איילון (0B) אג"ח חברות ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5106885 (הראל (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5106992 (מיטב (0B)(!) הזדמנויות אג"ח בסיכון גבוה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5107156 (הראל (0C) קונצרני A ומעלה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5107503 (הראל (1A) קונצרני שקלי + 10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5107859 (הראל (2B) אג"ח מדורג ומניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5108006 (הראל (4B) שווקים מפותחים עד 30% מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5109608 (איילון (1B)(!) אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5109848 (קסם אקטיב (4D) ארה"ב נקוב $) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5110051 (הראל (4B) ת"א-Midcap150) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5110192 (הראל (1B) מדד בינוני ממשלתי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5110341 (הראל (0D) כספית נקובה ב-$) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5110523 (אנליסט (0B)(!) אג"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5110929 (הראל (1B)(!) תיק אג"ח פלוס 10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5111307 (מיטב (2A) מדינה + 20%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5111992 (הראל (1A) נכסים סולידיים) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5112560 (הראל (0B) תיק מדינה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5112586 (הראל מחקה (2A) משולבת אג"ח ישראל (90%) מניות ישראל-חול (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5112693 (קסם אקטיב (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5112719 (קסם אקטיב (1A)י 10-90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5113121 (הראל מחקה (00) משולבת מדינה חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5113618 (מיטב (4A) מניות צמיחה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5113709 (אנליסט (2B) עוקבת תיק 2 הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5113782 (הראל (1D)(!) בונד + 10% - נקוב $ אגד חוץ) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5113956 (מיטב (1B) אג"ח קונצרני + 10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5114079 (מיטב (2B) י30/70) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5114350 (אנליסט 10/90 (1A)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5114434 (מיטב (0A) עוקבת תיק מרכיב הנזילות הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5114640 (מיטב (1A)(!) קונצרני פלוס) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5114780 (מיטב (0B)(!) אג"ח ממשלתי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5114939 (הראל מחקה (00) תל בונד צמודות-יתר) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5115027 (אנליסט (4B) מניות ת"א 125 במומנטום) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5115225 (אנליסט (00) שקלית קונצרנית ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5115290 (הראל 10/90 (1A) מחלקת) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5115506 (סיגמא (00)(!) מודל דירוג פנימי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5115514 (סיגמא (2B) מדינה + 20%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5115738 (הראל מחקה (2B) משולבת אג"ח ישראל (80%) מניות ישראל-חול (20%) חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5115803 (אנליסט (1A) ממשלתית תיק סולידי עד שנתיים) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5116033 (אנליסט (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5116553 (קסם אקטיב (1A) אג"ח מדינה + 10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5116629 (FOREST (י0A)(!) אג"ח מדורג) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5116660 (הראל (2B) שנהב אג"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5116736 (דיאמונד (4A) מניות ת"א 125) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5116785 (הראל מחקה (00) תל גוב-צמודות 5-10) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5116793 (הראל מחקה (00) משולבת אג"ח ישראל צמוד חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5116934 (אנליסט (0B) מודל דירוג פנימי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5116942 (קסם אקטיב (0A) אג"ח מדורג ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117007 (הראל מחקה (00) משולבת אג"ח ישראל שקלי חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117239 (הראל (1B) תיק אג"ח סולידי + 10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117247 (הראל מחקה (00) תל גוב-צמודות 2-5) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117262 (הראל מחקה (00) תל גוב-שקלי 2-5) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117270 (הראל מחקה (00) תל בונד 20 צמודות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117288 (הראל מחקה (00) תל בונד שקלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117445 (Gse Spotי (0A) מחקר קונצרני) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117460 (הראל (2B) תיק אג"ח + 15%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117650 (איילון (2C)י 25/75 כשרה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117668 (איילון (0B) תיק השקעות ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117684 (איילון (6A) אקסטרים ת"א 125 פי 3) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117692 (איילון (60) אקסטרים ת"א 35 פי 3) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117700 (איילון (00) כספית) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117734 (אימפקט (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117742 (איילון (4B) משקל שווה ת"א 35) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117759 (איילון (6D) אקסטרים 500 S&P פי 3) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5117809 (איילון (0F) אקסטרים דולר פי 3) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5118419 (הראל מחקה (4D)י S&P 500 נקובה ב-$) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5119003 (קסם אקטיב (4D) מניות ארה"ב) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5119144 (אנליסט (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5119359 (מיטב (1A)י 5/95) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5119367 (מיטב (1B) אג"ח פלוס) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5119409 (הראל (00) כספית שקלית) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5119607 (אנליסט (00) אג"ח מדינה עד 5 שנים ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5119672 (אנליסט (0A)(!) אג"ח פיזור רחב ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5119763 (הראל מחקה (2A) משולבת מדינה (90%) מניות ישראל-חול (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5119854 (פרופאונד (4B) מנייתית) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120225 (אימפקט (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120340 (הראל (0A) עוקבת מרכיב נזילות - הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120704 (סיגמא (0A)(!) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120720 (סיגמא (1B)(!) תיק אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120795 (אנליסט (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120811 (אנליסט (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120837 (אנליסט (4B) תעשיות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120852 (אנליסט (00) כספית שקלית) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120886 (מיטב (0B) סולידית) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120894 (אנליסט (2C) אג"ח חברות + 30%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120902 (מיטב (2D) עוקבת תיק 2 חו"ל הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5120910 (אנליסט (1C) אג"ח מדינה + 10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5121140 (אנליסט (00) כספית) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5121272 (מיטב (0B) מדינה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5121694 (מיטב (1B)(!)י 10/90 תיק אג"ח חו"ל עד 30% מט"ח.) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5121736 (מיטב (4B) מניות חו"ל עד 30% מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5121801 (הראל מחקה (2A) משולבת אג``ח ישראל (75%) מניות ישראל-חול (25%) חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5121819 (הראל מחקה (00) משולבת ממשלתיות חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5121835 (הראל מחקה (00) תל בונד 60 צמודות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5122510 (הראל מחקה (4A) ת"א 125) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5122536 (אלפא טק (4D) אירופה E.S.G) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5122551 (הראל מחקה (00) All-Bond-ריבית משתנה שקלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5122601 (מיטב (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5122619 (מיטב (0B) מדינה צמודה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5122668 (קסם אקטיב (4A) ארה"ב מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5122957 (קסם S&P 500 (4A) KTF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5123104 (הראל מחקה (00) אינדקס קונצרני מאוזן מח"מ 2-4) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5123112 (הראל מחקה (00) אינדקס קונצרני צמוד A) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5123120 (מיטב (00) מדינה שקלי עד 4 שנים) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5123138 (מיטב (0B) אג"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5123146 (מיטב (1A) קונצרני שקלי פלוס) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5123211 (קסם אקטיב (4D) זהב) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5123468 (קסם אקטיב (1B)(!)י אג"ח +10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5123476 (קסם אקטיב (0A) אג"ח מדינה ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5123559 (הראל מחקה (00) אינדקס קונצרני שקלי A) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5124060 (סיגמא (2C)י 25/75) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5124672 (הראל (3B) תיק השקעות עד 50%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5124698 (הראל (0A) תיק אג"ח סולידי עד שלוש שנים) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5124888 (פרופאונד (1A)י 10/90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5124912 (הראל מחקה (00) אינדקס לפדיון 2028 (מתגלגל כל 6 שנים)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5125265 (FOREST י(1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5125463 (פסטרנק שהם (A0)(!) אג"ח חברות ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5125828 (אלפי בנדק (0A)(!)י All Bond כללי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5125836 (אלפא טק (4A) מניות ESG ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5126065 (מיטב (3B)י 40/60) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5126347 (מיטב (2C) תיק השקעות 15/85) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5126685 (אנליסט (4B) מניות SMALL CAP ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5126776 (קסם אקטיב (2B)י 20-80) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5127030 (מיטב (1A) סולידית פלוס) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5127139 (שופן (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5127501 (הראל מחקה (4A)י Dax - מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5127527 (הראל מחקה (4A)י S&P 500 - מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5127568 (איילון (4D) קנאביס חו"ל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5127576 (פסטרנק שהם (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5127774 (הראל (2D) תיק אג"ח חו"ל - נקובה $) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5127782 (הראל (1B) מדינה + 10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5127790 (הראל (00) כספית מגמת ריבית) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5127808 (הראל (0D) כספית דולרית מגמת ריבית) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128095 (הראל מחקה (0A) תל בונד מאגר) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128103 (הראל מחקה (00) תל גוב-משתנה שקלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128111 (הראל מחקה (00) תל גוב-שקלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128137 (הראל מחקה (00) תל גוב-שקלי 5+) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128194 (הראל מחקה (2A) משולבת אג"ח ישראל (90%) ומניות (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128202 (הראל מחקה (4A) משולבת מניות חו"ל חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128210 (הראל מחקה (2A) משולבת אג"ח ישראל (85%) מניות ישראל-חול (15%) חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128236 (הראל מחקה (4D) משולבת מניות חו"ל חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128244 (הראל מחקה (4D) משולבת מניות סקטורים ארה"ב חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128251 (הראל מחקה (4A) משולבת מניות סקטורים ארה"ב חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128293 (אלפא טק (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128509 (דיאמונד (4D) מניות גלובאלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128673 (סיגמא (1A) מדינה צמודה פלוס) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128855 (איילון (4D) מניות גלובאלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128871 (הראל (2B) עוקבת תיק מס` 3 - הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128897 (הראל (00) שהם אג"ח סולידי ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5128947 (איילון (6D) אקסטרים נאסד"ק 100 פי 3) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129093 (פורצ`ן (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129101 (פורצ`ן (0D)(!) אג"ח בינלאומי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129119 (פורצ`ן (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129275 (הראל מחקה (4D)יS&P 500) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129283 (הראל מחקה (4D)יNASDAQ 100) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129382 (שופן (0B) אג"ח גלאט בפקוח ועד ההלכה של הגר"ש ואזנר והגר"נ קרליץ) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129424 (הראל מחקה (00) אינדקס לפדיון 2030 (מתגלגל כל 6 שנים)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129473 (אלפא טק (4D) מניות חו"ל ESG) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129606 (פסטרנק שהם (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129655 (אנליסט (2B) עוקבת תיק 3 הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129663 (הראל מחקה (00) אינדקס אג"ח תזרימיות A ומעלה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129689 (הראל מחקה (00) תל בונד צמודות- בנקים ללא COCO) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129697 (הראל מחקה (4A) תל דיב) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129705 (הראל מחקה (4A) ת"א סקטור-באלאנס) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5129978 (FOREST (י0B)(!) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130018 (הראל מחקה (00) אינדקס אג"ח CoCo בנקים) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130026 (הראל מחקה (4D)י Dow Jones U.S. Select Medical Equipment) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130307 (איילון (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130315 (איילון (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130323 (איילון (4B) מימון ואשראי חוץ בנקאי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130414 (פרופאונד אג"ח מדורגות (0A)(!)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130422 (פרופאונד גמישה (4D)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130430 (פרופאונד 20/80 (2B)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130638 (הראל מחקה (4A) ת"א 90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130661 (הראל מחקה (4A) ת"א 35) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130729 (אימפקט (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130802 (פורצ`ן (0B)(!) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130810 (פסטרנק שהם (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130919 (אי.בי.אי. מחקה (4A) ת"א 90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130950 (אנליסט (0B) סולידית LV) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5130992 (אי.בי.אי. מחקה (00) תל בונד שקלי AA-AAA) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5131008 (אי.בי.אי. מחקה (00) תל בונד צמודות AA-AAA) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5131081 (הראל מחקה (4A) ת"א טכנולוגיה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5131164 (הראל מחקה (00) אינדקס AA-AAA ריאליות שקלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5131180 (הראל מחקה (00) אינדקס AA-AAA ריאליות צמוד) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5131347 (קסם KTFי (00) משולבת אג"ח חברות (50%) אג"ח מדינה (50%) חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5131404 (הראל מחקה (4A) ת"א בנייה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5131420 (הראל מחקה (4A) ת"א מניב ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5131792 (הראל מחקה (0A) תל גוב-כללי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5131958 (דיאמונד (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5132006 (קסם KTF י(4D)י אינדקס eGaming מנוטרלת דולר) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5132030 (הראל מחקה (00) אינדקס A שקלי מנפיקים ישראלים) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5132204 (פסטרנק שהם (1B)(!)י 10/90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5132295 (הראל מחקה (4A) אינדקס קמעונאות ומסחר ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5132410 (פלקון (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5132592 (הראל מחקה (0D) אינדקס A-AAA ת"א שקלי - נקובה $) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5132865 (הראל מחקה (00) אינדקס A-AA צמוד 0-2) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133012 (קסם S&P Regional Banks (4D) KTF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133111 (פסטרנק שהם (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133145 (הראל מחקה (00) אינדקס A-AAA ריאליות פקטור מרווח מאג``ח ממשלתי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133152 (הראל מחקה (0A) אינדקס אג"ח מנפיקים ישראלים במשקל שווה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133236 (ATF מחקה (40) אינדקס בנקים וביטוח ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133459 (פורצ`ן (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133574 (הראל מחקה (4A)י NASDAQ 100 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133608 (הראל מחקה (0D) אינדקס AA-AAA ת"א 0-2 - נקובה $) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133616 (הראל מחקה (4A)י אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133756 (הראל מחקה (0A)י All Bond כללי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133764 (הראל מחקה (4A) ת"א All-Share) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133905 (ATF מחקה (00) אינדקס אג"ח חברות ישראל EW TOP 100) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5133939 (מיטב (2A) תיק אג"ח + 15%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134028 (מיטב (2B)י 25/75) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134036 (מיטב (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134101 (הראל מחקה (4A) אינדקס מניות ערך ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134143 (אימפקט (4D)י Global Shares) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134226 (פסטרנק שהם (0B) אג"ח כללי ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134234 (פסטרנק שהם (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134283 (פורצ`ן (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134606 (מיטב (0A)(!) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134614 (מיטב (1A)(!) תיק אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134663 (מיטב (0A) אג"ח מדינה ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134705 (הראל מחקה (0A) אינדקס לפדיון 2026 מנפיקים במשקל שווה (מתגלגל כל 6 שנים)) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134754 (הראל (2C) אגד ישראלי עד 15% מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134762 (הראל (2C) אגד ישראלי עד 30% מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134846 (פרופאונד (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5134929 (קסם iBoxx USD Liquid FRN Investment Grade Corporates 100 (0D) KTF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5135058 (Gse Spotי (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5135165 (ATF מחקה (4A) אינדקס ת"א-125 מומנטום ענפי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5135264 (פרופאונד (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5135272 (קסם KTFי (4A) משולבת מניות חו"ל מפותחות MidCap חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5135348 (הראל מחקה (4D) ת"א 90 - נקובה $) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5135736 (הראל מחקה (0D) תל גוב-מק"מ - נקובה $) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5135835 (הראל מחקה (00) תל גוב-שקלי 10+) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5135843 (הראל מחקה (00) תל גוב-צמודות 10+) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5135975 (ATF מחקה (00) אינדקס אג"ח בנקים וחב` ממשלתיות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136064 (קסם KTFי (4D)י NIKKEI 225) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136080 (פסטרנק שהם (2B)י 15/85) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136098 (פסטרנק שהם (4B) מניות Mid Cap ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136163 (מיטב (4B) נדל"ן - תשתיות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136254 (בול מרקט (4D) השקעות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136288 (FOREST י(2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136619 (פלקון (0A) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136627 (סיגמא (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136676 (ATF מחקה (2B) משולבת אינדקס מנגנון אג"ח (75%) מניות (25%) חודשי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136692 (קסם KTFי (4D)י S&P Consumer Staples) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136775 (ATF מחקה (4A) אינדקס מניות ארה"ב Large Cap מומנטום ענפי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136833 (אי.בי.אי. מחקה (4A)י S&P 500 Equal Weight מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136841 (אי.בי.אי. מחקה (4A) ת"א סקטור-באלאנס) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136858 (אי.בי.אי. מחקה (00) תל בונד-צמודות 1-3) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136866 (איילון (00) כספית ניהול הנזילות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5136924 (איילון (0D) כספית דולרית) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137070 (אנליסט (0A) סולידית) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137211 (פורצ`ן (0B) תיק אג"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137237 (אי.בי.אי. מחקה (4A) אינדקס מניות דיבידנד ישראל מחלקת) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137310 (הראל (0D) כספית יורו) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137336 (ATF מחקה (4D) אינדקס מניות ארה"ב Large Cap מומנטום ענפי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137435 (הראל מחקה (4D) אינדקס Top10 Tech) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137476 (פסטרנק שהם (0B)(!) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137526 (אי.בי.אי. מחקה (00) אינדקס אג"ח קופון גבוה מחלקת) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137690 (מיטב (00) כספית שקלית ללא קונצרני) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137765 (פסטרנק שהם (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137807 (הראל מחקה (4D)י  S&P 500 Equal Weight) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137831 (איילון (00) אג"ח קונצרני מדורג A ומעלה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137880 (מיטב (2B)י 20/80 מודל ESG) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137898 (מיטב (2B)י 30/70 מודל ESG) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5137997 (ATF מחקה (00) אינדקס שקלים ארוכים עד 20% מדינה) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5138219 (פרופאונד (0B)(!) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5138359 (ATF מחקה (00) אינדקס EW TOP100 מרווח מעל הממוצע מותאם מח"מ) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5138375 (מיטב (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5138409 (הראל מחקה (4D) אינדקס תעשיות ביטחוניות ארה``ב וישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5138425 (פורצ`ן (0D)(!) אג"ח גלובלי – נקובה $) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5138722 (הראל מחקה (0D)י iBoxx USD Liquid 5-9 Top 50) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5138839 (אנליסט (0D) כספית דולרית - נקובה $) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5138847 (הראל מחקה (00) תל בונד צמודות בנקים וחברות ממשלתיות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5138854 (הראל מחקה (00) תל בונד צמודות 5-10) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5138862 (הראל מחקה (00) תל בונד שקלי 5-10) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5138896 (קסם KTF י(4D)י MSCI India) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139076 (איילון (0D) כספית דולרית – נקובה דולר) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139175 (ATF מחקה (4A) אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139233 (קסם KTFי (4A) ת"א-125 ערך) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139332 (מיטב (4B) מניות מומנטום) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139340 (איילון (6A) אקסטרים בנקים פי 3) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139357 (איילון (6A) אקסטרים ת"א 90 פי 3) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139407 (קסם KTFי (00) תל בונד 125 ערך שקלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139415 (קסם KTFי (00) תל בונד 125 ערך צמודות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139449 (אנליסט (0B)(!) תיק קונצרני) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139571 (הראל מחקה (4D)י S&P 500 Momentum) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139639 (הראל מחקה (4A) ת"א 90 ובנקים) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139670 (אנליסט (4B) מניות ערך) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139688 (אנליסט (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139712 (אנליסט (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139738 (קסם KTFי (4A) ת"א 90 ובנקים) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139753 (פורצ`ן (1B) תיק אג"ח בינלאומי עד 20% מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139837 (הראל מחקה (4D)י Russell 2000) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139902 (קסם S&P/TSX 60 (4D) KTF) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139936 (ATF מחקה (4A) ת"א-20) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139944 (ATF מחקה (4A) ת"א-50 ריאלי) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139951 (ATF מחקה (4A) ת"א-200) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139969 (DCMSי (2D) תיק השקעות גלובלי עד 30% מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139985 (הראל מחקה (00)(!) תל בונד- תשואות צמודות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5139993 (הראל מחקה (4A)י S&P Hotels, Resorts & Cruise lines 15% FMC Capped מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140009 (הראל מחקה (4A) ת"א- ביטוח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140058 (קסם KTF י(00)י תל בונד צמודות 1-3) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140116 (ATF מחקה (00) תל בונד-צמודות A) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140124 (ATF מחקה (00)(!) תל בונד-תשואות צמודות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140132 (הראל מחקה (4A)י S&P 500 Momentum מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140348 (מיטב (2B)י 15/85 מודל ESG) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140355 (מיטב (0B) אג"ח מודל ESG) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140413 (אנליסט (00) כספית חיסכון) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140504 (מיטב (4A) ת"א 125 מומנטום) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140553 (פסטרנק שהם (2B)י 25/75) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140561 (הראל מחקה (4A) אינדקס תעשיות ביטחוניות ארה"ב וישראל מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140579 (אקהאוס (4B) מניות ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140629 (הראל מחקה (4D) אינדקס תשתיות ובינוי ארה"ב וישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140686 (אנליסט (6F) מניות ממונפת) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140694 (פרופאונד (4B) מניות Large & Mid Cap ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5140926 (הראל מחקה (4D) אינדקס תעשיות ביטחוניות אירופה Top10) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141049 (פרופאונד (1B)(!) תיק אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141072 (MTF מחקה (4A) אינדקס פיננסים ישראל Top15) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141247 (אנליסט (4B) מניות Mid Cap ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141254 (אנליסט (1A) מדינה צמודה פלוס) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141262 (MTF מחקה (Indxx Top 10 US-Israel Banks (4A מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141296 (מיטב (00) כספית ג`מבו) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141312 (קסם KTFי (4A) אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141486 (מיטב (4B) בנקים – ביטוח ושוק ההון) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141510 (אקהאוס (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141544 (סיגמא (2B) תיק אג"ח + 30%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141569 (אלטשולר שחם מחקה (4A)י Nasdaq 100 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141635 (אלטשולר שחם מחקה (00) תל בונד-שקלי 5-15) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141643 (סיגמא (4B) מניות ת"א 125) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141650 (סיגמא (4B) מניות ערך) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141668 (סיגמא (0B) אג"ח מדורג ללא מניות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141759 (MTF מחקה (4A) משולבת ת"א-125 (50%) S&P 500 י(50%) חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141767 (אנליסט (3C) תיק השקעות עד 50%) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141817 (ATF מחקה (0A) אינדקס אג"ח ממשלת ארה"ב - מח"מ דינמי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141890 (פלקון (4D) תיק השקעות גמיש) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141916 (MTF מחקה (4A)י (ILS)י S&P Israel 70 MidCap) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141924 (MTF מחקה (4A)י (ILS)י S&P Israel 30 LargeCap) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5141940 (פורצ`ן (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5142039 (תכלית TTF י(4A) ‏ת"א נדל"ן-35) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5142054 (MTF מחקה (4D)י Crypto Ecosystem iNDEX) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5142088 (קסם KTF י(4A)י MarketVector תעשיות בטחוניות ישראליות) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 5142096 (קסם KTF י(4A)י LBMA GOLD PRICE PM USD מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 21:44:44 - WARNING - Fund 1158310 (MTF. INDX US E-COMMERCE 4) is in report but not in mutual funds list
+2026-01-20 21:44:44 - WARNING - Fund 1170646 (MTFסל אינדקס צריכה מחזורי) is in report but not in mutual funds list
+2026-01-20 21:44:44 - WARNING - Fund 5132576 (BLUESTAR TRAVEL& VACATION) is in report but not in mutual funds list
+2026-01-20 21:44:44 - INFO - Fund completeness check completed: 447 exceptions
+2026-01-20 21:44:44 - INFO - Starting date validity check for month: 2025-12
+2026-01-20 21:44:44 - WARNING - Row 421: Date mismatch for fund 1162361 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 422: Date mismatch for fund 1162361 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 423: Date mismatch for fund 1162361 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 424: Date mismatch for fund 1162361 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 425: Date mismatch for fund 1162361 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 426: Date mismatch for fund 1162361 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 427: Date mismatch for fund 1162361 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 428: Date mismatch for fund 1162361 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 429: Date mismatch for fund 1162361 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 430: Date mismatch for fund 1162361 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 452: Date mismatch for fund 1168723 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 453: Date mismatch for fund 1168723 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 454: Date mismatch for fund 1168723 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 455: Date mismatch for fund 1168723 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 456: Date mismatch for fund 1168723 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 457: Date mismatch for fund 1168723 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 486: Date mismatch for fund 1171321 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 487: Date mismatch for fund 1171321 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 488: Date mismatch for fund 1171321 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 489: Date mismatch for fund 1171321 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 490: Date mismatch for fund 1171321 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 491: Date mismatch for fund 1171321 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 492: Date mismatch for fund 1171321 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 493: Date mismatch for fund 1171321 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 494: Date mismatch for fund 1171321 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 495: Date mismatch for fund 1171321 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 496: Date mismatch for fund 1171321 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 580: Date mismatch for fund 1187079 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 581: Date mismatch for fund 1187079 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 582: Date mismatch for fund 1187079 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 583: Date mismatch for fund 1187079 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 584: Date mismatch for fund 1187079 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 585: Date mismatch for fund 1187079 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 586: Date mismatch for fund 1187079 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 587: Date mismatch for fund 1187079 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 588: Date mismatch for fund 1187079 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 589: Date mismatch for fund 1187079 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 590: Date mismatch for fund 1187079 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 591: Date mismatch for fund 1188069 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 592: Date mismatch for fund 1188069 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 593: Date mismatch for fund 1188069 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 594: Date mismatch for fund 1188069 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 595: Date mismatch for fund 1188069 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 596: Date mismatch for fund 1188069 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 597: Date mismatch for fund 1188069 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 598: Date mismatch for fund 1188069 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 599: Date mismatch for fund 1188069 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 600: Date mismatch for fund 1188069 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 601: Date mismatch for fund 1188069 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 602: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 603: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 604: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 605: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 606: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 607: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 608: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 609: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 610: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 611: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 612: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 613: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 614: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 615: Date mismatch for fund 1189810 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 616: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 617: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 618: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 619: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 620: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 621: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 622: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 623: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 624: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 625: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 626: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 627: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 628: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 629: Date mismatch for fund 1189828 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 644: Date mismatch for fund 1193044 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 645: Date mismatch for fund 1193044 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 646: Date mismatch for fund 1193044 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 647: Date mismatch for fund 1193044 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 648: Date mismatch for fund 1193044 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 649: Date mismatch for fund 1193044 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 650: Date mismatch for fund 1193044 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 651: Date mismatch for fund 1193044 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 652: Date mismatch for fund 1193044 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 653: Date mismatch for fund 1193051 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 654: Date mismatch for fund 1193051 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 655: Date mismatch for fund 1193051 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 656: Date mismatch for fund 1193051 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 657: Date mismatch for fund 1193051 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 658: Date mismatch for fund 1193051 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 659: Date mismatch for fund 1193051 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 660: Date mismatch for fund 1193051 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 678: Date mismatch for fund 1193135 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 679: Date mismatch for fund 1193135 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 680: Date mismatch for fund 1193135 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 681: Date mismatch for fund 1193135 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 682: Date mismatch for fund 1193135 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 683: Date mismatch for fund 1193135 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 684: Date mismatch for fund 1193135 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 685: Date mismatch for fund 1193135 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 686: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 687: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 688: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 689: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 690: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 691: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 692: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 693: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 694: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 695: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 696: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 697: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 698: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 699: Date mismatch for fund 1193317 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 700: Date mismatch for fund 1200195 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 701: Date mismatch for fund 1200195 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 702: Date mismatch for fund 1200195 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 703: Date mismatch for fund 1200195 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 704: Date mismatch for fund 1200195 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 705: Date mismatch for fund 1200195 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 706: Date mismatch for fund 1200195 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 707: Date mismatch for fund 1200195 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 708: Date mismatch for fund 1200195 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 709: Date mismatch for fund 1200195 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 710: Date mismatch for fund 1200195 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 711: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 712: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 713: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 714: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 715: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 716: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 717: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 718: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 719: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 720: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 721: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 722: Date mismatch for fund 1200351 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 736: Date mismatch for fund 1201623 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 737: Date mismatch for fund 1201623 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 738: Date mismatch for fund 1201623 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 739: Date mismatch for fund 1201623 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 740: Date mismatch for fund 1201623 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 752: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 753: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 754: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 755: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 756: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 757: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 758: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 759: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 760: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 761: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 762: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 763: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 764: Date mismatch for fund 1207901 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 765: Date mismatch for fund 1212794 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 766: Date mismatch for fund 1212794 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 767: Date mismatch for fund 1212794 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 768: Date mismatch for fund 1212794 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 769: Date mismatch for fund 1212794 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 770: Date mismatch for fund 1212794 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 771: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 772: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 773: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 774: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 775: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 776: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 777: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 778: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 779: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 780: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 781: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 782: Date mismatch for fund 1217561 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 783: Date mismatch for fund 1219294 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 784: Date mismatch for fund 1219294 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 785: Date mismatch for fund 1219294 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 786: Date mismatch for fund 1219294 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 787: Date mismatch for fund 1219294 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 788: Date mismatch for fund 1219294 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 789: Date mismatch for fund 1219294 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 790: Date mismatch for fund 1219294 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 791: Date mismatch for fund 1219294 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 792: Date mismatch for fund 1219294 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 793: Date mismatch for fund 1221670 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 794: Date mismatch for fund 1221670 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 795: Date mismatch for fund 1221670 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 796: Date mismatch for fund 1221670 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 797: Date mismatch for fund 1221670 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 798: Date mismatch for fund 1221670 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 799: Date mismatch for fund 1221670 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 800: Date mismatch for fund 1221670 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 801: Date mismatch for fund 1221670 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 802: Date mismatch for fund 1221670 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 803: Date mismatch for fund 1221670 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 804: Date mismatch for fund 1222439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 805: Date mismatch for fund 1222439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 806: Date mismatch for fund 1222439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 807: Date mismatch for fund 1222439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 808: Date mismatch for fund 1222439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 809: Date mismatch for fund 1222439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 810: Date mismatch for fund 1222439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 811: Date mismatch for fund 1222439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 812: Date mismatch for fund 1222439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 813: Date mismatch for fund 1222439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1006: Date mismatch for fund 5121843 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1007: Date mismatch for fund 5121843 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1008: Date mismatch for fund 5121843 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1009: Date mismatch for fund 5121843 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1010: Date mismatch for fund 5121843 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1011: Date mismatch for fund 5121843 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1012: Date mismatch for fund 5121843 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1013: Date mismatch for fund 5121843 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1014: Date mismatch for fund 5121843 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1015: Date mismatch for fund 5121843 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1016: Date mismatch for fund 5121843 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1027: Date mismatch for fund 5122163 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1028: Date mismatch for fund 5122163 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1029: Date mismatch for fund 5122163 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1030: Date mismatch for fund 5122163 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1031: Date mismatch for fund 5122163 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1032: Date mismatch for fund 5122163 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1033: Date mismatch for fund 5122163 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1034: Date mismatch for fund 5122163 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1035: Date mismatch for fund 5122163 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1036: Date mismatch for fund 5122163 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1037: Date mismatch for fund 5122262 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1038: Date mismatch for fund 5122262 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1039: Date mismatch for fund 5122262 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1040: Date mismatch for fund 5122262 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1041: Date mismatch for fund 5122262 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1042: Date mismatch for fund 5122262 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1043: Date mismatch for fund 5122262 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1044: Date mismatch for fund 5122262 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1050: Date mismatch for fund 5122320 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1051: Date mismatch for fund 5122320 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1052: Date mismatch for fund 5122320 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1053: Date mismatch for fund 5122320 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1054: Date mismatch for fund 5122320 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1055: Date mismatch for fund 5122320 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1056: Date mismatch for fund 5122320 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1071: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1072: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1073: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1074: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1075: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1076: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1077: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1078: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1079: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1080: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1081: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1082: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1083: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1084: Date mismatch for fund 5122627 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1085: Date mismatch for fund 5122635 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1086: Date mismatch for fund 5122635 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1087: Date mismatch for fund 5122635 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1088: Date mismatch for fund 5122635 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1089: Date mismatch for fund 5122635 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1090: Date mismatch for fund 5122635 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1091: Date mismatch for fund 5122635 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1112: Date mismatch for fund 5122973 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1113: Date mismatch for fund 5122973 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1114: Date mismatch for fund 5122973 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1115: Date mismatch for fund 5122973 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1116: Date mismatch for fund 5122973 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1117: Date mismatch for fund 5122973 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1118: Date mismatch for fund 5122973 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1126: Date mismatch for fund 5123260 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1127: Date mismatch for fund 5123260 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1128: Date mismatch for fund 5123260 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1129: Date mismatch for fund 5123260 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1130: Date mismatch for fund 5123260 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1131: Date mismatch for fund 5123260 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1132: Date mismatch for fund 5123260 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1133: Date mismatch for fund 5123260 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1134: Date mismatch for fund 5123278 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1135: Date mismatch for fund 5123278 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1136: Date mismatch for fund 5123278 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1137: Date mismatch for fund 5123278 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1138: Date mismatch for fund 5123278 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1139: Date mismatch for fund 5123278 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1140: Date mismatch for fund 5123278 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1141: Date mismatch for fund 5123344 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1142: Date mismatch for fund 5123344 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1143: Date mismatch for fund 5123344 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1144: Date mismatch for fund 5123344 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1145: Date mismatch for fund 5123344 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1146: Date mismatch for fund 5123344 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1147: Date mismatch for fund 5123344 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1148: Date mismatch for fund 5123344 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1149: Date mismatch for fund 5123351 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1150: Date mismatch for fund 5123351 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1151: Date mismatch for fund 5123351 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1152: Date mismatch for fund 5123351 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1153: Date mismatch for fund 5123351 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1154: Date mismatch for fund 5123351 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1155: Date mismatch for fund 5123351 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1156: Date mismatch for fund 5123351 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1157: Date mismatch for fund 5123351 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1158: Date mismatch for fund 5123351 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1159: Date mismatch for fund 5123369 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1160: Date mismatch for fund 5123369 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1161: Date mismatch for fund 5123369 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1162: Date mismatch for fund 5123369 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1163: Date mismatch for fund 5123369 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1164: Date mismatch for fund 5123369 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1165: Date mismatch for fund 5123393 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1166: Date mismatch for fund 5123393 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1167: Date mismatch for fund 5123393 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1168: Date mismatch for fund 5123393 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1169: Date mismatch for fund 5123393 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1170: Date mismatch for fund 5123393 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1171: Date mismatch for fund 5123393 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1182: Date mismatch for fund 5123518 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1183: Date mismatch for fund 5123518 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1184: Date mismatch for fund 5123518 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1185: Date mismatch for fund 5123518 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1186: Date mismatch for fund 5123518 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1187: Date mismatch for fund 5123518 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1188: Date mismatch for fund 5123518 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1189: Date mismatch for fund 5123518 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1190: Date mismatch for fund 5123518 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1214: Date mismatch for fund 5123641 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1215: Date mismatch for fund 5123641 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1216: Date mismatch for fund 5123641 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1217: Date mismatch for fund 5123641 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1471: Date mismatch for fund 5129069 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1472: Date mismatch for fund 5129069 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1473: Date mismatch for fund 5129069 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1474: Date mismatch for fund 5129069 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1475: Date mismatch for fund 5129069 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1476: Date mismatch for fund 5129069 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1477: Date mismatch for fund 5129069 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1478: Date mismatch for fund 5129069 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1479: Date mismatch for fund 5129069 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1480: Date mismatch for fund 5129069 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1481: Date mismatch for fund 5129069 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1524: Date mismatch for fund 5129887 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1525: Date mismatch for fund 5129887 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1526: Date mismatch for fund 5129887 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1527: Date mismatch for fund 5129887 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1528: Date mismatch for fund 5129887 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1529: Date mismatch for fund 5130000 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1530: Date mismatch for fund 5130000 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1531: Date mismatch for fund 5130000 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1532: Date mismatch for fund 5130000 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1533: Date mismatch for fund 5130000 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1534: Date mismatch for fund 5130000 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1535: Date mismatch for fund 5130000 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1536: Date mismatch for fund 5130000 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1537: Date mismatch for fund 5130000 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1538: Date mismatch for fund 5130000 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1539: Date mismatch for fund 5130083 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1540: Date mismatch for fund 5130083 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1541: Date mismatch for fund 5130083 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1542: Date mismatch for fund 5130083 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1543: Date mismatch for fund 5130083 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1544: Date mismatch for fund 5130083 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1545: Date mismatch for fund 5130083 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1546: Date mismatch for fund 5130372 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1547: Date mismatch for fund 5130372 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1548: Date mismatch for fund 5130372 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1549: Date mismatch for fund 5130372 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1550: Date mismatch for fund 5130372 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1551: Date mismatch for fund 5130372 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1552: Date mismatch for fund 5130372 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1553: Date mismatch for fund 5130372 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1554: Date mismatch for fund 5130372 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1555: Date mismatch for fund 5130372 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1556: Date mismatch for fund 5130372 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1584: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1585: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1586: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1587: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1588: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1589: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1590: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1591: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1592: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1593: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1594: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1595: Date mismatch for fund 5130596 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1616: Date mismatch for fund 5131222 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1617: Date mismatch for fund 5131222 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1618: Date mismatch for fund 5131222 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1619: Date mismatch for fund 5131222 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1620: Date mismatch for fund 5131222 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1621: Date mismatch for fund 5131222 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1622: Date mismatch for fund 5131222 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1623: Date mismatch for fund 5131222 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1624: Date mismatch for fund 5131222 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1625: Date mismatch for fund 5131222 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1649: Date mismatch for fund 5131529 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1650: Date mismatch for fund 5131529 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1651: Date mismatch for fund 5131529 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1652: Date mismatch for fund 5131529 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1653: Date mismatch for fund 5131529 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1654: Date mismatch for fund 5131727 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1655: Date mismatch for fund 5131727 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1656: Date mismatch for fund 5131727 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1657: Date mismatch for fund 5131727 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1658: Date mismatch for fund 5131727 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1659: Date mismatch for fund 5131727 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1660: Date mismatch for fund 5131727 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1661: Date mismatch for fund 5131727 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1662: Date mismatch for fund 5131727 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1663: Date mismatch for fund 5131735 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1664: Date mismatch for fund 5131735 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1665: Date mismatch for fund 5131735 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1666: Date mismatch for fund 5131735 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1667: Date mismatch for fund 5131735 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1668: Date mismatch for fund 5131735 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1669: Date mismatch for fund 5131735 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1670: Date mismatch for fund 5131735 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1682: Date mismatch for fund 5133038 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1683: Date mismatch for fund 5133038 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1684: Date mismatch for fund 5133038 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1685: Date mismatch for fund 5133038 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1686: Date mismatch for fund 5133038 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1687: Date mismatch for fund 5133038 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1688: Date mismatch for fund 5133038 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1689: Date mismatch for fund 5133038 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1690: Date mismatch for fund 5133038 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1691: Date mismatch for fund 5133038 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1717: Date mismatch for fund 5133715 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1718: Date mismatch for fund 5133715 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1719: Date mismatch for fund 5133715 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1720: Date mismatch for fund 5133715 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1721: Date mismatch for fund 5133715 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1722: Date mismatch for fund 5133715 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1723: Date mismatch for fund 5133715 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1724: Date mismatch for fund 5133715 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1725: Date mismatch for fund 5133715 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1726: Date mismatch for fund 5133715 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1727: Date mismatch for fund 5133897 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1728: Date mismatch for fund 5133897 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1729: Date mismatch for fund 5133897 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1730: Date mismatch for fund 5133897 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1731: Date mismatch for fund 5133897 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1732: Date mismatch for fund 5133897 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1733: Date mismatch for fund 5133897 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1734: Date mismatch for fund 5133897 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1735: Date mismatch for fund 5133897 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1736: Date mismatch for fund 5133897 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1737: Date mismatch for fund 5134135 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1738: Date mismatch for fund 5134135 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1739: Date mismatch for fund 5134135 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1740: Date mismatch for fund 5134135 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1741: Date mismatch for fund 5134135 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1742: Date mismatch for fund 5134135 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1743: Date mismatch for fund 5134135 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1744: Date mismatch for fund 5134135 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1745: Date mismatch for fund 5134135 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1746: Date mismatch for fund 5134135 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1747: Date mismatch for fund 5134242 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1748: Date mismatch for fund 5134242 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1749: Date mismatch for fund 5134242 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1750: Date mismatch for fund 5134242 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1751: Date mismatch for fund 5134242 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1752: Date mismatch for fund 5134242 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1753: Date mismatch for fund 5134242 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1754: Date mismatch for fund 5134242 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1755: Date mismatch for fund 5134242 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1756: Date mismatch for fund 5134242 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1784: Date mismatch for fund 5134713 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1785: Date mismatch for fund 5134713 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1786: Date mismatch for fund 5134713 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1787: Date mismatch for fund 5134713 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1788: Date mismatch for fund 5134713 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1789: Date mismatch for fund 5134788 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1790: Date mismatch for fund 5134788 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1791: Date mismatch for fund 5134788 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1792: Date mismatch for fund 5134788 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1793: Date mismatch for fund 5134788 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1794: Date mismatch for fund 5134788 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1795: Date mismatch for fund 5134788 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1796: Date mismatch for fund 5134788 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1797: Date mismatch for fund 5134788 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1798: Date mismatch for fund 5134796 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1799: Date mismatch for fund 5134796 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1800: Date mismatch for fund 5134796 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1801: Date mismatch for fund 5134796 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1802: Date mismatch for fund 5134796 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1803: Date mismatch for fund 5134796 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1804: Date mismatch for fund 5134796 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1805: Date mismatch for fund 5134796 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1806: Date mismatch for fund 5134796 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1807: Date mismatch for fund 5134853 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1808: Date mismatch for fund 5134853 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1809: Date mismatch for fund 5134853 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1810: Date mismatch for fund 5134853 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1811: Date mismatch for fund 5134853 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1812: Date mismatch for fund 5134853 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1813: Date mismatch for fund 5134853 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1814: Date mismatch for fund 5135090 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1815: Date mismatch for fund 5135090 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1816: Date mismatch for fund 5135090 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1817: Date mismatch for fund 5135090 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1818: Date mismatch for fund 5135090 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1819: Date mismatch for fund 5135090 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 1851: Date mismatch for fund 5135603 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1852: Date mismatch for fund 5135603 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1853: Date mismatch for fund 5135603 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1854: Date mismatch for fund 5135603 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1855: Date mismatch for fund 5135603 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1856: Date mismatch for fund 5135603 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1857: Date mismatch for fund 5135603 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1858: Date mismatch for fund 5135603 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1859: Date mismatch for fund 5135603 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1860: Date mismatch for fund 5135603 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1861: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1862: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1863: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1864: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1865: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1866: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1867: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1868: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1869: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1870: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1871: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1872: Date mismatch for fund 5135942 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 1873: Date mismatch for fund 5135983 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1874: Date mismatch for fund 5135983 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1875: Date mismatch for fund 5135983 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1876: Date mismatch for fund 5135983 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1877: Date mismatch for fund 5135983 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1878: Date mismatch for fund 5135983 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1879: Date mismatch for fund 5135983 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1880: Date mismatch for fund 5135983 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1881: Date mismatch for fund 5135983 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1882: Date mismatch for fund 5135983 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1933: Date mismatch for fund 5137112 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1934: Date mismatch for fund 5137112 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1935: Date mismatch for fund 5137112 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1936: Date mismatch for fund 5137112 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1937: Date mismatch for fund 5137112 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1938: Date mismatch for fund 5137112 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1939: Date mismatch for fund 5137112 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1940: Date mismatch for fund 5137112 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1941: Date mismatch for fund 5137112 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1942: Date mismatch for fund 5137112 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1943: Date mismatch for fund 5137716 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1944: Date mismatch for fund 5137716 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1945: Date mismatch for fund 5137716 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1946: Date mismatch for fund 5137716 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1947: Date mismatch for fund 5137716 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1948: Date mismatch for fund 5137716 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1949: Date mismatch for fund 5137716 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1950: Date mismatch for fund 5137716 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1951: Date mismatch for fund 5137716 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1952: Date mismatch for fund 5137716 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1953: Date mismatch for fund 5137716 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1954: Date mismatch for fund 5137773 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1955: Date mismatch for fund 5137773 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1956: Date mismatch for fund 5137773 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1957: Date mismatch for fund 5137773 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1958: Date mismatch for fund 5137773 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1959: Date mismatch for fund 5137773 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1960: Date mismatch for fund 5137773 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1961: Date mismatch for fund 5137773 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1962: Date mismatch for fund 5137773 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1963: Date mismatch for fund 5138151 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1964: Date mismatch for fund 5138151 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1965: Date mismatch for fund 5138151 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1966: Date mismatch for fund 5138151 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1967: Date mismatch for fund 5138151 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1968: Date mismatch for fund 5138151 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1969: Date mismatch for fund 5138151 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1970: Date mismatch for fund 5138151 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1971: Date mismatch for fund 5138151 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1972: Date mismatch for fund 5138151 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1973: Date mismatch for fund 5138151 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1974: Date mismatch for fund 5138201 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1975: Date mismatch for fund 5138201 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1976: Date mismatch for fund 5138201 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1977: Date mismatch for fund 5138201 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1978: Date mismatch for fund 5138201 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1979: Date mismatch for fund 5138201 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1980: Date mismatch for fund 5138201 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1981: Date mismatch for fund 5138201 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1982: Date mismatch for fund 5138201 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 1983: Date mismatch for fund 5138201 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2020: Date mismatch for fund 5138458 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2021: Date mismatch for fund 5138458 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2022: Date mismatch for fund 5138458 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2023: Date mismatch for fund 5138458 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2024: Date mismatch for fund 5138458 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2025: Date mismatch for fund 5138458 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2026: Date mismatch for fund 5138458 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2027: Date mismatch for fund 5138458 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2028: Date mismatch for fund 5138458 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2029: Date mismatch for fund 5138458 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2044: Date mismatch for fund 5138474 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2045: Date mismatch for fund 5138474 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2046: Date mismatch for fund 5138474 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2047: Date mismatch for fund 5138474 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2048: Date mismatch for fund 5138474 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2049: Date mismatch for fund 5138474 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2050: Date mismatch for fund 5138474 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2051: Date mismatch for fund 5138474 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2052: Date mismatch for fund 5138474 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2053: Date mismatch for fund 5138474 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2064: Date mismatch for fund 5139027 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2065: Date mismatch for fund 5139027 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2066: Date mismatch for fund 5139027 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2067: Date mismatch for fund 5139027 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2068: Date mismatch for fund 5139027 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2086: Date mismatch for fund 5139274 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2087: Date mismatch for fund 5139274 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2088: Date mismatch for fund 5139274 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2089: Date mismatch for fund 5139274 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2090: Date mismatch for fund 5139274 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2091: Date mismatch for fund 5139274 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2092: Date mismatch for fund 5139274 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2093: Date mismatch for fund 5139274 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2094: Date mismatch for fund 5139274 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2095: Date mismatch for fund 5139274 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2096: Date mismatch for fund 5139365 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2097: Date mismatch for fund 5139365 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2098: Date mismatch for fund 5139365 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2099: Date mismatch for fund 5139365 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2100: Date mismatch for fund 5139365 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2101: Date mismatch for fund 5139365 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2102: Date mismatch for fund 5139514 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2103: Date mismatch for fund 5139514 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2104: Date mismatch for fund 5139514 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2105: Date mismatch for fund 5139514 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2106: Date mismatch for fund 5139514 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2107: Date mismatch for fund 5139514 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2108: Date mismatch for fund 5139514 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2109: Date mismatch for fund 5139514 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2110: Date mismatch for fund 5139514 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2111: Date mismatch for fund 5139514 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2112: Date mismatch for fund 5139886 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2113: Date mismatch for fund 5139886 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2114: Date mismatch for fund 5139886 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2115: Date mismatch for fund 5139886 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2116: Date mismatch for fund 5139886 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2117: Date mismatch for fund 5139886 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2118: Date mismatch for fund 5139886 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2119: Date mismatch for fund 5140140 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2120: Date mismatch for fund 5140140 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2121: Date mismatch for fund 5140140 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2122: Date mismatch for fund 5140140 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2123: Date mismatch for fund 5140140 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2124: Date mismatch for fund 5140140 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2125: Date mismatch for fund 5140140 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2126: Date mismatch for fund 5140140 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2127: Date mismatch for fund 5140140 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2128: Date mismatch for fund 5140140 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2129: Date mismatch for fund 5140157 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2130: Date mismatch for fund 5140157 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2131: Date mismatch for fund 5140157 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2132: Date mismatch for fund 5140157 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2133: Date mismatch for fund 5140165 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2134: Date mismatch for fund 5140165 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2135: Date mismatch for fund 5140165 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2136: Date mismatch for fund 5140165 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2137: Date mismatch for fund 5140165 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2138: Date mismatch for fund 5140165 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2139: Date mismatch for fund 5140165 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2140: Date mismatch for fund 5140165 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2141: Date mismatch for fund 5140165 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2142: Date mismatch for fund 5140165 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2143: Date mismatch for fund 5140199 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2144: Date mismatch for fund 5140199 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2145: Date mismatch for fund 5140199 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2146: Date mismatch for fund 5140199 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2147: Date mismatch for fund 5140199 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2148: Date mismatch for fund 5140207 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2149: Date mismatch for fund 5140207 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2150: Date mismatch for fund 5140207 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2151: Date mismatch for fund 5140207 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2152: Date mismatch for fund 5140207 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2153: Date mismatch for fund 5140207 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2154: Date mismatch for fund 5140207 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2155: Date mismatch for fund 5140207 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2156: Date mismatch for fund 5140207 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2157: Date mismatch for fund 5140207 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2158: Date mismatch for fund 5140215 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2159: Date mismatch for fund 5140215 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2160: Date mismatch for fund 5140215 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2161: Date mismatch for fund 5140215 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2162: Date mismatch for fund 5140215 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2163: Date mismatch for fund 5140215 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2164: Date mismatch for fund 5140215 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2165: Date mismatch for fund 5140215 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2166: Date mismatch for fund 5140215 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2167: Date mismatch for fund 5140215 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2168: Date mismatch for fund 5140397 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2169: Date mismatch for fund 5140397 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2170: Date mismatch for fund 5140397 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2171: Date mismatch for fund 5140397 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2172: Date mismatch for fund 5140397 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2173: Date mismatch for fund 5140439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2174: Date mismatch for fund 5140439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2175: Date mismatch for fund 5140439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2176: Date mismatch for fund 5140439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2177: Date mismatch for fund 5140439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2178: Date mismatch for fund 5140439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2179: Date mismatch for fund 5140439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2180: Date mismatch for fund 5140439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2181: Date mismatch for fund 5140439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2182: Date mismatch for fund 5140439 - expected 2025-12, got 2025-11-27
+2026-01-20 21:44:44 - WARNING - Row 2183: Date mismatch for fund 5140447 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2184: Date mismatch for fund 5140447 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2185: Date mismatch for fund 5140447 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2186: Date mismatch for fund 5140447 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2187: Date mismatch for fund 5140595 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2188: Date mismatch for fund 5140595 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2189: Date mismatch for fund 5140595 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2190: Date mismatch for fund 5140595 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2191: Date mismatch for fund 5140595 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2192: Date mismatch for fund 5140595 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2193: Date mismatch for fund 5140850 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2194: Date mismatch for fund 5140850 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2195: Date mismatch for fund 5140850 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2196: Date mismatch for fund 5140850 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2197: Date mismatch for fund 5140850 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2198: Date mismatch for fund 5140850 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2199: Date mismatch for fund 5140850 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2200: Date mismatch for fund 5140850 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2201: Date mismatch for fund 5140850 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2202: Date mismatch for fund 5140850 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2203: Date mismatch for fund 5140850 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2204: Date mismatch for fund 5140868 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2205: Date mismatch for fund 5140868 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2206: Date mismatch for fund 5140868 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2207: Date mismatch for fund 5140868 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2208: Date mismatch for fund 5140868 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2209: Date mismatch for fund 5140868 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2210: Date mismatch for fund 5140868 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2211: Date mismatch for fund 5140868 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2212: Date mismatch for fund 5140884 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2213: Date mismatch for fund 5140884 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2214: Date mismatch for fund 5140884 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2215: Date mismatch for fund 5140884 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2216: Date mismatch for fund 5140884 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2217: Date mismatch for fund 5140884 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2218: Date mismatch for fund 5140884 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2219: Date mismatch for fund 5140884 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2220: Date mismatch for fund 5140884 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2221: Date mismatch for fund 5140884 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2245: Date mismatch for fund 5141114 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2246: Date mismatch for fund 5141114 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2247: Date mismatch for fund 5141114 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2248: Date mismatch for fund 5141114 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2249: Date mismatch for fund 5141114 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2250: Date mismatch for fund 5141114 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2251: Date mismatch for fund 5141114 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2252: Date mismatch for fund 5141114 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2253: Date mismatch for fund 5141114 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2254: Date mismatch for fund 5141114 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2255: Date mismatch for fund 5141213 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2256: Date mismatch for fund 5141213 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2257: Date mismatch for fund 5141213 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2258: Date mismatch for fund 5141213 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2259: Date mismatch for fund 5141213 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2260: Date mismatch for fund 5141213 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2261: Date mismatch for fund 5141213 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2262: Date mismatch for fund 5141213 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2263: Date mismatch for fund 5141213 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2264: Date mismatch for fund 5141213 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 2272: Date mismatch for fund 1150184 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2273: Date mismatch for fund 1150184 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2274: Date mismatch for fund 1150184 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2275: Date mismatch for fund 1150184 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2276: Date mismatch for fund 1150184 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2281: Date mismatch for fund 1150283 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2282: Date mismatch for fund 1150283 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2283: Date mismatch for fund 1150283 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2284: Date mismatch for fund 1150283 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2285: Date mismatch for fund 1150283 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2286: Date mismatch for fund 1159714 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2287: Date mismatch for fund 1159714 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 2288: Date mismatch for fund 1159714 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3213: Date mismatch for fund 5121686 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3214: Date mismatch for fund 5121686 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3215: Date mismatch for fund 5121686 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3216: Date mismatch for fund 5121686 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3217: Date mismatch for fund 5121686 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3218: Date mismatch for fund 5121686 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3219: Date mismatch for fund 5121686 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3558: Date mismatch for fund 5130604 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3559: Date mismatch for fund 5130604 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3560: Date mismatch for fund 5130604 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3561: Date mismatch for fund 5130604 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3562: Date mismatch for fund 5130604 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3930: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3931: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3932: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3933: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3934: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3935: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3936: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3937: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3938: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3939: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3940: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3941: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3942: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3943: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3944: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3945: Date mismatch for fund 5138284 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3946: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3947: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3948: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3949: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3950: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3951: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3952: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3953: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3954: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3955: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3956: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3957: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3958: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3959: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3960: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3961: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3962: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3963: Date mismatch for fund 5138391 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3964: Date mismatch for fund 5138524 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3965: Date mismatch for fund 5138524 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3966: Date mismatch for fund 5138524 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3967: Date mismatch for fund 5138524 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3968: Date mismatch for fund 5138524 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3969: Date mismatch for fund 5138524 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3970: Date mismatch for fund 5138524 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3971: Date mismatch for fund 5138524 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3972: Date mismatch for fund 5138524 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3973: Date mismatch for fund 5138524 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 3974: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3975: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3976: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3977: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3978: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3979: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3980: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3981: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3982: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3983: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3984: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3985: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3986: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3987: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3988: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3989: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3990: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3991: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 3992: Date mismatch for fund 5138532 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4007: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4008: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4009: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4010: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4011: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4012: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4013: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4014: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4015: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4016: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4017: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4018: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4019: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4020: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4021: Date mismatch for fund 5139183 - expected 2025-12, got 2025-11-30
+2026-01-20 21:44:44 - WARNING - Row 4022: Date mismatch for fund 5140041 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 4023: Date mismatch for fund 5140041 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 4024: Date mismatch for fund 5140041 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 4025: Date mismatch for fund 5140041 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 4026: Date mismatch for fund 5140041 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 4027: Date mismatch for fund 5140041 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 4028: Date mismatch for fund 5140041 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 4029: Date mismatch for fund 5140041 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 4030: Date mismatch for fund 5140041 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - WARNING - Row 4031: Date mismatch for fund 5140041 - expected 2025-12, got 2025-11-26
+2026-01-20 21:44:44 - INFO - Date validity check completed: 880 exceptions
+2026-01-20 21:44:44 - INFO - Starting previous month comparison check
+2026-01-20 21:44:44 - INFO - Previous month comparison completed: 0 exceptions
+2026-01-20 21:44:44 - INFO - Starting exposure profile check
+2026-01-20 21:44:44 - WARNING - Fund 1168723: Profile 4A has 0 FX exposure but code 0601 has 0.01%
+2026-01-20 21:44:44 - WARNING - Fund 1193317: Profile 0A has 0 FX exposure but code 0601 has 0.77%
+2026-01-20 21:44:44 - WARNING - Fund 1201623: Profile 4A has 0 FX exposure but code 0601 has 0.02%
+2026-01-20 21:44:44 - WARNING - Fund 1212794: Profile 4A has 0 FX exposure but code 0601 has 0.01%
+2026-01-20 21:44:44 - WARNING - Fund 5122163: Profile 4A has 0 FX exposure but code 0601 has -0.03%
+2026-01-20 21:44:44 - WARNING - Fund 5129887: Profile 4A has 0 FX exposure but code 0601 has 0.03%
+2026-01-20 21:44:44 - WARNING - Fund 5133897: Profile 4A has 0 FX exposure but code 0601 has -1.80%
+2026-01-20 21:44:44 - WARNING - Fund 5134713: Profile 4A has 0 FX exposure but code 0601 has 0.01%
+2026-01-20 21:44:44 - WARNING - Fund 5135603: Profile 4A has 0 FX exposure but code 0601 has 0.16%
+2026-01-20 21:44:44 - WARNING - Fund 5135983: Profile 4A has 0 FX exposure but code 0601 has 1.35%
+2026-01-20 21:44:44 - WARNING - Fund 5137112: Profile 4A has 0 FX exposure but code 0601 has -0.16%
+2026-01-20 21:44:44 - WARNING - Fund 5137773: Profile 0A has 0 FX exposure but code 0601 has 0.23%
+2026-01-20 21:44:44 - WARNING - Fund 5138201: Profile 4A has 0 FX exposure but code 0601 has 0.77%
+2026-01-20 21:44:44 - WARNING - Fund 5138474: Profile 4A has 0 FX exposure but code 0601 has -0.15%
+2026-01-20 21:44:44 - WARNING - Fund 5139365: Profile 4A has 0 FX exposure but code 0601 has 0.01%
+2026-01-20 21:44:44 - WARNING - Fund 5140207: Profile 4A has 0 FX exposure but code 0601 has 0.10%
+2026-01-20 21:44:44 - WARNING - Fund 5140215: Profile 4A has 0 FX exposure but code 0601 has -0.31%
+2026-01-20 21:44:44 - WARNING - Fund 5140595: Profile 4A has 0 FX exposure but code 0601 has 0.14%
+2026-01-20 21:44:44 - WARNING - Fund 5140884: Profile 4A has 0 FX exposure but code 0601 has -3.65%
+2026-01-20 21:44:44 - WARNING - Fund 5141114: Profile 4A has 0 FX exposure but code 0601 has -0.02%
+2026-01-20 21:44:44 - WARNING - Fund 5141213: Profile 4A has 0 FX exposure but code 0601 has -0.04%
+2026-01-20 21:44:44 - WARNING - Fund 1150184: Profile 4A has 0 FX exposure but code 0601 has 0.01%
+2026-01-20 21:44:44 - WARNING - Fund 1150283: Profile 4A has 0 FX exposure but code 0601 has 0.00%
+2026-01-20 21:44:44 - WARNING - Fund 5138391: Profile 0A has 0 FX exposure but code 0601 has 0.07%
+2026-01-20 21:44:44 - WARNING - Fund 5138524: Profile 4A has 0 FX exposure but code 0601 has 0.68%
+2026-01-20 21:44:44 - WARNING - Fund 5138532: Profile 1A has 0 FX exposure but code 0601 has 1.52%
+2026-01-20 21:44:44 - INFO - Exposure profile check completed: 26 exceptions
+2026-01-20 21:44:44 - INFO - Starting within-month combinations check
+2026-01-20 21:44:44 - WARNING - Fund 1168723: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - Fund 1193317: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - Fund 1201623: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - Fund 1212794: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - Fund 5129887: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - Fund 5134713: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - Fund 5139365: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - Fund 5140595: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - Fund 1150184: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - Fund 1150283: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - WARNING - Fund 5138391: Has code 06 but missing FX-related codes
+2026-01-20 21:44:44 - INFO - Combinations check completed: 98 total exceptions
+2026-01-20 21:44:44 - INFO - Writing output Excel file...
+2026-01-20 21:44:46 - INFO - Output saved to: disclosure_validation_output.xlsx
+2026-01-20 21:44:46 - INFO - ======================================================================
+2026-01-20 21:44:46 - INFO - Validation Summary
+2026-01-20 21:44:46 - INFO - ======================================================================
+2026-01-20 21:44:46 - INFO - Report Month: 2025-12
+2026-01-20 21:44:46 - INFO - Total Funds in Report: 344
+2026-01-20 21:44:46 - INFO - In-Scope Funds (Mizrahi): 96
+2026-01-20 21:44:46 - INFO - Out-of-Scope Funds: 248
+2026-01-20 21:44:46 - INFO - 
+2026-01-20 21:44:46 - INFO - Check Results:
+2026-01-20 21:44:46 - INFO -   1א Fund Completeness: 447 exceptions
+2026-01-20 21:44:46 - INFO -   1ב Date Validity: 880 exceptions
+2026-01-20 21:44:46 - INFO -   2א Previous Month Comparison: 0 exceptions
+2026-01-20 21:44:46 - INFO -   2ב Exposure Profile: 26 exceptions
+2026-01-20 21:44:46 - INFO -   3א: 11 exceptions
+2026-01-20 21:44:46 - INFO -   3ב: 0 exceptions
+2026-01-20 21:44:46 - INFO -   3ג: 42 exceptions
+2026-01-20 21:44:46 - INFO -   3ד: 42 exceptions
+2026-01-20 21:44:46 - INFO -   3ה: 0 exceptions
+2026-01-20 21:44:46 - INFO -   3ו: 0 exceptions
+2026-01-20 21:44:46 - INFO -   3ז: 3 exceptions
+2026-01-20 21:44:46 - INFO -   3ח: 0 exceptions
+2026-01-20 21:44:46 - INFO - 
+2026-01-20 21:44:46 - INFO - Output saved to: disclosure_validation_output.xlsx
+2026-01-20 21:44:46 - INFO - ======================================================================

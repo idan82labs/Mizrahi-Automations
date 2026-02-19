@@ -1,0 +1,34 @@
+2026-01-20 22:18:07 - INFO - [CHK_2B] ======================================================================
+2026-01-20 22:18:07 - INFO - [CHK_2B] CHK_2B - Exposure Profile Check
+2026-01-20 22:18:07 - INFO - [CHK_2B] ======================================================================
+2026-01-20 22:18:08 - INFO - [CHK_2B] Starting exposure profile check
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 1193317: Profile 0A has 0 FX exposure but code 0601 has 0.75%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5122163: Profile 4A has 0 FX exposure but code 0601 has 0.35%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5129887: Profile 4A has 0 FX exposure but code 0601 has 0.01%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5133897: Profile 4A has 0 FX exposure but code 0601 has -0.50%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5134713: Profile 4A has 0 FX exposure but code 0601 has 0.01%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5135603: Profile 4A has 0 FX exposure but code 0601 has -0.62%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5135983: Profile 4A has 0 FX exposure but code 0601 has -0.85%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5137112: Profile 4A has 0 FX exposure but code 0601 has -0.53%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5137773: Profile 0A has 0 FX exposure but code 0601 has -0.29%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5138201: Profile 4A has 0 FX exposure but code 0601 has -0.64%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5138474: Profile 4A has 0 FX exposure but code 0601 has -0.76%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5140157: Profile 4A has 0 FX exposure but code 0601 has 0.09%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5140207: Profile 4A has 0 FX exposure but code 0601 has -0.81%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5140215: Profile 4A has 0 FX exposure but code 0601 has -0.77%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5140595: Profile 4A has 0 FX exposure but code 0601 has 0.70%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5140884: Profile 4A has 0 FX exposure but code 0601 has -1.02%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5141114: Profile 4A has 0 FX exposure but code 0601 has -0.63%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5141213: Profile 4A has 0 FX exposure but code 0601 has -1.34%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 1150184: Profile 4A has 0 FX exposure but code 0601 has 0.00%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 1150283: Profile 4A has 0 FX exposure but code 0601 has 0.41%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 1201623: Profile 4A has 0 FX exposure but code 0601 has 0.63%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 1212794: Profile 4A has 0 FX exposure but code 0601 has 0.02%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5138391: Profile 0A has 0 FX exposure but code 0601 has 0.07%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5138524: Profile 4A has 0 FX exposure but code 0601 has -0.92%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5138532: Profile 1A has 0 FX exposure but code 0601 has 1.57%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5139365: Profile 4A has 0 FX exposure but code 0601 has 0.02%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5140199: Profile 4A has 0 FX exposure but code 0601 has 0.02%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5141262: Profile 4A has 0 FX exposure but code 0601 has -0.34%
+2026-01-20 22:18:08 - WARNING - [CHK_2B] Fund 5141759: Profile 4A has 0 FX exposure but code 0601 has 1.12%
+2026-01-20 22:18:08 - INFO - [CHK_2B] Exposure profile check completed: 29 exceptions

@@ -1,0 +1,8 @@
+2026-01-22 18:23:35 - INFO - [CHK_3] ======================================================================
+2026-01-22 18:23:35 - INFO - [CHK_3] CHK_3 - Within-Month Combinations
+2026-01-22 18:23:35 - INFO - [CHK_3] ======================================================================
+2026-01-22 18:23:36 - INFO - [CHK_3] Starting within-month combinations check
+2026-01-22 18:23:36 - WARNING - [CHK_3] Fund 1193317: Has code 06 but missing FX-related codes
+2026-01-22 18:23:36 - WARNING - [CHK_3] Fund 1193317: Has bonds (03) but missing 07 (דירוגים)
+2026-01-22 18:23:36 - WARNING - [CHK_3] Fund 5138391: Has code 06 but missing FX-related codes
+2026-01-22 18:23:36 - INFO - [CHK_3] Combinations check completed: 85 total exceptions
