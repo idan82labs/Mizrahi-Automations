@@ -24,3 +24,8 @@ Thumbs.db
 
 # Excel temp files
 ~$*.xlsx
+
+# Environment variables (API keys, secrets)
+.env
+.env.local
+*.env

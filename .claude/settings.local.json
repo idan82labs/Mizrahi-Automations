@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"cd ''C:\\\\Users\\\\reneb\\\\Documents\\\\GitHub\\\\mizrahi-5\\\\Mizrahi-Automations''; py -3 disclosure_k303_validator.py --mutual-funds-list ''Mutual_Funds_List.xlsx - Worksheet.csv'' --current-report ''disclosure_migdal_current_month.csv'' --previous-report ''disclosure_migdal_previous_month.xlsx - Sheet1.csv'' --spec-file ''בדיקת דוח גילוי נאות ק.303.xlsx - גיליון1.csv'' --output-xlsx ''disclosure_validation_output.xlsx'' --manager-name ''מגדל''\")",
+      "Bash(powershell:*)",
+      "Bash(\"C:/Users/reneb/AppData/Local/Programs/Python/Python312/python.exe\":*)",
+      "Bash(python:*)"
+    ]
+  }
+}

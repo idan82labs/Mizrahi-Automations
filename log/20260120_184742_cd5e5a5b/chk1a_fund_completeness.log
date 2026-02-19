@@ -1,0 +1,446 @@
+2026-01-20 18:47:42 - INFO - [CHK_1A] ======================================================================
+2026-01-20 18:47:42 - INFO - [CHK_1A] CHK_1A - Fund Completeness
+2026-01-20 18:47:42 - INFO - [CHK_1A] ======================================================================
+2026-01-20 18:47:42 - INFO - [CHK_1A] Starting fund completeness check
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1143700 (תכלית סל (40) ת"א 35) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1145747 (קסם MSCI India (!)(4D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1145754 (קסם KOSPI 200 (!)(4D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1145804 (קסם MSCI World (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1145879 (קסם DJ Health Care Titans 30 (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1145945 (קסם NIKKEI 225 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1145952 (קסם EURO STOXX 50 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146059 (קסם 6A) ETF) ממונפת בחסר ת"א 35 פי 2 חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146091 (קסם IBOVESPA(!)(4D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146182 (קסם STOXX Europe 600 (4A) ETF מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146224 (קסם NASDAQ US BuyBack Achievers (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146240 (קסם STOXX Europe MID 200 (4A) ETF מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146265 (קסם 4A) ETF) משולבת מניות אירופה חודשי מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146307 (קסם STOXX Europe 600 Banks (4A) ETF מנוטרלת אירו) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146372 (קסם MDAX (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146380 (קסם 6A) ETF) ממונפת ת"א 35 פי 3 חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146422 (קסם LBMA Gold Price PM USD (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146430 (קסם 4A) ETF) אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146455 (קסם ETFי (00) חסר תל בונד 40 צמודות (534)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146521 (קסם FTSE China 50 (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146620 (קסם ETFי (4A) חוזה Bloomberg Brent Crude מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146638 (קסם  ETFי (0A) משולבת תל גוב-כללי (65%) וקונצרני ישראל (35%) חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146661 (קסם 2A) ETF) משולבת אגח כללי ישראל (90%) ומניות ישראל (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146679 (קסם MSCI AC World (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146687 (קסם Hang Seng China (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146695 (קסם 2A) ETF) משולבת אגח כללי ישראל (80%) ומניות (20%) חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146703 (קסם DAX (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146745 (קסם 6A) ETF) חסר ת"א 35 (5,337.49)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1146828 (קסם 4A) ETF) משולבת מניות MidCap מפותחות חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1147024 (קסם S&P SmallCap 600 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1147057 (קסם 2A) ETF) משולבת תל גוב-כללי(55%) קונצרני(30%) ומניות(15%) חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1147099 (קסם FTSE 250 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1147131 (קסם ETFי (00)(!) חסר תל בונד- תשואות צמודות (682.1)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1147214 (קסם 4D) ETF) משולבת מניות סקטורים ארהב S&P חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1147230 (קסם S&P Technology (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1147263 (קסם iBoxx $ Corps Liquid 3-7 Years (0A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1147297 (קסם iBoxx $ Corps Liquid 3-7 Years (0D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1147396 (קסם ETFי (00) תל בונד שקלי 3-5) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1148899 (הראל סל (4A) ת"א 125) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1148931 (הראל סל (4A) ת"א 90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1149970 (הראל סל (4A) ‏S&P 500 Equal Weight מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1150440 (הראל סל (00) תל בונד 20 צמודות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1150473 (הראל סל (00) תל בונד 60 צמודות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1150499 (הראל סל (00) תל בונד 40 צמודות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1150523 (הראל סל (00) תל בונד שקלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1150739 (הראל סל (00)(!) תל בונד גלובל שקלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1150747 (הראל סל (00) תל בונד שקלי-בנקים וביטוח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1150762 (קסם ETFי (00) תל בונד שקלי 50) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1150770 (קסם ETFי (00)(!) תל בונד גלובל שקלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1150796 (קסם S&P MidCap 400 (4D) ETF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1155092 (הראל סל (00) כשרה תל בונד 60 צמודות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1155191 (הראל סל (00) כשרה תל בונד שקלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1155340 (הראל סל (4A) כשרה ת"א 125) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1161058 (קסם ETF י(60) חסר ת"א 90 (6123.68)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1161827 (הראל סל (4A) ת"א טכנולוגיה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1161876 (קסם ETF י(00)(!) חסר תל בונד גלובל שקלי (718)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1166172 (הראל סל (4A) כשרה ת"א 90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1167568 (הראל סל (6A) ממונפת NASDAQ 100 פי 3 חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1167576 (הראל סל (6D) ממונפת בחסר NASDAQ 100 פי 2 חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1169622 (הראל סל (0A) תל בונד מאגר) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1184092 (הראל סל (4A)יS&P North American Expanded Tech Software מנוטרלת מט``ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1190685 (הראל סל (4A) אינדקס ישראל 100 רווחיות משקל שווה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1190859 (הראל סל (4D) אינדקס מומנטום ארה"ב) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1193614 (קסם ETF‏י (00) תל בונד-צמודות 1-3) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1193655 (קסם ETFי (00) תל בונד שקלי A) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1193663 (קסם ETFי (00) תל בונד שקלי AA-AAA) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1193671 (קסם ETFי (00) תל בונד צמודות 5-15) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1193689 (קסם ETFי (00) תל בונד-שקלי 1-3) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1193739 (קסם S&P Technology (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1193747 (קסם S&P MidCap 400 (4A) ETF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1194315 (אימפקט (6F) לונג/שורט - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1194323 (פסטרנק שהם (6F) לונג/שורט - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1194356 (אנליסט (5D) נדל"ן ישראל - חו"ל Multi Strategy- קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1194364 (אנליסט (6D) מניות Multi Strategy- קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1200435 (אי.בי.אי. סל (4A)י 500 S&P מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1200443 (אי.בי.אי. סל (4A)י Nasdaq 100 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1200450 (אי.בי.אי. סל (4D)י Nasdaq 100) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1207646 (פורצ`ן (6F)י Multi-Strategy - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1210871 (הראל סל (0D)י S&P U.S. Treasury Bond 5-7 Year) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1212521 (פסטרנק שהם (2D)(!) אסטרטגיות אג"ח - קרן גידור בנאמנות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1213594 (הראל סל (4A) ת"א 90 ובנקים) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1218916 (ATF סל (4D)י S&P 500) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1218924 (ATF סל (4A)י S&P 500 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1220391 (הראל סל (4D)י (CME CF Bitcoin Reference Rate (BRRNY) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5100383 (מיטב (0B) מדורגות A ומעלה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5100953 (קסם אקטיב (3D) תיק מנוהל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5101019 (מיטב (4D) מניות טכנולוגיה חו"ל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5101092 (אנליסט (4D) טכנולוגיות חו"ל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5101258 (אנליסט (4B) מניות ישראל Large & mid cap) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5101266 (אנליסט (4B) נדל"ן) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5101480 (קסם אקטיב (2B)י אג"ח + 25%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5101639 (אנליסט (4D) השקעות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5102256 (מיטב (4D) מניות ארה"ב) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5102371 (הראל (0D) אג"ח דולר בינלאומי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5103296 (מיטב (4A) מניות ת"א MID CAP) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5104153 (מיטב (4B) מניות ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5104237 (אנליסט (0D)(!) אג"ח חו"ל ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5104328 (אנליסט (5C) אסטרטגיות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5104948 (קסם אקטיב (4D) אירופה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5105390 (הראל (0D)(!) אג"ח עולמי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5105580 (מיטב (2B) עוקבת תיק 2 הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5105929 (אנליסט (4D) מניות ארה"ב) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5105978 (קסם  אקטיב (0A) מדינה צמוד ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5106158 (איילון (0B) אג"ח חברות ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5106885 (הראל (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5106992 (מיטב (0B)(!) הזדמנויות אג"ח בסיכון גבוה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5107156 (הראל (0C) קונצרני A ומעלה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5107503 (הראל (1A) קונצרני שקלי + 10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5107859 (הראל (2B) אג"ח מדורג ומניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5108006 (הראל (4B) שווקים מפותחים עד 30% מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5109608 (איילון (1B)(!) אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5109848 (קסם אקטיב (4D) ארה"ב נקוב $) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5110051 (הראל (4B) ת"א-Midcap150) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5110192 (הראל (1B) מדד בינוני ממשלתי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5110341 (הראל (0D) כספית נקובה ב-$) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5110523 (אנליסט (0B)(!) אג"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5110929 (הראל (1B)(!) תיק אג"ח פלוס 10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5111307 (מיטב (2A) מדינה + 20%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5111992 (הראל (1A) נכסים סולידיים) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5112560 (הראל (0B) תיק מדינה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5112586 (הראל מחקה (2A) משולבת אג"ח ישראל (90%) מניות ישראל-חול (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5112693 (קסם אקטיב (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5112719 (קסם אקטיב (1A)י 10-90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5113121 (הראל מחקה (00) משולבת מדינה חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5113618 (מיטב (4A) מניות צמיחה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5113709 (אנליסט (2B) עוקבת תיק 2 הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5113782 (הראל (1D)(!) בונד + 10% - נקוב $ אגד חוץ) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5113956 (מיטב (1B) אג"ח קונצרני + 10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5114079 (מיטב (2B) י30/70) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5114350 (אנליסט 10/90 (1A)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5114434 (מיטב (0A) עוקבת תיק מרכיב הנזילות הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5114640 (מיטב (1A)(!) קונצרני פלוס) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5114780 (מיטב (0B)(!) אג"ח ממשלתי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5114939 (הראל מחקה (00) תל בונד צמודות-יתר) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5115027 (אנליסט (4B) מניות ת"א 125 במומנטום) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5115225 (אנליסט (00) שקלית קונצרנית ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5115290 (הראל 10/90 (1A) מחלקת) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5115506 (סיגמא (00)(!) מודל דירוג פנימי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5115514 (סיגמא (2B) מדינה + 20%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5115738 (הראל מחקה (2B) משולבת אג"ח ישראל (80%) מניות ישראל-חול (20%) חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5115803 (אנליסט (1A) ממשלתית תיק סולידי עד שנתיים) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5116033 (אנליסט (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5116553 (קסם אקטיב (1A) אג"ח מדינה + 10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5116629 (FOREST (י0A)(!) אג"ח מדורג) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5116660 (הראל (2B) שנהב אג"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5116736 (דיאמונד (4A) מניות ת"א 125) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5116785 (הראל מחקה (00) תל גוב-צמודות 5-10) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5116793 (הראל מחקה (00) משולבת אג"ח ישראל צמוד חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5116934 (אנליסט (0B) מודל דירוג פנימי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5116942 (קסם אקטיב (0A) אג"ח מדורג ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117007 (הראל מחקה (00) משולבת אג"ח ישראל שקלי חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117239 (הראל (1B) תיק אג"ח סולידי + 10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117247 (הראל מחקה (00) תל גוב-צמודות 2-5) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117262 (הראל מחקה (00) תל גוב-שקלי 2-5) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117270 (הראל מחקה (00) תל בונד 20 צמודות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117288 (הראל מחקה (00) תל בונד שקלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117445 (Gse Spotי (0A) מחקר קונצרני) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117460 (הראל (2B) תיק אג"ח + 15%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117650 (איילון (2C)י 25/75 כשרה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117668 (איילון (0B) תיק השקעות ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117684 (איילון (6A) אקסטרים ת"א 125 פי 3) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117692 (איילון (60) אקסטרים ת"א 35 פי 3) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117700 (איילון (00) כספית) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117734 (אימפקט (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117742 (איילון (4B) משקל שווה ת"א 35) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117759 (איילון (6D) אקסטרים 500 S&P פי 3) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5117809 (איילון (0F) אקסטרים דולר פי 3) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5118419 (הראל מחקה (4D)י S&P 500 נקובה ב-$) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5119003 (קסם אקטיב (4D) מניות ארה"ב) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5119144 (אנליסט (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5119359 (מיטב (1A)י 5/95) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5119367 (מיטב (1B) אג"ח פלוס) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5119409 (הראל (00) כספית שקלית) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5119607 (אנליסט (00) אג"ח מדינה עד 5 שנים ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5119672 (אנליסט (0A)(!) אג"ח פיזור רחב ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5119763 (הראל מחקה (2A) משולבת מדינה (90%) מניות ישראל-חול (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5119854 (פרופאונד (4B) מנייתית) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120225 (אימפקט (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120340 (הראל (0A) עוקבת מרכיב נזילות - הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120704 (סיגמא (0A)(!) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120720 (סיגמא (1B)(!) תיק אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120795 (אנליסט (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120811 (אנליסט (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120837 (אנליסט (4B) תעשיות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120852 (אנליסט (00) כספית שקלית) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120886 (מיטב (0B) סולידית) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120894 (אנליסט (2C) אג"ח חברות + 30%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120902 (מיטב (2D) עוקבת תיק 2 חו"ל הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5120910 (אנליסט (1C) אג"ח מדינה + 10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5121140 (אנליסט (00) כספית) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5121272 (מיטב (0B) מדינה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5121694 (מיטב (1B)(!)י 10/90 תיק אג"ח חו"ל עד 30% מט"ח.) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5121736 (מיטב (4B) מניות חו"ל עד 30% מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5121801 (הראל מחקה (2A) משולבת אג``ח ישראל (75%) מניות ישראל-חול (25%) חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5121819 (הראל מחקה (00) משולבת ממשלתיות חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5121835 (הראל מחקה (00) תל בונד 60 צמודות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5122510 (הראל מחקה (4A) ת"א 125) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5122536 (אלפא טק (4D) אירופה E.S.G) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5122551 (הראל מחקה (00) All-Bond-ריבית משתנה שקלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5122601 (מיטב (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5122619 (מיטב (0B) מדינה צמודה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5122668 (קסם אקטיב (4A) ארה"ב מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5122957 (קסם S&P 500 (4A) KTF מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5123104 (הראל מחקה (00) אינדקס קונצרני מאוזן מח"מ 2-4) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5123112 (הראל מחקה (00) אינדקס קונצרני צמוד A) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5123120 (מיטב (00) מדינה שקלי עד 4 שנים) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5123138 (מיטב (0B) אג"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5123146 (מיטב (1A) קונצרני שקלי פלוס) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5123211 (קסם אקטיב (4D) זהב) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5123468 (קסם אקטיב (1B)(!)י אג"ח +10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5123476 (קסם אקטיב (0A) אג"ח מדינה ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5123559 (הראל מחקה (00) אינדקס קונצרני שקלי A) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5124060 (סיגמא (2C)י 25/75) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5124672 (הראל (3B) תיק השקעות עד 50%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5124698 (הראל (0A) תיק אג"ח סולידי עד שלוש שנים) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5124888 (פרופאונד (1A)י 10/90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5124912 (הראל מחקה (00) אינדקס לפדיון 2028 (מתגלגל כל 6 שנים)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5125265 (FOREST י(1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5125463 (פסטרנק שהם (A0)(!) אג"ח חברות ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5125828 (אלפי בנדק (0A)(!)י All Bond כללי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5125836 (אלפא טק (4A) מניות ESG ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5126065 (מיטב (3B)י 40/60) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5126347 (מיטב (2C) תיק השקעות 15/85) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5126685 (אנליסט (4B) מניות SMALL CAP ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5126776 (קסם אקטיב (2B)י 20-80) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5127030 (מיטב (1A) סולידית פלוס) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5127139 (שופן (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5127501 (הראל מחקה (4A)י Dax - מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5127527 (הראל מחקה (4A)י S&P 500 - מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5127568 (איילון (4D) קנאביס חו"ל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5127576 (פסטרנק שהם (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5127774 (הראל (2D) תיק אג"ח חו"ל - נקובה $) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5127782 (הראל (1B) מדינה + 10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5127790 (הראל (00) כספית מגמת ריבית) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5127808 (הראל (0D) כספית דולרית מגמת ריבית) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128095 (הראל מחקה (0A) תל בונד מאגר) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128103 (הראל מחקה (00) תל גוב-משתנה שקלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128111 (הראל מחקה (00) תל גוב-שקלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128137 (הראל מחקה (00) תל גוב-שקלי 5+) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128194 (הראל מחקה (2A) משולבת אג"ח ישראל (90%) ומניות (10%) חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128202 (הראל מחקה (4A) משולבת מניות חו"ל חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128210 (הראל מחקה (2A) משולבת אג"ח ישראל (85%) מניות ישראל-חול (15%) חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128236 (הראל מחקה (4D) משולבת מניות חו"ל חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128244 (הראל מחקה (4D) משולבת מניות סקטורים ארה"ב חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128251 (הראל מחקה (4A) משולבת מניות סקטורים ארה"ב חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128293 (אלפא טק (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128509 (דיאמונד (4D) מניות גלובאלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128673 (סיגמא (1A) מדינה צמודה פלוס) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128855 (איילון (4D) מניות גלובאלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128871 (הראל (2B) עוקבת תיק מס` 3 - הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128897 (הראל (00) שהם אג"ח סולידי ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5128947 (איילון (6D) אקסטרים נאסד"ק 100 פי 3) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129093 (פורצ`ן (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129101 (פורצ`ן (0D)(!) אג"ח בינלאומי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129119 (פורצ`ן (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129275 (הראל מחקה (4D)יS&P 500) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129283 (הראל מחקה (4D)יNASDAQ 100) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129382 (שופן (0B) אג"ח גלאט בפקוח ועד ההלכה של הגר"ש ואזנר והגר"נ קרליץ) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129424 (הראל מחקה (00) אינדקס לפדיון 2030 (מתגלגל כל 6 שנים)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129473 (אלפא טק (4D) מניות חו"ל ESG) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129606 (פסטרנק שהם (4D) גמישה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129655 (אנליסט (2B) עוקבת תיק 3 הבנק הבינלאומי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129663 (הראל מחקה (00) אינדקס אג"ח תזרימיות A ומעלה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129689 (הראל מחקה (00) תל בונד צמודות- בנקים ללא COCO) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129697 (הראל מחקה (4A) תל דיב) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129705 (הראל מחקה (4A) ת"א סקטור-באלאנס) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5129978 (FOREST (י0B)(!) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130018 (הראל מחקה (00) אינדקס אג"ח CoCo בנקים) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130026 (הראל מחקה (4D)י Dow Jones U.S. Select Medical Equipment) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130307 (איילון (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130315 (איילון (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130323 (איילון (4B) מימון ואשראי חוץ בנקאי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130414 (פרופאונד אג"ח מדורגות (0A)(!)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130422 (פרופאונד גמישה (4D)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130430 (פרופאונד 20/80 (2B)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130638 (הראל מחקה (4A) ת"א 90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130661 (הראל מחקה (4A) ת"א 35) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130729 (אימפקט (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130802 (פורצ`ן (0B)(!) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130810 (פסטרנק שהם (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130919 (אי.בי.אי. מחקה (4A) ת"א 90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130950 (אנליסט (0B) סולידית LV) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5130992 (אי.בי.אי. מחקה (00) תל בונד שקלי AA-AAA) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5131008 (אי.בי.אי. מחקה (00) תל בונד צמודות AA-AAA) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5131081 (הראל מחקה (4A) ת"א טכנולוגיה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5131164 (הראל מחקה (00) אינדקס AA-AAA ריאליות שקלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5131180 (הראל מחקה (00) אינדקס AA-AAA ריאליות צמוד) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5131347 (קסם KTFי (00) משולבת אג"ח חברות (50%) אג"ח מדינה (50%) חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5131404 (הראל מחקה (4A) ת"א בנייה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5131420 (הראל מחקה (4A) ת"א מניב ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5131792 (הראל מחקה (0A) תל גוב-כללי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5131958 (דיאמונד (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5132006 (קסם KTF י(4D)י אינדקס eGaming מנוטרלת דולר) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5132030 (הראל מחקה (00) אינדקס A שקלי מנפיקים ישראלים) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5132204 (פסטרנק שהם (1B)(!)י 10/90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5132295 (הראל מחקה (4A) אינדקס קמעונאות ומסחר ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5132410 (פלקון (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5132592 (הראל מחקה (0D) אינדקס A-AAA ת"א שקלי - נקובה $) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5132865 (הראל מחקה (00) אינדקס A-AA צמוד 0-2) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133012 (קסם S&P Regional Banks (4D) KTF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133111 (פסטרנק שהם (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133145 (הראל מחקה (00) אינדקס A-AAA ריאליות פקטור מרווח מאג``ח ממשלתי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133152 (הראל מחקה (0A) אינדקס אג"ח מנפיקים ישראלים במשקל שווה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133236 (ATF מחקה (40) אינדקס בנקים וביטוח ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133459 (פורצ`ן (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133574 (הראל מחקה (4A)י NASDAQ 100 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133608 (הראל מחקה (0D) אינדקס AA-AAA ת"א 0-2 - נקובה $) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133616 (הראל מחקה (4A)י אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133756 (הראל מחקה (0A)י All Bond כללי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133764 (הראל מחקה (4A) ת"א All-Share) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133905 (ATF מחקה (00) אינדקס אג"ח חברות ישראל EW TOP 100) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5133939 (מיטב (2A) תיק אג"ח + 15%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134028 (מיטב (2B)י 25/75) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134036 (מיטב (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134101 (הראל מחקה (4A) אינדקס מניות ערך ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134143 (אימפקט (4D)י Global Shares) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134226 (פסטרנק שהם (0B) אג"ח כללי ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134234 (פסטרנק שהם (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134283 (פורצ`ן (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134606 (מיטב (0A)(!) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134614 (מיטב (1A)(!) תיק אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134663 (מיטב (0A) אג"ח מדינה ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134705 (הראל מחקה (0A) אינדקס לפדיון 2026 מנפיקים במשקל שווה (מתגלגל כל 6 שנים)) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134754 (הראל (2C) אגד ישראלי עד 15% מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134762 (הראל (2C) אגד ישראלי עד 30% מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134846 (פרופאונד (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5134929 (קסם iBoxx USD Liquid FRN Investment Grade Corporates 100 (0D) KTF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5135058 (Gse Spotי (4B) מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5135165 (ATF מחקה (4A) אינדקס ת"א-125 מומנטום ענפי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5135264 (פרופאונד (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5135272 (קסם KTFי (4A) משולבת מניות חו"ל מפותחות MidCap חודשי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5135348 (הראל מחקה (4D) ת"א 90 - נקובה $) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5135736 (הראל מחקה (0D) תל גוב-מק"מ - נקובה $) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5135835 (הראל מחקה (00) תל גוב-שקלי 10+) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5135843 (הראל מחקה (00) תל גוב-צמודות 10+) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5135975 (ATF מחקה (00) אינדקס אג"ח בנקים וחב` ממשלתיות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136064 (קסם KTFי (4D)י NIKKEI 225) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136080 (פסטרנק שהם (2B)י 15/85) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136098 (פסטרנק שהם (4B) מניות Mid Cap ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136163 (מיטב (4B) נדל"ן - תשתיות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136254 (בול מרקט (4D) השקעות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136288 (FOREST י(2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136619 (פלקון (0A) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136627 (סיגמא (2B)י 20/80) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136676 (ATF מחקה (2B) משולבת אינדקס מנגנון אג"ח (75%) מניות (25%) חודשי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136692 (קסם KTFי (4D)י S&P Consumer Staples) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136775 (ATF מחקה (4A) אינדקס מניות ארה"ב Large Cap מומנטום ענפי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136833 (אי.בי.אי. מחקה (4A)י S&P 500 Equal Weight מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136841 (אי.בי.אי. מחקה (4A) ת"א סקטור-באלאנס) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136858 (אי.בי.אי. מחקה (00) תל בונד-צמודות 1-3) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136866 (איילון (00) כספית ניהול הנזילות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5136924 (איילון (0D) כספית דולרית) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137070 (אנליסט (0A) סולידית) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137211 (פורצ`ן (0B) תיק אג"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137237 (אי.בי.אי. מחקה (4A) אינדקס מניות דיבידנד ישראל מחלקת) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137310 (הראל (0D) כספית יורו) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137336 (ATF מחקה (4D) אינדקס מניות ארה"ב Large Cap מומנטום ענפי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137435 (הראל מחקה (4D) אינדקס Top10 Tech) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137476 (פסטרנק שהם (0B)(!) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137526 (אי.בי.אי. מחקה (00) אינדקס אג"ח קופון גבוה מחלקת) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137690 (מיטב (00) כספית שקלית ללא קונצרני) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137765 (פסטרנק שהם (1B)י 10/90) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137807 (הראל מחקה (4D)י  S&P 500 Equal Weight) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137831 (איילון (00) אג"ח קונצרני מדורג A ומעלה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137880 (מיטב (2B)י 20/80 מודל ESG) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137898 (מיטב (2B)י 30/70 מודל ESG) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5137997 (ATF מחקה (00) אינדקס שקלים ארוכים עד 20% מדינה) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5138219 (פרופאונד (0B)(!) תיק אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5138359 (ATF מחקה (00) אינדקס EW TOP100 מרווח מעל הממוצע מותאם מח"מ) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5138375 (מיטב (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5138409 (הראל מחקה (4D) אינדקס תעשיות ביטחוניות ארה``ב וישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5138425 (פורצ`ן (0D)(!) אג"ח גלובלי – נקובה $) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5138722 (הראל מחקה (0D)י iBoxx USD Liquid 5-9 Top 50) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5138839 (אנליסט (0D) כספית דולרית - נקובה $) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5138847 (הראל מחקה (00) תל בונד צמודות בנקים וחברות ממשלתיות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5138854 (הראל מחקה (00) תל בונד צמודות 5-10) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5138862 (הראל מחקה (00) תל בונד שקלי 5-10) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5138896 (קסם KTF י(4D)י MSCI India) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139076 (איילון (0D) כספית דולרית – נקובה דולר) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139175 (ATF מחקה (4A) אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139233 (קסם KTFי (4A) ת"א-125 ערך) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139332 (מיטב (4B) מניות מומנטום) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139340 (איילון (6A) אקסטרים בנקים פי 3) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139357 (איילון (6A) אקסטרים ת"א 90 פי 3) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139407 (קסם KTFי (00) תל בונד 125 ערך שקלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139415 (קסם KTFי (00) תל בונד 125 ערך צמודות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139449 (אנליסט (0B)(!) תיק קונצרני) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139571 (הראל מחקה (4D)י S&P 500 Momentum) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139639 (הראל מחקה (4A) ת"א 90 ובנקים) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139670 (אנליסט (4B) מניות ערך) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139688 (אנליסט (0B) אג"ח ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139712 (אנליסט (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139738 (קסם KTFי (4A) ת"א 90 ובנקים) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139753 (פורצ`ן (1B) תיק אג"ח בינלאומי עד 20% מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139837 (הראל מחקה (4D)י Russell 2000) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139902 (קסם S&P/TSX 60 (4D) KTF) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139936 (ATF מחקה (4A) ת"א-20) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139944 (ATF מחקה (4A) ת"א-50 ריאלי) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139951 (ATF מחקה (4A) ת"א-200) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139969 (DCMSי (2D) תיק השקעות גלובלי עד 30% מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139985 (הראל מחקה (00)(!) תל בונד- תשואות צמודות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5139993 (הראל מחקה (4A)י S&P Hotels, Resorts & Cruise lines 15% FMC Capped מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140009 (הראל מחקה (4A) ת"א- ביטוח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140058 (קסם KTF י(00)י תל בונד צמודות 1-3) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140116 (ATF מחקה (00) תל בונד-צמודות A) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140124 (ATF מחקה (00)(!) תל בונד-תשואות צמודות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140132 (הראל מחקה (4A)י S&P 500 Momentum מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140348 (מיטב (2B)י 15/85 מודל ESG) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140355 (מיטב (0B) אג"ח מודל ESG) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140413 (אנליסט (00) כספית חיסכון) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140504 (מיטב (4A) ת"א 125 מומנטום) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140553 (פסטרנק שהם (2B)י 25/75) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140561 (הראל מחקה (4A) אינדקס תעשיות ביטחוניות ארה"ב וישראל מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140579 (אקהאוס (4B) מניות ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140629 (הראל מחקה (4D) אינדקס תשתיות ובינוי ארה"ב וישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140686 (אנליסט (6F) מניות ממונפת) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140694 (פרופאונד (4B) מניות Large & Mid Cap ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5140926 (הראל מחקה (4D) אינדקס תעשיות ביטחוניות אירופה Top10) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141049 (פרופאונד (1B)(!) תיק אג"ח + 10%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141247 (אנליסט (4B) מניות Mid Cap ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141254 (אנליסט (1A) מדינה צמודה פלוס) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141296 (מיטב (00) כספית ג`מבו) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141312 (קסם KTFי (4A) אינדקס בנקים ישראל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141486 (מיטב (4B) בנקים – ביטוח ושוק ההון) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141510 (אקהאוס (4D) מניות חו"ל) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141544 (סיגמא (2B) תיק אג"ח + 30%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141569 (אלטשולר שחם מחקה (4A)י Nasdaq 100 מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141635 (אלטשולר שחם מחקה (00) תל בונד-שקלי 5-15) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141643 (סיגמא (4B) מניות ת"א 125) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141650 (סיגמא (4B) מניות ערך) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141668 (סיגמא (0B) אג"ח מדורג ללא מניות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141767 (אנליסט (3C) תיק השקעות עד 50%) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141817 (ATF מחקה (0A) אינדקס אג"ח ממשלת ארה"ב - מח"מ דינמי מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141890 (פלקון (4D) תיק השקעות גמיש) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5141940 (פורצ`ן (2B)י 30/70) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5142039 (תכלית TTF י(4A) ‏ת"א נדל"ן-35) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5142054 (MTF מחקה (4D)י Crypto Ecosystem iNDEX) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5142088 (קסם KTF י(4A)י MarketVector תעשיות בטחוניות ישראליות) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5142096 (קסם KTF י(4A)י LBMA GOLD PRICE PM USD מנוטרלת מט"ח) is in mutual funds list but missing from report
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 1158310 (MTF. INDX US E-COMMERCE 4) is in report but not in mutual funds list
+2026-01-20 18:47:42 - WARNING - [CHK_1A] Fund 5132576 (BLUESTAR TRAVEL& VACATION) is in report but not in mutual funds list
+2026-01-20 18:47:42 - INFO - [CHK_1A] Fund completeness check completed: 441 exceptions

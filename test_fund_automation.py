@@ -14,8 +14,8 @@ from datetime import datetime, timedelta
 
 # ============ CONFIGURATION ============
 APIFY_TOKEN = "YOUR_APIFY_TOKEN_HERE"
-TEST_FUND_NAME = "סיגמא"
-TEST_FUND_CODE = "10048"
+TEST_FUND_NAME = "מגדל"
+TEST_FUND_CODE = "10040"
 
 # Apify Actor IDs
 FUNDS_LIST_ACTOR_ID = "K9WppTziYC3n2vxTu"

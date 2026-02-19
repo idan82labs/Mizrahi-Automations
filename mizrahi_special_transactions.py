@@ -23,7 +23,7 @@ Example:
     --input-report "1702431.csv" \
     --output-xlsx "output.xlsx" \
     --email-json "email.json" \
-    --manager-name "איילון" \
+    --manager-name "מגדל" \
     --spec-file "Special Transactions Report Testing Specifications.xlsx" \
     --price-threshold 5.0 \
     --seed 123
